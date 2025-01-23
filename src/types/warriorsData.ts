@@ -22,7 +22,7 @@ export const localArmy = [
 			'https://sun9-42.userapi.com/impg/ZUX3PK_2Q8LYzLX7zoGmcob8XHjzbiLz1WFOIw/swR2rz2er5U.jpg?size=1937x992&quality=95&sign=7620fd23ae96fd0c824778b2f487a6ea&type=album', // Прямой URL для удаленного изображения
 		price: 150,
 		inBasket: true,
-		button: 'xt gbcfnm z [p',
+		button: '',
 	},
 	{
 		id: '3GVSversal',
@@ -218,7 +218,7 @@ export const localArmy = [
 	},
 	{
 		id: 'GVSyupiter',
-		title: 'Легион Юпитер',
+		title: 'Юпитер',
 		category: 'Гильдия вольных стрелков',
 		description:
 			'https://sun9-52.userapi.com/impg/j-TdIRfdbcdilxYbaDFAHS_wvl6_zx3KKFqRFQ/QXPP6EtuMt4.jpg?size=1090x726&quality=95&sign=2aa5001160610b8239f577f1cb5c3418&type=album',
@@ -232,7 +232,7 @@ export const localArmy = [
 	//Войска Колдуна
 	{
 		id: 'VKrotavaryag',
-		title: 'Рота Варяг',
+		title: 'Варяги',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-34.userapi.com/impg/-opRQwCYgcqqcOkCMYUu8Mw_0KkoC8aN9MnT2g/iorEpIWnAow.jpg?size=1090x726&quality=95&sign=016c971f133c8e18a166fbe4c0a0f875&type=album',
@@ -240,7 +240,7 @@ export const localArmy = [
 			'https://sun9-63.userapi.com/impg/jQGzfByVHZDOW_P1pIculHTwo8Jm46sn8oQNoA/GOxu3vg4XME.jpg?size=1937x992&quality=95&sign=b1fd4970d558f553c7670c3f3c9fe787&type=album', // Прямой URL для удаленного изображения
 		price: 160,
 		inBasket: true,
-		button: 'xt gbcfnm z [p',
+		button: '',
 	},
 	{
 		id: 'VKrotagrenadery',
@@ -364,7 +364,7 @@ export const localArmy = [
 	},
 	{
 		id: 'VKNorman',
-		title: 'Рота Норман',
+		title: 'Норман',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-15.userapi.com/impg/gZtAoobQetk0XYgPtnNh-KRSy3wo_7PoainKbg/aZDaXTYc94Y.jpg?size=1090x726&quality=95&sign=6b1b89a258da612ff6b35df922b61349&type=album',
@@ -376,7 +376,7 @@ export const localArmy = [
 	},
 	{
 		id: 'VKyatagan',
-		title: 'Отряд Ятаган',
+		title: 'Ятаган',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-5.userapi.com/impg/Kzp5yyVwKckYcF12GH2KEUQ9lCiWSn8TPRvILg/QBW8Kk5_QTk.jpg?size=1090x726&quality=95&sign=20c36e2f9e12941173091dd7558c8423&type=album',
@@ -388,7 +388,7 @@ export const localArmy = [
 	},
 	{
 		id: 'VKAskalon',
-		title: 'Отряд Аскалон',
+		title: 'Аскалон',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-50.userapi.com/impg/e23dHt6watNjMsBuHm9Y2U5olVCjPAuhkDOvxw/5zP0QOd-4Mg.jpg?size=1090x726&quality=95&sign=806272c7a4ef2cba9c660e24796e71c3&type=album',
@@ -400,7 +400,7 @@ export const localArmy = [
 	},
 	{
 		id: 'VKAsterisk',
-		title: 'Рота Астериск',
+		title: 'Астериск',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-74.userapi.com/impg/VJwA0Hi6Mis3h5pcqu8VUWPR_x2F9nT-Rp_oLQ/nOjW3JpHt3o.jpg?size=1090x726&quality=95&sign=eb5754663b5884e2f5f626c91609b731&type=album',
@@ -436,7 +436,7 @@ export const localArmy = [
 	},
 	{
 		id: 'VKvervulf',
-		title: 'Боевая стая Вервульф',
+		title: 'Вервульф',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-14.userapi.com/impg/ItNXDuV-t3OylcwLpAdmV2keEPIU-h8BYt_vRg/Ohmn5DoIBNM.jpg?size=1090x726&quality=95&sign=84d9527e003fa17b592396501ad66129&type=album',
@@ -448,7 +448,7 @@ export const localArmy = [
 	},
 	{
 		id: 'VKgidra',
-		title: 'Боевая стая Гидра',
+		title: 'Гидра',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-41.userapi.com/impg/C0q48BsR6x2LN165X_jLT_EA381Gd1VFxMn3eA/Aos9UyWlUPY.jpg?size=1090x726&quality=95&sign=ace7ea429e8e490650b37fd79cd49b93&type=album',
@@ -460,7 +460,7 @@ export const localArmy = [
 	},
 	{
 		id: 'VKIzmail',
-		title: 'Корпус Измаил',
+		title: 'Измаил',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-31.userapi.com/impg/jqeiXyhp7s3AcfUFWq--pgWnzzmQ-xjN7hcSTA/UlwuvZ0wt-8.jpg?size=1090x726&quality=95&sign=e6ae7e81d050e5bc5453f6d57620b783&type=album',
@@ -472,7 +472,7 @@ export const localArmy = [
 	},
 	{
 		id: 'VKKiber-skilet',
-		title: 'Отряд Кибер-Скелеты',
+		title: 'Кибер-Скелеты',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-39.userapi.com/impg/M_cpOUtEcdLLWocsBZlxxbp9R_rZ099zUtoZbg/mv6azU1ilfE.jpg?size=1090x726&quality=95&sign=3f7543d1fa3ea785f00d1de2571f31b0&type=album',
@@ -484,7 +484,7 @@ export const localArmy = [
 	},
 	{
 		id: 'VKKondung',
-		title: 'Дружина Кондунг',
+		title: 'Кондунг',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-12.userapi.com/impg/-cIbShHFmewHJUg4JeVTLWBJJLwvXHy4NmpcjQ/yC2YXH0RFcs.jpg?size=1090x726&quality=95&sign=da426c27e5dd1ea9c05e9950a6281dc1&type=album',
@@ -496,7 +496,7 @@ export const localArmy = [
 	},
 	{
 		id: 'VKMinotavri',
-		title: 'Отряд Минотавры',
+		title: 'Минотавры',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-75.userapi.com/impg/4p-Ym_MeKaUTpcNtctFlwmgrXaxf_PWNM7Fu-g/923In1Hyq1o.jpg?size=1090x726&quality=95&sign=3f4f4e8c650f439db254f3918500d5d0&type=album',
@@ -508,7 +508,7 @@ export const localArmy = [
 	},
 	{
 		id: 'VKChagatai',
-		title: 'Отряд Чагатай',
+		title: 'Чагатай',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-49.userapi.com/impg/fjeAtR7Q3dMcX02BR0aTcSvn-h5p5qTbSYq7Cw/YWKb_aBYxYI.jpg?size=1090x726&quality=95&sign=62f3e475b42361e9d60fa6b9259b1583&type=album',
@@ -520,7 +520,7 @@ export const localArmy = [
 	},
 	{
 		id: 'VKYagelon',
-		title: 'Хоругвь Ягеллон',
+		title: 'Ягеллон',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-9.userapi.com/impg/o07b5i4pntWW8hbdsAcvvx49YJ0X4zp47ZAehA/QmFFAGQBjdc.jpg?size=1090x726&quality=95&sign=4c81455e30f1dfd5a48691291b25d104&type=album',
@@ -534,7 +534,7 @@ export const localArmy = [
 	//Легионеры Некроманта
 	{
 		id: 'LNKentavr',
-		title: 'Орден Кентавр',
+		title: 'Кентавр',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-37.userapi.com/impg/aNVg-RcDGUU2Tla30Mj0M31fOTRkWvovTL-zhg/Pyg95YCw5L4.jpg?size=1090x726&quality=95&sign=b07d7475b2c1f0b98d5ac6ed80d88fb7&type=album',
@@ -546,7 +546,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNKobra',
-		title: 'Гоблин-рота Кобра',
+		title: 'Кобра',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-53.userapi.com/impg/lUoAQqN5wUO-3tMFDD4fl9dxelwqBqHwJuKnRQ/TB1yeTivlUM.jpg?size=1090x726&quality=95&sign=2cd013d0b48932cee5021395fad022a6&type=album',
@@ -558,7 +558,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNMagnum',
-		title: 'Легион Магнум',
+		title: 'Магнум',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-66.userapi.com/impg/EkqCmYcFVS-lxR7hvYWGgKRVUnBW7RmUQlJdag/BUGTuy-l0AQ.jpg?size=1090x726&quality=95&sign=babffb36c5f13cf2ac9e83017c18fd3a&type=album',
@@ -570,7 +570,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNPiton',
-		title: 'Гоблин-рота Питон',
+		title: 'Питон',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-80.userapi.com/impg/LXWw9OtlnIWMNhLZ5OyogwLQWNPi7BM3sxvhNg/boe3s72pEts.jpg?size=1090x726&quality=95&sign=d7fea51c27e5f65962b71799dfe681a7&type=album',
@@ -582,7 +582,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNNekro-Kiborgi_Skeletoni',
-		title: 'Некро-киборги Скелетоны',
+		title: 'Скелетоны',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-79.userapi.com/impg/Y0u9-7plhAcDAsfytTGmwR2RNPP98JfvvDu43w/q0rEis5Wgxc.jpg?size=1090x726&quality=95&sign=6242a1f32d0032adb9228b4251c443e9&type=album',
@@ -594,7 +594,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNTitan',
-		title: 'Ударный взвод Титан',
+		title: 'Титан',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-30.userapi.com/impg/-j7DLTH_sLjv9czqT428hCSqfpL4SCFA0nl-cw/kuWKh6vyIOU.jpg?size=1090x726&quality=95&sign=ca4bf59640076ccc4e1bb6b79b029430&type=album',
@@ -606,7 +606,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNTornado',
-		title: 'Корпус Торнадо',
+		title: 'Торнадо',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-53.userapi.com/impg/ugubCQx3kiq_n4uNhMs1ThlpzrFMRtS0Ny4-0w/mfSxpax9ZdQ.jpg?size=1090x726&quality=95&sign=30fd1f797cb5b14405b41434bd0c214a&type=album',
@@ -618,7 +618,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNTornadogolovotyap',
-		title: 'Корпус Торнадо (7 бойцов)',
+		title: 'Торнадо (7 бойцов)',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-53.userapi.com/impg/ugubCQx3kiq_n4uNhMs1ThlpzrFMRtS0Ny4-0w/mfSxpax9ZdQ.jpg?size=1090x726&quality=95&sign=30fd1f797cb5b14405b41434bd0c214a&type=album',
@@ -630,7 +630,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNUdav',
-		title: 'Гоблин-рота Удав',
+		title: 'Удав',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-27.userapi.com/impg/0vNN1PXZ6Pb3pZfd4kWqCI6HIn56rHhEzi5jyQ/94dQ1-m-Fv4.jpg?size=1090x726&quality=95&sign=7962b2c756549559a064c0cb5b3b8b65&type=album',
@@ -642,7 +642,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNUragan',
-		title: 'Штурм-бат Ураган',
+		title: 'Ураган',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-79.userapi.com/impg/7WOGG5L6n_wNy-AdBeVsjr57ZXu2-o4n9DCPOw/nK0TAbHYqfw.jpg?size=1090x726&quality=95&sign=c2e75482ab6c6a31b4ca354c14188aea&type=album',
@@ -678,7 +678,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNCunami',
-		title: 'Развед-отряд Цунами',
+		title: 'Цунами',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-29.userapi.com/impg/BMRQY50NFqTIwL8G5q0J2Zfrx02LXPlvQHqmOg/syEUwCfYxWo.jpg?size=1090x726&quality=95&sign=ca20f639510833db5312faaa7810f92d&type=album',
@@ -702,7 +702,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNGladius',
-		title: 'Легион Гладиус',
+		title: 'Гладиус',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-9.userapi.com/impg/6U54-IMRu0IXuj0oszULP6l_dXPnlcu45zD_Mw/PkdmlccVQ2Y.jpg?size=1090x726&quality=95&sign=c9b4f4a0e58e667b354d00f5d8b06211&type=album',
@@ -726,7 +726,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNGrobag',
-		title: 'Банда Гробаг',
+		title: 'Гробаг',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-30.userapi.com/impg/BrCE0ot__s_gb41NTC-9iUmxz2bvY9oKMzng3Q/yj52in6WZJk.jpg?size=1090x726&quality=95&sign=92408922f658e66756c15e848fa22f72&type=album',
@@ -738,7 +738,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNGulrog',
-		title: 'Бригада Гулрог',
+		title: 'Гулрог',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-49.userapi.com/impg/i82_fAu4Os62WIJpE2Xim8zT-t79NQgA5t9LnQ/nC3GUpK2gj0.jpg?size=1090x726&quality=95&sign=1c0ca07b15377f81147a35ae24cad28e&type=album',
@@ -750,7 +750,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNGugluk',
-		title: 'Бригада Гуглук',
+		title: 'Гуглук',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-76.userapi.com/impg/yCwtJ2tU96mcJTCLs4eH0pi657JIty-kQQznuw/wFJ5-0jkP5U.jpg?size=1090x726&quality=95&sign=30c03b5b1801de18d4698f3fe6ce6e62&type=album',
@@ -762,7 +762,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNYedinorog',
-		title: 'Орден Единорог',
+		title: 'Единорог',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-4.userapi.com/impg/36lyhV4uuXVl07bIkP0VrLSTdxm8D4C2mRUxNw/zLTxDxq0G74.jpg?size=1090x726&quality=95&sign=dbf5fede1e720f0b7eb3ca6171bc7c2b&type=album',
@@ -774,7 +774,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNKechya',
-		title: 'Отряд Кечуа',
+		title: 'Кечуа',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-16.userapi.com/impg/WVyg0avGVPoCt-d7u1RjYu4ADs3J0mKLQkyhAQ/qnfaa8NBeBk.jpg?size=1090x726&quality=95&sign=a9b380ce34cbb270d53cc6f63a9166af&type=album',
@@ -834,7 +834,7 @@ export const localArmy = [
 	},
 	{
 		id: 'LNHatamoto',
-		title: 'Отряд Хатамото',
+		title: 'Хатамото',
 		category: 'Легионеры Некроманта',
 		description:
 			'https://sun9-67.userapi.com/impg/Kn6hT5aBZ39xKR7q0xg29hN5Q-GiezPdZuaMqQ/GOotV_HiZdY.jpg?size=1090x726&quality=95&sign=fb79cd450e3c1e979ae1074ea52ab320&type=album',

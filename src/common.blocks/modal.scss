@@ -20,7 +20,8 @@
 		@include mixins.container;
 		@include mixins.flex(column);
 		gap: $defaultPadding;
-		background-color: $background;
+
+		background-color: rgb(0, 0, 0);
 		min-height: min-content;
 		min-width: min-content;
 		border-radius: 3rem;
@@ -29,6 +30,10 @@
 		top: auto;
 		left: 0;
 		right: 0;
+		@media (max-width: 450px) {
+			padding: 0px;
+		}
+
 		&_locked {
 			position: absolute;
 			top: 0;
@@ -47,14 +52,15 @@
 
 	&__actions {
 		@include mixins.flex(row);
+		margin-top: 20px;
 		align-items: center;
 		gap: 2rem;
 	}
 
 	&__close {
 		position: absolute;
-		top: calc(#{$defaultPadding} / 2);
-		right: calc(#{$defaultPadding} / 2);
+		top: 5px;
+		right: 5px;
 		@include mixins.icon(2rem, 'close');
 		@include mixins.link(white, $hover);
 	}

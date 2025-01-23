@@ -2,7 +2,6 @@
 @use 'mixins';
 
 .basket {
-	@include mixins.flex(column);
 	gap: 2rem;
 	height: 100%;
 
@@ -13,8 +12,13 @@
 	}
 
 	&__item {
+		display: flex;
 		border-bottom: 1px solid $primary;
-		padding: 1.5rem 0;
+		padding: 0.5rem 0;
+		background-color: transparent;
+		align-items: center;
+		border-radius: 0;
+		gap: 20px;
 
 		&-index {
 			@include mixins.flex(row);
@@ -24,7 +28,7 @@
 			width: 55px;
 			height: 55px;
 			border-radius: 50%;
-			background-color: $primary;
+
 			color: white;
 			margin-right: 1rem;
 		}

@@ -19,7 +19,7 @@
 		<div class="page__wrapper">
 			<header class="header">
 				<div class="header__container">
-					<a class="header__logo" href="/">
+					<a class="header__logo" href="#">
 						<img
 							class="header__logo-image"
 							src="<%=require('../images/siyNqnwSosk.jpg')%>"
@@ -38,6 +38,8 @@
 					<button class="header__basket">
 						<span class="header__basket-counter">0</span>
 					</button>
+
+					<span class="footer_price">Сумма ростера: 0 очков</span>
 				</div>
 			</header>
 
@@ -65,8 +67,8 @@
 
 		<template id="card-preview">
 			<div class="card card_full">
-				<img class="card__image" src="" alt="арм лист отряда" />
 				<div class="card__column">
+					<img class="card__image" src="" alt="арм лист отряда" />
 					<span class="card__category">другое</span>
 					<h2 class="card__title">Бэкенд-антистресс</h2>
 					<img class="card__description" src="" alt="артефакт отряда" />
@@ -81,13 +83,11 @@
 		<template id="card-tehlist">
 			<div class="card card_tehList">
 				<img class="card__image" src="" alt="арм лист отряда" />
-				<div class="card__column">
-					<span class="card__category">другое</span>
-					<h2 class="card__title">Бэкенд-антистресс</h2>
-					<div class="card__row">
-						<button class="button card__button">Добавить</button>
-						<span class="card__price">1000 синапсов</span>
-					</div>
+				<span class="card__category">другое</span>
+				<h2 class="card__title">Бэкенд-антистресс</h2>
+				<div class="card__row">
+					<button class="button card__button">Добавить</button>
+					<span class="card__price">1000 синапсов</span>
 				</div>
 			</div>
 		</template>
@@ -95,17 +95,16 @@
 		<template id="card-tehlist_wheels">
 			<div class="card card_tehList_wheels">
 				<img class="card__image" src="" alt="арм лист отряда" />
-				<div class="card__column">
-					<span class="card__category">другое</span>
-					<h2 class="card__title">Бэкенд-антистресс</h2>
-					<label class="wheels_box">
-						<span>Шины</span>
-						<input class="input_wheels" type="checkbox" />
-					</label>
-					<div class="card__row">
-						<button class="button card__button">Добавить</button>
-						<span class="card__price">1000 синапсов</span>
-					</div>
+
+				<span class="card__category">другое</span>
+				<h2 class="card__title">Бэкенд-антистресс</h2>
+				<label class="wheels_box">
+					<span>Шины</span>
+					<input class="input_wheels" type="checkbox" />
+				</label>
+				<div class="card__row">
+					<button class="button card__button">Добавить</button>
+					<span class="card__price">1000 синапсов</span>
 				</div>
 			</div>
 		</template>
@@ -117,14 +116,13 @@
 					src=""
 					alt="арм лист боевой машины"
 				/>
-				<div class="card__column">
-					<span class="card__category"></span>
-					<h2 class="card__title"></h2>
-					<div class="weapons-list"></div>
-					<div class="card__row">
-						<button class="button card__button">Добавить</button>
-						<span class="card__price">1000 синапсов</span>
-					</div>
+
+				<span class="card__category"></span>
+				<h2 class="card__title"></h2>
+				<div class="weapons-list"></div>
+				<div class="card__row">
+					<button class="button card__button">Добавить</button>
+					<span class="card__price">1000 синапсов</span>
 				</div>
 			</div>
 		</template>
@@ -186,9 +184,7 @@
 				></button>
 			</li>
 		</template>
-		<div class="footer">
-			<span class="footer_price">Сумма ростера: 0 очков</span>
-		</div>
+
 		<template id="basket">
 			<div class="basket">
 				<h2 class="modal__title">Просмотр армии</h2>

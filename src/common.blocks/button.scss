@@ -17,6 +17,10 @@
 		@include mixins.button(white, $primaryLight, $primaryLight);
 		border: $hoverBorder;
 	}
+
+	@media (max-width: 415px) {
+		max-width: 200px;
+	}
 }
 
 .button_gallery {
