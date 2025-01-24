@@ -327,7 +327,7 @@ export const localArmy = [
 		button: '',
 	},
 	{
-		id: 'VKkondor',
+		id: 'VKkondor7',
 		title: 'Кондор (7 бойцов)',
 		category: 'Войска Колдуна',
 		description:

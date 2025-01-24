@@ -32,6 +32,7 @@
 		right: 0;
 		@media (max-width: 450px) {
 			padding: 0px;
+			border-radius: none;
 		}
 
 		&_locked {
@@ -59,10 +60,12 @@
 
 	&__close {
 		position: absolute;
-		top: 5px;
-		right: 5px;
+		top: 15px;
+		right: 10px;
 		@include mixins.icon(2rem, 'close');
 		@include mixins.link(white, $hover);
+		@media (max-width: 450px) {
+		}
 	}
 
 	&__footer {
