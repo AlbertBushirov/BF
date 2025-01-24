@@ -11,6 +11,9 @@
 	z-index: 100;
 	padding-top: 5vh;
 	padding-bottom: 5vh;
+	@media (max-width: 450px) {
+		padding-top: 5px;
+	}
 
 	&_active {
 		display: flex;
