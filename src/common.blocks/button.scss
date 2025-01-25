@@ -19,7 +19,7 @@
 	}
 
 	@media (max-width: 450px) {
-		max-width: 200px;
+		font-size: small;
 		padding: 20px;
 	}
 }
@@ -36,6 +36,7 @@
 }
 
 .volume-control {
+	max-width: 240px;
 	display: flex;
 	align-items: center;
 	background-color: #fff;

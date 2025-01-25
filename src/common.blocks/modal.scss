@@ -68,6 +68,8 @@
 		@include mixins.icon(2rem, 'close');
 		@include mixins.link(white, $hover);
 		@media (max-width: 450px) {
+			top: 7px;
+			right: 5px;
 		}
 	}
 
