@@ -24,7 +24,7 @@ export const localWeapons = [
 		title: 'Клерик',
 		category: 'Войска Колдуна',
 		image:
-			'https://sun9-31.userapi.com/impg/-oQWYPiVIxonPaQpi-AaJVKuL_cafLPrVIr2Vg/lsXaqF17Qzw.jpg?size=968x992&quality=95&sign=c32ef4bb34ce8b926becdff20b1a92d2&type=album', // Прямой URL для удаленного изображения
+			'https://sun9-61.userapi.com/impg/hxuFh1gwXs2kik_UXX7v35-85hoknz1nRo-C5Q/DNMG9gS9Upg.jpg?size=968x992&quality=95&sign=08e4d78c4692c3ec3d47d7fa9f9551ea&type=album', // Прямой URL для удаленного изображения
 		price: 110,
 		inBasket: true,
 		button: '',
