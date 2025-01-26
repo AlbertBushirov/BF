@@ -13,6 +13,7 @@
 	padding-bottom: 5vh;
 	@media (max-width: 450px) {
 		padding-top: 5px;
+		padding-bottom: 0px;
 	}
 
 	&_active {
@@ -35,6 +36,7 @@
 		right: 0;
 		@media (max-width: 1420px) {
 			width: 100vw;
+
 			padding: 0px;
 			border-radius: none;
 		}
@@ -47,6 +49,8 @@
 
 	&__content {
 		flex-grow: 1;
+		@media (max-width: 1420px) {
+		}
 	}
 
 	&__title {
@@ -61,11 +65,9 @@
 		align-items: center;
 		gap: 2rem;
 		@media (max-width: 450px) {
-			position: fixed;
-			width: 100vw;
-			bottom: 2px;
-			left: 2px;
-			background-color: black;
+			margin: 0px;
+			background-color: $primary;
+			gap: 5rem;
 		}
 	}
 
