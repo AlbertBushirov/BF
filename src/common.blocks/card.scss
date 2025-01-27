@@ -21,6 +21,10 @@ html {
 		gap: 10px;
 		grid-template-rows: min-content 1fr;
 		grid-template-columns: min-content 1fr min-content;
+		@media (max-width: 730px) {
+			width: 100vw;
+			box-sizing: border-box;
+		}
 		@media (max-width: 450px) {
 			padding: 0px;
 			width: 100vw;
@@ -81,6 +85,10 @@ html {
 		gap: 10px;
 		grid-template-rows: min-content 1fr;
 		grid-template-columns: min-content 1fr min-content;
+		@media (max-width: 730px) {
+			width: 100vw;
+			box-sizing: border-box;
+		}
 		@media (max-width: 450px) {
 			height: 100vh;
 			padding-top: 5px;
@@ -156,7 +164,10 @@ html {
 		gap: 10px;
 		grid-template-rows: min-content min-content min-content;
 		grid-template-columns: 1fr 1fr;
-
+		@media (max-width: 730px) {
+			width: 100vw;
+			box-sizing: border-box;
+		}
 		@media (max-width: 450px) {
 			box-sizing: border-box;
 			height: 99vh;
@@ -263,6 +274,10 @@ html {
 		gap: 10px;
 		grid-template-rows: min-content min-content min-content;
 		grid-template-columns: 1fr 1fr;
+		@media (max-width: 730px) {
+			width: 100vw;
+			box-sizing: border-box;
+		}
 		@media (max-width: 450px) {
 			height: 100vh;
 			border-radius: 0%;
@@ -320,7 +335,8 @@ html {
 		grid-row: 2;
 		grid-column: 2;
 		display: flex;
-		height: 200px;
+		max-height: 200px;
+		max-width: 50%;
 		align-self: center;
 		@media (max-width: 450px) {
 			height: 150px;
