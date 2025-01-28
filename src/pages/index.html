@@ -30,7 +30,7 @@
 						<ul class="category_list">
 							<li><a class="" href="#">Отряды</a></li>
 							<li><a class="" href="#gvs">ОБЕ</a></li>
-							<li><a class="" href="#tehlist">Орудия</a></li>
+							<li><a class="" href="#card-tehlist">Орудия</a></li>
 							<li><a id="fighting-machines-link" href="#">Боевые машины</a></li>
 							<li></li>
 						</ul>
@@ -65,7 +65,7 @@
 		</template>
 
 		<template id="card-preview">
-			<div class="card card_full">
+			<div class="card_full">
 				<div class="card__column">
 					<img class="card__image" src="" alt="арм лист отряда" />
 					<span class="card__category">другое</span>
@@ -80,7 +80,7 @@
 		</template>
 
 		<template id="card-tehlist">
-			<div class="card card_tehList">
+			<div class="card_tehList">
 				<img class="card__image" src="" alt="арм лист отряда" />
 				<span class="card__category">другое</span>
 				<h2 class="card__title">Бэкенд-антистресс</h2>
@@ -92,7 +92,7 @@
 		</template>
 
 		<template id="card-tehlist_wheels">
-			<div class="card card_tehList_wheels">
+			<div class="card_tehList_wheels">
 				<img class="card__image" src="" alt="арм лист отряда" />
 
 				<span class="card__category">другое</span>
@@ -109,7 +109,7 @@
 		</template>
 
 		<template id="card-fighting_machine">
-			<div class="card card_fighting_machine">
+			<div class="card_fighting_machine">
 				<img
 					class="card__image img__machine"
 					src=""
@@ -127,7 +127,7 @@
 		</template>
 
 		<template id="weapon">
-			<div>
+			<div class="weapon_row">
 				<span class="weapon_title">1000 синапсов </span>
 				<div class="volume-control">
 					<button class="button switch decrease">-</button>
@@ -140,7 +140,7 @@
 		</template>
 
 		<template id="card-basket">
-			<li class="basket__item card card_compact">
+			<li class="basket__item card_compact">
 				<span class="basket__item-index">1</span>
 				<img class="card__image" src="" alt="" />
 				<img class="card__description" src="" alt="" />
@@ -154,7 +154,7 @@
 		</template>
 
 		<template id="card-basket_wheels">
-			<li class="basket__item card card_compact">
+			<li class="basket__item card_compact">
 				<span class="basket__item-index">1</span>
 				<img class="card__image" src="" alt="" />
 				<label class="wheels_box">
@@ -171,9 +171,9 @@
 		</template>
 
 		<template id="card-basket_fighting_machine">
-			<li class="basket__item card card_compact">
+			<li class="basket__item card_compact">
 				<span class="basket__item-index">1</span>
-				<img class="img__machine" src="" alt="" />
+				<img class="card__image" src="" alt="" />
 				<div class="weapons-list"></div>
 				<span class="card__title"></span>
 				<span class="card__price_basket"></span>
@@ -192,7 +192,7 @@
 					<img class="card__description" src="" alt="" />
 				</ul>
 				<div class="modal__actions">
-					<button class="button basket__button">Сохранить ростер</button>
+					<button class="button basket__button">Очистить ростер</button>
 					<span class="basket__price">0</span>
 				</div>
 			</div>

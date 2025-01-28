@@ -1,6 +1,10 @@
 import './scss/styles.scss';
 import { API_URL, CDN_URL } from './utils/constants';
-import { ICardItem, ITehListWheelsEtem } from './types/index';
+import {
+	ICardItem,
+	ITehListWheelsEtem,
+	IFightingMachineItem,
+} from './types/index';
 import { EventEmitter } from './components/base/events';
 import { WebLarekAPI } from './components/data/ExtensionApi';
 import { AppData, CatalogChangeEvent } from './components/data/AppData';
@@ -30,6 +34,9 @@ const basketTemplate = ensureElement<HTMLTemplateElement>('#basket');
 const cardBasketTemplate = ensureElement<HTMLTemplateElement>('#card-basket');
 const cardBasketTemplateWheels = ensureElement<HTMLTemplateElement>(
 	'#card-basket_wheels'
+);
+const cardBasketTemplateFM = ensureElement<HTMLTemplateElement>(
+	'#card-basket_fighting_machine'
 );
 
 //Ссылки на категории
@@ -93,6 +100,8 @@ events.on('basket:changed', () => {
 		// Выбор шаблона в зависимости от типа товара
 		if (item.type === 'wheels') {
 			cardTemplate = cardBasketTemplateWheels;
+		} else if (item.type === 'machine') {
+			cardTemplate = cardBasketTemplateFM;
 		} else {
 			cardTemplate = cardBasketTemplate;
 		}
@@ -229,7 +238,6 @@ events.on('preview:changed', (item: ICardItem) => {
 				},
 			});
 
-			card.BasedOnWeapon();
 			modal.render({
 				content: card.render({
 					...item,
@@ -244,6 +252,10 @@ events.on('basket:open', () => {
 	modal.render({
 		content: basket.render({}),
 	});
+});
+
+events.on('basket:clear', () => {
+	appData.clearBasket();
 });
 
 // Блокировка прокрутки страницы

@@ -18,7 +18,7 @@
 		flex-grow: 1;
 		@media (max-width: 450px) {
 			background-color: black;
-			padding-bottom: 50px;
+			padding-bottom: 40px;
 		}
 	}
 
@@ -73,9 +73,25 @@
 				opacity: 0;
 			}
 		}
+		.weapon_title {
+			@media (max-width: 450px) {
+				font-size: 14px;
+			}
+		}
+		.volume-control {
+			max-width: 0px;
+
+			.button {
+				opacity: 0;
+			}
+		}
+		.weapon_row {
+			@media (max-width: 450px) {
+			}
+		}
 	}
 	.card__image {
-		max-height: 300px;
+		max-height: 260px;
 		@media (max-width: 450px) {
 			max-width: 98%;
 			max-height: 189px;

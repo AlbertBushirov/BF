@@ -717,7 +717,7 @@ export const localArmy = [
 		title: 'Центурион',
 		category: 'Гвардия Чародея',
 		description:
-			'https://sun9-44.userapi.com/impg/JUn000q8J37RkOKguoFCCqSPbGV7UZovPa68mg/x_IkOZ7PQQE.jpg?size=1090x726&quality=95&sign=0921a2b1c5a6f03866b879a22f1ff0fa&type=album',
+			'https://sun9-25.userapi.com/impg/GQoz5YW8Uughy8Y6p39oxAP-1pWVYMS_GBi8Kw/IH01kj7Wyy0.jpg?size=1090x726&quality=95&sign=af74824e0097f3e5e30fe9f58d39bc24&type=album',
 		image:
 			'https://sun9-63.userapi.com/impg/ZZBbccjX3bQctjmdHnG9ShPZIT8hMpBCD7FnRg/vJgtyBwKseA.jpg?size=1937x992&quality=95&sign=8cfc5b7d373c2e59f8df20214e0d647e&type=album', // Прямой URL для удаленного изображения
 		price: 170,

@@ -264,6 +264,8 @@ export class BasketElement extends Component<IBasketItem> {
 	protected _description?: HTMLImageElement;
 	protected _inputWheels?: HTMLInputElement;
 	protected wheelsPrice?: number;
+	protected _weapons?: HTMLInputElement;
+	protected weapons?: IItemWeapons;
 
 	constructor(
 		container: HTMLElement,
@@ -283,6 +285,7 @@ export class BasketElement extends Component<IBasketItem> {
 		this._inputWheels = container.querySelector(
 			'.input_wheels'
 		) as HTMLInputElement;
+		this._weapons = container.querySelector('.weapons-list');
 
 		this.events = events;
 
@@ -304,13 +307,6 @@ export class BasketElement extends Component<IBasketItem> {
 		}
 	}
 
-	// Метод для обновления цены в зависимости от состояния input_wheels
-	getPriceAdjustment(): number {
-		return this._inputWheels && this._inputWheels.checked
-			? this.wheelsPrice
-			: -this.wheelsPrice;
-	}
-
 	// Метод для обновления цены
 	updatePrice() {
 		let currentPrice = parseInt(
@@ -328,7 +324,6 @@ export class BasketElement extends Component<IBasketItem> {
 
 		this.priceValue = currentPrice;
 
-		// Обновляем состояние в родительском компоненте, если есть обработчик onChange
 		if (this.action?.onChange) {
 			this.action.onChange({
 				price: currentPrice,
@@ -356,12 +351,10 @@ export class BasketElement extends Component<IBasketItem> {
 		this.setText(this._title, value);
 	}
 
-	//отображает арм лист отряда
 	set image(value: string) {
 		this.setImage(this._image, value, this.title);
 	}
 
-	//отображает артефакт отряда
 	set description(value: string) {
 		this.setImage(this._description, value, this.title);
 	}
@@ -373,5 +366,82 @@ export class BasketElement extends Component<IBasketItem> {
 
 	set isWheels(value: boolean) {
 		this._inputWheels.checked = value;
+	}
+
+	set isWeapons(value: boolean) {
+		this._weapons.checked = value;
+	}
+
+	private totalWeaponCount(): number {
+		return this.weapons.reduce((total, weapon) => total + weapon.quantity, 0);
+	}
+
+	private increaseWeaponCount(index: number) {
+		if (this.totalWeaponCount() < 2) {
+			// Проверка на общую сумму
+			this.weapons[index].quantity++;
+			this.renderWeapons(this.weapons);
+			this.BasedOnWeapon();
+		} else {
+			console.warn('Общая сумма weapon_numper не может превышать 2');
+		}
+	}
+
+	private decreaseWeaponCount(index: number) {
+		if (this.weapons[index].quantity > 0) {
+			this.weapons[index].quantity--;
+			this.renderWeapons(this.weapons);
+			this.BasedOnWeapon();
+		}
+	}
+
+	private notifyBasketChanged() {
+		if (this.events) {
+			this.events.emit('basket:changed');
+		} else {
+			console.error('Events manager is not initialized');
+		}
+	}
+
+	public BasedOnWeapon() {
+		const weaponsPrice = this.weapons?.reduce(
+			(total, weapon) => total + weapon.price * weapon.quantity,
+			0
+		);
+
+		this.price = this.priceValue + weaponsPrice;
+		this.notifyBasketChanged();
+	}
+
+	renderWeapons(weapons: IItemWeapons) {
+		if (weapons && this._weapons) {
+			const selectedWeapons = weapons.filter((weapon) => weapon.quantity > 0);
+
+			const weaponsElements = selectedWeapons.map((weapon, index) => {
+				const container = cloneTemplate('#weapon');
+				const weaponEl = new Weapon(container, {
+					increase: () => {
+						this.increaseWeaponCount(index);
+					},
+					decrease: () => {
+						this.decreaseWeaponCount(index);
+					},
+				});
+				return weaponEl.render({
+					...weapon,
+					isMax: this.totalWeaponCount() >= 2,
+				});
+			});
+			this._weapons.replaceChildren(...weaponsElements);
+		}
+	}
+
+	render(data: ICardItem): HTMLElement {
+		const element = super.render(data);
+		this.priceValue = data.price;
+		if ('weapons' in data) {
+			this.renderWeapons(data.weapons);
+		}
+		return element;
 	}
 }

@@ -31,7 +31,7 @@ export class Basket extends Component<IBasketView> {
 		this._footerPrice = document.querySelector('.footer_price');
 		if (this._buttonBasket) {
 			this._buttonBasket.addEventListener('click', () => {
-				events.emit('order:open');
+				events.emit('basket:clear');
 			});
 		}
 
