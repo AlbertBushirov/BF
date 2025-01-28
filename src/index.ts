@@ -289,6 +289,55 @@ Promise.all([
 				...getFightingMachineList,
 			];
 			appData.setCatalog(combinedList); // Передаем комбинированный список
+			const pointWeapon = document.querySelector('.point_weapon');
+			const pointFightMachine = document.querySelector('.point_fightMachine');
+			const pointSpecial = document.querySelector('.point_special');
+
+			const divs = document.querySelectorAll('.card__title');
+
+			if (pointWeapon) {
+				pointWeapon.addEventListener('click', (event) => {
+					event.preventDefault();
+
+					const tehlist = Array.from(divs).filter((h2) =>
+						h2.textContent.includes('Паук')
+					);
+
+					if (tehlist.length > 0) {
+						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+					}
+				});
+			}
+			if (pointFightMachine) {
+				pointFightMachine.addEventListener('click', (event) => {
+					event.preventDefault();
+
+					const tehlist = Array.from(divs).filter((h2) =>
+						h2.textContent.includes('UNL-3')
+					);
+
+					// Проверяем, есть ли совпадающие элементы
+					if (tehlist.length > 0) {
+						// Прокручиваем к первому найденному элементу
+						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'start' }); // Плавная прокрутка к элементу
+					}
+				});
+			}
+			if (pointSpecial) {
+				pointSpecial.addEventListener('click', (event) => {
+					event.preventDefault();
+
+					const tehlist = Array.from(divs).filter((h2) =>
+						h2.textContent.includes('Дракон')
+					);
+
+					// Проверяем, есть ли совпадающие элементы
+					if (tehlist.length > 0) {
+						// Прокручиваем к первому найденному элементу
+						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'start' }); // Плавная прокрутка к элементу
+					}
+				});
+			}
 		}
 	)
 	.catch((error) => {
