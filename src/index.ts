@@ -83,6 +83,22 @@ const order: Record<string, number> = {
 	machine: 4,
 };
 
+function saveBasketToLocalStorage() {
+	const basketItems = appData.getOrderProducts();
+	localStorage.setItem('basket', JSON.stringify(basketItems));
+}
+
+function loadBasketFromLocalStorage() {
+	const storedBasket = localStorage.getItem('basket');
+	if (storedBasket) {
+		const basketItems = JSON.parse(storedBasket);
+		basketItems.forEach((item: ICardItem) => {
+			appData.addBasket(item); // Предполагается, что у вас есть метод для добавления товара в корзину
+		});
+		events.emit('basket:changed'); // Вызываем событие для обновления корзины
+	}
+}
+
 //Обработчик изменения в корзине и обновления общей стоимости
 events.on('basket:changed', () => {
 	page.counter = appData.getOrderProducts().length;
@@ -109,6 +125,7 @@ events.on('basket:changed', () => {
 		const card = new BasketElement(cloneTemplate(cardTemplate), index, events, {
 			onClick: () => {
 				appData.removeFromBasket(item.id);
+				saveBasketToLocalStorage(); // Сохраняем корзину после удаления
 			},
 			onChange: ({ price, isWheels }) => {
 				appData.basket[index].price = price;
@@ -117,6 +134,7 @@ events.on('basket:changed', () => {
 				}
 
 				basket.total = appData.getTotalPrice();
+				saveBasketToLocalStorage(); // Сохраняем корзину после изменения
 			},
 		});
 
@@ -126,6 +144,9 @@ events.on('basket:changed', () => {
 	});
 
 	basket.total = total;
+
+	// Сохраняем корзину в localStorage
+	saveBasketToLocalStorage();
 });
 
 // Обработчики изменения предпросмотра продукта и добавления в корзину
@@ -316,10 +337,8 @@ Promise.all([
 						h2.textContent.includes('UNL-3')
 					);
 
-					// Проверяем, есть ли совпадающие элементы
 					if (tehlist.length > 0) {
-						// Прокручиваем к первому найденному элементу
-						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'start' }); // Плавная прокрутка к элементу
+						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
 					}
 				});
 			}
@@ -331,13 +350,12 @@ Promise.all([
 						h2.textContent.includes('Дракон')
 					);
 
-					// Проверяем, есть ли совпадающие элементы
 					if (tehlist.length > 0) {
-						// Прокручиваем к первому найденному элементу
-						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'start' }); // Плавная прокрутка к элементу
+						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
 					}
 				});
 			}
+			loadBasketFromLocalStorage();
 		}
 	)
 	.catch((error) => {

@@ -111,9 +111,10 @@ nav {
 	font-size: 15px;
 	padding: 10px 15px;
 	transition: background 0.2s linear;
-	padding-block: 100%;
+	cursor: pointer;
+
 	@media (max-width: 450px) {
-		padding: 4px;
+		padding: 10px 4px;
 	}
 }
 .category_list li a:hover {
