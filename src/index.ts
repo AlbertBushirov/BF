@@ -39,11 +39,6 @@ const cardBasketTemplateFM = ensureElement<HTMLTemplateElement>(
 	'#card-basket_fighting_machine'
 );
 
-//Ссылки на категории
-const fightingMachinesLink = document.getElementById(
-	'fighting-machines-link'
-) as HTMLAnchorElement;
-
 // Инициализация состояния приложения
 const appData = new AppData({}, events);
 
@@ -93,9 +88,9 @@ function loadBasketFromLocalStorage() {
 	if (storedBasket) {
 		const basketItems = JSON.parse(storedBasket);
 		basketItems.forEach((item: ICardItem) => {
-			appData.addBasket(item); // Предполагается, что у вас есть метод для добавления товара в корзину
+			appData.addBasket(item);
 		});
-		events.emit('basket:changed'); // Вызываем событие для обновления корзины
+		events.emit('basket:changed');
 	}
 }
 
@@ -125,7 +120,7 @@ events.on('basket:changed', () => {
 		const card = new BasketElement(cloneTemplate(cardTemplate), index, events, {
 			onClick: () => {
 				appData.removeFromBasket(item.id);
-				saveBasketToLocalStorage(); // Сохраняем корзину после удаления
+				saveBasketToLocalStorage();
 			},
 			onChange: ({ price, isWheels }) => {
 				appData.basket[index].price = price;
@@ -134,7 +129,7 @@ events.on('basket:changed', () => {
 				}
 
 				basket.total = appData.getTotalPrice();
-				saveBasketToLocalStorage(); // Сохраняем корзину после изменения
+				saveBasketToLocalStorage();
 			},
 		});
 
@@ -145,7 +140,6 @@ events.on('basket:changed', () => {
 
 	basket.total = total;
 
-	// Сохраняем корзину в localStorage
 	saveBasketToLocalStorage();
 });
 
@@ -277,6 +271,7 @@ events.on('basket:open', () => {
 
 events.on('basket:clear', () => {
 	appData.clearBasket();
+	modal.close();
 });
 
 // Блокировка прокрутки страницы
