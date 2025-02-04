@@ -1085,4 +1085,571 @@ export const localArmy = [
 		inBasket: true,
 		button: '',
 	},
+
+	//Сторонние производиттели
+
+	{
+		id: 'SPDrakonoborci',
+		title: 'Драконоборцы',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-41.userapi.com/impg/NVJgRGuh6Th1TvhBF8tQcgSjD2WJtiHLuI-F0Q/JzRn_xmR03g.jpg?size=1090x726&quality=95&sign=7a5a313723db6229ee06a27400113c8f&type=album',
+		image:
+			'https://sun9-34.userapi.com/impg/SUyCmzorhjtNUAMXsnYMifUftV2MoG6oyQ0bfQ/rT8HERDIaIY.jpg?size=1937x992&quality=95&sign=19c0b66ac985dc4b5cf8363d604a4796&type=album', // Прямой URL для удаленного изображения
+		price: 170,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPKamlak',
+		title: 'Камлак',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-74.userapi.com/impg/s1pVSD12LE5H5WXhFGvDT8LypF55JzJzJiKr7Q/FgY2zo64iHM.jpg?size=1090x726&quality=95&sign=fb8bb20438fa9caf3df996f44e90fe8a&type=album',
+		image:
+			'https://sun9-80.userapi.com/impg/VVM_FenlCxXQc6Ah-3YNnEdeya7etOH2rtk3Ww/-ZTpG5e-Z_M.jpg?size=1937x992&quality=95&sign=6ade7039218dbd7bff6c6271e4787a2f&type=album', // Прямой URL для удаленного изображения
+		price: 250,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPKitoboi',
+		title: 'Китобои',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-33.userapi.com/impg/D7nWIl_NITjS6s5Pr6dl_o1Fi4K9hLxG2XRD2w/zKwwTIG0yCY.jpg?size=1090x726&quality=95&sign=b04a389bd8b7592432ddf081e8972aae&type=album',
+		image:
+			'https://sun9-16.userapi.com/impg/nkxf4coaypk2s2CN-H6JuQ6PePlSdbm3HOVd6w/x8VEbNB4PHA.jpg?size=1937x992&quality=95&sign=80ae1380beec905f37dece91030e97b4&type=album', // Прямой URL для удаленного изображения
+		price: 210,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPKricheri',
+		title: 'Кричеры',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-4.userapi.com/impg/qETRHTS4v2XaRf0nsxGjxpecAvcg2HYMD7pPsA/1MpMfaz-Ni0.jpg?size=1090x726&quality=95&sign=10627e0536f29bb85c5863f12c25a7ea&type=album',
+		image:
+			'https://sun9-58.userapi.com/impg/Q9HDv8eYW3n6spFyXFy_tEEgymsupC9TbstdUg/cV2dzGNefko.jpg?size=1937x992&quality=95&sign=282be412b5d598b2d6e1f58639f32a3a&type=album', // Прямой URL для удаленного изображения
+		price: 170,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPNeukronimie',
+		title: 'Неукротимые',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-24.userapi.com/impg/2WNgLhj_KMrwLireOzBYmO_KvsEfiyJbTvnFLg/04q7_dmwHXQ.jpg?size=1090x726&quality=95&sign=628ea791149fd1929ef27ab3d4d0ba4f&type=album',
+		image:
+			'https://sun9-51.userapi.com/impg/PdsZsUCIoZDSEC9rQN-7dmFaPb8dOewxB-bpnw/WpCxAbin9f8.jpg?size=1937x992&quality=95&sign=bcfd43c01d813676dc27f64bab836194&type=album', // Прямой URL для удаленного изображения
+		price: 210,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPPredvestniki4',
+		title: 'Предвестники',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-54.userapi.com/impg/vQ7OqwTWbQ7Tba2IDmzGW3Wi059U5Di2LAWk8g/10PNCkLkxMA.jpg?size=1090x726&quality=95&sign=bd1176f6f57fb93b791ed349a0f96504&type=album',
+		image:
+			'https://sun9-46.userapi.com/impg/8cMDhz_3OB9rBm7yl5EA6rDQ0yoDmAYqdVpcGw/TKFoV70eaEk.jpg?size=1937x992&quality=95&sign=a6b32b8c9fee35df92eaedda0edbcea0&type=album', // Прямой URL для удаленного изображения
+		price: 150,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPPredvestniki5',
+		title: 'Предвестники (5 бойцов)',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-54.userapi.com/impg/vQ7OqwTWbQ7Tba2IDmzGW3Wi059U5Di2LAWk8g/10PNCkLkxMA.jpg?size=1090x726&quality=95&sign=bd1176f6f57fb93b791ed349a0f96504&type=album',
+		image:
+			'https://sun9-38.userapi.com/impg/FFhj_HXBwk1Wv-sup1S9zKjrmTDVq3iCxNln7Q/Y9jtiEWK_cg.jpg?size=1937x992&quality=95&sign=751ccbad7812ec82e3a646b9bb46d1a9&type=album', // Прямой URL для удаленного изображения
+		price: 190,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPStragiGizi',
+		title: 'Стражи Гизы',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-65.userapi.com/impg/amTLXF3NkH9ujq0HSi-Qqj7NPlOF1q9BLZG8lA/hYs12KFlbS8.jpg?size=1090x726&quality=95&sign=75a812d9b68e96fca9b4d7c8f2d8c1ae&type=album',
+		image:
+			'https://sun9-34.userapi.com/impg/5oJI3VpBJHZpesCUcbLXCdzMmklj_7CyZgIrqg/n3Xu8LHkoYg.jpg?size=1937x992&quality=95&sign=0efe5357d30c48c46f6863491f3ead64&type=album', // Прямой URL для удаленного изображения
+		price: 220,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPTechKnight',
+		title: 'Технорыцари',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-37.userapi.com/impg/3aQSPgiRPozd-PIfWyZo48lMZSyj0NycyEj2-w/iA4H5V9vE_c.jpg?size=1090x726&quality=95&sign=869ed39928fb6e8e2ee69ce6cb67a34c&type=album',
+		image:
+			'https://sun9-79.userapi.com/impg/NrVt-pjLMREaJcGf1p_slLEa32IhROty_owBmg/wxwCxxQShZI.jpg?size=1937x992&quality=95&sign=387a9e5f52a3f2309e33ee1315176a5c&type=album', // Прямой URL для удаленного изображения
+		price: 180,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPHardkor',
+		title: 'отряд Хардкор',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-38.userapi.com/impg/gjiimzrJOv66xDpMVzQ-eLCoXMl5zSpMm9ztfg/fbxImTxZs5M.jpg?size=1090x726&quality=95&sign=2f8d172adb30bb60b8ee5d9863e21ec3&type=album',
+		image:
+			'https://sun9-55.userapi.com/impg/L-0LChllvoZ9-mXQ1oh54_sVcRGHeBQTbiIrXA/FXCnHd0EvS4.jpg?size=1937x992&quality=95&sign=593a1458ecc92ad630b62df485eb752c&type=album', // Прямой URL для удаленного изображения
+		price: 230,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPShotrm',
+		title: 'Био-взвод Шторм',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-5.userapi.com/impg/8cfo4mAepYybkBdXk2dICVhLy6V6Pp0j4FGQiA/q3Ttc_-qq88.jpg?size=1090x726&quality=95&sign=56750b4e298ebbe81e75632059946309&type=album',
+		image:
+			'https://sun9-11.userapi.com/impg/_fKTi1p9ZgJ-Q9tRcJhStRsb9uCVXVAy933Gyw/s_czXiU2KwU.jpg?size=1937x992&quality=95&sign=c2fca8bbbd47dd1327e84e9459e61fce&type=album', // Прямой URL для удаленного изображения
+		price: 220,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPKallisto',
+		title: 'Каллисто',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-12.userapi.com/impg/bvR7cJyi5lLMPiwmNuAH-Ap47j87SOJ9st3y2Q/e48La_SU8U8.jpg?size=1090x726&quality=95&sign=a4cf18e61919cd11f379c0416d373c49&type=album',
+		image:
+			'https://sun9-39.userapi.com/impg/5_V_YMbFRPO9lel3ZwKL5VyAMChN2XrdgT-spA/_ypA5hl5M0o.jpg?size=1937x992&quality=95&sign=dbde229703eec1b18f6ffe8bb63f895d&type=album', // Прямой URL для удаленного изображения
+		price: 260,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPDemoniSulfura',
+		title: 'Демоны Сульфура',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-57.userapi.com/impg/0gRvloQ1P84MAEuGJUeGq8fxJkr2N5XkZDXm3A/xTgeRLgFPuE.jpg?size=1090x726&quality=95&sign=34de08e2a94a3ab6554dddf66126b645&type=album',
+		image:
+			'https://sun9-26.userapi.com/impg/SFBYt24NmwLlw9s_aNUTEq97uKDNCMvsYZ1zEw/fpOGX2D2NKc.jpg?size=1937x992&quality=95&sign=13a64337f8925a93fc9409b0f9f6a098&type=album', // Прямой URL для удаленного изображения
+		price: 130,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPVedmaki',
+		title: 'Отряд Ведьмаки',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-39.userapi.com/impg/Vy9bev8buZwWaUlylFyZW9Wwd00JKFC-wFEHRA/CrecKwzdFg0.jpg?size=1090x726&quality=95&sign=3a378a6725de8ba6d48b6a03884e08ec&type=album',
+		image:
+			'https://sun9-25.userapi.com/impg/aKa-O6b2Dfbo8qLj8Bp4UTQzCR7sj0dh2XPJkw/qiESTJbCLb0.jpg?size=1937x992&quality=95&sign=73611678f23e266708928874d616e03d&type=album', // Прямой URL для удаленного изображения
+		price: 210,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPVerniePrinc',
+		title: 'Верные Принцу',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-76.userapi.com/impg/HNHPHCTWT7KwhFB9hv9PDhJ67LeXddIlD5dG0A/VbGFSLX8uHY.jpg?size=1090x726&quality=95&sign=6d50c3b71545e09e97e29fb17bb24bdb&type=album',
+		image:
+			'https://sun9-51.userapi.com/impg/kG-cR-WGYGZPGvALVCS1GEWqiHGLg9OcZ5hydw/4ljY7l0reOE.jpg?size=1937x992&quality=95&sign=8b046c226aafff92ddff9128cd02d8b7&type=album', // Прямой URL для удаленного изображения
+		price: 230,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPGeroyBilin',
+		title: 'Герои былин',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-3.userapi.com/impg/G6HfRg6uzUJkBjRpLT9fd5rhk6o3rhwHRawCAA/wwetHskAGEA.jpg?size=1090x726&quality=95&sign=a73e4676aa4d6f6606d8e08ff36aa9f7&type=album',
+		image:
+			'https://sun9-72.userapi.com/impg/zvZFgY60UJDFLKlSaIUSjmuW7oIJ4qx7vJy5rA/kxH_oK5hpEE.jpg?size=1937x992&quality=95&sign=37ee09b3e6aad7ab85a37ed99eac37a9&type=album', // Прямой URL для удаленного изображения
+		price: 210,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPHichniki',
+		title: 'Отряд Хищники',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-9.userapi.com/impg/yHTzvtsyIQPCQL5Sp8Np2RDaXn5qkA0dBKd4KA/5JhyPQGWGHE.jpg?size=1090x726&quality=95&sign=b73e232cfaa07b0da916ee079c5c508d&type=album',
+		image:
+			'https://sun9-62.userapi.com/impg/vb7f51_QjtLYxOHvQanB6Kl1Iu648x50FMbNDQ/zsdyaihD7-0.jpg?size=1937x992&quality=95&sign=2e8f235cbbc6f2266e9509f90915ff74&type=album', // Прямой URL для удаленного изображения
+		price: 330,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPChempioniAreni',
+		title: 'Чемпионы Арены',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-22.userapi.com/impg/jNZqI8BBjyVW-9A-8k0Q_ZdqkfyaJOB8G9mpxg/pMTzV26zfYo.jpg?size=1090x726&quality=95&sign=1272b24d89c9a560c4d02a1c6cf1e77e&type=album',
+		image:
+			'https://sun9-12.userapi.com/impg/_3uw-_eM5EkcGgrGir_fkDIqkBJh6zRSzhi8bQ/9w3NVO3-fBw.jpg?size=1937x992&quality=95&sign=ac5d35e71040f9dbedf2dbc62bf7bbb8&type=album', // Прямой URL для удаленного изображения
+		price: 260,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPKiberici',
+		title: 'Киберийцы',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-73.userapi.com/impg/E7CFxy2mUdNPVOQW8Td1EmZRYRfu0v0s_QQMBw/o5gZiFqO_BI.jpg?size=1090x726&quality=95&sign=d2a250e63650422c5a65e711afd4e664&type=album',
+		image:
+			'https://sun9-1.userapi.com/impg/m6wDmbvLuCxl2aj-qEocgjPK_x1RdhNmM0ci4A/mgCZXHLLK4Q.jpg?size=1937x992&quality=95&sign=e56e667aa3abbc57eb2f550f7dcfe9f3&type=album', // Прямой URL для удаленного изображения
+		price: 180,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPKsenohanteri',
+		title: 'Ксенохантеры',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-11.userapi.com/impg/BeMJLQZXNUOO2E6gX0EX8EdF7fB9r66F2Fj-Tw/TR3fL_4ZkWk.jpg?size=1090x726&quality=95&sign=5c8d98af5ac57d583342322a9b8abbab&type=album',
+		image:
+			'https://sun9-78.userapi.com/impg/IgnZtnLXNU8AI8FOa89zUqKzePABcwiz9xTs3g/uUxct2mC7h0.jpg?size=1937x992&quality=95&sign=6c059f5105559917b8c6704479c67a8b&type=album', // Прямой URL для удаленного изображения
+		price: 200,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPStalnayaPyaterka',
+		title: 'Стальная Пятерка',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-44.userapi.com/impg/L3oWOYVKrTZs4splw8oFcnkgrBzXG8O6OzN4yg/9mSZ85XZNyA.jpg?size=1090x726&quality=95&sign=c99602f592ed23ef78a833ed208ae032&type=album',
+		image:
+			'https://sun9-12.userapi.com/impg/c0NWgbYTiVDbIBsu8PglzbQuSK1RD46x1PnkqA/j1xPwZxjHpY.jpg?size=1937x992&quality=95&sign=934f4229df8fbe099abe9adca27c4f4e&type=album', // Прямой URL для удаленного изображения
+		price: 250,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPTangar',
+		title: 'Тангар',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-61.userapi.com/impg/ZJ6GlfcX02jbu9cq20VzWS8Lt-ztWU14FD0CTA/AeYHAYLyyoY.jpg?size=1090x726&quality=95&sign=0ff8a37c774bd9bcae9cf4779916b0d2&type=album',
+		image:
+			'https://sun9-51.userapi.com/impg/BE9n_Z80lY9RMor_u8E93jPbROuQh9gdfzZERA/8LtcRRApAdU.jpg?size=1937x992&quality=95&sign=03cf932fc2f9f06eeffec82a009e1ac6&type=album', // Прямой URL для удаленного изображения
+		price: 270,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPTropik',
+		title: 'Тропик',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-15.userapi.com/impg/_wiHsBCcTySlpzKZLHUS9rhwvuZp2GeZELlX9A/Z3V3sNToXZQ.jpg?size=1090x726&quality=95&sign=0d92952a958f2b62a585c83b3ad27543&type=album',
+		image:
+			'https://sun9-71.userapi.com/impg/ZSH-mV6JK6PNWtr2Sa3dMtfWSuHtpEPmBtV_Kg/GeeaY7D-ID8.jpg?size=1937x992&quality=95&sign=89b1c51ff3f595e827be10f63cb483e5&type=album', // Прямой URL для удаленного изображения
+		price: 220,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPHorni',
+		title: 'Хорны',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-24.userapi.com/impg/OIlCGEIIdxVQeXgKFstDIZ1YBvZS-BAzdafNbQ/M3Q17kGwTNY.jpg?size=1090x726&quality=95&sign=b500074e51206d20a6d900cc33b0b96e&type=album',
+		image:
+			'https://sun9-80.userapi.com/impg/Zojq4mFyLumn10pjOOLB24lSvTvLyZobfM8ICQ/XSPXPV1-QB0.jpg?size=1937x992&quality=95&sign=1624245cb7ecbff19c8d1e06964b5511&type=album', // Прямой URL для удаленного изображения
+		price: 230,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPBladhorn',
+		title: 'Бладхорн',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-59.userapi.com/impg/IRp_fukI99grG5XwnxCGYIJDwSJronStbToZ0w/ZS6ldfjbTO4.jpg?size=1090x726&quality=95&sign=3cd2dde77c51ba55216b7fb783200fdf&type=album',
+		image:
+			'https://sun9-61.userapi.com/impg/DaEX7MnOGbiCZ9ai05CwHagDUj545VGWrmfzcw/RFc45VCwlLY.jpg?size=1937x992&quality=95&sign=43a5a16b72e21a5f844c9143abf56cc4&type=album', // Прямой URL для удаленного изображения
+		price: 200,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPBorciZaOgon',
+		title: 'Борцы за Огонь',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-40.userapi.com/impg/1wu1K-vtPJNjF1Yx7gJL5h1KKUqcYDBJ_Rbilg/YlkH6AQlgU4.jpg?size=1090x726&quality=95&sign=4a22e68c1cf7975f92faf336b6bd6c82&type=album',
+		image:
+			'https://sun9-66.userapi.com/impg/h0vLN77yglmst7Q1TDi1cF4I6x33-KX_lOggcg/6BvulGtpo9A.jpg?size=1937x992&quality=95&sign=9cdab523422f178752d7f8b085ee8072&type=album', // Прямой URL для удаленного изображения
+		price: 170,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPBratyaIgarashi',
+		title: 'Братья Игараши',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-60.userapi.com/impg/J19aPS302mM7cjZQYfy8_vmXwpTAQ1D_EiDG4A/U6k1Usllxus.jpg?size=1090x726&quality=95&sign=84f8dcb1019ddd25724c77136a998478&type=album',
+		image:
+			'https://sun9-61.userapi.com/impg/Eb82ZeKGeNaKhb7Q0ocUxVujHUB6X2t1-R0kuw/H7Veqw1boOw.jpg?size=1937x992&quality=95&sign=1ec6ee1f60f341c1ad49345c5cdfb3f7&type=album', // Прямой URL для удаленного изображения
+		price: 200,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPBratyaIgarashi',
+		title: 'Братья Игараши',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-60.userapi.com/impg/J19aPS302mM7cjZQYfy8_vmXwpTAQ1D_EiDG4A/U6k1Usllxus.jpg?size=1090x726&quality=95&sign=84f8dcb1019ddd25724c77136a998478&type=album',
+		image:
+			'https://sun9-61.userapi.com/impg/Eb82ZeKGeNaKhb7Q0ocUxVujHUB6X2t1-R0kuw/H7Veqw1boOw.jpg?size=1937x992&quality=95&sign=1ec6ee1f60f341c1ad49345c5cdfb3f7&type=album', // Прямой URL для удаленного изображения
+		price: 200,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPValkirii',
+		title: 'Валькирии',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-5.userapi.com/impg/emxy63d9Uay9qL-9c3kYAoOfa7FYcUf-tScVKQ/IAQKpDxciIU.jpg?size=1090x726&quality=95&sign=6067cc7f437fe196d7580e37ba4a9724&type=album',
+		image:
+			'https://sun9-71.userapi.com/impg/3RewB6OgPQFZJbLaoFug_r6INlrNVTmhEXC5DA/IhxgVFGrAKQ.jpg?size=1937x992&quality=95&sign=f9c498b114fc0f502241e5b00a537236&type=album', // Прямой URL для удаленного изображения
+		price: 180,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPGoblinilesa',
+		title: 'Гоблины Дикого Леса',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-28.userapi.com/impg/R0VKmbJ2tVMS3BBzs5EnkScTTVF-tqxz85k6tA/NHODrsQf7FQ.jpg?size=1090x726&quality=95&sign=7d4845a0ebf87dae318a9a9ff167426a&type=album',
+		image:
+			'https://sun9-25.userapi.com/impg/t4-Z_NThqNhXEFkW9JmbJtFdlh0deTVUvholzw/ISHPu5LLLkI.jpg?size=1937x992&quality=95&sign=6390667c13c379e5cea15f033fdd3d64&type=album', // Прямой URL для удаленного изображения
+		price: 160,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPDagaz',
+		title: 'Дагаз',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-20.userapi.com/impg/-le_33wremBBJPc3RH38SyklUltsgSkkM-dEtw/1wP87gHuHtk.jpg?size=1090x726&quality=95&sign=1723a9dbe576f05cd86859664cd44ba5&type=album',
+		image:
+			'https://sun9-62.userapi.com/impg/7QMnmgVDuLYL_49BjqpTC4xfnlmUnHsbf-jPKw/ri9naHRCLOg.jpg?size=1937x992&quality=95&sign=c4f7cfb84253a27e2c952f84cdfbfcbc&type=album', // Прямой URL для удаленного изображения
+		price: 180,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPDerzkayaStaya',
+		title: 'Дерзкая Стая',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-73.userapi.com/impg/FdZdZPgOY89XJERMLMEKcNAd_xY5xV1irljs-Q/ER3xtLpriRQ.jpg?size=1090x726&quality=95&sign=7e42dd8c54a6557b550f1fb2315051a4&type=album',
+		image:
+			'https://sun9-35.userapi.com/impg/E-KcYw4A6snZJXLmje5MElJ7fwgPUbQAAu-RcQ/s592vMxc1Ko.jpg?size=1937x992&quality=95&sign=92b2662c093d7909e848be50d4d91aac&type=album', // Прямой URL для удаленного изображения
+		price: 230,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPMinoni',
+		title: 'Банда Миньоны',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-31.userapi.com/impg/66ZwrzRFKIsActI7V4BkZBz2mjrnC-bEJlziag/cGFDGThPtZw.jpg?size=1090x726&quality=95&sign=c9c787a3c118ed53cb95287321e1e31a&type=album',
+		image:
+			'https://sun9-38.userapi.com/impg/zwD09NOrxopRI0K3gtRM7oJyfm7bGxOk1M1w-g/freLMNODH-U.jpg?size=1937x992&quality=95&sign=3ea650fe492f58efec9a8605b1fdc086&type=album', // Прямой URL для удаленного изображения
+		price: 150,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPFangeti',
+		title: 'Фангеты',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-7.userapi.com/impg/i6ZUdzh5R91HNGzvWpBKZgzq088jfVn4t8D8SA/laBYv8ZqT5s.jpg?size=1090x726&quality=95&sign=687d4250cfa845c07f552e224d887874&type=album',
+		image:
+			'https://sun9-3.userapi.com/impg/ZEfK2C5mE9BxU4pZlf7juJw72l2j3Hkl3MEQ1A/xI9ggJjlUfU.jpg?size=1937x992&quality=95&sign=68743bd3433a19e5f5e85749ad3ed804&type=album', // Прямой URL для удаленного изображения
+		price: 190,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPCherniRassvet',
+		title: 'Черный Рассвет',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-8.userapi.com/impg/eHSkgTl_rEQ1WC9bcnrkmL65-kpDPxg05UGqKw/tJUZRz_SYss.jpg?size=1090x726&quality=95&sign=40617461ff2c19f6f12267c90e282cb1&type=album',
+		image:
+			'https://sun9-33.userapi.com/impg/dLr_-arbVPfwsywIqsB0ELINh5IDxAleUsFZxw/3TMl14-Xlqs.jpg?size=1937x992&quality=95&sign=b346167ce77cc3dbfe18605ec2887031&type=album', // Прямой URL для удаленного изображения
+		price: 230,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPNewAmazonki',
+		title: 'Новые Амазонки',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-76.userapi.com/impg/Qdy0Ot8wB5iVbwzTsEzeOVT1HIFCcdLc0zj9Mw/QI7A5v95Z9M.jpg?size=1090x726&quality=95&sign=124c5fb07c97a6e1e4c5a92807f774f2&type=album',
+		image:
+			'https://sun9-70.userapi.com/impg/fKejDk-ChneQSG6VlL4DJLhs5YMlnBHL549fqQ/0sZn1vSvRyU.jpg?size=1937x992&quality=95&sign=e07bbd00bb0f88d885460c439c1fde79&type=album', // Прямой URL для удаленного изображения
+		price: 240,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPPesherniLudi',
+		title: 'Пещерные Люди',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-28.userapi.com/impg/VNPJ406fBRNCPVssKtd5O-yz23btPilXoD6a5Q/lbSr4gKYRfM.jpg?size=1090x726&quality=95&sign=5dff1a87e679b5c853d20dd6bfba5e01&type=album',
+		image:
+			'https://sun9-20.userapi.com/impg/ovBSbOxWm4x4OHxVQB1Z7YXshyxcw9zAYAz_6g/rodDjOZptws.jpg?size=1937x992&quality=95&sign=49792ff23ad045bcb5493e1e006196a2&type=album', // Прямой URL для удаленного изображения
+		price: 190,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPFemiskira',
+		title: 'Фемискира',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-79.userapi.com/impg/gBe4jnFnSR2GpQ_GKcryq_3UeegQDdjMneY6Ww/19b1tTYeK_4.jpg?size=1090x726&quality=95&sign=896920605e8d2c62be58d06f72e71b24&type=album',
+		image:
+			'https://sun9-23.userapi.com/impg/MFYsNoH2rc0Uei3LjtvpLxXpn8YEdWNx-jxyDg/Q663b2evUp0.jpg?size=1937x992&quality=95&sign=7640f89ef64be4a81d09840075b5629f&type=album', // Прямой URL для удаленного изображения
+		price: 170,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPBergi',
+		title: 'Берги',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-67.userapi.com/impg/d5XO5yA9LOANelhmDFPkDyfPDqroInw9MLDE9Q/9f3f7i5wedQ.jpg?size=1090x726&quality=95&sign=1fc66d08763eb5f0838bdf9cdd0c5e37&type=album',
+		image:
+			'https://sun9-12.userapi.com/impg/lTmlmZOavxPUpR5rIigLp2zO-AF8rDL5gZMZaA/YoZLsldiPFc.jpg?size=1937x992&quality=95&sign=7b615d6f319c2ce01e45720c845c3400&type=album', // Прямой URL для удаленного изображения
+		price: 290,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPGornyaki',
+		title: 'Горняки',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-61.userapi.com/impg/CuIJlFbL-CADqUjhRux4g9r86t4lK3gvluSQlA/yJOZrvY8f2o.jpg?size=1090x726&quality=95&sign=856e2039c58056111209133192335434&type=album',
+		image:
+			'https://sun9-79.userapi.com/impg/IRFiL8LPjcNlPOO_kfZAxRmUpcmg9fYh_7OuLg/NVYhsm6LfkQ.jpg?size=1937x992&quality=95&sign=b71342efde5e5068b70400822990238e&type=album', // Прямой URL для удаленного изображения
+		price: 260,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPGromoboi',
+		title: 'Громобои',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-23.userapi.com/impg/KfwiGhX8I3aeCkGrwef-e3WrdtVLq9BTy3GzBA/9vTNjKlZcrc.jpg?size=1090x726&quality=95&sign=57bc4b66c7daf09113a382a3055a9d82&type=album',
+		image:
+			'https://sun9-2.userapi.com/impg/3U3goB-mBZ0_XCEUfp5pqOv7_5yZFPOb-g6Ojg/Dc7v8vsgxdo.jpg?size=1937x992&quality=95&sign=5de81916b52cf3d8a856f28b74386307&type=album', // Прямой URL для удаленного изображения
+		price: 270,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPKiberzveri',
+		title: 'Кибер Звери',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-47.userapi.com/impg/RRORQOUkrDxjNkLirfotv_Ma8xd1rqTucrF--Q/qeVjnLSLQbk.jpg?size=1090x726&quality=95&sign=281cd1fc16275c529cb0b06c7da9dbdf&type=album',
+		image:
+			'https://sun9-10.userapi.com/impg/_U-7EKc2xCmVust9gIHdoZHIbMO-HWldkYLGqQ/gkuutxxvdbE.jpg?size=1937x992&quality=95&sign=572eff8ba12d364005cbd679c0619eb2&type=album', // Прямой URL для удаленного изображения
+		price: 290,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPSumerechniStrazhi',
+		title: 'Сумеречные стражи',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-50.userapi.com/impg/ITq0dOUEKJrKmUD7vGFrGxLbkkurlgqNbOgLBg/867GOtz4nxk.jpg?size=1090x726&quality=95&sign=7de871346c989facc8bb5f0094790c2e&type=album',
+		image:
+			'https://sun9-66.userapi.com/impg/kMJ35r877VY-uzdDeW9VuEHkFsG1YUsegA6rYw/E7MPNhHgqnY.jpg?size=1937x992&quality=95&sign=6943d39e7b68be34dc03d7e55bbb4e9d&type=album', // Прямой URL для удаленного изображения
+		price: 250,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPTvoreniyaMarkusa',
+		title: 'Творения Маркуса',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-35.userapi.com/impg/VPyS1PQC2zzl0s1F6ZpkQmO0exLdB_mA5DKOcg/bfYVUqy_Z6I.jpg?size=1090x726&quality=95&sign=19a9e50cd50dcc90a98db00ab9f96316&type=album',
+		image:
+			'https://sun9-23.userapi.com/impg/IBvgCAlKbJTX1Vim1qTuD5zmx9mcBe8gU7QgyA/izIcpCRweuI.jpg?size=1937x992&quality=95&sign=8ed8f33f19e5d099c15a3162132845ac&type=album', // Прямой URL для удаленного изображения
+		price: 260,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPZhneci',
+		title: 'Темные Жнецы',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-5.userapi.com/impg/MvIQrM4l7YGWYfJgHAoMay7Yqw01E8EmoKk0Ew/BNSmCSKCz-o.jpg?size=1090x726&quality=95&sign=578841dbead4d3b6cfee2f6d2b45379a&type=album',
+		image:
+			'https://sun9-77.userapi.com/impg/nSuzXD5Rq-CJpiZbjVqwp9YslxizqNDexbI5SQ/7HRhVhBlysA.jpg?size=1937x992&quality=95&sign=48fd7e7207f2591bdd37930b8e0dd529&type=album', // Прямой URL для удаленного изображения
+		price: 230,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPTritalianci',
+		title: 'Триталианцы',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-37.userapi.com/impg/mZGXhPdnfWKDFkefydOGv-QQO1OP8TneU2t-DQ/FC2g8cp1nFc.jpg?size=1090x726&quality=95&sign=97bf9f92e1822f0fd52fcc347258a107&type=album',
+		image:
+			'https://sun9-74.userapi.com/impg/nFgP4CYw65fp05tfOnnGyxHReaeomCfku4DMFg/QePpNVlDWGQ.jpg?size=1937x992&quality=95&sign=901c6113ec13785a880817ab43ddc15c&type=album', // Прямой URL для удаленного изображения
+		price: 250,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPChama-Tor',
+		title: 'Чама-Тор',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-52.userapi.com/impg/0MvknPoNdOcbzGwcU1OOiReESGQb4EVYD0sUWg/ODbo-UsbUlg.jpg?size=1090x726&quality=95&sign=a87cf8941ce09e064febbc3213a65273&type=album',
+		image:
+			'https://sun9-17.userapi.com/impg/WTFAmn0ief14d-GCtPU5Eh9qkp5wbHPK1phFcw/C333Z4aWgPY.jpg?size=1937x992&quality=95&sign=9c65dc142053f1fc7788769baff0e897&type=album', // Прямой URL для удаленного изображения
+		price: 300,
+		inBasket: true,
+		button: '',
+	},
 ];

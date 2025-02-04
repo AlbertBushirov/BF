@@ -40,7 +40,7 @@
 		@media (max-width: 450px) {
 			grid-column: 1;
 			grid-row: 1 / 4;
-			padding-right: 5px;
+
 			padding-top: 15px;
 		}
 	}
@@ -104,6 +104,7 @@ nav {
 	list-style-type: none;
 	@media (max-width: 450px) {
 		border-bottom: 1px solid rgba(255, 255, 255, 0.459);
+		padding-inline: 10px;
 	}
 }
 .category_list li a {
@@ -116,18 +117,12 @@ nav {
 	cursor: pointer;
 
 	@media (max-width: 450px) {
-		padding: 10px 4px;
+		padding: 14px 4px;
 	}
 }
 .category_list li a:hover {
 	background: #5116d8;
 	border-radius: 3px;
-}
-.category_list li a.Logo {
-	margin-right: 240px;
-}
-.category_list li a:contact Us {
-	margin-right: 100px;
 }
 
 .footer_price {
@@ -141,4 +136,28 @@ nav {
 		font-size: 16px;
 		text-align: center;
 	}
+}
+
+.sub-menu {
+	display: none; /* Скрываем подменю по умолчанию */
+	position: absolute; /* Позволяет позиционировать подменю */
+	background-color: white; /* Цвет фона подменю */
+	border: 1px solid #ccc; /* Граница подменю */
+	padding: 10px; /* Отступы внутри подменю */
+	list-style: none; /* Убираем маркеры списка */
+}
+
+.sub-menu li a {
+	@media (max-width: 450px) {
+		padding: 6px 4px;
+	}
+}
+
+.positioning {
+	position: relative; /* Необходимо для позиционирования подменю */
+}
+
+.positioning:hover .sub-menu {
+	display: block; /* Показываем подменю при наведении на родительский элемент */
+	background-color: black;
 }

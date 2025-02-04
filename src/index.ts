@@ -305,9 +305,38 @@ Promise.all([
 				...getFightingMachineList,
 			];
 			appData.setCatalog(combinedList); // Передаем комбинированный список
+			/*
+			const pointSquad = document.querySelector('.point_squad');
+
+			pointSquad.addEventListener('mouseenter', function () {
+				const subMenu = this.nextElementSibling;
+				if (subMenu) {
+					subMenu.style.display = 'block'; // Показываем подменю при наведении
+				}
+			});
+			const submenuItems = document.querySelectorAll('.sub-menu a');
+			submenuItems.forEach((item) => {
+				item.addEventListener('click', function () {
+					const subMenu = this.closest('.sub-menu');
+					if (subMenu) {
+						subMenu.style.display = 'none'; // Скрываем подменю при выборе элемента
+					}
+				});
+			});
+			pointSquad.addEventListener('click', function () {
+				const subMenu = this.nextElementSibling;
+				if (subMenu) {
+					subMenu.style.display = 'none'; // Скрываем подменю при уходе мыши
+				}
+			});
+			*/
 			const pointWeapon = document.querySelector('.point_weapon');
 			const pointFightMachine = document.querySelector('.point_fightMachine');
 			const pointSpecial = document.querySelector('.point_special');
+			const pointNecromancer = document.querySelector('.point_Necromancer');
+			const pointSorcerer = document.querySelector('.point_Sorcerer');
+			const pointGVS = document.querySelector('.point_GVS');
+			const pointOutsiders = document.querySelector('.point_Outsiders');
 
 			const divs = document.querySelectorAll('.card__title');
 
@@ -337,6 +366,7 @@ Promise.all([
 					}
 				});
 			}
+
 			if (pointSpecial) {
 				pointSpecial.addEventListener('click', (event) => {
 					event.preventDefault();
@@ -346,7 +376,72 @@ Promise.all([
 					);
 
 					if (tehlist.length > 0) {
+						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+					}
+				});
+			}
+			if (pointWeapon) {
+				pointWeapon.addEventListener('click', (event) => {
+					event.preventDefault();
+
+					const tehlist = Array.from(divs).filter((h2) =>
+						h2.textContent.includes('Паук')
+					);
+
+					if (tehlist.length > 0) {
 						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+					}
+				});
+			}
+			if (pointNecromancer) {
+				pointNecromancer.addEventListener('click', (event) => {
+					event.preventDefault();
+
+					const tehlist = Array.from(divs).filter((h2) =>
+						h2.textContent.includes('Кентавр')
+					);
+
+					if (tehlist.length > 0) {
+						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+					}
+				});
+			}
+			if (pointSorcerer) {
+				pointSorcerer.addEventListener('click', (event) => {
+					event.preventDefault();
+
+					const tehlist = Array.from(divs).filter((h2) =>
+						h2.textContent.includes('Амазонки')
+					);
+
+					if (tehlist.length > 0) {
+						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+					}
+				});
+			}
+			if (pointGVS) {
+				pointGVS.addEventListener('click', (event) => {
+					event.preventDefault();
+
+					const tehlist = Array.from(divs).filter((h2) =>
+						h2.textContent.includes('Беркут')
+					);
+
+					if (tehlist.length > 0) {
+						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+					}
+				});
+			}
+			if (pointOutsiders) {
+				pointOutsiders.addEventListener('click', (event) => {
+					event.preventDefault();
+
+					const tehlist = Array.from(divs).filter((h2) =>
+						h2.textContent.includes('Драконоборцы')
+					);
+
+					if (tehlist.length > 0) {
+						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
 					}
 				});
 			}

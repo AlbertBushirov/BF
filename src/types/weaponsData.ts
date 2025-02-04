@@ -49,6 +49,26 @@ export const localWeapons = [
 		inBasket: true,
 		button: '',
 	},
+	{
+		id: 'ObePolbustuk',
+		title: 'ПолбУстУк',
+		category: 'Сторонние производители',
+		image:
+			'https://sun9-75.userapi.com/impg/jgo32bv9Tl-dGtJ8ZqNZpUJhwEkDOUSkxljRcQ/54DLDR3sKbs.jpg?size=968x992&quality=95&sign=37011c24c50471e40ff58d9c01240323&type=album', // Прямой URL для удаленного изображения
+		price: 100,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'ObeOriana',
+		title: 'Ориана',
+		category: 'Сторонние производители',
+		image:
+			'https://sun9-18.userapi.com/impg/nc7XKeD4hkKX3zF8EXJy1EtnWj0YNOR8F9rwBg/RP1W8cNdO2s.jpg?size=968x992&quality=95&sign=3f363e4c59ed70995b7e3944ecc343d5&type=album', // Прямой URL для удаленного изображения
+		price: 120,
+		inBasket: true,
+		button: '',
+	},
 
 	{
 		id: 'arbaletpauk',
@@ -173,7 +193,7 @@ export const localWeapons = [
 		button: '',
 	},
 ];
-
+//Орудия с шинами
 export const localWeaponsWheels = [
 	{
 		id: 'arbaletgoliaf',

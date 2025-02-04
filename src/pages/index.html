@@ -4,8 +4,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#000000" />
-		<link rel="icon" href="<%=require('../images/logo.jpg')%>" />
-		<link rel="apple-touch-icon" href="<%=require('../images/logo.jpg')%>" />
+		<link rel="icon" href="<%=require('../images/icon.jpg')%>" />
+		<link rel="apple-touch-icon" href="<%=require('../images/icon.jpg')%>" />
 		<meta name="msapplication-TileColor" content="#000000" />
 		<title>БF assistant</title>
 		<meta name="description" content="" />
@@ -23,7 +23,19 @@
 					</a>
 					<nav>
 						<ul class="category_list">
-							<li><a class="point_squad" href="#">Отряды</a></li>
+							<li class="positioning">
+								<a class="point_squad"> Отряды </a>
+								<ul class="sub-menu">
+									<li class="positioning">
+										<a class="point_Coldun" href="#">Колдун</a>
+										<a class="point_Necromancer">Некромант</a>
+										<a class="point_Sorcerer">Чародей</a>
+										<a class="point_GVS">ГВС</a>
+										<a class="point_Outsiders">Сторонние</a>
+									</li>
+								</ul>
+							</li>
+
 							<li><a class="point_special">ОБЕ</a></li>
 							<li><a class="point_weapon">Орудия</a></li>
 							<li><a class="point_fightMachine">БМ</a></li>
