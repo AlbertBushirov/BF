@@ -9,6 +9,9 @@
 		<meta name="msapplication-TileColor" content="#000000" />
 		<title>БF assistant</title>
 		<meta name="description" content="" />
+		<meta property="og:image" content="<%=require('../images/icon.jpg')%>" />
+		<meta property="og:image:width" content="968" />
+		<meta property="og:image:height" content="504" />
 	</head>
 	<body class="page">
 		<div class="page__wrapper">
@@ -24,8 +27,8 @@
 					<nav>
 						<ul class="category_list">
 							<li class="positioning">
-								<a class="point_squad"> Отряды </a>
-								<ul class="sub-menu">
+								<a class="point_squad"><span>Отряды</span></a>
+								<ul class="sub-menu" id="sub-menu">
 									<li class="positioning">
 										<a class="point_Coldun" href="#">Колдун</a>
 										<a class="point_Necromancer">Некромант</a>
@@ -45,7 +48,7 @@
 					<button class="header__basket">
 						<span class="header__basket-counter">0</span>
 					</button>
-					<span class="footer_price">Сумма ростера: 0 очков</span>
+					<span class="header_price">Сумма ростера: 0 очков</span>
 				</div>
 			</header>
 
@@ -203,5 +206,50 @@
 				</div>
 			</div>
 		</template>
+		<div class="menu-toggle" id="menu-toggle">
+			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar"></div>
+		</div>
+		<footer class="menu" id="menu">
+			<ul class="footer-menu">
+				<li>
+					<a href="#rating"
+						><img
+							class="footer-image"
+							src="<%=require('../images/icon_rating-04.png')%>"
+							alt="БF assistent logo"
+						/>Рейтинг игроков</a
+					>
+				</li>
+				<li>
+					<a href="#memo"
+						><img
+							class="footer-image"
+							src="<%=require('../images/icon_memo-04.png')%>"
+							alt="БF assistent logo"
+						/>Турнирная памятка</a
+					>
+				</li>
+				<li>
+					<a href="#сhangelog"
+						><img
+							class="footer-image"
+							src="<%=require('../images/icon_сhangelog-04.png')%>"
+							alt="БF assistent logo"
+						/>Чейнджлог</a
+					>
+				</li>
+				<li>
+					<a href="#tournaments"
+						><img
+							class="footer-image"
+							src="<%=require('../images/icon_tournaments-04.png')%>"
+							alt="БF assistent logo"
+						/>Турнир</a
+					>
+				</li>
+			</ul>
+		</footer>
 	</body>
 </html>

@@ -121,11 +121,11 @@ nav {
 	}
 }
 .category_list li a:hover {
-	background: #5116d8;
+	background: #444;
 	border-radius: 3px;
 }
 
-.footer_price {
+.header_price {
 	background-color: $primary;
 	min-height: min-content;
 	font-size: 20px;
@@ -139,12 +139,11 @@ nav {
 }
 
 .sub-menu {
-	display: none; /* Скрываем подменю по умолчанию */
-	position: absolute; /* Позволяет позиционировать подменю */
-	background-color: white; /* Цвет фона подменю */
-	border: 1px solid #ccc; /* Граница подменю */
-	padding: 10px; /* Отступы внутри подменю */
-	list-style: none; /* Убираем маркеры списка */
+	display: none;
+	position: absolute;
+	padding: 10px;
+	list-style: none;
+	border-radius: 10%;
 }
 
 .sub-menu li a {
@@ -159,5 +158,5 @@ nav {
 
 .positioning:hover .sub-menu {
 	display: block; /* Показываем подменю при наведении на родительский элемент */
-	background-color: black;
+	background-color: rgba(0, 0, 0, 0.8);
 }

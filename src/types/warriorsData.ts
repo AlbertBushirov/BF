@@ -1413,18 +1413,6 @@ export const localArmy = [
 		button: '',
 	},
 	{
-		id: 'SPBratyaIgarashi',
-		title: 'Братья Игараши',
-		category: 'Сторонние производители',
-		description:
-			'https://sun9-60.userapi.com/impg/J19aPS302mM7cjZQYfy8_vmXwpTAQ1D_EiDG4A/U6k1Usllxus.jpg?size=1090x726&quality=95&sign=84f8dcb1019ddd25724c77136a998478&type=album',
-		image:
-			'https://sun9-61.userapi.com/impg/Eb82ZeKGeNaKhb7Q0ocUxVujHUB6X2t1-R0kuw/H7Veqw1boOw.jpg?size=1937x992&quality=95&sign=1ec6ee1f60f341c1ad49345c5cdfb3f7&type=album', // Прямой URL для удаленного изображения
-		price: 200,
-		inBasket: true,
-		button: '',
-	},
-	{
 		id: 'SPValkirii',
 		title: 'Валькирии',
 		category: 'Сторонние производители',
@@ -1553,6 +1541,18 @@ export const localArmy = [
 		image:
 			'https://sun9-12.userapi.com/impg/lTmlmZOavxPUpR5rIigLp2zO-AF8rDL5gZMZaA/YoZLsldiPFc.jpg?size=1937x992&quality=95&sign=7b615d6f319c2ce01e45720c845c3400&type=album', // Прямой URL для удаленного изображения
 		price: 290,
+		inBasket: true,
+		button: '',
+	},
+	{
+		id: 'SPHraniteliRochi',
+		title: 'Хранители Рощи',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-59.userapi.com/impg/CXUClEk_tSE8rQFOSKSKN0r7Z8DfnElKPeUC3A/DOCSEnLTRMw.jpg?size=1090x726&quality=95&sign=618e0ea433360ebbc82c58e6f3e9d715&type=album',
+		image:
+			'https://sun9-62.userapi.com/impg/4c3yPlpg0Lqjl6zN9FvIu1gaX7WIXbIVwApXPQ/qZmo5bxMIqM.jpg?size=1937x992&quality=95&sign=97b462cc78c169192048ab586c73e357&type=album', // Прямой URL для удаленного изображения
+		price: 240,
 		inBasket: true,
 		button: '',
 	},

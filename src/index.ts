@@ -1,10 +1,6 @@
 import './scss/styles.scss';
 import { API_URL, CDN_URL } from './utils/constants';
-import {
-	ICardItem,
-	ITehListWheelsEtem,
-	IFightingMachineItem,
-} from './types/index';
+import { ICardItem, ITehListWheelsEtem } from './types/index';
 import { EventEmitter } from './components/base/events';
 import { WebLarekAPI } from './components/data/ExtensionApi';
 import { AppData, CatalogChangeEvent } from './components/data/AppData';
@@ -262,6 +258,34 @@ events.on('preview:changed', (item: ICardItem) => {
 	}
 });
 
+events.on('preview:changed', (item: ICardItem) => {
+	if (item && item.type === 'machine') {
+		api.getlocalMortarItem(item.id).then((res) => {
+			item.id = res.id;
+			item.category = res.category;
+			item.title = res.title;
+			item.image = res.image;
+			item.price = res.price;
+
+			// Создание карточки товара
+			const card = new Card('card', cloneTemplate(cardFightMachineTemplate), {
+				onClick: () => {
+					events.emit('product:add', {
+						...item,
+						price: card.price,
+					});
+				},
+			});
+
+			modal.render({
+				content: card.render({
+					...item,
+				}),
+			});
+		});
+	}
+});
+
 //Открытие корзицы товаров
 events.on('basket:open', () => {
 	modal.render({
@@ -283,11 +307,38 @@ events.on('modal:close', () => {
 	page.locked = false;
 });
 
+const menuToggle = document.getElementById('menu-toggle');
+
+const menu = document.getElementById('menu');
+
+menuToggle.addEventListener('click', () => {
+	menu.classList.toggle('active');
+	menu.style.display =
+		menu.style.display === 'none' || menu.style.display === ''
+			? 'block'
+			: 'none';
+});
+
+document.addEventListener('click', (event) => {
+	const target = event.target as Node;
+	const isClickInsideMenu = menu.contains(target);
+	const isClickInsideToggle = menuToggle.contains(target);
+
+	if (!isClickInsideMenu && !isClickInsideToggle) {
+		menu.style.display = 'none';
+	}
+});
+
+window.addEventListener('scroll', () => {
+	menu.style.display = 'none';
+});
+
 //Получаем массив товаров с сервера
 Promise.all([
 	api.getWarriorsList(),
 	api.getWeaponsList(),
 	api.getWeaponsWheelsList(),
+	api.getlocalMortarList(),
 	api.getFightingMachineList(),
 ])
 	.then(
@@ -295,6 +346,7 @@ Promise.all([
 			warriorsList,
 			weaponsList,
 			getFightMachineList,
+			getlocalMortarList,
 			getFightingMachineList,
 		]) => {
 			// Объединяем оба списка в один массив и передаем в setCatalog
@@ -302,34 +354,11 @@ Promise.all([
 				...warriorsList,
 				...weaponsList,
 				...getFightMachineList,
+				...getlocalMortarList,
 				...getFightingMachineList,
 			];
 			appData.setCatalog(combinedList); // Передаем комбинированный список
-			/*
-			const pointSquad = document.querySelector('.point_squad');
 
-			pointSquad.addEventListener('mouseenter', function () {
-				const subMenu = this.nextElementSibling;
-				if (subMenu) {
-					subMenu.style.display = 'block'; // Показываем подменю при наведении
-				}
-			});
-			const submenuItems = document.querySelectorAll('.sub-menu a');
-			submenuItems.forEach((item) => {
-				item.addEventListener('click', function () {
-					const subMenu = this.closest('.sub-menu');
-					if (subMenu) {
-						subMenu.style.display = 'none'; // Скрываем подменю при выборе элемента
-					}
-				});
-			});
-			pointSquad.addEventListener('click', function () {
-				const subMenu = this.nextElementSibling;
-				if (subMenu) {
-					subMenu.style.display = 'none'; // Скрываем подменю при уходе мыши
-				}
-			});
-			*/
 			const pointWeapon = document.querySelector('.point_weapon');
 			const pointFightMachine = document.querySelector('.point_fightMachine');
 			const pointSpecial = document.querySelector('.point_special');
@@ -372,7 +401,7 @@ Promise.all([
 					event.preventDefault();
 
 					const tehlist = Array.from(divs).filter((h2) =>
-						h2.textContent.includes('Дракон')
+						h2.textContent.includes('Тёмный Шаман')
 					);
 
 					if (tehlist.length > 0) {

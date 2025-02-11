@@ -7,10 +7,10 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 10px;
-
+	padding-inline: 10px;
+	padding-bottom: 10px;
 	@media (max-width: 450px) {
 		grid-template-columns: repeat(2, 1fr);
 		margin-top: 90px;
-		padding-inline: 10px;
 	}
 }

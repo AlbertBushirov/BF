@@ -1,0 +1,66 @@
+@use 'variables' as *;
+@use 'mixins';
+
+.menu-toggle {
+	position: fixed;
+	bottom: 4px;
+	right: 10px;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	padding: 10px;
+	width: 35px;
+	height: 30px;
+	opacity: 0.7;
+}
+
+.bar {
+	height: 4px;
+	width: 100%;
+	background-color: #fff;
+	margin: 3px 0;
+	transition: all 0.3s ease;
+}
+
+.menu {
+	display: none;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	font-size: 16px;
+	bottom: 0px;
+	padding: 15px;
+	width: 100%;
+	border-radius: 10%;
+	z-index: 1000;
+}
+
+.menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu a {
+	color: white;
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	align-self: end;
+	padding: 5px;
+}
+
+.menu a:hover {
+	background-color: #444;
+	border-radius: 3px;
+}
+
+.footer-menu {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+}
+
+.footer-image {
+	width: 50px;
+}

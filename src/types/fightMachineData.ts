@@ -12,44 +12,9 @@ import {
 	heavyMachineGun2,
 	rocketLauncher2,
 	launcher2,
-	projectile,
-	rocketProjectile,
 } from './weapons';
 
 export const localfightMachine = [
-	{
-		id: 'minometKrab',
-		title: 'Краб',
-		category: 'Техлист',
-		image:
-			'https://sun9-60.userapi.com/impg/DhtwmMsQANBwMR6AzKNcTkpOJitaxmkka5OwWw/QJJDT4CunAs.jpg?size=709x508&quality=95&sign=01e15f432b4f8cf484dc1fa5db679842&type=album',
-		price: 40,
-		inBasket: true,
-		weapons: [projectile, rocketProjectile],
-		button: '',
-	},
-	{
-		id: 'minometMolot',
-		title: 'Молот',
-		category: 'Техлист',
-		image:
-			'https://sun9-18.userapi.com/impg/haq49LyOTB3AR5jAXHYCGs9elWm10fhqJ32p2g/6QImkA6yq6s.jpg?size=709x508&quality=95&sign=894627b6f05c3a54dbaca3f98322f69f&type=album',
-		price: 60,
-		inBasket: true,
-		weapons: [projectile, rocketProjectile],
-		button: '',
-	},
-	{
-		id: 'minometedelveys',
-		title: 'Эдельвейс',
-		category: 'Техлист',
-		image:
-			'https://sun9-63.userapi.com/impg/aYDm6gRWJyQxw06KGj9hhD5qYdojCRpO8JEItg/pvNBIdg9IZA.jpg?size=709x508&quality=95&sign=b0c2cdef8d5d1393fd21ae35f6a88205&type=album',
-		price: 60,
-		inBasket: true,
-		weapons: [projectile, rocketProjectile],
-		button: '',
-	},
 	{
 		id: 'FMUnl-3',
 		title: 'UNL-3',

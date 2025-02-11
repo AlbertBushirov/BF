@@ -28,7 +28,7 @@ export class Basket extends Component<IBasketView> {
 		this._list = ensureElement<HTMLElement>('.basket__list', this.container);
 		this._total = this.container.querySelector('.basket__price');
 		this._buttonBasket = this.container.querySelector('.basket__button');
-		this._footerPrice = document.querySelector('.footer_price');
+		this._footerPrice = document.querySelector('.header_price');
 		if (this._buttonBasket) {
 			this._buttonBasket.addEventListener('click', () => {
 				events.emit('basket:clear');

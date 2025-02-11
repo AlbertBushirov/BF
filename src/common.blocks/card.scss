@@ -11,7 +11,7 @@ html {
 	border-radius: 10%;
 	background-color: $primary;
 	color: white;
-	padding: 10px;
+	padding: 10px 5px;
 	gap: 10px;
 	align-items: center;
 	cursor: pointer;
@@ -28,7 +28,7 @@ html {
 		@media (max-width: 450px) {
 			padding: 0px;
 			width: 100vw;
-			height: 99vh;
+			height: 100vh;
 			justify-content: center;
 			grid-template-rows: min-content min-content min-content;
 			grid-template-columns: min-content min-content;
@@ -171,6 +171,7 @@ html {
 			box-sizing: border-box;
 		}
 		@media (max-width: 450px) {
+			height: 100vh;
 			box-sizing: border-box;
 			height: 99vh;
 			border-radius: 0%;
@@ -227,7 +228,7 @@ html {
 			text-align: center;
 			@media (max-width: 450px) {
 				padding: 6px;
-				height: 10px;
+				height: 20px;
 				justify-self: end;
 				align-self: end;
 				grid-column: 1;
@@ -327,7 +328,7 @@ html {
 		align-items: center;
 		gap: $defaultPadding;
 		@media (max-width: 450px) {
-			gap: 100px;
+			gap: 45vw;
 		}
 	}
 
@@ -371,7 +372,7 @@ html {
 		@media (max-width: 450px) {
 			grid-row: 1;
 			grid-column: 1;
-			max-width: 100px;
+			max-width: 80px;
 			max-height: 20px;
 		}
 		&__text {
