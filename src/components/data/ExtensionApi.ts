@@ -5,6 +5,7 @@ import {
 	ITehListEtem,
 	ITehListWheelsEtem,
 	IFightingMachineItem,
+	IPlayersForm,
 } from '../../types';
 import { Api } from '../base/api';
 import { localArmy } from '../../types/warriorsData';
@@ -14,6 +15,7 @@ import {
 	localMortar,
 } from '../../types/weaponsData';
 import { localfightMachine } from '../../types/fightMachineData';
+import { localPlayers } from '../../types/playersData';
 
 interface IOrderResult {
 	id: string;
@@ -37,6 +39,7 @@ export class WebLarekAPI extends Api implements IAuctionAPI {
 	// Функция для обработки путей изображений в description
 	getWarriorsItem(id: string): Promise<IListItem> {
 		const item = localArmy.find((i) => i.id === id);
+
 		if (!item) {
 			return Promise.reject('Item not found');
 		}

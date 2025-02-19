@@ -1,9 +1,10 @@
-import { FormErrors, ICardItem, IProductItem } from '../../types';
+import { FormErrors, ICardItem, IProductItem, IPlayersForm } from '../../types';
 import { Model } from '../base/Model';
 
 //Изменение каталога
 export type CatalogChangeEvent = {
 	catalog: ICardItem;
+	playersList: IPlayersForm;
 };
 
 export interface IOrderForm {
@@ -16,6 +17,7 @@ export interface IOrderForm {
 export class AppData extends Model<IProductItem> {
 	basket: ICardItem[] = [];
 	items: ICardItem[];
+	players: IPlayersForm[];
 	order: IOrderForm = {
 		payment: '',
 		email: '',
@@ -89,5 +91,10 @@ export class AppData extends Model<IProductItem> {
 	setPreview(item: ICardItem) {
 		this.preview = item.id;
 		this.emitChanges('preview:changed', item);
+	}
+
+	setRating(item: IPlayersForm[]) {
+		this.players = item;
+		this.emitChanges('rating:changed', this.players);
 	}
 }

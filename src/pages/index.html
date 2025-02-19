@@ -4,12 +4,18 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#000000" />
-		<link rel="icon" href="<%=require('../images/icon.jpg')%>" />
-		<link rel="apple-touch-icon" href="<%=require('../images/icon.jpg')%>" />
+		<link rel="icon" href="<%=require('../images/icon-dark.png')%>" />
+		<link
+			rel="apple-touch-icon"
+			href="<%=require('../images/icon-dark.png')%>"
+		/>
 		<meta name="msapplication-TileColor" content="#000000" />
 		<title>БF assistant</title>
 		<meta name="description" content="" />
-		<meta property="og:image" content="<%=require('../images/icon.jpg')%>" />
+		<meta
+			property="og:image"
+			content="<%=require('../images/icon-dark.png')%>"
+		/>
 		<meta property="og:image:width" content="968" />
 		<meta property="og:image:height" content="504" />
 	</head>
@@ -206,15 +212,46 @@
 				</div>
 			</div>
 		</template>
+
+		<template id="rating">
+			<div class="rating">
+				<ul class="rating__title">
+					<li><h3>Место</h3></li>
+					<li><h3>Аватар</h3></li>
+					<li><h3>Игрок</h3></li>
+					<li><h3>Достижения</h3></li>
+					<li><h3>Игр сыграно</h3></li>
+					<li><h3>Процент побед</h3></li>
+				</ul>
+				<div class="rating__list"></div>
+			</div>
+		</template>
+
+		<template id="rating-item">
+			<li class="rating__item">
+				<h2 class="rating__item-index"></h2>
+				<img class="rating__image" src="" alt="Аватарка Игрока" />
+				<span class="rating__name"></span>
+				<div class="rating__achievements">
+					<span class="rating__achievements_title"></span>
+					<img class="rating__achievements_image" alt="" />
+				</div>
+
+				<span class="rating__games"></span>
+				<span class="rating__win"></span>
+			</li>
+		</template>
+
 		<div class="menu-toggle" id="menu-toggle">
 			<div class="bar"></div>
 			<div class="bar"></div>
 			<div class="bar"></div>
 		</div>
+
 		<footer class="menu" id="menu">
 			<ul class="footer-menu">
-				<li>
-					<a href="#rating"
+				<li class="menu-item">
+					<a class="rating__point" href="#rating"
 						><img
 							class="footer-image"
 							src="<%=require('../images/icon_rating-04.png')%>"
@@ -222,7 +259,7 @@
 						/>Рейтинг игроков</a
 					>
 				</li>
-				<li>
+				<li class="menu-item">
 					<a href="#memo"
 						><img
 							class="footer-image"
@@ -231,7 +268,7 @@
 						/>Турнирная памятка</a
 					>
 				</li>
-				<li>
+				<li class="menu-item">
 					<a href="#сhangelog"
 						><img
 							class="footer-image"
@@ -240,7 +277,7 @@
 						/>Чейнджлог</a
 					>
 				</li>
-				<li>
+				<li class="menu-item">
 					<a href="#tournaments"
 						><img
 							class="footer-image"

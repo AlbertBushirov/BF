@@ -1,6 +1,6 @@
 import './scss/styles.scss';
 import { API_URL, CDN_URL } from './utils/constants';
-import { ICardItem, ITehListWheelsEtem } from './types/index';
+import { ICardItem, ITehListWheelsEtem, IPlayersForm } from './types/index';
 import { EventEmitter } from './components/base/events';
 import { WebLarekAPI } from './components/data/ExtensionApi';
 import { AppData, CatalogChangeEvent } from './components/data/AppData';
@@ -9,6 +9,8 @@ import { cloneTemplate, ensureElement } from './utils/utils';
 import { Page } from './components/View/Page';
 import { Modal } from './components/View/Modal';
 import { Basket } from './components/View/Basket';
+import { Rating } from './components/view/Rating';
+import { localPlayers } from './types/playersData';
 
 //Управление событиями и API
 const events = new EventEmitter();
@@ -18,6 +20,7 @@ const api = new WebLarekAPI(CDN_URL, API_URL);
 const modal = new Modal(ensureElement<HTMLElement>('#modal-container'), events);
 const page = new Page(document.body, events);
 const cardCatalogTemplate = ensureElement<HTMLTemplateElement>('#card-catalog');
+
 const cardPreviewTemplate = ensureElement<HTMLTemplateElement>('#card-preview');
 const cardTehlistTemplate = ensureElement<HTMLTemplateElement>('#card-tehlist');
 const cardTehlistWheelsTemplate = ensureElement<HTMLTemplateElement>(
@@ -34,11 +37,14 @@ const cardBasketTemplateWheels = ensureElement<HTMLTemplateElement>(
 const cardBasketTemplateFM = ensureElement<HTMLTemplateElement>(
 	'#card-basket_fighting_machine'
 );
+const ratingTemplate = ensureElement<HTMLTemplateElement>('#rating');
 
 // Инициализация состояния приложения
 const appData = new AppData({}, events);
 
 const basket = new Basket(cloneTemplate(basketTemplate), events);
+
+const rating = new Rating(cloneTemplate(ratingTemplate), events);
 
 // Обработчик изменения каталога
 events.on<CatalogChangeEvent>('items:changed', () => {
@@ -139,6 +145,14 @@ events.on('basket:changed', () => {
 	saveBasketToLocalStorage();
 });
 
+// Открытие рейтинга игроков
+events.on('rating:open', () => {
+	page.locked = true;
+	modal.render({
+		content: rating.render({}),
+	});
+});
+
 // Обработчики изменения предпросмотра продукта и добавления в корзину
 events.on('preview:changed', (item: ICardItem) => {
 	if (item && item.type === 'list') {
@@ -149,7 +163,7 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.description = res.description;
 			item.image = res.image;
 			item.price = res.price;
-
+			console.log('Полученный объект item:', item);
 			const card = new Card('card', cloneTemplate(cardPreviewTemplate), {
 				onClick: () => {
 					if (appData.productOrder(item)) {
@@ -308,29 +322,36 @@ events.on('modal:close', () => {
 });
 
 const menuToggle = document.getElementById('menu-toggle');
-
 const menu = document.getElementById('menu');
 
+// Обработчик события для переключения меню
 menuToggle.addEventListener('click', () => {
 	menu.classList.toggle('active');
-	menu.style.display =
-		menu.style.display === 'none' || menu.style.display === ''
-			? 'block'
-			: 'none';
 });
 
+// Закрытие меню при клике вне его
 document.addEventListener('click', (event) => {
 	const target = event.target as Node;
 	const isClickInsideMenu = menu.contains(target);
 	const isClickInsideToggle = menuToggle.contains(target);
 
 	if (!isClickInsideMenu && !isClickInsideToggle) {
-		menu.style.display = 'none';
+		menu.classList.remove('active'); // Закрываем меню
 	}
 });
 
+// Закрытие меню при прокрутке страницы
 window.addEventListener('scroll', () => {
-	menu.style.display = 'none';
+	menu.classList.remove('active'); // Закрываем меню
+});
+
+// Обработчик события для закрытия меню при клике на элементы
+const menuItems = menu.querySelectorAll('.menu-item');
+
+menuItems.forEach((item) => {
+	item.addEventListener('click', () => {
+		menu.classList.remove('active'); // Закрываем меню
+	});
 });
 
 //Получаем массив товаров с сервера
@@ -357,7 +378,7 @@ Promise.all([
 				...getlocalMortarList,
 				...getFightingMachineList,
 			];
-			appData.setCatalog(combinedList); // Передаем комбинированный список
+			appData.setCatalog(combinedList);
 
 			const pointWeapon = document.querySelector('.point_weapon');
 			const pointFightMachine = document.querySelector('.point_fightMachine');

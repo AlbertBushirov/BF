@@ -9,6 +9,7 @@ interface WeaponActions {
 }
 
 type WeaponProps = IItemWeapons[0] & { isMax?: boolean };
+
 export class Weapon extends Component<WeaponProps> {
 	protected _title: HTMLElement;
 	protected _quantity: HTMLElement;

@@ -1,5 +1,6 @@
 // Приложение
-import {Weapon} from "./weapons";
+import { Weapon } from './weapons';
+import { Cup } from './playersData';
 
 export interface IProductItem {
 	basket: IBasket[];
@@ -10,9 +11,13 @@ export interface IProductItem {
 	image: string;
 }
 
-export type IItemWeapons = Array<Weapon & {
-	quantity: number
-}>
+export type IItemWeapons = Array<
+	Weapon & {
+		quantity: number;
+	}
+>;
+
+type IItemCup = Array<Cup>;
 
 // Товар
 export type ICardItem =
@@ -53,7 +58,17 @@ export interface ITehListWheelsEtem extends IBaseCardItem {
 export interface IFightingMachineItem extends IBaseCardItem {
 	type: 'machine';
 	image: string;
-	weapons: IItemWeapons
+	weapons: IItemWeapons;
+}
+
+// Данные игроков
+export interface IPlayersForm {
+	id: string;
+	image: string;
+	player: string;
+	games: number;
+	win: number;
+	achievements: IItemCup;
 }
 
 // Интерфейс формы доставки заказа
@@ -89,8 +104,6 @@ export interface IBasket {
 	price: number;
 	totalPrice: number;
 }
-
-export type PaymenthMethods = 'card' | 'cash';
 
 // Тип ошибок формы
 export type FormErrors = Partial<Record<keyof IOrder, string>>;

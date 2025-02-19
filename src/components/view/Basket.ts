@@ -5,9 +5,6 @@ import { EventEmitter } from '../base/events';
 interface IBasketView {
 	items: HTMLElement[];
 	total: number;
-	price: number;
-	image: string;
-	description: string;
 }
 
 export class Basket extends Component<IBasketView> {
@@ -18,7 +15,7 @@ export class Basket extends Component<IBasketView> {
 	protected _title: HTMLElement;
 	protected _price: HTMLElement;
 	protected _button: HTMLButtonElement;
-	protected _image?: HTMLImageElement;
+
 	protected _description?: HTMLImageElement;
 	protected _footerPrice: HTMLElement;
 

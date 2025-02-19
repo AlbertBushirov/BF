@@ -1652,4 +1652,16 @@ export const localArmy = [
 		inBasket: true,
 		button: '',
 	},
+	{
+		id: 'SPKhakylmoa',
+		title: 'Воины Кхакульмоа',
+		category: 'Сторонние производители',
+		description:
+			'https://sun9-1.userapi.com/impg/S478mpL5SogrugqwQjlUeI0SYQZHRpY5Jq1jGw/2omBpUvrM1g.jpg?size=1090x726&quality=95&sign=2c01eae70ee4f63d9d4b18edeca101cf&type=album',
+		image:
+			'https://sun9-65.userapi.com/impg/D1TDctltfpuLUgnZsm58DOjWqAmJu8rmUf4Ksw/hHAuRJaF788.jpg?size=1937x992&quality=95&sign=5bbfaaf31c2d41a4da3f80425d6001a4&type=album', // Прямой URL для удаленного изображения
+		price: 200,
+		inBasket: true,
+		button: '',
+	},
 ];

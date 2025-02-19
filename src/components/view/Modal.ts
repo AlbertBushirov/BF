@@ -9,7 +9,7 @@ interface IModalData {
 export class Modal extends Component<IModalData> {
 	protected _closeButton: HTMLButtonElement;
 	protected _content: HTMLElement;
-
+	protected _rating: HTMLElement;
 	constructor(container: HTMLElement, protected events: IEvents) {
 		super(container);
 
