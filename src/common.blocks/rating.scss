@@ -103,3 +103,16 @@
 		max-width: 25px;
 	}
 }
+
+.rating__memo_conteiner {
+	margin-top: 20px;
+	padding-inline: 10px;
+	text-align: left;
+}
+
+.rating__memo {
+	font-size: 15px;
+
+	margin: 0; /* Убираем отступы, если они есть */
+	padding: 5px; /* Убираем внутренние отступы, если они есть */
+}

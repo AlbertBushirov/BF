@@ -22,6 +22,7 @@ export class Modal extends Component<IModalData> {
 		//обработчики событий для закрытия модального окна
 		this._closeButton.addEventListener('click', this.close.bind(this));
 		this.container.addEventListener('click', this.close.bind(this));
+
 		this._content.addEventListener('click', (event) => event.stopPropagation());
 	}
 
@@ -40,6 +41,14 @@ export class Modal extends Component<IModalData> {
 		this.container.classList.remove('modal_active');
 		this.content = null;
 		this.events.emit('modal:close');
+	}
+
+	private handleDocumentClick(event: MouseEvent): void {
+		const target = event.target as HTMLElement;
+		// Проверяем, был ли клик вне контейнера модального окна
+		if (!this.container.contains(target)) {
+			this.close();
+		}
 	}
 
 	//Показать модальное окно

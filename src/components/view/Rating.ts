@@ -21,11 +21,21 @@ export class Rating extends Component<IRatingView> {
 		this._player.innerHTML = '';
 
 		players.sort((a, b) => {
+			// Сравниваем количество побед
 			if (b.win !== a.win) {
 				return b.win - a.win;
 			}
 
-			return b.games - a.games;
+			// Сравниваем количество игр
+			if (b.games !== a.games) {
+				return b.games - a.games;
+			}
+
+			// Если количество побед и игр одинаковое, сравниваем количество достижений
+			const achievementsA = a.achievements ? a.achievements.length : 0;
+			const achievementsB = b.achievements ? b.achievements.length : 0;
+
+			return achievementsB - achievementsA; // Сравниваем по количеству достижений
 		});
 
 		players.forEach((player, index) => {
