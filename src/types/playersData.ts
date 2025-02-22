@@ -88,7 +88,7 @@ export const localPlayers = [
 		player: 'Альберт Баширов',
 		achievements: [],
 		games: 11, //Побед: 8
-		win: 73,
+		winrating: 73,
 	},
 	{
 		id: 'Artur_Kivalev',
@@ -96,7 +96,7 @@ export const localPlayers = [
 		player: 'Артур Ковалёв',
 		achievements: [OneMoscow1, TwoChel1, TwoSPB2, TwoMoscow3],
 		games: 27, //Побед: 22
-		win: 81,
+		winrating: 81,
 	},
 	{
 		id: 'Sergey_Latishev',
@@ -104,7 +104,7 @@ export const localPlayers = [
 		player: 'Сергей Латышев',
 		achievements: [OneChel1, TwoMoscow1, TwoSPB3],
 		games: 15, //Побед: 14
-		win: 93,
+		winrating: 93,
 	},
 	{
 		id: 'Ivan_Vasilev',
@@ -112,7 +112,7 @@ export const localPlayers = [
 		player: 'Иван Васильев',
 		achievements: [],
 		games: 20, //Побед: 12
-		win: 60,
+		winrating: 60,
 	},
 	{
 		id: 'Stepan_Harlakshin',
@@ -120,7 +120,7 @@ export const localPlayers = [
 		player: 'Степан Харлакшин',
 		achievements: [],
 		games: 15, //Побед: 10
-		win: 67,
+		winrating: 67,
 	},
 	{
 		id: 'Viktor_Petrov',
@@ -128,7 +128,7 @@ export const localPlayers = [
 		player: 'Виктор Петров',
 		achievements: [TwoSPB1, OneSPB2],
 		games: 9, //Побед: 7
-		win: 78,
+		winrating: 78,
 	},
 	{
 		id: 'Aleksey_Fedulov',
@@ -136,7 +136,7 @@ export const localPlayers = [
 		player: 'Алексей Федулов',
 		achievements: [],
 		games: 12, //Побед: 6
-		win: 50,
+		winrating: 50,
 	},
 	{
 		id: 'Denis_Solodkov',
@@ -144,7 +144,7 @@ export const localPlayers = [
 		player: 'Денис Солодков',
 		achievements: [],
 		games: 13, //Побед: 6
-		win: 46,
+		winrating: 46,
 	},
 	{
 		id: 'Aleksey_Mukhin',
@@ -152,7 +152,7 @@ export const localPlayers = [
 		player: 'Алексей Мухин',
 		achievements: [OneMoscow2],
 		games: 9, //Побед: 6
-		win: 67,
+		winrating: 67,
 	},
 	{
 		id: 'Leonid_Vasilev',
@@ -160,7 +160,7 @@ export const localPlayers = [
 		player: 'Леонид Васильев',
 		achievements: [],
 		games: 9, //Побед: 5
-		win: 56,
+		winrating: 56,
 	},
 	{
 		id: 'Ruslan_Ilyasov',
@@ -168,7 +168,7 @@ export const localPlayers = [
 		player: 'Руслан Ильясов',
 		achievements: [TwoMoscow2],
 		games: 6, //Побед: 5
-		win: 83,
+		winrating: 83,
 	},
 	{
 		id: 'Ivan_Gaidukov',
@@ -176,7 +176,7 @@ export const localPlayers = [
 		player: 'Иван Гайдуков',
 		achievements: [],
 		games: 9, //Побед: 4
-		win: 44,
+		winrating: 44,
 	},
 	{
 		id: 'Vasily_Nikishin',
@@ -184,7 +184,7 @@ export const localPlayers = [
 		player: 'Василий Никишин',
 		achievements: [],
 		games: 5, //Побед: 1
-		win: 20,
+		winrating: 20,
 	},
 	{
 		id: 'Ural_Ismagilov',
@@ -192,7 +192,7 @@ export const localPlayers = [
 		player: 'Урал Исмагилов',
 		achievements: [OneChel2],
 		games: 4, //Побед: 3
-		win: 75,
+		winrating: 75,
 	},
 	{
 		id: 'Dmitriy_Vinogradov',
@@ -200,7 +200,7 @@ export const localPlayers = [
 		player: 'Дмитрий Виноградов',
 		achievements: [],
 		games: 6, //Побед: 3
-		win: 50,
+		winrating: 50,
 	},
 	{
 		id: 'Kim_Sabirov',
@@ -208,7 +208,7 @@ export const localPlayers = [
 		player: 'Ким Сабиров',
 		achievements: [OneSPB1],
 		games: 3, //Побед: 3
-		win: 100,
+		winrating: 100,
 	},
 	{
 		id: 'Pavel_Karelin',
@@ -216,7 +216,7 @@ export const localPlayers = [
 		player: 'Павел Карелин',
 		achievements: [],
 		games: 3, //Побед: 2
-		win: 67,
+		winrating: 67,
 	},
 	{
 		id: 'Artem_Sirvachev',
@@ -224,7 +224,7 @@ export const localPlayers = [
 		player: 'Артём Сырвачев',
 		achievements: [TwoChel2],
 		games: 10, //Побед: 7
-		win: 70,
+		winrating: 70,
 	},
 	{
 		id: 'Leonid_Solovev',
@@ -232,15 +232,15 @@ export const localPlayers = [
 		player: 'Леонид Соловьев',
 		achievements: [],
 		games: 6, //Побед: 4
-		win: 67,
+		winrating: 67,
 	},
 	{
 		id: 'Andrei_Andreev',
 		image: require('../images/avatar_gamers.png'),
-		player: 'Андрей Анредев',
+		player: 'Андрей Анреев',
 		achievements: [],
 		games: 8, //Побед: 3
-		win: 38,
+		winrating: 38,
 	},
 	{
 		id: 'Timofei_Barahovski',
@@ -248,7 +248,7 @@ export const localPlayers = [
 		player: 'Тимофей Бараховский',
 		achievements: [],
 		games: 4, //Побед: 2
-		win: 50,
+		winrating: 50,
 	},
 	{
 		id: 'Alexander_Mashkalo',
@@ -256,7 +256,7 @@ export const localPlayers = [
 		player: 'Александр Машкало',
 		achievements: [],
 		games: 6, //Побед: 2
-		win: 33,
+		winrating: 33,
 	},
 	{
 		id: 'Georgiy_Dragun',
@@ -264,7 +264,7 @@ export const localPlayers = [
 		player: 'Георгий Драгун',
 		achievements: [],
 		games: 4, //Побед: 2
-		win: 50,
+		winrating: 50,
 	},
 	{
 		id: 'Danila_Kuznecov',
@@ -272,7 +272,7 @@ export const localPlayers = [
 		player: 'Данила Кузнецов',
 		achievements: [],
 		games: 11, //Побед: 5
-		win: 45,
+		winrating: 45,
 	},
 	{
 		id: 'Dmitriy_Sokil',
@@ -280,7 +280,7 @@ export const localPlayers = [
 		player: 'Дмитрий Сокил',
 		achievements: [],
 		games: 13, //Побед: 2
-		win: 15,
+		winrating: 15,
 	},
 	{
 		id: 'Egor_Muzika',
@@ -288,7 +288,7 @@ export const localPlayers = [
 		player: 'Егор Музыка',
 		achievements: [],
 		games: 4, //Побед: 2
-		win: 50,
+		winrating: 50,
 	},
 	{
 		id: 'Evgeniy_Sorokin',
@@ -296,7 +296,7 @@ export const localPlayers = [
 		player: 'Евгений Сорокин',
 		achievements: [],
 		games: 4, //Побед: 2
-		win: 50,
+		winrating: 50,
 	},
 	{
 		id: 'Eduard_Agievich',
@@ -304,7 +304,7 @@ export const localPlayers = [
 		player: 'Эдуард Агиевич',
 		achievements: [],
 		games: 8, //Побед: 3
-		win: 36,
+		winrating: 36,
 	},
 	{
 		id: 'Pavel_Gavrilov',
@@ -312,7 +312,7 @@ export const localPlayers = [
 		player: 'Павел Гаврилов',
 		achievements: [],
 		games: 3, //Побед: 1
-		win: 33,
+		winrating: 33,
 	},
 	{
 		id: 'Vladimir_Baskov',
@@ -320,7 +320,7 @@ export const localPlayers = [
 		player: 'Владимир Басков',
 		achievements: [],
 		games: 3, //Побед: 1
-		win: 33,
+		winrating: 33,
 	},
 	{
 		id: 'Zahar_Alekseev',
@@ -328,7 +328,7 @@ export const localPlayers = [
 		player: 'Захар Алексеев',
 		achievements: [],
 		games: 3, //Побед: 1
-		win: 33,
+		winrating: 33,
 	},
 	{
 		id: 'Sergey_Egorov',
@@ -336,15 +336,15 @@ export const localPlayers = [
 		player: 'Сергей Егоров',
 		achievements: [],
 		games: 3, //Побед: 1
-		win: 0,
+		winrating: 0,
 	},
 	{
 		id: 'Anton_Zubakov',
 		image: require('../images/avatar_gamers.png'),
-		player: 'Антон Зубаков',
+		player: 'Антон Зубков',
 		achievements: [],
 		games: 3, //Побед: 1
-		win: 33,
+		winrating: 33,
 	},
 	{
 		id: 'Borovik_Matvei',
@@ -352,7 +352,7 @@ export const localPlayers = [
 		player: 'Матвей Боровик',
 		achievements: [],
 		games: 3, //Побед: 1
-		win: 33,
+		winrating: 33,
 	},
 	{
 		id: 'Egor_Kornev',
@@ -360,15 +360,15 @@ export const localPlayers = [
 		player: 'Егор Корнев',
 		achievements: [],
 		games: 9, //Побед: 5
-		win: 56,
+		winrating: 56,
 	},
 	{
 		id: 'Vaycheslav_Kocherov',
 		image: require('../images/avatar_gamers.png'),
-		player: 'Вячеслав Кочеров',
+		player: 'Вячеслав Качеров',
 		achievements: [],
 		games: 3, //Побед: 1
-		win: 33,
+		winrating: 33,
 	},
 	{
 		id: 'Igor_Reshetnikov',
@@ -376,7 +376,7 @@ export const localPlayers = [
 		player: 'Игорь Решетников',
 		achievements: [],
 		games: 9, //Побед: 1
-		win: 10,
+		winrating: 10,
 	},
 	{
 		id: 'Denis_Shtaltovoi',
@@ -384,15 +384,7 @@ export const localPlayers = [
 		player: 'Денис Шталтовой',
 		achievements: [],
 		games: 4, //Побед: 1
-		win: 25,
-	},
-	{
-		id: 'Denis_Shtaltovoi',
-		image: require('../images/avatar_gamers.png'),
-		player: 'Денис Шталтовой',
-		achievements: [],
-		games: 4, //Побед: 1
-		win: 25,
+		winrating: 25,
 	},
 	{
 		id: 'Ivan_Vershinin',
@@ -400,7 +392,7 @@ export const localPlayers = [
 		player: 'Иван Вершинин',
 		achievements: [],
 		games: 3, //Побед: 1
-		win: 33,
+		winrating: 33,
 	},
 	{
 		id: 'Andrei_Omelyashko',
@@ -408,7 +400,7 @@ export const localPlayers = [
 		player: 'Андрей Омеляшко',
 		achievements: [],
 		games: 6, //Побед: 4
-		win: 67,
+		winrating: 67,
 	},
 	{
 		id: 'Ruslan_Aljanov',
@@ -416,7 +408,7 @@ export const localPlayers = [
 		player: 'Руслан Альжанов',
 		achievements: [],
 		games: 3, //Побед: 0
-		win: 0,
+		winrating: 0,
 	},
 	{
 		id: 'Georgiy_Matveev',
@@ -424,7 +416,7 @@ export const localPlayers = [
 		player: 'Георгий Матвеев',
 		achievements: [],
 		games: 7, //Побед: 0
-		win: 0,
+		winrating: 0,
 	},
 	{
 		id: 'Maksim_Dobrohodov',
@@ -432,7 +424,7 @@ export const localPlayers = [
 		player: 'Максим Доброходов',
 		achievements: [],
 		games: 3, //Побед: 0
-		win: 0,
+		winrating: 0,
 	},
 	{
 		id: 'Mikhail_Bezgans',
@@ -440,6 +432,22 @@ export const localPlayers = [
 		player: 'Михаил Безганс',
 		achievements: [TwoChel3],
 		games: 6, //Побед: 0
-		win: 67,
+		winrating: 67,
+	},
+	{
+		id: 'Vladisliav_Rastihin',
+		image: require('../images/avatar_gamers.png'),
+		player: 'Владислав Растихин',
+		achievements: [],
+		games: 3, //Побед: 0
+		winrating: 0,
+	},
+	{
+		id: 'Alexander_Toporkov',
+		image: require('../images/avatar_gamers.png'),
+		player: 'Александр Топорков',
+		achievements: [],
+		games: 6, //Побед: 2
+		winrating: 33,
 	},
 ];

@@ -22,8 +22,8 @@ export class Rating extends Component<IRatingView> {
 
 		players.sort((a, b) => {
 			// Сравниваем количество побед
-			if (b.win !== a.win) {
-				return b.win - a.win;
+			if (b.winrating !== a.winrating) {
+				return b.winrating - a.winrating;
 			}
 
 			// Сравниваем количество игр
@@ -63,7 +63,7 @@ export class Rating extends Component<IRatingView> {
 			imageElement.alt = player.player;
 			nameElement.textContent = player.player;
 			gamesElement.textContent = player.games.toString();
-			winElement.textContent = `${player.win}%`;
+			winElement.textContent = `${player.winrating}%`;
 			if (player.achievements && player.achievements.length > 0) {
 				player.achievements.forEach((achievement: Cup) => {
 					const achievementImage = document.createElement('img');
