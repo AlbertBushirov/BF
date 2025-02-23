@@ -3,6 +3,40 @@ export interface Cup {
 	title: string;
 }
 
+//За судейство
+const judgeTwoSPB: Cup = {
+	image: require('../images/judge.png'),
+	title: 'Судья турнира в Санкт-Петербурге 2024',
+};
+
+const judgeOneMoskow: Cup = {
+	image: require('../images/judge.png'),
+	title: 'Судья турнира в Москве 2023',
+};
+
+const judgeTwoMoskow: Cup = {
+	image: require('../images/judge.png'),
+	title: 'Судья турнира в Москве 2024',
+};
+
+//-------------------------------------------------------------------------------
+
+//За оргазизацию
+const organizerOneChe: Cup = {
+	image: require('../images/organizer.png'),
+	title: 'Организатор турнира в Челябинске 2023',
+};
+
+const organizerTwoChe: Cup = {
+	image: require('../images/organizer.png'),
+	title: 'Организатор турнира в Челябинске 2024',
+};
+
+const organizerTwoMoscow: Cup = {
+	image: require('../images/organizer.png'),
+	title: 'Организатор турнира в Москве 2024',
+};
+
 //Санкт-Петербург 2023
 const OneSPB1: Cup = {
 	image: require('../images/cups-1.png'),
@@ -102,7 +136,7 @@ export const localPlayers = [
 		id: 'Sergey_Latishev',
 		image: require('../images/avatar_gamers.png'),
 		player: 'Сергей Латышев',
-		achievements: [OneChel1, TwoMoscow1, TwoSPB3],
+		achievements: [OneChel1, TwoMoscow1, TwoSPB3, organizerTwoChe],
 		games: 15, //Побед: 14
 		winrating: 93,
 	},
@@ -134,7 +168,7 @@ export const localPlayers = [
 		id: 'Aleksey_Fedulov',
 		image: require('../images/avatar_gamers.png'),
 		player: 'Алексей Федулов',
-		achievements: [],
+		achievements: [organizerTwoMoscow],
 		games: 12, //Побед: 6
 		winrating: 50,
 	},
@@ -206,7 +240,7 @@ export const localPlayers = [
 		id: 'Kim_Sabirov',
 		image: require('../images/avatar_gamers.png'),
 		player: 'Ким Сабиров',
-		achievements: [OneSPB1],
+		achievements: [OneSPB1, judgeTwoSPB],
 		games: 3, //Побед: 3
 		winrating: 100,
 	},
@@ -246,7 +280,7 @@ export const localPlayers = [
 		id: 'Timofei_Barahovski',
 		image: require('../images/avatar_gamers.png'),
 		player: 'Тимофей Бараховский',
-		achievements: [],
+		achievements: [judgeOneMoskow, judgeTwoMoskow],
 		games: 4, //Побед: 2
 		winrating: 50,
 	},
@@ -398,7 +432,7 @@ export const localPlayers = [
 		id: 'Andrei_Omelyashko',
 		image: require('../images/avatar_gamers.png'),
 		player: 'Андрей Омеляшко',
-		achievements: [],
+		achievements: [organizerOneChe],
 		games: 6, //Побед: 4
 		winrating: 67,
 	},

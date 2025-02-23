@@ -11,7 +11,7 @@
 
 .rating__title {
 	display: grid;
-	grid-template-columns: 1.6fr 2fr 2fr 2fr 2fr 2fr 2fr;
+	grid-template-columns: 1.2fr 2fr 2fr 2fr 2fr 2fr;
 	font-size: 15px;
 	list-style: none;
 	padding: 0px;
@@ -30,6 +30,8 @@
 
 .rating__title li h3 {
 	margin: 0px 0px 8px 0px;
+	@media (max-width: 450px) {
+	}
 }
 
 .rating__title li {
@@ -37,14 +39,9 @@
 	box-sizing: border-box;
 }
 
-.rating__title > :nth-child(3) {
-	@media (max-width: 450px) {
-	}
-}
-
 .rating__item {
 	display: grid;
-	grid-template-columns: 1.6fr 2fr 2fr 2fr 2fr 2fr;
+	grid-template-columns: 1.2fr 2fr 2fr 2fr 2fr 2fr;
 	height: 120px;
 	font-size: 15px;
 	border-bottom: 2px solid rgba(255, 255, 255, 0.459);
