@@ -11,6 +11,7 @@ export class Basket extends Component<IBasketView> {
 	protected _list: HTMLElement;
 	protected _total: HTMLElement;
 	protected _buttonBasket: HTMLElement;
+	protected _buttonSave: HTMLElement;
 	protected _index: HTMLElement;
 	protected _title: HTMLElement;
 	protected _price: HTMLElement;
@@ -25,10 +26,17 @@ export class Basket extends Component<IBasketView> {
 		this._list = ensureElement<HTMLElement>('.basket__list', this.container);
 		this._total = this.container.querySelector('.basket__price');
 		this._buttonBasket = this.container.querySelector('.basket__button');
+		this._buttonSave = this.container.querySelector('.button_save');
 		this._footerPrice = document.querySelector('.header_price');
 		if (this._buttonBasket) {
 			this._buttonBasket.addEventListener('click', () => {
 				events.emit('basket:clear');
+			});
+		}
+
+		if (this._buttonSave) {
+			this._buttonSave.addEventListener('click', () => {
+				events.emit('basket:save');
 			});
 		}
 
@@ -39,11 +47,13 @@ export class Basket extends Component<IBasketView> {
 		if (items.length) {
 			this._list.replaceChildren(...items);
 			this.setDisabled(this._buttonBasket, false);
+			this.setDisabled(this._buttonSave, false);
 		} else {
 			const emptyMessage = createElement<HTMLParagraphElement>('p');
 			this.setText(emptyMessage, 'Армия не выбрана');
 			this._list.replaceChildren(emptyMessage);
 			this.setDisabled(this._buttonBasket, true);
+			this.setDisabled(this._buttonSave, true);
 		}
 	}
 

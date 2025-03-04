@@ -14,14 +14,19 @@ const judgeOneMoskow: Cup = {
 	title: 'Судья турнира в Москве 2023',
 };
 
-const judgeTwoMoskow: Cup = {
-	image: require('../images/judge.png'),
-	title: 'Судья турнира в Москве 2024',
-};
-
 //-------------------------------------------------------------------------------
 
 //За оргазизацию
+const organizerOneSPB: Cup = {
+	image: require('../images/organizer.png'),
+	title: 'Организатор турнира в Санкт-Петербурге 2023',
+};
+
+const organizerTwoSPB: Cup = {
+	image: require('../images/organizer.png'),
+	title: 'Организатор турнира в Санкт-Петербурге 2024',
+};
+
 const organizerOneChe: Cup = {
 	image: require('../images/organizer.png'),
 	title: 'Организатор турнира в Челябинске 2023',
@@ -35,6 +40,11 @@ const organizerTwoChe: Cup = {
 const organizerTwoMoscow: Cup = {
 	image: require('../images/organizer.png'),
 	title: 'Организатор турнира в Москве 2024',
+};
+
+const organizerOneMoscow: Cup = {
+	image: require('../images/organizer.png'),
+	title: 'Организатор турнира в Москве 2023',
 };
 
 //Санкт-Петербург 2023
@@ -117,36 +127,67 @@ const TwoChel3: Cup = {
 
 export const localPlayers = [
 	{
-		id: 'Albert_Bashirov',
+		id: 'Eduard_Permyakov',
 		image: require('../images/avatar_gamers.png'),
+		player: 'Эдуард Пермяков',
+		achievements: [organizerOneMoscow, organizerTwoMoscow],
+		games: 0, //Побед: 0
+		winrating: 0,
+		win: 0,
+	},
+	{
+		id: 'Petr_Devyatko',
+		image: require('../images/avatar_gamers.png'),
+		player: 'Пётр Девятко',
+		achievements: [organizerOneSPB, organizerTwoSPB],
+		games: 0, //Побед: 0
+		winrating: 0,
+		win: 0,
+	},
+	{
+		id: 'Elena_Alekseeva',
+		image: require('../images/avatar_gamers.png'),
+		player: 'Елена Алексеева',
+		achievements: [organizerOneSPB, organizerTwoSPB, organizerTwoMoscow],
+		games: 0, //Побед: 0
+		winrating: 0,
+		win: 0,
+	},
+	{
+		id: 'Albert_Bashirov',
+		image: require('../images/photo_players/Albert_Bashirov.jpg'),
 		player: 'Альберт Баширов',
 		achievements: [],
 		games: 11, //Побед: 8
 		winrating: 73,
+		win: 8,
 	},
 	{
-		id: 'Artur_Kivalev',
+		id: 'Artur_Kovalev',
 		image: require('../images/avatar_gamers.png'),
 		player: 'Артур Ковалёв',
 		achievements: [OneMoscow1, TwoChel1, TwoSPB2, TwoMoscow3],
 		games: 27, //Побед: 22
 		winrating: 81,
+		win: 22,
 	},
 	{
 		id: 'Sergey_Latishev',
-		image: require('../images/avatar_gamers.png'),
+		image: require('../images/photo_players/Sergey_Latishev.jpg'),
 		player: 'Сергей Латышев',
 		achievements: [OneChel1, TwoMoscow1, TwoSPB3, organizerTwoChe],
 		games: 15, //Побед: 14
 		winrating: 93,
+		win: 14,
 	},
 	{
 		id: 'Ivan_Vasilev',
-		image: require('../images/avatar_gamers.png'),
+		image: require('../images/photo_players/Ivan_Vasilev.jpg'),
 		player: 'Иван Васильев',
 		achievements: [],
 		games: 20, //Побед: 12
 		winrating: 60,
+		win: 12,
 	},
 	{
 		id: 'Stepan_Harlakshin',
@@ -155,6 +196,16 @@ export const localPlayers = [
 		achievements: [],
 		games: 15, //Побед: 10
 		winrating: 67,
+		win: 10,
+	},
+	{
+		id: 'Mikhail_Bezgans',
+		image: require('../images/avatar_gamers.png'),
+		player: 'Михаил Безганс',
+		achievements: [TwoChel3],
+		games: 6, //Побед: 4
+		winrating: 67,
+		win: 4,
 	},
 	{
 		id: 'Viktor_Petrov',
@@ -163,6 +214,7 @@ export const localPlayers = [
 		achievements: [TwoSPB1, OneSPB2],
 		games: 9, //Побед: 7
 		winrating: 78,
+		win: 7,
 	},
 	{
 		id: 'Aleksey_Fedulov',
@@ -171,6 +223,7 @@ export const localPlayers = [
 		achievements: [organizerTwoMoscow],
 		games: 12, //Побед: 6
 		winrating: 50,
+		win: 6,
 	},
 	{
 		id: 'Denis_Solodkov',
@@ -179,6 +232,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 13, //Побед: 6
 		winrating: 46,
+		win: 6,
 	},
 	{
 		id: 'Aleksey_Mukhin',
@@ -187,6 +241,7 @@ export const localPlayers = [
 		achievements: [OneMoscow2],
 		games: 9, //Побед: 6
 		winrating: 67,
+		win: 6,
 	},
 	{
 		id: 'Leonid_Vasilev',
@@ -195,6 +250,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 9, //Побед: 5
 		winrating: 56,
+		win: 5,
 	},
 	{
 		id: 'Ruslan_Ilyasov',
@@ -203,6 +259,7 @@ export const localPlayers = [
 		achievements: [TwoMoscow2],
 		games: 6, //Побед: 5
 		winrating: 83,
+		win: 5,
 	},
 	{
 		id: 'Ivan_Gaidukov',
@@ -211,6 +268,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 9, //Побед: 4
 		winrating: 44,
+		win: 4,
 	},
 	{
 		id: 'Vasily_Nikishin',
@@ -219,6 +277,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 5, //Побед: 1
 		winrating: 20,
+		win: 1,
 	},
 	{
 		id: 'Ural_Ismagilov',
@@ -227,6 +286,7 @@ export const localPlayers = [
 		achievements: [OneChel2],
 		games: 4, //Побед: 3
 		winrating: 75,
+		win: 3,
 	},
 	{
 		id: 'Dmitriy_Vinogradov',
@@ -235,6 +295,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 6, //Побед: 3
 		winrating: 50,
+		win: 3,
 	},
 	{
 		id: 'Kim_Sabirov',
@@ -243,6 +304,7 @@ export const localPlayers = [
 		achievements: [OneSPB1, judgeTwoSPB],
 		games: 3, //Побед: 3
 		winrating: 100,
+		win: 3,
 	},
 	{
 		id: 'Pavel_Karelin',
@@ -251,6 +313,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 3, //Побед: 2
 		winrating: 67,
+		win: 2,
 	},
 	{
 		id: 'Artem_Sirvachev',
@@ -259,6 +322,7 @@ export const localPlayers = [
 		achievements: [TwoChel2],
 		games: 10, //Побед: 7
 		winrating: 70,
+		win: 7,
 	},
 	{
 		id: 'Leonid_Solovev',
@@ -267,6 +331,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 6, //Побед: 4
 		winrating: 67,
+		win: 4,
 	},
 	{
 		id: 'Andrei_Andreev',
@@ -275,14 +340,16 @@ export const localPlayers = [
 		achievements: [],
 		games: 8, //Побед: 3
 		winrating: 38,
+		win: 3,
 	},
 	{
 		id: 'Timofei_Barahovski',
 		image: require('../images/avatar_gamers.png'),
 		player: 'Тимофей Бараховский',
-		achievements: [judgeOneMoskow, judgeTwoMoskow],
+		achievements: [judgeOneMoskow, organizerTwoMoscow],
 		games: 4, //Побед: 2
 		winrating: 50,
+		win: 2,
 	},
 	{
 		id: 'Alexander_Mashkalo',
@@ -291,6 +358,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 6, //Побед: 2
 		winrating: 33,
+		win: 2,
 	},
 	{
 		id: 'Georgiy_Dragun',
@@ -299,6 +367,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 4, //Побед: 2
 		winrating: 50,
+		win: 2,
 	},
 	{
 		id: 'Danila_Kuznecov',
@@ -307,6 +376,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 11, //Побед: 5
 		winrating: 45,
+		win: 5,
 	},
 	{
 		id: 'Dmitriy_Sokil',
@@ -315,6 +385,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 13, //Побед: 2
 		winrating: 15,
+		win: 2,
 	},
 	{
 		id: 'Egor_Muzika',
@@ -323,6 +394,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 4, //Побед: 2
 		winrating: 50,
+		win: 2,
 	},
 	{
 		id: 'Evgeniy_Sorokin',
@@ -331,6 +403,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 4, //Побед: 2
 		winrating: 50,
+		win: 2,
 	},
 	{
 		id: 'Eduard_Agievich',
@@ -339,6 +412,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 8, //Побед: 3
 		winrating: 36,
+		win: 3,
 	},
 	{
 		id: 'Pavel_Gavrilov',
@@ -347,6 +421,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 3, //Побед: 1
 		winrating: 33,
+		win: 1,
 	},
 	{
 		id: 'Vladimir_Baskov',
@@ -355,6 +430,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 3, //Побед: 1
 		winrating: 33,
+		win: 1,
 	},
 	{
 		id: 'Zahar_Alekseev',
@@ -363,6 +439,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 3, //Побед: 1
 		winrating: 33,
+		win: 1,
 	},
 	{
 		id: 'Sergey_Egorov',
@@ -371,6 +448,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 3, //Побед: 1
 		winrating: 0,
+		win: 1,
 	},
 	{
 		id: 'Anton_Zubakov',
@@ -379,6 +457,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 3, //Побед: 1
 		winrating: 33,
+		win: 1,
 	},
 	{
 		id: 'Borovik_Matvei',
@@ -387,6 +466,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 3, //Побед: 1
 		winrating: 33,
+		win: 1,
 	},
 	{
 		id: 'Egor_Kornev',
@@ -395,6 +475,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 9, //Побед: 5
 		winrating: 56,
+		win: 5,
 	},
 	{
 		id: 'Vaycheslav_Kocherov',
@@ -403,6 +484,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 3, //Побед: 1
 		winrating: 33,
+		win: 1,
 	},
 	{
 		id: 'Igor_Reshetnikov',
@@ -411,6 +493,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 9, //Побед: 1
 		winrating: 10,
+		win: 1,
 	},
 	{
 		id: 'Denis_Shtaltovoi',
@@ -419,6 +502,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 4, //Побед: 1
 		winrating: 25,
+		win: 1,
 	},
 	{
 		id: 'Ivan_Vershinin',
@@ -427,6 +511,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 3, //Побед: 1
 		winrating: 33,
+		win: 1,
 	},
 	{
 		id: 'Andrei_Omelyashko',
@@ -435,6 +520,7 @@ export const localPlayers = [
 		achievements: [organizerOneChe],
 		games: 6, //Побед: 4
 		winrating: 67,
+		win: 4,
 	},
 	{
 		id: 'Ruslan_Aljanov',
@@ -443,6 +529,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 3, //Побед: 0
 		winrating: 0,
+		win: 0,
 	},
 	{
 		id: 'Georgiy_Matveev',
@@ -451,6 +538,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 7, //Побед: 0
 		winrating: 0,
+		win: 0,
 	},
 	{
 		id: 'Maksim_Dobrohodov',
@@ -459,15 +547,9 @@ export const localPlayers = [
 		achievements: [],
 		games: 3, //Побед: 0
 		winrating: 0,
+		win: 0,
 	},
-	{
-		id: 'Mikhail_Bezgans',
-		image: require('../images/avatar_gamers.png'),
-		player: 'Михаил Безганс',
-		achievements: [TwoChel3],
-		games: 6, //Побед: 0
-		winrating: 67,
-	},
+
 	{
 		id: 'Vladisliav_Rastihin',
 		image: require('../images/avatar_gamers.png'),
@@ -475,6 +557,7 @@ export const localPlayers = [
 		achievements: [],
 		games: 3, //Побед: 0
 		winrating: 0,
+		win: 0,
 	},
 	{
 		id: 'Alexander_Toporkov',
@@ -483,5 +566,26 @@ export const localPlayers = [
 		achievements: [],
 		games: 6, //Побед: 2
 		winrating: 33,
+		win: 2,
+	},
+
+	{
+		id: 'Ivan_Perfilev',
+		image: require('../images/avatar_gamers.png'),
+		player: 'Иван Перфильев',
+		achievements: [],
+		games: 4, //Побед: 2
+		winrating: 50,
+		win: 2,
+	},
+
+	{
+		id: 'Stanislav_Tarasov',
+		image: require('../images/avatar_gamers.png'),
+		player: 'Станислав Тарасов',
+		achievements: [],
+		games: 3, //Побед: 2
+		winrating: 33,
+		win: 1,
 	},
 ];

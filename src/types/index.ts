@@ -69,6 +69,7 @@ export interface IPlayersForm {
 	games: number;
 	winrating: number;
 	achievements: IItemCup;
+	win: number;
 }
 
 // Интерфейс формы доставки заказа

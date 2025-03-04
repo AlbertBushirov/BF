@@ -128,7 +128,7 @@ nav {
 .header_price {
 	background-color: $primary;
 	min-height: min-content;
-	font-size: 20px;
+	font-size: 16px;
 	min-width: min-content;
 	box-sizing: border-box;
 	@media (max-width: 450px) {
@@ -158,5 +158,5 @@ nav {
 
 .positioning:hover .sub-menu {
 	display: block; /* Показываем подменю при наведении на родительский элемент */
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(21, 23, 25, 0.9);
 }

@@ -1,6 +1,6 @@
 import './scss/styles.scss';
 import { API_URL, CDN_URL } from './utils/constants';
-import { ICardItem, ITehListWheelsEtem, IPlayersForm } from './types/index';
+import { ICardItem, ITehListWheelsEtem } from './types/index';
 import { EventEmitter } from './components/base/events';
 import { WebLarekAPI } from './components/data/ExtensionApi';
 import { AppData, CatalogChangeEvent } from './components/data/AppData';
@@ -10,7 +10,7 @@ import { Page } from './components/View/Page';
 import { Modal } from './components/View/Modal';
 import { Basket } from './components/View/Basket';
 import { Rating } from './components/view/Rating';
-import { localPlayers } from './types/playersData';
+import html2canvas from 'html2canvas';
 
 //Управление событиями и API
 const events = new EventEmitter();
@@ -104,7 +104,22 @@ events.on('basket:changed', () => {
 	const sortedItems = appData
 		.getOrderProducts()
 		.sort((a: ICardItem, b: ICardItem) => {
-			return (order[a.type] || 5) - (order[b.type] || 5);
+			const orderA = order[a.type] || 5;
+			const orderB = order[b.type] || 5;
+
+			if (a.category === 'Техлист' && b.category === 'Техлист') {
+				return 0;
+			}
+
+			if (a.category === 'Техлист') {
+				return 1;
+			}
+
+			if (b.category === 'Техлист') {
+				return -1;
+			}
+
+			return orderA - orderB;
 		});
 
 	basket.items = sortedItems.map((item, index) => {
@@ -163,7 +178,7 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.description = res.description;
 			item.image = res.image;
 			item.price = res.price;
-			console.log('Полученный объект item:', item);
+
 			const card = new Card('card', cloneTemplate(cardPreviewTemplate), {
 				onClick: () => {
 					if (appData.productOrder(item)) {
@@ -312,6 +327,10 @@ events.on('basket:clear', () => {
 	modal.close();
 });
 
+events.on('basket:save', () => {
+	saveBasketAsImage();
+});
+
 // Блокировка прокрутки страницы
 events.on('basket:open', () => {
 	page.locked = true;
@@ -354,6 +373,34 @@ menuItems.forEach((item) => {
 	});
 });
 
+function saveBasketAsImage() {
+	const basketList = document.querySelector('.basket__list') as HTMLElement;
+	console.log(basketList);
+	if (!basketList) {
+		return;
+	}
+
+	html2canvas(basketList, {
+		ignoreElements: (element) => {
+			return (
+				element.classList.contains('card__title') ||
+				element.classList.contains('basket__item-delete') ||
+				element.classList.contains('card__description') ||
+				element.classList.contains('card__price_basket')
+			);
+		},
+	})
+		.then((canvas) => {
+			// Создаем изображение из канваса
+			const link = document.createElement('a');
+			link.href = canvas.toDataURL('image/jpeg');
+			link.download = 'MyRoster.jpg';
+			link.click();
+		})
+		.catch((error) => {
+			console.error('Error generating image:', error);
+		});
+}
 //Получаем массив товаров с сервера
 Promise.all([
 	api.getWarriorsList(),

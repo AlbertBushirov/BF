@@ -16,8 +16,8 @@
 			property="og:image"
 			content="<%=require('../images/icon-dark.png')%>"
 		/>
-		<meta property="og:image:width" content="968" />
-		<meta property="og:image:height" content="504" />
+		<meta property="og:image:width" content="50" />
+		<meta property="og:image:height" content="50" />
 	</head>
 	<body class="page">
 		<div class="page__wrapper">
@@ -113,7 +113,7 @@
 				<span class="card__category">другое</span>
 				<h2 class="card__title">Бэкенд-антистресс</h2>
 				<label class="wheels_box">
-					<span>Шины</span>
+					<span class="wheels">Шины</span>
 					<input class="input_wheels" type="checkbox" />
 				</label>
 				<div class="card__row">
@@ -173,7 +173,7 @@
 				<span class="basket__item-index">1</span>
 				<img class="card__image" src="" alt="" />
 				<label class="wheels_box">
-					<span>Шины</span>
+					<span class="wheels">Шины</span>
 					<input class="input_wheels" type="checkbox" />
 				</label>
 				<span class="card__title"></span>
@@ -207,7 +207,16 @@
 					<img class="card__description" src="" alt="" />
 				</ul>
 				<div class="modal__actions">
-					<button class="button basket__button">Очистить ростер</button>
+					<div class="basket_buttons">
+						<button class="button basket__button">Очистить ростер</button>
+						<button class="button_save">
+							<img
+								class="floppy-image"
+								src="<%=require('../images/floppy.png')%>"
+								alt="Дискета"
+							/>
+						</button>
+					</div>
 					<span class="basket__price">0</span>
 				</div>
 			</div>
@@ -227,21 +236,23 @@
 				<div class="rating__list"></div>
 				<div class="rating__memo_conteiner">
 					<p class="rating__memo">
-						- Игрок, с большим количеством игр, в случае одинакового процента
-						побед, будет находиться выше в рейтинге игроков;
-					</p>
-					<p class="rating__memo">
-						- В случае равенства игр и процента побед, будет выше в рейтинге тот
-						игрок, у которого больше достижений;
+						- Место в рейтинге игроков вычисляется по формуле, учитывающей
+						процент побед, а так же их количество;
 					</p>
 					<p class="rating__memo">
 						- Бронзовый кубок в достижения игрока добавляется только в случае
 						достаточного количества участников на проведённом турнире;
 					</p>
 					<p class="rating__memo">
-						- Свой аватар можно изменить, скинув картинку на почту
-						albash7@yandex.ru. В картинке должны отсутствовать мат, оскорбления,
-						политические лозунги, контент 18+;
+						- Свой аватар можно изменить, скинув картинку в личные сообщения
+						<a
+							class="rating__link"
+							href="https://vk.com/bfassistent"
+							target="_blank"
+							>сообществу VK</a
+						>
+						. Картинка должна быть квадратной! Также на изображении должны
+						отсутствовать мат, оскорбления, политические лозунги, контент 18+
 					</p>
 				</div>
 			</div>
@@ -294,7 +305,7 @@
 							class="footer-image"
 							src="<%=require('../images/icon_сhangelog-04.png')%>"
 							alt="БF assistent logo"
-						/>Чейнджлог</a
+						/>Новости БF</a
 					>
 				</li>
 				<li class="menu-item">
@@ -304,6 +315,18 @@
 							src="<%=require('../images/icon_tournaments-04.png')%>"
 							alt="БF assistent logo"
 						/>Турнир</a
+					>
+				</li>
+				<li class="menu-item">
+					<a
+						class="header__link"
+						href="https://vk.com/bfassistent"
+						target="_blank"
+						><img
+							class="footer-image"
+							src="<%=require('../images/VK_logo_dark-04.png')%>"
+							alt="ссылка на сообщество в Вконтакте"
+						/>По всем вопросам</a
 					>
 				</li>
 			</ul>

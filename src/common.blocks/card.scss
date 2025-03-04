@@ -57,7 +57,7 @@ html {
 		}
 		.card__category {
 			grid-column: 2;
-			grid-row: 2;
+			grid-row: 1;
 			@media (max-width: 450px) {
 				justify-self: start;
 				align-self: end;
@@ -136,7 +136,7 @@ html {
 
 		.card__category {
 			grid-column: 2;
-			grid-row: 2;
+			grid-row: 1;
 			@media (max-width: 450px) {
 				justify-self: start;
 				align-self: end;
@@ -218,6 +218,7 @@ html {
 		}
 		.weapon_title {
 			font-size: 15px;
+
 			@media (max-width: 450px) {
 				font-size: 14px;
 			}
@@ -361,10 +362,10 @@ html {
 	&__category {
 		grid-row: 1;
 		grid-column: 2;
-		max-width: 150px;
+
 		max-height: 50px;
 		justify-self: start;
-		align-self: start;
+		text-align: center;
 		font-size: 12px;
 		padding: 0.5rem 1.25rem;
 		border-radius: 2.5rem;
@@ -434,4 +435,8 @@ html {
 	@media (max-width: 450px) {
 		width: 10px;
 	}
+}
+
+.wheels {
+	background-color: rgba(0, 0, 0, 0.5);
 }

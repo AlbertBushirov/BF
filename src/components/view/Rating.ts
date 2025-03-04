@@ -21,9 +21,12 @@ export class Rating extends Component<IRatingView> {
 		this._player.innerHTML = '';
 
 		players.sort((a, b) => {
-			// Сравниваем количество побед
-			if (b.winrating !== a.winrating) {
-				return b.winrating - a.winrating;
+			//Сравниваем суммы процента побед и побед
+			const scoreA = a.winrating + a.win;
+			const scoreB = b.winrating + b.win;
+
+			if (scoreB !== scoreA) {
+				return scoreB - scoreA;
 			}
 
 			// Сравниваем количество игр
@@ -37,7 +40,6 @@ export class Rating extends Component<IRatingView> {
 
 			return achievementsB - achievementsA; // Сравниваем по количеству достижений
 		});
-
 		players.forEach((player, index) => {
 			const template = document.getElementById(
 				'rating-item'
