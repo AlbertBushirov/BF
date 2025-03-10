@@ -189,7 +189,7 @@ export const localArmy = [
 	},
 	{
 		id: 'VKvervulf',
-		title: 'Вервульф',
+		title: 'Вервольф',
 		category: 'Войска Колдуна',
 		description:
 			'https://sun9-14.userapi.com/impg/ItNXDuV-t3OylcwLpAdmV2keEPIU-h8BYt_vRg/Ohmn5DoIBNM.jpg?size=1090x726&quality=95&sign=84d9527e003fa17b592396501ad66129&type=album',
@@ -1169,7 +1169,7 @@ export const localArmy = [
 		category: 'Сторонние производители',
 		description:
 			'https://sun9-3.userapi.com/impg/G6HfRg6uzUJkBjRpLT9fd5rhk6o3rhwHRawCAA/wwetHskAGEA.jpg?size=1090x726&quality=95&sign=a73e4676aa4d6f6606d8e08ff36aa9f7&type=album',
-		image: require('../images/Storonie/SPVerniePrinc.jpg'), // Прямой URL для удаленного изображения
+		image: require('../images/Storonie/SPGeroyBilin.jpg'), // Прямой URL для удаленного изображения
 		price: 210,
 		inBasket: true,
 		button: '',
@@ -1477,7 +1477,7 @@ export const localArmy = [
 		category: 'Сторонние производители',
 		description:
 			'https://sun9-47.userapi.com/impg/RRORQOUkrDxjNkLirfotv_Ma8xd1rqTucrF--Q/qeVjnLSLQbk.jpg?size=1090x726&quality=95&sign=281cd1fc16275c529cb0b06c7da9dbdf&type=album',
-		image: require('../images/Storonie/SPGromoboi.jpg'), // Прямой URL для удаленного изображения
+		image: require('../images/Storonie/SPKiberzveri.jpg'), // Прямой URL для удаленного изображения
 		price: 290,
 		inBasket: true,
 		button: '',

@@ -1,6 +1,10 @@
 import './scss/styles.scss';
 import { API_URL, CDN_URL } from './utils/constants';
-import { ICardItem, ITehListWheelsEtem } from './types/index';
+import {
+	ICardItem,
+	ITehListWheelsEtem,
+	IFightingMachineItem,
+} from './types/index';
 import { EventEmitter } from './components/base/events';
 import { WebLarekAPI } from './components/data/ExtensionApi';
 import { AppData, CatalogChangeEvent } from './components/data/AppData';
@@ -148,6 +152,11 @@ events.on('basket:changed', () => {
 				basket.total = appData.getTotalPrice();
 				saveBasketToLocalStorage();
 			},
+			onChangeWeapon: ({ weapons }) => {
+				if (item.type === 'machine') {
+					(appData.basket[index] as IFightingMachineItem).weapons = weapons;
+				}
+			},
 		});
 
 		total += item.price;
@@ -203,6 +212,11 @@ events.on('preview:changed', (item: ICardItem) => {
 	}
 });
 
+//Функция замены id продукта, если он уже в корзине
+function generateNewId(): string {
+	return '' + Math.random().toString(36).substr(2, 9); // Пример генерации уникального ID
+}
+
 events.on('preview:changed', (item: ICardItem) => {
 	if (item && item.type === 'tech') {
 		api.getWeaponsItem(item.id).then((res) => {
@@ -214,8 +228,10 @@ events.on('preview:changed', (item: ICardItem) => {
 
 			const card = new Card('card', cloneTemplate(cardTehlistTemplate), {
 				onClick: () => {
+					const newCartId = generateNewId();
 					events.emit('product:add', {
 						...item,
+						id: newCartId,
 					});
 				},
 			});
@@ -241,10 +257,12 @@ events.on('preview:changed', (item: ICardItem) => {
 			// Создание карточки товара
 			const card = new Card('card', cloneTemplate(cardTehlistWheelsTemplate), {
 				onClick: (formData: { isWheels?: boolean; price: number }) => {
+					const newCartId = generateNewId();
 					events.emit('product:add', {
 						...item,
 						isWheels: formData.isWheels,
 						price: formData.price ?? item.price,
+						id: newCartId,
 					});
 				},
 			});
@@ -271,9 +289,12 @@ events.on('preview:changed', (item: ICardItem) => {
 			// Создание карточки товара
 			const card = new Card('card', cloneTemplate(cardFightMachineTemplate), {
 				onClick: () => {
+					const newCartId = generateNewId();
 					events.emit('product:add', {
 						...item,
+						quantity: 0,
 						price: card.price,
+						id: newCartId,
 					});
 				},
 			});
@@ -283,34 +304,7 @@ events.on('preview:changed', (item: ICardItem) => {
 					...item,
 				}),
 			});
-		});
-	}
-});
-
-events.on('preview:changed', (item: ICardItem) => {
-	if (item && item.type === 'machine') {
-		api.getlocalMortarItem(item.id).then((res) => {
-			item.id = res.id;
-			item.category = res.category;
-			item.title = res.title;
-			item.image = res.image;
-			item.price = res.price;
-
-			// Создание карточки товара
-			const card = new Card('card', cloneTemplate(cardFightMachineTemplate), {
-				onClick: () => {
-					events.emit('product:add', {
-						...item,
-						price: card.price,
-					});
-				},
-			});
-
-			modal.render({
-				content: card.render({
-					...item,
-				}),
-			});
+			card.resetWeaponCount();
 		});
 	}
 });
@@ -383,9 +377,9 @@ function saveBasketAsImage() {
 	html2canvas(basketList, {
 		ignoreElements: (element) => {
 			return (
+				element.classList.contains('card__description') ||
 				element.classList.contains('card__title') ||
 				element.classList.contains('basket__item-delete') ||
-				element.classList.contains('card__description') ||
 				element.classList.contains('card__price_basket')
 			);
 		},
@@ -406,24 +400,16 @@ Promise.all([
 	api.getWarriorsList(),
 	api.getWeaponsList(),
 	api.getWeaponsWheelsList(),
-	api.getlocalMortarList(),
 	api.getFightingMachineList(),
 ])
 	.then(
-		([
-			warriorsList,
-			weaponsList,
-			getFightMachineList,
-			getlocalMortarList,
-			getFightingMachineList,
-		]) => {
+		([warriorsList, weaponsList, getFightMachineList, getlocalMortarList]) => {
 			// Объединяем оба списка в один массив и передаем в setCatalog
 			const combinedList: ICardItem[] = [
 				...warriorsList,
 				...weaponsList,
 				...getFightMachineList,
 				...getlocalMortarList,
-				...getFightingMachineList,
 			];
 			appData.setCatalog(combinedList);
 

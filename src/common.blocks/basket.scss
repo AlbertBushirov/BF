@@ -4,6 +4,7 @@
 .basket {
 	gap: 2rem;
 	height: 100%;
+
 	@media (max-width: 1420px) {
 		box-sizing: border-box;
 		width: 100vw;
@@ -25,8 +26,7 @@
 		margin: 0;
 		flex-grow: 1;
 		@media (max-width: 450px) {
-			background-color: rgb(21, 23, 25);
-			padding-bottom: 40px;
+			margin-bottom: 40px;
 		}
 	}
 
@@ -76,10 +76,10 @@
 			}
 		}
 		.card__title {
-			white-space: normal; /* Позволяет тексту переноситься на следующую строку */
+			white-space: normal;
 
-			display: block; /* Обеспечивает блочное поведение */
-			width: 4em; /* Устанавливает максимальную высоту, чтобы ограничить количество отображаемых строк */
+			display: block;
+			width: 4em;
 
 			@media (max-width: 450px) {
 				position: absolute;
@@ -87,7 +87,6 @@
 			}
 		}
 		.weapon_title {
-			background-color: rgba(0, 0, 0, 0.5);
 			@media (max-width: 450px) {
 				font-size: 14px;
 			}

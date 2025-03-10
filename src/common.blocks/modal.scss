@@ -62,17 +62,18 @@
 		margin: 0;
 		font-size: 1.5rem;
 		font-weight: 400;
+		@media (max-width: 450px) {
+			background-color: rgb(21, 23, 25);
+		}
 	}
 
 	&__actions {
 		@include mixins.flex(row);
 		margin-top: 20px;
 		align-items: center;
-
 		justify-content: space-between;
 		@media (max-width: 450px) {
 			margin: 0px;
-			background-color: $primary;
 		}
 	}
 

@@ -7,6 +7,7 @@ import { Weapon } from './Weapon';
 interface ICardActions {
 	onClick: (event: { isWheels?: boolean; price?: number }) => void;
 	onChange?: (data: { isWheels?: boolean; price?: number }) => void;
+	onChangeWeapon?: (data: { weapons?: IItemWeapons }) => void;
 }
 
 interface Category {
@@ -73,6 +74,7 @@ export class Card extends Component<ICardItem> {
 					price: this.price,
 				});
 			};
+			const handleWeapons = () => {};
 
 			if (this._button) {
 				this._button.addEventListener('click', handleAction);
@@ -80,6 +82,14 @@ export class Card extends Component<ICardItem> {
 				container.addEventListener('click', handleAction);
 			}
 		}
+	}
+
+	resetWeaponCount() {
+		this.weapons.forEach((weapon) => {
+			weapon.quantity = 0;
+		});
+		this.renderWeapons(this.weapons);
+		this.BasedOnWeapon();
 	}
 
 	private totalWeaponCount(): number {

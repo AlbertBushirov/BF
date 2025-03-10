@@ -280,35 +280,3 @@ export const localWeaponsWheels = [
 ];
 
 //Минометы
-export const localMortar = [
-	{
-		id: 'minometKrab',
-		title: 'Краб',
-		category: 'Техлист',
-		image: require('../images/TehList/Krab.png'),
-		price: 40,
-		inBasket: true,
-		weapons: [projectile, rocketProjectile],
-		button: '',
-	},
-	{
-		id: 'minometMolot',
-		title: 'Молот',
-		category: 'Техлист',
-		image: require('../images/TehList/Molot.png'),
-		price: 60,
-		inBasket: true,
-		weapons: [projectile, rocketProjectile],
-		button: '',
-	},
-	{
-		id: 'minometedelveys',
-		title: 'Эдельвейс',
-		category: 'Техлист',
-		image: require('../images/TehList/Adalveis.png'),
-		price: 60,
-		inBasket: true,
-		weapons: [projectile, rocketProjectile],
-		button: '',
-	},
-];
