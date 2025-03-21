@@ -5,13 +5,11 @@ import {
 	ITehListEtem,
 	ITehListWheelsEtem,
 	IFightingMachineItem,
-	IPlayersForm,
 } from '../../types';
 import { Api } from '../base/api';
 import { localArmy } from '../../types/warriorsData';
 import { localWeapons, localWeaponsWheels } from '../../types/weaponsData';
 import { localfightMachine } from '../../types/fightMachineData';
-import { localPlayers } from '../../types/playersData';
 
 interface IOrderResult {
 	id: string;

@@ -10,11 +10,15 @@ html {
 	border: 0;
 	border-radius: 1rem;
 	background-color: $primary;
+
 	color: white;
 	padding: 10px 5px;
 	gap: 10px;
 	align-items: center;
 	cursor: pointer;
+	@media (max-width: 450px) {
+		padding: 10px 4px;
+	}
 
 	&_tehList {
 		display: grid;
@@ -33,6 +37,36 @@ html {
 			grid-template-rows: min-content min-content min-content;
 			grid-template-columns: min-content min-content;
 			gap: 10px 10px;
+		}
+
+		.directory {
+			transform: translateX(-15px);
+			transition: opacity 0.3s ease, transform 0.3s ease;
+			width: 200px;
+			padding: 5px;
+			font-size: 16px;
+			left: 420px;
+			top: 150px;
+			@media (max-width: 450px) {
+				font-size: 14px;
+				left: 5vw;
+				top: 67vh;
+				transform: translateY(-15px);
+				width: 320px;
+			}
+		}
+
+		.directory.show {
+			transform: translateX(15px);
+			transition: opacity 0.3s ease, transform 0.3s ease;
+			left: 420px;
+			top: 150px;
+			@media (max-width: 450px) {
+				left: 5vw;
+				top: 67vh;
+				transform: translateY(15px);
+				width: 320px;
+			}
 		}
 
 		.card__title {
@@ -293,6 +327,37 @@ html {
 			padding-inline: 5px;
 			margin-top: 40px;
 		}
+
+		.directory {
+			transform: translateX(-15px);
+			transition: opacity 0.3s ease, transform 0.3s ease;
+			width: 200px;
+			padding: 5px;
+			font-size: 16px;
+			right: 50px;
+			top: 150px;
+			@media (max-width: 450px) {
+				left: 5vw;
+				top: 70vh;
+				transform: translateY(-15px);
+				font-size: 14px;
+				width: 320px;
+			}
+		}
+
+		.directory.show {
+			transform: translateX(15px);
+			transition: opacity 0.3s ease, transform 0.3s ease;
+			right: 50px;
+			top: 150px;
+			@media (max-width: 450px) {
+				left: 5vw;
+				top: 70vh;
+				transform: translateY(15px);
+				width: 320px;
+			}
+		}
+
 		.card__title {
 			align-self: end;
 			justify-self: end;
@@ -334,7 +399,18 @@ html {
 	}
 
 	&__image {
+		cursor: zoom-in;
+		transition: transform 0.3s ease;
 	}
+
+	&__image.enlarged {
+		transform: scale(1.5);
+		cursor: zoom-out;
+		@media (max-width: 450px) {
+			transform: scale(1.1);
+		}
+	}
+
 	&__description {
 		grid-row: 2;
 		grid-column: 2;
@@ -342,6 +418,8 @@ html {
 		max-height: 200px;
 		max-width: 50%;
 		align-self: center;
+		transition: transform 0.3s ease;
+		cursor: zoom-in;
 		@media (max-width: 450px) {
 			max-width: 100%;
 			height: 150px;
@@ -349,6 +427,14 @@ html {
 			grid-column: 1 / 3;
 			grid-row: 3;
 			margin-inline: auto;
+		}
+	}
+
+	&__description.enlarged {
+		transform: scale(1.5);
+		cursor: zoom-out;
+		@media (max-width: 450px) {
+			transform: scale(1.3);
 		}
 	}
 
@@ -373,7 +459,7 @@ html {
 		@media (max-width: 450px) {
 			grid-row: 1;
 			grid-column: 1;
-			max-width: 80px;
+
 			max-height: 20px;
 		}
 		&__text {
@@ -438,4 +524,38 @@ html {
 
 .wheels {
 	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.enlarged-image {
+	max-width: 90%;
+	max-height: 90%;
+	border: 2px solid white; /* Для лучшего визуального эффекта */
+}
+
+.directory {
+	background-color: #060c14;
+	border-radius: 1rem;
+	position: absolute;
+	opacity: 0;
+	@media (max-width: 450px) {
+		position: fixed;
+	}
+}
+
+.directory.show {
+	display: block;
+	opacity: 1;
 }

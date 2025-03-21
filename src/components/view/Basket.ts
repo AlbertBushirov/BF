@@ -1,6 +1,7 @@
 import { createElement, ensureElement } from '../../utils/utils';
 import { Component } from '../base/Component';
 import { EventEmitter } from '../base/events';
+import html2canvas from 'html2canvas';
 
 interface IBasketView {
 	items: HTMLElement[];
@@ -37,10 +38,40 @@ export class Basket extends Component<IBasketView> {
 		if (this._buttonSave) {
 			this._buttonSave.addEventListener('click', () => {
 				events.emit('basket:save');
+				this.saveBasketAsImage();
 			});
 		}
 
 		this.items = [];
+	}
+
+	private saveBasketAsImage() {
+		const basketList = document.querySelector('.basket__list') as HTMLElement;
+
+		if (!basketList) {
+			return;
+		}
+
+		html2canvas(basketList, {
+			ignoreElements: (element) => {
+				return (
+					element.classList.contains('card__description') ||
+					element.classList.contains('card__title') ||
+					element.classList.contains('basket__item-delete') ||
+					element.classList.contains('card__price_basket')
+				);
+			},
+		})
+			.then((canvas) => {
+				// Создаем изображение из канваса
+				const link = document.createElement('a');
+				link.href = canvas.toDataURL('image/jpeg');
+				link.download = 'MyRoster.jpg';
+				link.click();
+			})
+			.catch((error) => {
+				console.error('Error generating image:', error);
+			});
 	}
 
 	set items(items: HTMLElement[]) {

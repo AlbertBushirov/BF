@@ -5,7 +5,11 @@ import { ICardItem, IItemWeapons } from '../../types';
 import { Weapon } from './Weapon';
 
 interface ICardActions {
-	onClick: (event: { isWheels?: boolean; price?: number }) => void;
+	onClick: (event: {
+		isWheels?: boolean;
+		price?: number;
+		weapons?: IItemWeapons;
+	}) => void;
 	onChange?: (data: { isWheels?: boolean; price?: number }) => void;
 	onChangeWeapon?: (data: { weapons?: IItemWeapons }) => void;
 }
@@ -30,6 +34,7 @@ const category: Category = {
 
 export class Card extends Component<ICardItem> {
 	protected _title: HTMLElement;
+	protected _directory: HTMLElement;
 	protected _image?: HTMLImageElement;
 	protected _category?: HTMLElement;
 	protected _description?: HTMLImageElement;
@@ -56,6 +61,7 @@ export class Card extends Component<ICardItem> {
 		super(container, new EventEmitter()); // Инициализация EventEmitter
 		this._category = container.querySelector('.card__category');
 		this._title = ensureElement<HTMLElement>('.card__title', container);
+		this._directory = container.querySelector('.directory');
 		this._description = container.querySelector('.card__description');
 		this._image = container.querySelector('.card__image');
 		this._price = ensureElement<HTMLElement>('.card__price', container);
@@ -66,7 +72,15 @@ export class Card extends Component<ICardItem> {
 		this._inputWheels = container.querySelector(
 			'.input_wheels'
 		) as HTMLInputElement;
-
+		if (this._image) {
+			this._image.addEventListener('click', this.handleImageClick.bind(this));
+		}
+		if (this._description) {
+			this._description.addEventListener(
+				'click',
+				this.handledescriptionClick.bind(this)
+			);
+		}
 		if (action?.onClick) {
 			const handleAction = () => {
 				action.onClick({
@@ -74,12 +88,71 @@ export class Card extends Component<ICardItem> {
 					price: this.price,
 				});
 			};
-			const handleWeapons = () => {};
 
 			if (this._button) {
 				this._button.addEventListener('click', handleAction);
 			} else {
 				container.addEventListener('click', handleAction);
+			}
+		}
+	}
+
+	private addEnlargedClassToImage() {
+		if (this._image) {
+			this._image.classList.remove('enlarged');
+		}
+	}
+
+	private addEnlargedClassToDescription() {
+		if (this._description) {
+			this._description.classList.remove('enlarged');
+		}
+	}
+
+	private handleImageClick(event: MouseEvent) {
+		event.stopPropagation();
+		this.addEnlargedClassToDescription();
+		const image = this._image;
+		if (image) {
+			if (image.classList.contains('enlarged')) {
+				image.classList.remove('enlarged');
+				this.hideDirectory();
+			} else {
+				image.classList.add('enlarged');
+				this.showDirectory();
+			}
+		}
+	}
+
+	private showDirectory() {
+		const directory = this._directory;
+		if (directory) {
+			setTimeout(() => {
+				directory.classList.add('show');
+			});
+		}
+	}
+
+	private hideDirectory() {
+		const directory = this._directory;
+		if (this._directory) {
+			setTimeout(() => {
+				directory.classList.remove('show');
+			});
+		}
+	}
+
+	private handledescriptionClick(event: MouseEvent) {
+		event.stopPropagation();
+		this.addEnlargedClassToImage();
+		const image = this._description;
+		if (image) {
+			if (image.classList.contains('enlarged')) {
+				image.classList.remove('enlarged');
+				this.hideDirectory();
+			} else {
+				image.classList.add('enlarged');
+				this.showDirectory();
 			}
 		}
 	}
@@ -185,8 +258,16 @@ export class Card extends Component<ICardItem> {
 		this.setText(this._title, value);
 	}
 
+	set directory(value: string) {
+		this.setText(this._directory, value);
+	}
+
 	get title(): string {
 		return this._title.textContent || '';
+	}
+
+	get directory(): string {
+		return this._directory.textContent || '';
 	}
 
 	set buttonTitle(value: string) {
@@ -277,6 +358,7 @@ export class BasketElement extends Component<IBasketItem> {
 	protected wheelsPrice?: number;
 	protected _weapons?: HTMLInputElement;
 	protected weapons?: IItemWeapons;
+	protected _directory: HTMLElement;
 
 	constructor(
 		container: HTMLElement,
@@ -288,6 +370,7 @@ export class BasketElement extends Component<IBasketItem> {
 
 		this._index = ensureElement<HTMLElement>('.basket__item-index', container);
 		this.setText(this._index, index + 1);
+		this._directory = container.querySelector('.directory');
 		this._title = ensureElement<HTMLElement>('.card__title', container);
 		this._price = ensureElement<HTMLElement>('.card__price_basket', container);
 		this._button = container.querySelector('.card__button');
@@ -304,6 +387,13 @@ export class BasketElement extends Component<IBasketItem> {
 			this._inputWheels.addEventListener('change', () => this.updatePrice());
 		}
 
+		if (this.weapons) {
+			this._weapons.addEventListener(
+				'change',
+				() => this.action?.onChangeWeapon
+			);
+		}
+
 		if (action?.onClick) {
 			const handleClick = () => {
 				const isWheels = this._inputWheels
@@ -315,6 +405,56 @@ export class BasketElement extends Component<IBasketItem> {
 				});
 			};
 			this._button.addEventListener('click', handleClick);
+		}
+		if (this._description) {
+			this._description.addEventListener(
+				'click',
+				this.handledescriptionClick.bind(this)
+			);
+		}
+		if (this._image) {
+			this._image.addEventListener('click', this.handleImageClick.bind(this));
+		}
+		this.events.on('basket:save', () => {
+			this.addEnlargedClassToImage();
+		});
+	}
+
+	private handledescriptionClick(event: MouseEvent) {
+		event.stopPropagation();
+		this.addEnlargedClassToImage();
+		const image = this._description;
+		if (image) {
+			if (image.classList.contains('enlarged')) {
+				image.classList.remove('enlarged');
+			} else {
+				image.classList.add('enlarged');
+			}
+		}
+	}
+
+	private addEnlargedClassToImage() {
+		if (this._image) {
+			this._image.classList.remove('enlarged');
+		}
+	}
+
+	private addEnlargedClassToDescription() {
+		if (this._description) {
+			this._description.classList.remove('enlarged');
+		}
+	}
+
+	private handleImageClick(event: MouseEvent) {
+		event.stopPropagation();
+		this.addEnlargedClassToDescription();
+		const image = this._image;
+		if (image) {
+			if (image.classList.contains('enlarged')) {
+				image.classList.remove('enlarged');
+			} else {
+				image.classList.add('enlarged');
+			}
 		}
 	}
 
@@ -375,6 +515,14 @@ export class BasketElement extends Component<IBasketItem> {
 		this.setText(this._price, `${value} очков`);
 	}
 
+	set directory(value: string) {
+		this.setText(this._directory, value);
+	}
+
+	get directory(): string {
+		return this._directory.textContent || '';
+	}
+
 	set isWheels(value: boolean) {
 		this._inputWheels.checked = value;
 	}
@@ -415,10 +563,11 @@ export class BasketElement extends Component<IBasketItem> {
 	}
 
 	public BasedOnWeapon() {
-		const weaponsPrice = this.weapons?.reduce(
-			(total, weapon) => total + weapon.price * weapon.quantity,
-			0
-		);
+		const weaponsPrice =
+			this.weapons?.reduce(
+				(total, weapon) => total + weapon.price * weapon.quantity,
+				0
+			) || 0;
 
 		this.price = this.priceValue + weaponsPrice;
 		this.notifyBasketChanged();

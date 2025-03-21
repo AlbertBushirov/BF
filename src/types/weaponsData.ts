@@ -9,6 +9,7 @@ export const localWeapons = [
 		price: 250,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'ObeDarkShaman',
@@ -18,6 +19,8 @@ export const localWeapons = [
 		price: 110,
 		inBasket: true,
 		button: '',
+		directory:
+			'Ядовитое облако. Вероятность выпадения 6, при использовании в 5 воинов: 59.8%; в 4 воина: 51.8%; в 3 воина: 42.1%. Нейтрализация. Вероятность успешного использования: 33.33%',
 	},
 	{
 		id: 'ObeKlerik',
@@ -27,6 +30,8 @@ export const localWeapons = [
 		price: 110,
 		inBasket: true,
 		button: '',
+		directory:
+			'Огненный дождь. Вероятность успеха при использовании в 5 воинов: 91.2%; в 4 воина: 80.25%; в 3 воина:  70.37%; в 2 воина: 55.56%.',
 	},
 	{
 		id: 'ObeMasterVolshebnik',
@@ -36,6 +41,8 @@ export const localWeapons = [
 		price: 110,
 		inBasket: true,
 		button: '',
+		directory:
+			'Молния. Вероятность успешного использования: 33,33%. Воскрешение. Вероятность успешного использования в раненного воина: 67%; в мертвого воина: 33,33%',
 	},
 	{
 		id: 'ObeBrodyachiMag',
@@ -45,6 +52,7 @@ export const localWeapons = [
 		price: 120,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'ObePolbustuk',
@@ -54,6 +62,8 @@ export const localWeapons = [
 		price: 100,
 		inBasket: true,
 		button: '',
+		directory:
+			'Луковое амбре. Вероятность успешного использования в 1 воина: 67%',
 	},
 	{
 		id: 'ObeOriana',
@@ -63,6 +73,7 @@ export const localWeapons = [
 		price: 120,
 		inBasket: true,
 		button: '',
+		directory: 'Кибер-сердце. Вероятность успешного использования: 33,33%',
 	},
 
 	{
@@ -73,6 +84,7 @@ export const localWeapons = [
 		price: 80,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 
 	{
@@ -83,6 +95,7 @@ export const localWeapons = [
 		price: 120,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 
 	{
@@ -93,6 +106,7 @@ export const localWeapons = [
 		price: 80,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'catapultklop',
@@ -102,6 +116,7 @@ export const localWeapons = [
 		price: 100,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'catapultciklop',
@@ -111,6 +126,7 @@ export const localWeapons = [
 		price: 90,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'pushkabuldog',
@@ -120,6 +136,7 @@ export const localWeapons = [
 		price: 90,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'pushkaedinorog',
@@ -129,6 +146,7 @@ export const localWeapons = [
 		price: 130,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'MDB-15',
@@ -138,6 +156,7 @@ export const localWeapons = [
 		price: 180,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'pushkagrad',
@@ -147,6 +166,7 @@ export const localWeapons = [
 		price: 80,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'pushkasparka',
@@ -156,6 +176,7 @@ export const localWeapons = [
 		price: 50,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'pushkastilet',
@@ -165,6 +186,7 @@ export const localWeapons = [
 		price: 60,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'pushkaexecutor',
@@ -174,6 +196,7 @@ export const localWeapons = [
 		price: 60,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 ];
 //Орудия с шинами
@@ -186,6 +209,7 @@ export const localWeaponsWheels = [
 		price: 80,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'arbaletskorpion',
@@ -195,6 +219,7 @@ export const localWeaponsWheels = [
 		price: 130,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'arbaletharibda',
@@ -204,6 +229,7 @@ export const localWeaponsWheels = [
 		price: 70,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'catapultbogomol',
@@ -213,6 +239,7 @@ export const localWeaponsWheels = [
 		price: 70,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'catapultsarancha',
@@ -222,6 +249,7 @@ export const localWeaponsWheels = [
 		price: 110,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'pushkablast',
@@ -231,6 +259,7 @@ export const localWeaponsWheels = [
 		price: 130,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'pushkabuivol',
@@ -240,6 +269,7 @@ export const localWeaponsWheels = [
 		price: 80,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'pushkagrom',
@@ -249,6 +279,7 @@ export const localWeaponsWheels = [
 		price: 120,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'pushkatelec',
@@ -258,6 +289,7 @@ export const localWeaponsWheels = [
 		price: 70,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'pushkaShkval',
@@ -267,6 +299,7 @@ export const localWeaponsWheels = [
 		price: 110,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 	{
 		id: 'pushkashtorm',
@@ -276,6 +309,7 @@ export const localWeaponsWheels = [
 		price: 70,
 		inBasket: true,
 		button: '',
+		directory: '',
 	},
 ];
 

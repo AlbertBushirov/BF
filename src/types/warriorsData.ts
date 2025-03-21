@@ -9,6 +9,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKrotavaryag.png'),
 		price: 160,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -20,6 +21,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKrotagrenadery.png'),
 		price: 160,
 		inBasket: true,
+		directory: '',
 		button: 'xt gbcfnm z [p',
 	},
 	{
@@ -31,6 +33,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKsupergurony.png'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -42,6 +45,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKzigfridstandart.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -53,6 +57,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKzigfridmorgenshtern.jpg'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -64,6 +69,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKzigfrid6.jpg'), // Прямой URL для удаленного изображения
 		price: 230,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -75,6 +81,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKkaizer.png'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта: 42.13%',
 		button: '',
 	},
 	{
@@ -86,6 +93,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKkondor.png'), // Прямой URL для удаленного изображения
 		price: 230,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -97,6 +105,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKkondor7.jpg'), // Прямой URL для удаленного изображения
 		price: 270,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -108,6 +117,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKmatodor.png'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -119,6 +129,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKneptun.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -130,6 +141,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKNorman.png'), // Прямой URL для удаленного изображения
 		price: 150,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -141,6 +153,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKyatagan.png'), // Прямой URL для удаленного изображения
 		price: 170,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -152,6 +165,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKAskalon.png'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -163,6 +177,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKAsterisk.png'), // Прямой URL для удаленного изображения
 		price: 170,
 		inBasket: true,
+		directory: 'Вероятность выпадения 6: 59.8%',
 		button: '',
 	},
 	{
@@ -174,6 +189,8 @@ export const localArmy = [
 		image: require('../images/Koldun/VKgnomi.png'), // Прямой URL для удаленного изображения
 		price: 230,
 		inBasket: true,
+		directory:
+			'Вероятность успешного использования Артефакта в 3 воинов: 70.4%; в 2 воинов: 55.6%',
 		button: '',
 	},
 	{
@@ -185,6 +202,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKVaterloo.png'), // Прямой URL для удаленного изображения
 		price: 210,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -196,6 +214,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKvervulf.png'), // Прямой URL для удаленного изображения
 		price: 210,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -207,6 +226,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKgidra.png'), // Прямой URL для удаленного изображения
 		price: 240,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -218,6 +238,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKIzmail.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -229,6 +250,8 @@ export const localArmy = [
 		image: require('../images/Koldun/VKKiber-skilet.png'), // Прямой URL для удаленного изображения
 		price: 300,
 		inBasket: true,
+		directory:
+			'Вероятность успешного использования Артефакта в 4 воина: 80.2%; в 3 воинов: 70.4%; в 2 воинов: 55.6%',
 		button: '',
 	},
 	{
@@ -240,6 +263,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKKondung.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -251,6 +275,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKMinotavri.png'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -262,6 +287,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKChagatai.png'), // Прямой URL для удаленного изображения
 		price: 160,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -273,6 +299,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKYagelon.png'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 
@@ -286,6 +313,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNKentavr.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -297,6 +325,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNKobra.png'), // Прямой URL для удаленного изображения
 		price: 210,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -308,6 +337,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNMagnum.png'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -319,6 +349,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNPiton.png'), // Прямой URL для удаленного изображения
 		price: 210,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -330,6 +361,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNNekro-Kiborgi_Skeletoni.png'), // Прямой URL для удаленного изображения
 		price: 170,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -341,6 +373,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNTitan.png'), // Прямой URL для удаленного изображения
 		price: 160,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -352,6 +385,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNTornado.png'), // Прямой URL для удаленного изображения
 		price: 230,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -363,6 +397,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNTornadogolovotyap.jpg'), // Прямой URL для удаленного изображения
 		price: 270,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -374,6 +409,8 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNUdav.png'), // Прямой URL для удаленного изображения
 		price: 210,
 		inBasket: true,
+		directory:
+			'Вероятность успешного использования артефакта (воин хотя бы убежит): 67%',
 		button: '',
 	},
 	{
@@ -385,6 +422,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNUragan.png'), // Прямой URL для удаленного изображения
 		price: 260,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -396,6 +434,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNFobos.png'), // Прямой URL для удаленного изображения
 		price: 100,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта 55.6%',
 		button: '',
 	},
 	{
@@ -407,6 +446,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNFobos-radist.jpg'), // Прямой URL для удаленного изображения
 		price: 130,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта 55.6%',
 		button: '',
 	},
 	{
@@ -418,6 +458,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNCunami.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -429,6 +470,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNShipki.png'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -440,6 +482,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNGladius.png'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -451,6 +494,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNGornii-Bars.png'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: 'Вероятность успешного использования артефакта: 67%',
 		button: '',
 	},
 	{
@@ -462,6 +506,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNGrobag.png'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта: 30.56%',
 		button: '',
 	},
 	{
@@ -473,6 +518,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNGulrog.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -484,6 +530,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNGugluk.png'), // Прямой URL для удаленного изображения
 		price: 220,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -495,6 +542,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNYedinorog.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -506,6 +554,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNKechya.png'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -517,6 +566,8 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNNekros.png'), // Прямой URL для удаленного изображения
 		price: 270,
 		inBasket: true,
+		directory:
+			'Вероятность успешного использования Артефакта в 5 воинов: 59.8%; в 4 воина: 51.8%; в 3 воина: 42.1%',
 		button: '',
 	},
 	{
@@ -528,6 +579,8 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNStrazhi-grobnits.png'), // Прямой URL для удаленного изображения
 		price: 220,
 		inBasket: true,
+		directory:
+			'Вероятность смерти воина при успешном использовании артефакта: 33.33%',
 		button: '',
 	},
 	{
@@ -539,6 +592,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNStrazhi-Tmi.png'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: 'Вероятность успешного использования артефакта: 33.33%',
 		button: '',
 	},
 	{
@@ -550,6 +604,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNUruk-Tag.png'), // Прямой URL для удаленного изображения
 		price: 170,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта: 67%',
 		button: '',
 	},
 	{
@@ -561,6 +616,7 @@ export const localArmy = [
 		image: require('../images/Nekromant/LNHatamoto.png'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 
@@ -574,6 +630,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHAmazonki.png'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -585,6 +642,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHBagration.png'),
 		price: 180,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -596,6 +654,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHVarani.png'),
 		price: 260,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -607,6 +666,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHMarsel.png'),
 		price: 170,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -618,6 +678,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHPoseidon.png'),
 		price: 160,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта: 33,33%',
 		button: '',
 	},
 	{
@@ -629,6 +690,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHSokol.png'),
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -640,6 +702,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHStalingrad.png'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта 55.6%',
 		button: '',
 	},
 	{
@@ -651,6 +714,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHTaifun.png'), // Прямой URL для удаленного изображения
 		price: 260,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -662,6 +726,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHCenturion.png'), // Прямой URL для удаленного изображения
 		price: 170,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта 16,6%',
 		button: '',
 	},
 	{
@@ -673,6 +738,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHEspada.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта 83,4%',
 		button: '',
 	},
 	{
@@ -684,6 +750,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHAvalon.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -695,6 +762,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHBorodino.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -706,6 +774,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHVolkodav.png'), // Прямой URL для удаленного изображения
 		price: 150,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -717,6 +786,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHKanopus.png'), // Прямой URL для удаленного изображения
 		price: 280,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -728,6 +798,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHVolnica.png'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта 33,33%',
 		button: '',
 	},
 	{
@@ -739,6 +810,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHPaladini.png'), // Прямой URL для удаленного изображения
 		price: 210,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта: 30.56%',
 		button: '',
 	},
 	{
@@ -750,6 +822,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHPoltava.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -761,6 +834,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHSkifi.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -772,6 +846,8 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHElitar.png'), // Прямой URL для удаленного изображения
 		price: 230,
 		inBasket: true,
+		directory:
+			'Вероятность успешного использования Артефакта при 5 воинах: 59.8%; при 4 воинах: 51.8%; при 3 воинах: 42.1%',
 		button: '',
 	},
 	{
@@ -783,6 +859,7 @@ export const localArmy = [
 		image: require('../images/Charodei/GCHYastreb.png'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта: 67%',
 		button: '',
 	},
 	//Гильдия Вольных Стрелков
@@ -795,6 +872,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSberkut.png'), // Относительный путь для локального изображения
 		price: 200,
 		inBasket: true,
+		directory: 'Вероятность успешного использования артефакта: 33.33%',
 		button: 'green',
 	},
 	{
@@ -806,6 +884,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSvepr.png'), // Прямой URL для удаленного изображения
 		price: 150,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -817,6 +896,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSversal.png'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: '',
 		button: 'xt gbcfnm z [p',
 	},
 	{
@@ -828,6 +908,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSpsivoini.png'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: 'xt gbcfnm z [p',
 	},
 	{
@@ -839,6 +920,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSpushkari.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: 'xt gbcfnm z [p',
 	},
 	{
@@ -850,6 +932,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSrodezia.png'), // Прямой URL для удаленного изображения
 		price: 220,
 		inBasket: true,
+		directory: '',
 		button: 'xt gbcfnm z [p',
 	},
 	{
@@ -861,6 +944,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSsaturn.png'), // Прямой URL для удаленного изображения
 		price: 170,
 		inBasket: true,
+		directory: '',
 		button: 'xt gbcfnm z [p',
 	},
 	{
@@ -872,6 +956,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSshervud.png'), // Прямой URL для удаленного изображения
 		price: 170,
 		inBasket: true,
+		directory: '',
 		button: 'xt gbcfnm z [p',
 	},
 	{
@@ -883,6 +968,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSbiokiborgysherify.png'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: '',
 		button: 'xt gbcfnm z [p',
 	},
 	{
@@ -894,6 +980,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSvoinymirty.png'), // Прямой URL для удаленного изображения
 		price: 160,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта: 30.56%',
 		button: 'xt gbcfnm z [p',
 	},
 	{
@@ -905,6 +992,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSgladiatory.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -916,6 +1004,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSpsi-komandazero.png'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта: 67%',
 		button: '',
 	},
 	{
@@ -927,6 +1016,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSkentavry.png'), // Прямой URL для удаленного изображения
 		price: 250,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -938,6 +1028,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSmorskoye-bratstvo.png'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -949,6 +1040,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSnovaya-sibir.png'), // Прямой URL для удаленного изображения
 		price: 230,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -960,6 +1052,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSroksburg.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -971,6 +1064,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVStarasov-kuren.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -982,6 +1076,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVStemnya-sotnya.png'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -993,6 +1088,7 @@ export const localArmy = [
 		image: require('../images/GVS/GVSyupiter.png'), // Прямой URL для удаленного изображения
 		price: 160,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 
@@ -1007,6 +1103,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPDrakonoborci.jpg'), // Прямой URL для удаленного изображения
 		price: 170,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1018,6 +1115,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPKamlak.jpg'), // Прямой URL для удаленного изображения
 		price: 250,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1029,6 +1127,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPKitoboi.jpg'), // Прямой URL для удаленного изображения
 		price: 210,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1040,6 +1139,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPKricheri.jpg'), // Прямой URL для удаленного изображения
 		price: 170,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1051,6 +1151,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPNeukronimie.jpg'), // Прямой URL для удаленного изображения
 		price: 210,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1062,6 +1163,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPPredvestniki4.jpg'), // Прямой URL для удаленного изображения
 		price: 150,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1073,6 +1175,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPPredvestniki5.jpg'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1084,6 +1187,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPStragiGizi.jpg'), // Прямой URL для удаленного изображения
 		price: 220,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1095,6 +1199,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPTechKnight.jpg'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1106,6 +1211,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPHardkor.jpg'), // Прямой URL для удаленного изображения
 		price: 230,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1117,6 +1223,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPShotrm.jpg'), // Прямой URL для удаленного изображения
 		price: 220,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1128,6 +1235,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPKallisto.jpg'), // Прямой URL для удаленного изображения
 		price: 260,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1139,6 +1247,8 @@ export const localArmy = [
 		image: require('../images/Storonie/SPDemoniSulfura.jpg'), // Прямой URL для удаленного изображения
 		price: 130,
 		inBasket: true,
+		directory:
+			'Вероятность успешного использования Артефакта при 0 сброшенных карт: 33,33%; при 1 сброшенной карте: 55.6%; при 2 сброшенных картах: 70.37%',
 		button: '',
 	},
 	{
@@ -1150,6 +1260,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPVedmaki.jpg'), // Прямой URL для удаленного изображения
 		price: 210,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1161,6 +1272,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPVerniePrinc.jpg'), // Прямой URL для удаленного изображения
 		price: 230,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1172,6 +1284,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPGeroyBilin.jpg'), // Прямой URL для удаленного изображения
 		price: 210,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта: 33.33%',
 		button: '',
 	},
 	{
@@ -1183,6 +1296,8 @@ export const localArmy = [
 		image: require('../images/Storonie/SPHichniki.jpg'), // Прямой URL для удаленного изображения
 		price: 330,
 		inBasket: true,
+		directory:
+			'Вероятность успешного использования Артефакта в 5 воинов: 91.2%; в 4 воина: 80.25%; в 3 воина:  70.37%; в 2 воина: 55.56%.',
 		button: '',
 	},
 	{
@@ -1194,6 +1309,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPChempioniAreni.jpg'), // Прямой URL для удаленного изображения
 		price: 260,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1205,6 +1321,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPKiberici.jpg'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1216,6 +1333,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPKsenohanteri.jpg'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1227,6 +1345,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPStalnayaPyaterka.jpg'), // Прямой URL для удаленного изображения
 		price: 250,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1238,6 +1357,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPTangar.jpg'), // Прямой URL для удаленного изображения
 		price: 270,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1249,6 +1369,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPTropik.jpg'), // Прямой URL для удаленного изображения
 		price: 220,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1260,6 +1381,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPHorni.jpg'), // Прямой URL для удаленного изображения
 		price: 230,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1271,6 +1393,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPBladhorn.jpg'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1282,6 +1405,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPBorciZaOgon.jpg'), // Прямой URL для удаленного изображения
 		price: 170,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1293,6 +1417,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPBratyaIgarashi.jpg'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1304,6 +1429,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPValkirii.jpg'), // Прямой URL для удаленного изображения
 		price: 180,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1315,6 +1441,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPGoblinilesa.jpg'), // Прямой URL для удаленного изображения
 		price: 160,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1326,6 +1453,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPDagaz.jpg'),
 		price: 180,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1337,6 +1465,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPDerzkayaStaya.jpg'), // Прямой URL для удаленного изображения
 		price: 230,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1348,6 +1477,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPMinoni.jpg'),
 		price: 150,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1359,6 +1489,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPFangeti.jpg'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1370,6 +1501,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPCherniRassvet.jpg'), // Прямой URL для удаленного изображения
 		price: 230,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1381,6 +1513,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPNewAmazonki.jpg'), // Прямой URL для удаленного изображения
 		price: 240,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1392,6 +1525,7 @@ export const localArmy = [
 		image: require('../images/Storonie/oskal_Nochi.jpg'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1403,6 +1537,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPPesherniLudi.jpg'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1414,6 +1549,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPFemiskira.jpg'), // Прямой URL для удаленного изображения
 		price: 170,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1425,6 +1561,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPCherni_Ricari.jpg'), // Прямой URL для удаленного изображения
 		price: 140,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1436,6 +1573,8 @@ export const localArmy = [
 		image: require('../images/Storonie/SPBergi.jpg'), // Прямой URL для удаленного изображения
 		price: 290,
 		inBasket: true,
+		directory:
+			'Вероятность успешного использования Артефакта при броске 3 кубиков: 16,6%; ',
 		button: '',
 	},
 	{
@@ -1447,6 +1586,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPHraniteliRochi.jpg'), // Прямой URL для удаленного изображения
 		price: 240,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1458,6 +1598,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPGornyaki.jpg'), // Прямой URL для удаленного изображения
 		price: 260,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1469,6 +1610,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPGromoboi.jpg'), // Прямой URL для удаленного изображения
 		price: 270,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1480,6 +1622,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPKiberzveri.jpg'), // Прямой URL для удаленного изображения
 		price: 290,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1491,6 +1634,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPSumerechniStrazhi.jpg'), // Прямой URL для удаленного изображения
 		price: 250,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1502,6 +1646,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPTvoreniyaMarkusa.jpg'), // Прямой URL для удаленного изображения
 		price: 260,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1513,6 +1658,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPZhneci.jpg'), // Прямой URL для удаленного изображения
 		price: 230,
 		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта: 42.13%',
 		button: '',
 	},
 	{
@@ -1524,6 +1670,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPTritalianci.jpg'), // Прямой URL для удаленного изображения
 		price: 250,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1535,6 +1682,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPChama-Tor.jpg'), // Прямой URL для удаленного изображения
 		price: 300,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 	{
@@ -1546,6 +1694,7 @@ export const localArmy = [
 		image: require('../images/Storonie/SPKhakylmoa.jpg'), // Прямой URL для удаленного изображения
 		price: 200,
 		inBasket: true,
+		directory: '',
 		button: '',
 	},
 ];

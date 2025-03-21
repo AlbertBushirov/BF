@@ -4,6 +4,7 @@ import {
 	ICardItem,
 	ITehListWheelsEtem,
 	IFightingMachineItem,
+	IItemWeapons,
 } from './types/index';
 import { EventEmitter } from './components/base/events';
 import { WebLarekAPI } from './components/data/ExtensionApi';
@@ -177,6 +178,18 @@ events.on('rating:open', () => {
 	});
 });
 
+window.addEventListener('hashchange', () => {
+	if (window.location.hash === '#rating') {
+		events.emit('rating:open');
+	}
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+	if (window.location.hash === '#rating') {
+		events.emit('rating:open');
+	}
+});
+
 // Обработчики изменения предпросмотра продукта и добавления в корзину
 events.on('preview:changed', (item: ICardItem) => {
 	if (item && item.type === 'list') {
@@ -187,6 +200,7 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.description = res.description;
 			item.image = res.image;
 			item.price = res.price;
+			item.directory = res.directory;
 
 			const card = new Card('card', cloneTemplate(cardPreviewTemplate), {
 				onClick: () => {
@@ -212,9 +226,8 @@ events.on('preview:changed', (item: ICardItem) => {
 	}
 });
 
-//Функция замены id продукта, если он уже в корзине
 function generateNewId(): string {
-	return '' + Math.random().toString(36).substr(2, 9); // Пример генерации уникального ID
+	return '' + Math.random().toString(36).substr(2, 9);
 }
 
 events.on('preview:changed', (item: ICardItem) => {
@@ -225,6 +238,7 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.title = res.title;
 			item.image = res.image;
 			item.price = res.price;
+			item.directory = res.directory;
 
 			const card = new Card('card', cloneTemplate(cardTehlistTemplate), {
 				onClick: () => {
@@ -285,14 +299,16 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.title = res.title;
 			item.image = res.image;
 			item.price = res.price;
+			item.weapons = res.weapons;
 
 			// Создание карточки товара
 			const card = new Card('card', cloneTemplate(cardFightMachineTemplate), {
-				onClick: () => {
+				onClick: (formData: { weapons?: IItemWeapons }) => {
 					const newCartId = generateNewId();
 					events.emit('product:add', {
 						...item,
 						quantity: 0,
+						weapon: formData.weapons,
 						price: card.price,
 						id: newCartId,
 					});
@@ -321,10 +337,6 @@ events.on('basket:clear', () => {
 	modal.close();
 });
 
-events.on('basket:save', () => {
-	saveBasketAsImage();
-});
-
 // Блокировка прокрутки страницы
 events.on('basket:open', () => {
 	page.locked = true;
@@ -332,6 +344,7 @@ events.on('basket:open', () => {
 
 events.on('modal:close', () => {
 	page.locked = false;
+	history.replaceState(null, '', window.location.pathname);
 });
 
 const menuToggle = document.getElementById('menu-toggle');
@@ -367,34 +380,6 @@ menuItems.forEach((item) => {
 	});
 });
 
-function saveBasketAsImage() {
-	const basketList = document.querySelector('.basket__list') as HTMLElement;
-	console.log(basketList);
-	if (!basketList) {
-		return;
-	}
-
-	html2canvas(basketList, {
-		ignoreElements: (element) => {
-			return (
-				element.classList.contains('card__description') ||
-				element.classList.contains('card__title') ||
-				element.classList.contains('basket__item-delete') ||
-				element.classList.contains('card__price_basket')
-			);
-		},
-	})
-		.then((canvas) => {
-			// Создаем изображение из канваса
-			const link = document.createElement('a');
-			link.href = canvas.toDataURL('image/jpeg');
-			link.download = 'MyRoster.jpg';
-			link.click();
-		})
-		.catch((error) => {
-			console.error('Error generating image:', error);
-		});
-}
 //Получаем массив товаров с сервера
 Promise.all([
 	api.getWarriorsList(),

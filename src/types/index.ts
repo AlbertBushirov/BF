@@ -40,11 +40,13 @@ export interface IListItem extends IBaseCardItem {
 	type: 'list';
 	description: string;
 	image: string;
+	directory: string;
 }
 
 export interface ITehListEtem extends IBaseCardItem {
 	type: 'tech' | 'OBE';
 	image: string;
+	directory: string;
 }
 
 export interface ITehListWheelsEtem extends IBaseCardItem {

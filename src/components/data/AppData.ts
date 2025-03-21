@@ -46,16 +46,6 @@ export class AppData extends Model<IProductItem> {
 		this.updateBasket();
 	}
 
-	//очистка заказа
-	clearOrder() {
-		this.order = {
-			payment: '',
-			address: '',
-			email: '',
-			phone: '',
-		};
-	}
-
 	//Обновить корзину
 	updateBasket() {
 		this.emitChanges('counter:changed', this.basket);
