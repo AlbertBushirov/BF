@@ -56,7 +56,7 @@ export const localWeapons = [
 	},
 	{
 		id: 'ObePolbustuk',
-		title: 'ПолбУстУк',
+		title: 'Полб`Уст`Ук',
 		category: 'Сторонние производители',
 		image: require('../images/TehList/ObePolbustuk.jpg'), // Прямой URL для удаленного изображения
 		price: 100,

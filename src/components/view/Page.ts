@@ -15,6 +15,7 @@ export class Page extends Component<IPage> {
 	protected _basket: HTMLElement;
 	protected _modal: HTMLElement;
 	protected _rating: HTMLElement;
+	protected _memo: HTMLElement;
 
 	constructor(container: HTMLElement, protected events: IEvents) {
 		super(container);
@@ -28,14 +29,18 @@ export class Page extends Component<IPage> {
 		this._basket = ensureElement<HTMLElement>('.header__basket', container);
 		this._modal = ensureElement<HTMLElement>('.modal__container', container);
 		this._rating = ensureElement<HTMLElement>('.rating__point', container);
+		this._memo = ensureElement<HTMLElement>('.memo__point', container);
 
-		// обработчик клика на корзину
 		this._basket.addEventListener('click', () => {
 			this.events.emit('basket:open');
 		});
 
 		this._rating.addEventListener('click', () => {
 			this.events.emit('rating:open');
+		});
+
+		this._memo.addEventListener('click', () => {
+			this.events.emit('memo:open');
 		});
 	}
 	//Установка значения счетчика корзины.

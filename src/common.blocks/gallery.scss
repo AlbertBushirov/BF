@@ -15,3 +15,45 @@
 		margin-top: 90px;
 	}
 }
+.opacityCatalog {
+	opacity: 0.8;
+}
+
+.gallery__item {
+	position: relative;
+	.gallery_marker__image {
+		position: absolute;
+		width: 40px;
+		left: 1%;
+		top: 1%;
+		display: block;
+		z-index: 1;
+
+		@media (max-width: 450px) {
+			width: 40px;
+			left: 1%;
+			top: 1%;
+		}
+	}
+
+	.gallery_marker__title {
+		display: none; /* Скрываем заголовок по умолчанию */
+		position: absolute; /* Позиционируем заголовок относительно родительского контейнера */
+		left: 15%;
+		top: 1%;
+		background-color: rgba(
+			0,
+			0,
+			0,
+			0.7
+		); /* Полупрозрачный фон для читаемости */
+		color: white; /* Цвет текста */
+		padding: 5px; /* Отступы для текста */
+		font-size: 15px;
+		z-index: 2; /* Убедитесь, что заголовок выше других элементов */
+	}
+}
+
+.gallery_marker__image:hover + .gallery_marker__title {
+	display: block;
+}

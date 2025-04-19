@@ -18,12 +18,7 @@ export class AppData extends Model<IProductItem> {
 	basket: ICardItem[] = [];
 	items: ICardItem[];
 	players: IPlayersForm[];
-	order: IOrderForm = {
-		payment: '',
-		email: '',
-		phone: '',
-		address: '',
-	};
+
 	preview: string | null;
 	formErrors: FormErrors = {};
 

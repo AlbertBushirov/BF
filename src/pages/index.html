@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html class="no-js" lang="ru">
 	<head>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-VV0SBCXQRS"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+
+			gtag('config', 'G-VV0SBCXQRS');
+		</script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#000000" />
@@ -69,6 +82,8 @@
 
 		<template id="card-catalog">
 			<div class="gallery__item card">
+				<img class="gallery_marker__image" src="" alt="" />
+				<span class="gallery_marker__title"></span>
 				<button class="gallery__item card">
 					<span class="card__category card__category_soft">софт-скил</span>
 					<h2 class="card__title">+1 час в сутках</h2>
@@ -86,7 +101,8 @@
 					<span class="card__category">другое</span>
 					<h2 class="card__title">Бэкенд-антистресс</h2>
 					<img class="card__description" src="" alt="артефакт отряда" />
-
+					<img class="gallery_marker__image" src="" alt="" />
+					<span class="gallery_marker__title"></span>
 					<div class="card__row">
 						<button class="button card__button">В корзину</button>
 						<span class="card__price">1000 синапсов</span>
@@ -270,11 +286,322 @@
 					<span class="rating__achievements_title"></span>
 					<img class="rating__achievements_image" alt="" />
 				</div>
-
 				<span class="rating__games"></span>
 				<span class="rating__win"></span>
 			</li>
 		</template>
+
+		<template id="tournament-item">
+			<h1 class="tournament__name"></h1>
+			<div class="tournament__day">
+				<h2 class="tournament__day_title"></h2>
+				<div class="tournament__players">
+					<h3 class="tournament__item-index">участники</h3>
+					<li class="tournament__player"></li>
+					<h3 class="tournament__item-index">сыграно/побед</h3>
+					<li class="tournament__results"></li>
+				</div>
+				<div class="tournament__tour_one">
+					<h2 class="tournament__title">I тур</h2>
+					<div class="tournament__game">
+						<li class="tournament__player"></li>
+						<li class="tournament__result"></li>
+					</div>
+				</div>
+				<div class="tournament__tour_two">
+					<h2 class="tournament__title">II тур</h2>
+					<div class="tournament__game">
+						<li class="tournament__player"></li>
+						<li class="tournament__result"></li>
+					</div>
+				</div>
+				<div class="tournament__tour_three">
+					<h2 class="tournament__title">III тур</h2>
+					<div class="tournament__game">
+						<li class="tournament__player"></li>
+						<li class="tournament__result"></li>
+					</div>
+				</div>
+			</div>
+			<div class="tournament__day">
+				<h2 class="tournament__day_title"></h2>
+				<div class="tournament__players">
+					<h3 class="tournament__item-index">участники</h3>
+					<li class="tournament__player"></li>
+					<h3 class="tournament__item-index">сыграно/побед</h3>
+					<li class="tournament__results"></li>
+				</div>
+				<div class="tournament__tour_one">
+					<h2 class="tournament__title">I тур</h2>
+					<div class="tournament__game">
+						<li class="tournament__player"></li>
+						<li class="tournament__result"></li>
+					</div>
+				</div>
+				<div class="tournament__tour_two">
+					<h2 class="tournament__title">II тур</h2>
+					<div class="tournament__game">
+						<li class="tournament__player"></li>
+						<li class="tournament__result"></li>
+					</div>
+				</div>
+				<div class="tournament__tour_three">
+					<h2 class="tournament__title">III тур</h2>
+					<div class="tournament__game">
+						<li class="tournament__player"></li>
+						<li class="tournament__result"></li>
+					</div>
+				</div>
+			</div>
+		</template>
+
+		<div class="memo">
+			<div class="virtual_shooting">
+				<h1>Виртуальная стрельба</h1>
+				<h2>
+					Вероятность выпадения <span class="memo_title_number">6</span> при
+					броске:
+				</h2>
+				<ul class="memo__list_virtual">
+					<li class="memo__item">
+						<span class="memo__number">1</span>
+						<img
+							class="memo__cubes"
+							src="<%=require('../images/cubes.png')%>"
+							alt="Игральные кости"
+						/>
+						<span class="memo__equals">=</span>
+						<span class="memo__result">16.6%</span>
+					</li>
+					<li class="memo__item">
+						<span class="memo__number">2</span>
+						<img
+							class="memo__cubes"
+							src="<%=require('../images/cubes.png')%>"
+							alt="Игральные кости"
+						/>
+						<span class="memo__equals">=</span>
+						<span class="memo__result">30.5%</span>
+					</li>
+					<li class="memo__item">
+						<span class="memo__number">3</span>
+						<img
+							class="memo__cubes"
+							src="<%=require('../images/cubes.png')%>"
+							alt="Игральные кости"
+						/>
+						<span class="memo__equals">=</span>
+						<span class="memo__result">42.1%</span>
+					</li>
+					<li class="memo__item">
+						<span class="memo__number">4</span>
+						<img
+							class="memo__cubes"
+							src="<%=require('../images/cubes.png')%>"
+							alt="Игральные кости"
+						/>
+						<span class="memo__equals">=</span>
+						<span class="memo__result">51.8%</span>
+					</li>
+					<li class="memo__item">
+						<span class="memo__number">5</span>
+						<img
+							class="memo__cubes"
+							src="<%=require('../images/cubes.png')%>"
+							alt="Игральные кости"
+						/>
+						<span class="memo__equals">=</span>
+						<span class="memo__result">59.8%</span>
+					</li>
+					<li class="memo__item">
+						<span class="memo__number">6</span>
+						<img
+							class="memo__cubes"
+							src="<%=require('../images/cubes.png')%>"
+							alt="Игральные кости"
+						/>
+						<span class="memo__equals">=</span>
+						<span class="memo__result">66.5%</span>
+					</li>
+					<li class="memo__item">
+						<span class="memo__number">7</span>
+						<img
+							class="memo__cubes"
+							src="<%=require('../images/cubes.png')%>"
+							alt="Игральные кости"
+						/>
+						<span class="memo__equals">=</span>
+						<span class="memo__result">75.3%</span>
+					</li>
+					<li class="memo__item">
+						<span class="memo__number">8</span>
+						<img
+							class="memo__cubes"
+							src="<%=require('../images/cubes.png')%>"
+							alt="Игральные кости"
+						/>
+						<span class="memo__equals">=</span>
+						<span class="memo__result">76.8%</span>
+					</li>
+				</ul>
+			</div>
+			<div class="memo__combat">
+				<div class="hand_combat">
+					<h1>Рукопашный бой 1vs1</h1>
+					<h2>Вероятность победы при разнице доп. очков:</h2>
+					<ul class="memo__list_combat">
+						<li>
+							<div class="memo__item">
+								<span class="memo__number">4</span>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">91.7%</span>
+							</div>
+							<div class="memo__item">
+								<span class="memo__number">3</span>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">83.3%</span>
+							</div>
+							<div class="memo__item">
+								<span class="memo__number">2</span>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">72.2%</span>
+							</div>
+							<div class="memo__item">
+								<span class="memo__number">1</span>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">58.3%</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="hand_combat">
+					<h1>Рукопашный бой 2vs2</h1>
+					<h2>Вероятность победы при разнице доп. очков:</h2>
+					<ul class="memo__list_combat">
+						<li>
+							<div class="memo__item">
+								<span class="memo__number">6</span>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">83%</span>
+							</div>
+							<div class="memo__item">
+								<span class="memo__number">5</span>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">75%</span>
+							</div>
+							<div class="memo__item">
+								<span class="memo__number">4</span>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">62.2%</span>
+							</div>
+							<div class="memo__item">
+								<span class="memo__number">3</span>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">59.3%</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="memo__info">
+				<div class="hand_combat">
+					<h1>Активация артефакта</h1>
+					<h2>Вероятность успеха:</h2>
+					<ul class="memo__list_combat">
+						<li>
+							<div class="memo__item">
+								<span class="memo__number">4</span>
+								<img
+									class="memo__cubes"
+									src="<%=require('../images/cubes.png')%>"
+									alt="Игральные кости"
+								/>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">80.25%</span>
+							</div>
+							<div class="memo__item">
+								<span class="memo__number">3</span>
+								<img
+									class="memo__cubes"
+									src="<%=require('../images/cubes.png')%>"
+									alt="Игральные кости"
+								/>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">70.37%</span>
+							</div>
+							<div class="memo__item">
+								<span class="memo__number">2</span>
+								<img
+									class="memo__cubes"
+									src="<%=require('../images/cubes.png')%>"
+									alt="Игральные кости"
+								/>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">55.56%</span>
+							</div>
+							<div class="memo__item">
+								<span class="memo__number">1</span>
+								<img
+									class="memo__cubes"
+									src="<%=require('../images/cubes.png')%>"
+									alt="Игральные кости"
+								/>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">33.33%</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="hand_combat">
+					<h1>Спасбросок брони</h1>
+					<h2>Вероятность выпадения 6:</h2>
+					<ul class="memo__list_combat">
+						<li>
+							<div class="memo__item">
+								<span class="memo__number">4</span>
+								<img
+									class="memo__cubes"
+									src="<%=require('../images/cubes.png')%>"
+									alt="Игральные кости"
+								/>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">51.8%</span>
+							</div>
+							<div class="memo__item">
+								<span class="memo__number">3</span>
+								<img
+									class="memo__cubes"
+									src="<%=require('../images/cubes.png')%>"
+									alt="Игральные кости"
+								/>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">42.1%</span>
+							</div>
+							<div class="memo__item">
+								<span class="memo__number">2</span>
+								<img
+									class="memo__cubes"
+									src="<%=require('../images/cubes.png')%>"
+									alt="Игральные кости"
+								/>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">30.5%</span>
+							</div>
+							<div class="memo__item">
+								<span class="memo__number">1</span>
+								<img
+									class="memo__cubes"
+									src="<%=require('../images/cubes.png')%>"
+									alt="Игральные кости"
+								/>
+								<span class="memo__equals">=</span>
+								<span class="memo__result">16.6%</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
 		<div class="menu-toggle" id="menu-toggle">
 			<div class="bar"></div>
@@ -294,7 +621,7 @@
 					>
 				</li>
 				<li class="menu-item">
-					<a href="#memo"
+					<a class="memo__point" href="#memo"
 						><img
 							class="footer-image"
 							src="<%=require('../images/icon_memo-04.png')%>"
@@ -306,9 +633,9 @@
 					<a href="#сhangelog"
 						><img
 							class="footer-image"
-							src="<%=require('../images/icon_сhangelog-04.png')%>"
+							src="<%=require('../images/icon_tournaments.png')%>"
 							alt="БF assistent logo"
-						/>Новости БF</a
+						/>Турнир</a
 					>
 				</li>
 

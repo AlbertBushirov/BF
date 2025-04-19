@@ -78,7 +78,7 @@ export class Rating extends Component<IRatingView> {
 					achievementTitle.textContent = achievement.title;
 
 					const achievementDiv = document.createElement('div');
-					achievementDiv.className = 'rating__achievements';
+					achievementDiv.className = 'rating__achievement';
 					achievementDiv.appendChild(achievementImage);
 					achievementDiv.appendChild(achievementTitle);
 

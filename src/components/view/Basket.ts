@@ -65,7 +65,7 @@ export class Basket extends Component<IBasketView> {
 			.then((canvas) => {
 				// Создаем изображение из канваса
 				const link = document.createElement('a');
-				link.href = canvas.toDataURL('image/jpeg');
+				link.href = canvas.toDataURL('image/jpeg', 1.0);
 				link.download = 'MyRoster.jpg';
 				link.click();
 			})

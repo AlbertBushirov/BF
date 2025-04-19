@@ -44,7 +44,6 @@ export class WebLarekAPI extends Api implements IAuctionAPI {
 				? item.description
 				: `${process.env.PUBLIC_URL}${item.description}`;
 
-		// Обрабатываем описание с картинками
 		const imageUrl =
 			item.image.startsWith('http') || item.image.startsWith('https')
 				? item.image

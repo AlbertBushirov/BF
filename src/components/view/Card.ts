@@ -25,7 +25,12 @@ const category: Category = {
 	'Легионеры Некроманта': 'card__category_nekromant',
 	'Гвардия Чародея': 'card__category_charodey',
 	'Боевая машина': 'card__category_additional',
-	'Сторонние производители': 'card__category_storonniye',
+	'Ст. производители (НО)': 'card__category_storonniye_NO',
+	'Ст. производители (АС)': 'card__category_storonniye_AS',
+	'Ст. производители (ВИМ)': 'card__category_storonniye_VIM',
+	'Ст. производители (ХБ)': 'card__category_storonniye_XB',
+	'Ст. производители (ВПМ)': 'card__category_storonniye_VPM',
+	'Ст. производители (ЛЧП)': 'card__category_storonniye_LCHP',
 	Техлист: 'card__category_other',
 	кнопка: 'card__category_button',
 	другое: 'card__category_other',
@@ -38,6 +43,9 @@ export class Card extends Component<ICardItem> {
 	protected _image?: HTMLImageElement;
 	protected _category?: HTMLElement;
 	protected _description?: HTMLImageElement;
+	protected _marker?: HTMLImageElement;
+	protected _markerTitle: HTMLElement;
+	protected _markers: HTMLInputElement;
 	protected _price: HTMLElement;
 	protected priceValue: number;
 	protected _button?: HTMLButtonElement;
@@ -64,6 +72,9 @@ export class Card extends Component<ICardItem> {
 		this._directory = container.querySelector('.directory');
 		this._description = container.querySelector('.card__description');
 		this._image = container.querySelector('.card__image');
+		this._marker = container.querySelector('.gallery_marker__image');
+		this._markerTitle = container.querySelector('.gallery_marker__title');
+		this._markers = container.querySelector('.gallery__marker');
 		this._price = ensureElement<HTMLElement>('.card__price', container);
 		this._button = container.querySelector('.card__button');
 		this._weapons = container.querySelector('.weapons-list');
@@ -308,6 +319,14 @@ export class Card extends Component<ICardItem> {
 
 	set isWheels(value: boolean) {
 		this._inputWheels.checked = value;
+	}
+
+	set marker(value: string) {
+		this.setImage(this._marker, value);
+	}
+
+	set markerTitle(value: string) {
+		this.setText(this._markerTitle, value);
 	}
 
 	renderWeapons(weapons: IItemWeapons) {

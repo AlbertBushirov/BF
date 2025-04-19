@@ -1,0 +1,115 @@
+.memo {
+	display: none;
+	h1,
+	h2 {
+		margin: 0px;
+	}
+	h1 {
+		@media (max-width: 450px) {
+			font-size: 19px;
+		}
+	}
+	h2 {
+		@media (max-width: 450px) {
+			font-size: 14px;
+		}
+	}
+	@media (max-width: 450px) {
+		margin-top: 20px;
+	}
+}
+
+.memo.active {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.memo__list_virtual {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	margin-top: 40px;
+	padding: 0px;
+	column-gap: 100px;
+	list-style: none;
+	@media (max-width: 450px) {
+		column-gap: 40px;
+
+		margin-top: 20px;
+	}
+}
+
+.virtual_shooting {
+	text-align: center;
+	display: flexbox;
+	justify-items: center;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.459);
+}
+
+.memo__item {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	padding-block: 5px;
+}
+
+.memo__number {
+	font-size: 60px;
+	@media (max-width: 450px) {
+		font-size: 30px;
+	}
+}
+
+.memo__cubes {
+	width: 70px;
+	@media (max-width: 450px) {
+		width: 40px;
+	}
+}
+
+.memo__equals {
+	font-size: 50px;
+	@media (max-width: 450px) {
+		font-size: 20px;
+	}
+}
+
+.memo__result {
+	color: black;
+	background-color: white;
+	border-radius: 0.2rem;
+	padding: 1px;
+	font-size: 25px;
+	@media (max-width: 450px) {
+		font-size: 15px;
+	}
+}
+
+.hand_combat {
+	justify-items: center;
+	text-align: center;
+}
+//Стили для рукопашного боя
+
+.memo__combat {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	border-bottom: 2px solid rgba(255, 255, 255, 0.459);
+}
+
+.memo__list_combat {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	padding: 0px;
+	column-gap: 100px;
+	list-style: none;
+	@media (max-width: 450px) {
+		font-size: 15px;
+	}
+}
+
+.memo__info {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	border-bottom: 2px solid rgba(255, 255, 255, 0.459);
+}

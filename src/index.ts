@@ -15,7 +15,6 @@ import { Page } from './components/View/Page';
 import { Modal } from './components/View/Modal';
 import { Basket } from './components/View/Basket';
 import { Rating } from './components/view/Rating';
-import html2canvas from 'html2canvas';
 
 //Управление событиями и API
 const events = new EventEmitter();
@@ -43,6 +42,7 @@ const cardBasketTemplateFM = ensureElement<HTMLTemplateElement>(
 	'#card-basket_fighting_machine'
 );
 const ratingTemplate = ensureElement<HTMLTemplateElement>('#rating');
+const memoTemplate = ensureElement<HTMLElement>('.memo');
 
 // Инициализация состояния приложения
 const appData = new AppData({}, events);
@@ -57,6 +57,9 @@ events.on<CatalogChangeEvent>('items:changed', () => {
 		const card = new Card('card', cloneTemplate(cardCatalogTemplate), {
 			onClick: () => events.emit('card:select', item),
 		});
+
+		card.marker = item.marker;
+		card.markerTitle = item.markerTitle;
 
 		return card.render(item);
 	});
@@ -178,15 +181,30 @@ events.on('rating:open', () => {
 	});
 });
 
+//Открытие справочника
+events.on('memo:open', () => {
+	page.locked = true;
+	memoTemplate.classList.add('active');
+	modal.render({
+		content: memoTemplate,
+	});
+});
+
 window.addEventListener('hashchange', () => {
 	if (window.location.hash === '#rating') {
 		events.emit('rating:open');
+	}
+	if (window.location.hash === '#memo') {
+		events.emit('memo:open');
 	}
 });
 
 document.addEventListener('DOMContentLoaded', () => {
 	if (window.location.hash === '#rating') {
 		events.emit('rating:open');
+	}
+	if (window.location.hash === '#memo') {
+		events.emit('memo:open');
 	}
 });
 
@@ -201,6 +219,8 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.image = res.image;
 			item.price = res.price;
 			item.directory = res.directory;
+			item.marker = res.marker;
+			item.markerTitle = res.markerTitle;
 
 			const card = new Card('card', cloneTemplate(cardPreviewTemplate), {
 				onClick: () => {

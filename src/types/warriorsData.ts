@@ -1,3 +1,13 @@
+export interface Marker {
+	image: string;
+	title: string;
+}
+
+const NewWarriors: Marker = {
+	image: require('../images/marker_new.png'),
+	title: 'Новый отряд',
+};
+
 export const localArmy = [
 	//Войска Колдуна
 	{
@@ -1097,7 +1107,7 @@ export const localArmy = [
 	{
 		id: 'SPDrakonoborci',
 		title: 'Драконоборцы',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (НО)',
 		description:
 			'https://sun9-41.userapi.com/impg/NVJgRGuh6Th1TvhBF8tQcgSjD2WJtiHLuI-F0Q/JzRn_xmR03g.jpg?size=1090x726&quality=95&sign=7a5a313723db6229ee06a27400113c8f&type=album',
 		image: require('../images/Storonie/SPDrakonoborci.jpg'), // Прямой URL для удаленного изображения
@@ -1109,7 +1119,7 @@ export const localArmy = [
 	{
 		id: 'SPKamlak',
 		title: 'Камлак',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (НО)',
 		description:
 			'https://sun9-74.userapi.com/impg/s1pVSD12LE5H5WXhFGvDT8LypF55JzJzJiKr7Q/FgY2zo64iHM.jpg?size=1090x726&quality=95&sign=fb8bb20438fa9caf3df996f44e90fe8a&type=album',
 		image: require('../images/Storonie/SPKamlak.jpg'), // Прямой URL для удаленного изображения
@@ -1121,7 +1131,7 @@ export const localArmy = [
 	{
 		id: 'SPKitoboi',
 		title: 'Китобои',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (НО)',
 		description:
 			'https://sun9-33.userapi.com/impg/D7nWIl_NITjS6s5Pr6dl_o1Fi4K9hLxG2XRD2w/zKwwTIG0yCY.jpg?size=1090x726&quality=95&sign=b04a389bd8b7592432ddf081e8972aae&type=album',
 		image: require('../images/Storonie/SPKitoboi.jpg'), // Прямой URL для удаленного изображения
@@ -1133,7 +1143,7 @@ export const localArmy = [
 	{
 		id: 'SPKricheri',
 		title: 'Кричеры',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (НО)',
 		description:
 			'https://sun9-4.userapi.com/impg/qETRHTS4v2XaRf0nsxGjxpecAvcg2HYMD7pPsA/1MpMfaz-Ni0.jpg?size=1090x726&quality=95&sign=10627e0536f29bb85c5863f12c25a7ea&type=album',
 		image: require('../images/Storonie/SPKricheri.jpg'), // Прямой URL для удаленного изображения
@@ -1142,22 +1152,11 @@ export const localArmy = [
 		directory: '',
 		button: '',
 	},
-	{
-		id: 'SPNeukronimie',
-		title: 'Неукротимые',
-		category: 'Сторонние производители',
-		description:
-			'https://sun9-24.userapi.com/impg/2WNgLhj_KMrwLireOzBYmO_KvsEfiyJbTvnFLg/04q7_dmwHXQ.jpg?size=1090x726&quality=95&sign=628ea791149fd1929ef27ab3d4d0ba4f&type=album',
-		image: require('../images/Storonie/SPNeukronimie.jpg'), // Прямой URL для удаленного изображения
-		price: 210,
-		inBasket: true,
-		directory: '',
-		button: '',
-	},
+
 	{
 		id: 'SPPredvestniki4',
 		title: 'Предвестники',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (НО)',
 		description:
 			'https://sun9-54.userapi.com/impg/vQ7OqwTWbQ7Tba2IDmzGW3Wi059U5Di2LAWk8g/10PNCkLkxMA.jpg?size=1090x726&quality=95&sign=bd1176f6f57fb93b791ed349a0f96504&type=album',
 		image: require('../images/Storonie/SPPredvestniki4.jpg'), // Прямой URL для удаленного изображения
@@ -1169,7 +1168,7 @@ export const localArmy = [
 	{
 		id: 'SPPredvestniki5',
 		title: 'Предвестники (5 бойцов)',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (НО)',
 		description:
 			'https://sun9-54.userapi.com/impg/vQ7OqwTWbQ7Tba2IDmzGW3Wi059U5Di2LAWk8g/10PNCkLkxMA.jpg?size=1090x726&quality=95&sign=bd1176f6f57fb93b791ed349a0f96504&type=album',
 		image: require('../images/Storonie/SPPredvestniki5.jpg'), // Прямой URL для удаленного изображения
@@ -1181,7 +1180,7 @@ export const localArmy = [
 	{
 		id: 'SPStragiGizi',
 		title: 'Стражи Гизы',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (НО)',
 		description:
 			'https://sun9-65.userapi.com/impg/amTLXF3NkH9ujq0HSi-Qqj7NPlOF1q9BLZG8lA/hYs12KFlbS8.jpg?size=1090x726&quality=95&sign=75a812d9b68e96fca9b4d7c8f2d8c1ae&type=album',
 		image: require('../images/Storonie/SPStragiGizi.jpg'), // Прямой URL для удаленного изображения
@@ -1193,7 +1192,7 @@ export const localArmy = [
 	{
 		id: 'SPTechKnight',
 		title: 'Технорыцари',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (НО)',
 		description:
 			'https://sun9-37.userapi.com/impg/3aQSPgiRPozd-PIfWyZo48lMZSyj0NycyEj2-w/iA4H5V9vE_c.jpg?size=1090x726&quality=95&sign=869ed39928fb6e8e2ee69ce6cb67a34c&type=album',
 		image: require('../images/Storonie/SPTechKnight.jpg'), // Прямой URL для удаленного изображения
@@ -1205,7 +1204,7 @@ export const localArmy = [
 	{
 		id: 'SPHardkor',
 		title: 'отряд Хардкор',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (НО)',
 		description:
 			'https://sun9-38.userapi.com/impg/gjiimzrJOv66xDpMVzQ-eLCoXMl5zSpMm9ztfg/fbxImTxZs5M.jpg?size=1090x726&quality=95&sign=2f8d172adb30bb60b8ee5d9863e21ec3&type=album',
 		image: require('../images/Storonie/SPHardkor.jpg'), // Прямой URL для удаленного изображения
@@ -1217,7 +1216,7 @@ export const localArmy = [
 	{
 		id: 'SPShotrm',
 		title: 'Био-взвод Шторм',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (НО)',
 		description:
 			'https://sun9-5.userapi.com/impg/8cfo4mAepYybkBdXk2dICVhLy6V6Pp0j4FGQiA/q3Ttc_-qq88.jpg?size=1090x726&quality=95&sign=56750b4e298ebbe81e75632059946309&type=album',
 		image: require('../images/Storonie/SPShotrm.jpg'), // Прямой URL для удаленного изображения
@@ -1229,7 +1228,7 @@ export const localArmy = [
 	{
 		id: 'SPKallisto',
 		title: 'Каллисто',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (НО)',
 		description:
 			'https://sun9-12.userapi.com/impg/bvR7cJyi5lLMPiwmNuAH-Ap47j87SOJ9st3y2Q/e48La_SU8U8.jpg?size=1090x726&quality=95&sign=a4cf18e61919cd11f379c0416d373c49&type=album',
 		image: require('../images/Storonie/SPKallisto.jpg'), // Прямой URL для удаленного изображения
@@ -1241,7 +1240,7 @@ export const localArmy = [
 	{
 		id: 'SPDemoniSulfura',
 		title: 'Демоны Сульфура',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (НО)',
 		description:
 			'https://sun9-57.userapi.com/impg/0gRvloQ1P84MAEuGJUeGq8fxJkr2N5XkZDXm3A/xTgeRLgFPuE.jpg?size=1090x726&quality=95&sign=34de08e2a94a3ab6554dddf66126b645&type=album',
 		image: require('../images/Storonie/SPDemoniSulfura.jpg'), // Прямой URL для удаленного изображения
@@ -1252,9 +1251,61 @@ export const localArmy = [
 		button: '',
 	},
 	{
+		id: 'SPLizardi',
+		title: 'Лизарды',
+		category: 'Ст. производители (НО)',
+		description:
+			'https://sun9-77.userapi.com/impg/akaHTu4Hbz681SYEODniHh6LUFn-vZawk2z6Vg/csxVDMkT8N0.jpg?size=1090x726&quality=95&sign=d882e3ee8f7901ca9bff1c682c27f951&type=album',
+		image: require('../images/Storonie/SPLizardi.jpg'), // Прямой URL для удаленного изображения
+		price: 150,
+		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта: 67% ',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPKlanLokAmon',
+		title: 'Лок`Амон',
+		category: 'Ст. производители (НО)',
+		description: require('../images/Artefakti/LokAmon.jpg'),
+		image: require('../images/Storonie/SPKlanLokAmon.jpg'),
+		price: 165,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPKlanLokAmon5',
+		title: 'Лок`Амон (5 бойцов)',
+		category: 'Ст. производители (НО)',
+		description: require('../images/Artefakti/LokAmon.jpg'),
+		image: require('../images/Storonie/SPKlanLokAmon5.jpg'),
+		price: 205,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPNeukronimie',
+		title: 'Неукротимые',
+		category: 'Ст. производители (ВИМ)',
+		description:
+			'https://sun9-24.userapi.com/impg/2WNgLhj_KMrwLireOzBYmO_KvsEfiyJbTvnFLg/04q7_dmwHXQ.jpg?size=1090x726&quality=95&sign=628ea791149fd1929ef27ab3d4d0ba4f&type=album',
+		image: require('../images/Storonie/SPNeukronimie.jpg'), // Прямой URL для удаленного изображения
+		price: 210,
+		inBasket: true,
+		directory: '',
+		button: '',
+	},
+	{
 		id: 'SPVedmaki',
 		title: 'Отряд Ведьмаки',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ВИМ)',
 		description:
 			'https://sun9-39.userapi.com/impg/Vy9bev8buZwWaUlylFyZW9Wwd00JKFC-wFEHRA/CrecKwzdFg0.jpg?size=1090x726&quality=95&sign=3a378a6725de8ba6d48b6a03884e08ec&type=album',
 		image: require('../images/Storonie/SPVedmaki.jpg'), // Прямой URL для удаленного изображения
@@ -1266,7 +1317,7 @@ export const localArmy = [
 	{
 		id: 'SPVerniePrinc',
 		title: 'Верные Принцу',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ВИМ)',
 		description:
 			'https://sun9-76.userapi.com/impg/HNHPHCTWT7KwhFB9hv9PDhJ67LeXddIlD5dG0A/VbGFSLX8uHY.jpg?size=1090x726&quality=95&sign=6d50c3b71545e09e97e29fb17bb24bdb&type=album',
 		image: require('../images/Storonie/SPVerniePrinc.jpg'), // Прямой URL для удаленного изображения
@@ -1278,7 +1329,7 @@ export const localArmy = [
 	{
 		id: 'SPGeroyBilin',
 		title: 'Герои былин',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ВИМ)',
 		description:
 			'https://sun9-3.userapi.com/impg/G6HfRg6uzUJkBjRpLT9fd5rhk6o3rhwHRawCAA/wwetHskAGEA.jpg?size=1090x726&quality=95&sign=a73e4676aa4d6f6606d8e08ff36aa9f7&type=album',
 		image: require('../images/Storonie/SPGeroyBilin.jpg'), // Прямой URL для удаленного изображения
@@ -1290,7 +1341,7 @@ export const localArmy = [
 	{
 		id: 'SPHichniki',
 		title: 'Отряд Хищники',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ВИМ)',
 		description:
 			'https://sun9-9.userapi.com/impg/yHTzvtsyIQPCQL5Sp8Np2RDaXn5qkA0dBKd4KA/5JhyPQGWGHE.jpg?size=1090x726&quality=95&sign=b73e232cfaa07b0da916ee079c5c508d&type=album',
 		image: require('../images/Storonie/SPHichniki.jpg'), // Прямой URL для удаленного изображения
@@ -1303,7 +1354,7 @@ export const localArmy = [
 	{
 		id: 'SPChempioniAreni',
 		title: 'Чемпионы Арены',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ВИМ)',
 		description:
 			'https://sun9-22.userapi.com/impg/jNZqI8BBjyVW-9A-8k0Q_ZdqkfyaJOB8G9mpxg/pMTzV26zfYo.jpg?size=1090x726&quality=95&sign=1272b24d89c9a560c4d02a1c6cf1e77e&type=album',
 		image: require('../images/Storonie/SPChempioniAreni.jpg'), // Прямой URL для удаленного изображения
@@ -1315,7 +1366,7 @@ export const localArmy = [
 	{
 		id: 'SPKiberici',
 		title: 'Киберийцы',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ХБ)',
 		description:
 			'https://sun9-73.userapi.com/impg/E7CFxy2mUdNPVOQW8Td1EmZRYRfu0v0s_QQMBw/o5gZiFqO_BI.jpg?size=1090x726&quality=95&sign=d2a250e63650422c5a65e711afd4e664&type=album',
 		image: require('../images/Storonie/SPKiberici.jpg'), // Прямой URL для удаленного изображения
@@ -1327,7 +1378,7 @@ export const localArmy = [
 	{
 		id: 'SPKsenohanteri',
 		title: 'Ксенохантеры',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ХБ)',
 		description:
 			'https://sun9-11.userapi.com/impg/BeMJLQZXNUOO2E6gX0EX8EdF7fB9r66F2Fj-Tw/TR3fL_4ZkWk.jpg?size=1090x726&quality=95&sign=5c8d98af5ac57d583342322a9b8abbab&type=album',
 		image: require('../images/Storonie/SPKsenohanteri.jpg'), // Прямой URL для удаленного изображения
@@ -1339,7 +1390,7 @@ export const localArmy = [
 	{
 		id: 'SPStalnayaPyaterka',
 		title: 'Стальная Пятерка',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ХБ)',
 		description:
 			'https://sun9-44.userapi.com/impg/L3oWOYVKrTZs4splw8oFcnkgrBzXG8O6OzN4yg/9mSZ85XZNyA.jpg?size=1090x726&quality=95&sign=c99602f592ed23ef78a833ed208ae032&type=album',
 		image: require('../images/Storonie/SPStalnayaPyaterka.jpg'), // Прямой URL для удаленного изображения
@@ -1351,7 +1402,7 @@ export const localArmy = [
 	{
 		id: 'SPTangar',
 		title: 'Тангар',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ХБ)',
 		description:
 			'https://sun9-61.userapi.com/impg/ZJ6GlfcX02jbu9cq20VzWS8Lt-ztWU14FD0CTA/AeYHAYLyyoY.jpg?size=1090x726&quality=95&sign=0ff8a37c774bd9bcae9cf4779916b0d2&type=album',
 		image: require('../images/Storonie/SPTangar.jpg'), // Прямой URL для удаленного изображения
@@ -1363,7 +1414,7 @@ export const localArmy = [
 	{
 		id: 'SPTropik',
 		title: 'Тропик',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ХБ)',
 		description:
 			'https://sun9-15.userapi.com/impg/_wiHsBCcTySlpzKZLHUS9rhwvuZp2GeZELlX9A/Z3V3sNToXZQ.jpg?size=1090x726&quality=95&sign=0d92952a958f2b62a585c83b3ad27543&type=album',
 		image: require('../images/Storonie/SPTropik.jpg'), // Прямой URL для удаленного изображения
@@ -1375,7 +1426,7 @@ export const localArmy = [
 	{
 		id: 'SPHorni',
 		title: 'Хорны',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ХБ)',
 		description:
 			'https://sun9-24.userapi.com/impg/OIlCGEIIdxVQeXgKFstDIZ1YBvZS-BAzdafNbQ/M3Q17kGwTNY.jpg?size=1090x726&quality=95&sign=b500074e51206d20a6d900cc33b0b96e&type=album',
 		image: require('../images/Storonie/SPHorni.jpg'), // Прямой URL для удаленного изображения
@@ -1387,7 +1438,7 @@ export const localArmy = [
 	{
 		id: 'SPBladhorn',
 		title: 'Бладхорн',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (АС)',
 		description:
 			'https://sun9-59.userapi.com/impg/IRp_fukI99grG5XwnxCGYIJDwSJronStbToZ0w/ZS6ldfjbTO4.jpg?size=1090x726&quality=95&sign=3cd2dde77c51ba55216b7fb783200fdf&type=album',
 		image: require('../images/Storonie/SPBladhorn.jpg'), // Прямой URL для удаленного изображения
@@ -1399,7 +1450,7 @@ export const localArmy = [
 	{
 		id: 'SPBorciZaOgon',
 		title: 'Борцы за Огонь',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (АС)',
 		description:
 			'https://sun9-40.userapi.com/impg/1wu1K-vtPJNjF1Yx7gJL5h1KKUqcYDBJ_Rbilg/YlkH6AQlgU4.jpg?size=1090x726&quality=95&sign=4a22e68c1cf7975f92faf336b6bd6c82&type=album',
 		image: require('../images/Storonie/SPBorciZaOgon.jpg'), // Прямой URL для удаленного изображения
@@ -1411,7 +1462,7 @@ export const localArmy = [
 	{
 		id: 'SPBratyaIgarashi',
 		title: 'Братья Игараши',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (АС)',
 		description:
 			'https://sun9-60.userapi.com/impg/J19aPS302mM7cjZQYfy8_vmXwpTAQ1D_EiDG4A/U6k1Usllxus.jpg?size=1090x726&quality=95&sign=84f8dcb1019ddd25724c77136a998478&type=album',
 		image: require('../images/Storonie/SPBratyaIgarashi.jpg'), // Прямой URL для удаленного изображения
@@ -1423,7 +1474,7 @@ export const localArmy = [
 	{
 		id: 'SPValkirii',
 		title: 'Валькирии',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (АС)',
 		description:
 			'https://sun9-5.userapi.com/impg/emxy63d9Uay9qL-9c3kYAoOfa7FYcUf-tScVKQ/IAQKpDxciIU.jpg?size=1090x726&quality=95&sign=6067cc7f437fe196d7580e37ba4a9724&type=album',
 		image: require('../images/Storonie/SPValkirii.jpg'), // Прямой URL для удаленного изображения
@@ -1434,8 +1485,8 @@ export const localArmy = [
 	},
 	{
 		id: 'SPGoblinilesa',
-		title: 'Гоблины Дикого Леса',
-		category: 'Сторонние производители',
+		title: 'Гоблины дикого леса',
+		category: 'Ст. производители (АС)',
 		description:
 			'https://sun9-28.userapi.com/impg/R0VKmbJ2tVMS3BBzs5EnkScTTVF-tqxz85k6tA/NHODrsQf7FQ.jpg?size=1090x726&quality=95&sign=7d4845a0ebf87dae318a9a9ff167426a&type=album',
 		image: require('../images/Storonie/SPGoblinilesa.jpg'), // Прямой URL для удаленного изображения
@@ -1447,7 +1498,7 @@ export const localArmy = [
 	{
 		id: 'SPDagaz',
 		title: 'Дагаз',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (АС)',
 		description:
 			'https://sun9-20.userapi.com/impg/-le_33wremBBJPc3RH38SyklUltsgSkkM-dEtw/1wP87gHuHtk.jpg?size=1090x726&quality=95&sign=1723a9dbe576f05cd86859664cd44ba5&type=album',
 		image: require('../images/Storonie/SPDagaz.jpg'),
@@ -1459,7 +1510,7 @@ export const localArmy = [
 	{
 		id: 'SPDerzkayaStaya',
 		title: 'Дерзкая Стая',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (АС)',
 		description:
 			'https://sun9-73.userapi.com/impg/FdZdZPgOY89XJERMLMEKcNAd_xY5xV1irljs-Q/ER3xtLpriRQ.jpg?size=1090x726&quality=95&sign=7e42dd8c54a6557b550f1fb2315051a4&type=album',
 		image: require('../images/Storonie/SPDerzkayaStaya.jpg'), // Прямой URL для удаленного изображения
@@ -1471,7 +1522,7 @@ export const localArmy = [
 	{
 		id: 'SPMinoni',
 		title: 'Банда Миньоны',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (АС)',
 		description:
 			'https://sun9-31.userapi.com/impg/66ZwrzRFKIsActI7V4BkZBz2mjrnC-bEJlziag/cGFDGThPtZw.jpg?size=1090x726&quality=95&sign=c9c787a3c118ed53cb95287321e1e31a&type=album',
 		image: require('../images/Storonie/SPMinoni.jpg'),
@@ -1483,7 +1534,7 @@ export const localArmy = [
 	{
 		id: 'SPFangeti',
 		title: 'Фангеты',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (АС)',
 		description:
 			'https://sun9-7.userapi.com/impg/i6ZUdzh5R91HNGzvWpBKZgzq088jfVn4t8D8SA/laBYv8ZqT5s.jpg?size=1090x726&quality=95&sign=687d4250cfa845c07f552e224d887874&type=album',
 		image: require('../images/Storonie/SPFangeti.jpg'), // Прямой URL для удаленного изображения
@@ -1495,7 +1546,7 @@ export const localArmy = [
 	{
 		id: 'SPCherniRassvet',
 		title: 'Чёрный Рассвет',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (АС)',
 		description:
 			'https://sun9-8.userapi.com/impg/eHSkgTl_rEQ1WC9bcnrkmL65-kpDPxg05UGqKw/tJUZRz_SYss.jpg?size=1090x726&quality=95&sign=40617461ff2c19f6f12267c90e282cb1&type=album',
 		image: require('../images/Storonie/SPCherniRassvet.jpg'), // Прямой URL для удаленного изображения
@@ -1507,7 +1558,7 @@ export const localArmy = [
 	{
 		id: 'SPNewAmazonki',
 		title: 'Новые Амазонки',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ВПМ)',
 		description:
 			'https://sun9-76.userapi.com/impg/Qdy0Ot8wB5iVbwzTsEzeOVT1HIFCcdLc0zj9Mw/QI7A5v95Z9M.jpg?size=1090x726&quality=95&sign=124c5fb07c97a6e1e4c5a92807f774f2&type=album',
 		image: require('../images/Storonie/SPNewAmazonki.jpg'), // Прямой URL для удаленного изображения
@@ -1519,7 +1570,7 @@ export const localArmy = [
 	{
 		id: 'oskal_Nochi',
 		title: 'Оскал Ночи',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ВПМ)',
 		description:
 			'https://sun9-47.userapi.com/impg/7dPOSFAoGCZ9peUThuh1fXvShxDN3c_lKuyMJg/5JoKabrOc0k.jpg?size=1090x726&quality=95&sign=01b91c1764f8e5bfe9997207cf7d5dd2&type=album',
 		image: require('../images/Storonie/oskal_Nochi.jpg'), // Прямой URL для удаленного изображения
@@ -1531,7 +1582,7 @@ export const localArmy = [
 	{
 		id: 'SPPesherniLudi',
 		title: 'Пещерные Люди',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ВПМ)',
 		description:
 			'https://sun9-28.userapi.com/impg/VNPJ406fBRNCPVssKtd5O-yz23btPilXoD6a5Q/lbSr4gKYRfM.jpg?size=1090x726&quality=95&sign=5dff1a87e679b5c853d20dd6bfba5e01&type=album',
 		image: require('../images/Storonie/SPPesherniLudi.jpg'), // Прямой URL для удаленного изображения
@@ -1543,7 +1594,7 @@ export const localArmy = [
 	{
 		id: 'SPFemiskira',
 		title: 'Фемискира',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ВПМ)',
 		description:
 			'https://sun9-79.userapi.com/impg/gBe4jnFnSR2GpQ_GKcryq_3UeegQDdjMneY6Ww/19b1tTYeK_4.jpg?size=1090x726&quality=95&sign=896920605e8d2c62be58d06f72e71b24&type=album',
 		image: require('../images/Storonie/SPFemiskira.jpg'), // Прямой URL для удаленного изображения
@@ -1555,7 +1606,7 @@ export const localArmy = [
 	{
 		id: 'SPCherni_Ricari',
 		title: 'Чёрные рыцари',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ВПМ)',
 		description:
 			'https://sun9-55.userapi.com/impg/4RKOmAZcR0oNhAyREmopyMMXgRwwrVxE0QV0_g/l8xNy9R0M_Y.jpg?size=1090x726&quality=95&sign=eb4a03674711893dae3b87ba46dfe25c&type=album',
 		image: require('../images/Storonie/SPCherni_Ricari.jpg'), // Прямой URL для удаленного изображения
@@ -1567,7 +1618,7 @@ export const localArmy = [
 	{
 		id: 'SPBergi',
 		title: 'Берги',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ЛЧП)',
 		description:
 			'https://sun9-67.userapi.com/impg/d5XO5yA9LOANelhmDFPkDyfPDqroInw9MLDE9Q/9f3f7i5wedQ.jpg?size=1090x726&quality=95&sign=1fc66d08763eb5f0838bdf9cdd0c5e37&type=album',
 		image: require('../images/Storonie/SPBergi.jpg'), // Прямой URL для удаленного изображения
@@ -1580,7 +1631,7 @@ export const localArmy = [
 	{
 		id: 'SPHraniteliRochi',
 		title: 'Хранители Рощи',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ЛЧП)',
 		description:
 			'https://sun9-59.userapi.com/impg/CXUClEk_tSE8rQFOSKSKN0r7Z8DfnElKPeUC3A/DOCSEnLTRMw.jpg?size=1090x726&quality=95&sign=618e0ea433360ebbc82c58e6f3e9d715&type=album',
 		image: require('../images/Storonie/SPHraniteliRochi.jpg'), // Прямой URL для удаленного изображения
@@ -1592,7 +1643,7 @@ export const localArmy = [
 	{
 		id: 'SPGornyaki',
 		title: 'Горняки',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ЛЧП)',
 		description:
 			'https://sun9-61.userapi.com/impg/CuIJlFbL-CADqUjhRux4g9r86t4lK3gvluSQlA/yJOZrvY8f2o.jpg?size=1090x726&quality=95&sign=856e2039c58056111209133192335434&type=album',
 		image: require('../images/Storonie/SPGornyaki.jpg'), // Прямой URL для удаленного изображения
@@ -1604,7 +1655,7 @@ export const localArmy = [
 	{
 		id: 'SPGromoboi',
 		title: 'Громобои',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ЛЧП)',
 		description:
 			'https://sun9-23.userapi.com/impg/KfwiGhX8I3aeCkGrwef-e3WrdtVLq9BTy3GzBA/9vTNjKlZcrc.jpg?size=1090x726&quality=95&sign=57bc4b66c7daf09113a382a3055a9d82&type=album',
 		image: require('../images/Storonie/SPGromoboi.jpg'), // Прямой URL для удаленного изображения
@@ -1616,7 +1667,7 @@ export const localArmy = [
 	{
 		id: 'SPKiberzveri',
 		title: 'Кибер Звери',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ЛЧП)',
 		description:
 			'https://sun9-47.userapi.com/impg/RRORQOUkrDxjNkLirfotv_Ma8xd1rqTucrF--Q/qeVjnLSLQbk.jpg?size=1090x726&quality=95&sign=281cd1fc16275c529cb0b06c7da9dbdf&type=album',
 		image: require('../images/Storonie/SPKiberzveri.jpg'), // Прямой URL для удаленного изображения
@@ -1628,7 +1679,7 @@ export const localArmy = [
 	{
 		id: 'SPSumerechniStrazhi',
 		title: 'Сумеречные стражи',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ЛЧП)',
 		description:
 			'https://sun9-50.userapi.com/impg/ITq0dOUEKJrKmUD7vGFrGxLbkkurlgqNbOgLBg/867GOtz4nxk.jpg?size=1090x726&quality=95&sign=7de871346c989facc8bb5f0094790c2e&type=album',
 		image: require('../images/Storonie/SPSumerechniStrazhi.jpg'), // Прямой URL для удаленного изображения
@@ -1640,7 +1691,7 @@ export const localArmy = [
 	{
 		id: 'SPTvoreniyaMarkusa',
 		title: 'Творения Маркуса',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ЛЧП)',
 		description:
 			'https://sun9-35.userapi.com/impg/VPyS1PQC2zzl0s1F6ZpkQmO0exLdB_mA5DKOcg/bfYVUqy_Z6I.jpg?size=1090x726&quality=95&sign=19a9e50cd50dcc90a98db00ab9f96316&type=album',
 		image: require('../images/Storonie/SPTvoreniyaMarkusa.jpg'), // Прямой URL для удаленного изображения
@@ -1652,7 +1703,7 @@ export const localArmy = [
 	{
 		id: 'SPZhneci',
 		title: 'Темные Жнецы',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ЛЧП)',
 		description:
 			'https://sun9-5.userapi.com/impg/MvIQrM4l7YGWYfJgHAoMay7Yqw01E8EmoKk0Ew/BNSmCSKCz-o.jpg?size=1090x726&quality=95&sign=578841dbead4d3b6cfee2f6d2b45379a&type=album',
 		image: require('../images/Storonie/SPZhneci.jpg'), // Прямой URL для удаленного изображения
@@ -1664,7 +1715,7 @@ export const localArmy = [
 	{
 		id: 'SPTritalianci',
 		title: 'Триталианцы',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ЛЧП)',
 		description:
 			'https://sun9-37.userapi.com/impg/mZGXhPdnfWKDFkefydOGv-QQO1OP8TneU2t-DQ/FC2g8cp1nFc.jpg?size=1090x726&quality=95&sign=97bf9f92e1822f0fd52fcc347258a107&type=album',
 		image: require('../images/Storonie/SPTritalianci.jpg'), // Прямой URL для удаленного изображения
@@ -1676,7 +1727,7 @@ export const localArmy = [
 	{
 		id: 'SPChama-Tor',
 		title: 'Чама-Тор',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ЛЧП)',
 		description:
 			'https://sun9-52.userapi.com/impg/0MvknPoNdOcbzGwcU1OOiReESGQb4EVYD0sUWg/ODbo-UsbUlg.jpg?size=1090x726&quality=95&sign=a87cf8941ce09e064febbc3213a65273&type=album',
 		image: require('../images/Storonie/SPChama-Tor.jpg'), // Прямой URL для удаленного изображения
@@ -1687,8 +1738,8 @@ export const localArmy = [
 	},
 	{
 		id: 'SPKhakylmoa',
-		title: 'Воины Кхакульмоа',
-		category: 'Сторонние производители',
+		title: 'Воины К`хакульмоа',
+		category: 'Ст. производители (ЛЧП)',
 		description:
 			'https://sun9-1.userapi.com/impg/S478mpL5SogrugqwQjlUeI0SYQZHRpY5Jq1jGw/2omBpUvrM1g.jpg?size=1090x726&quality=95&sign=2c01eae70ee4f63d9d4b18edeca101cf&type=album',
 		image: require('../images/Storonie/SPKhakylmoa.jpg'), // Прямой URL для удаленного изображения
@@ -1696,5 +1747,19 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
+	},
+	{
+		id: 'SPKromeshniki',
+		title: 'Кромешники',
+		category: 'Ст. производители (ЛЧП)',
+		description:
+			'https://sun9-6.userapi.com/impg/QuMwRjPb4r12pM--3fQXvvJ_ov5Uh5_nt-J7FA/J_dtftmRS2k.jpg?size=1090x726&quality=95&sign=b3a4b8f8c75306e4a7e8bfad3a4cf819&type=album',
+		image: require('../images/Storonie/SPKromeshniki.jpg'),
+		price: 290,
+		inBasket: true,
+		directory: 'Вероятность успешного использования Артефакта: 67%',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
 	},
 ];
