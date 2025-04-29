@@ -1,7 +1,6 @@
 // Приложение
 import { Weapon } from './weapons';
 import { Cup } from './playersData';
-import { Marker } from './warriorsData';
 
 export interface IProductItem {
 	basket: IBasket[];
@@ -19,8 +18,6 @@ export type IItemWeapons = Array<
 >;
 
 type IItemCup = Array<Cup>;
-
-type IItemMarker = Array<Marker>;
 
 // Товар
 export type ICardItem =

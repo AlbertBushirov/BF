@@ -57,7 +57,7 @@ export const localWeapons = [
 	{
 		id: 'ObePolbustuk',
 		title: 'Полб`Уст`Ук',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (НО)',
 		image: require('../images/TehList/ObePolbustuk.jpg'), // Прямой URL для удаленного изображения
 		price: 100,
 		inBasket: true,
@@ -68,7 +68,7 @@ export const localWeapons = [
 	{
 		id: 'ObeOriana',
 		title: 'Ориана',
-		category: 'Сторонние производители',
+		category: 'Ст. производители (ВПМ)',
 		image: require('../images/TehList/ObeOriana.jpg'), // Прямой URL для удаленного изображения
 		price: 120,
 		inBasket: true,

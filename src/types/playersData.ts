@@ -147,7 +147,7 @@ export const localPlayers = [
 		image: require('../images/avatar_gamers.png'),
 		player: 'Эдуард Пермяков',
 		achievements: [organizerOneMoscow, organizerTwoMoscow],
-		games: 0, //Побед: 0
+		games: 0,
 		winrating: 0,
 		win: 0,
 	},
@@ -156,7 +156,7 @@ export const localPlayers = [
 		image: require('../images/avatar_gamers.png'),
 		player: 'Пётр Девятко',
 		achievements: [organizerOneSPB, organizerTwoSPB],
-		games: 0, //Побед: 0
+		games: 0,
 		winrating: 0,
 		win: 0,
 	},
@@ -170,7 +170,7 @@ export const localPlayers = [
 			organizerTwoMoscow,
 			organizerOneOmsk,
 		],
-		games: 0, //Побед: 0
+		games: 0,
 		winrating: 0,
 		win: 0,
 	},

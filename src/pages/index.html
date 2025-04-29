@@ -291,67 +291,72 @@
 			</li>
 		</template>
 
-		<template id="tournament-item">
-			<h1 class="tournament__name"></h1>
-			<div class="tournament__day">
-				<h2 class="tournament__day_title"></h2>
-				<div class="tournament__players">
-					<h3 class="tournament__item-index">участники</h3>
-					<li class="tournament__player"></li>
-					<h3 class="tournament__item-index">сыграно/побед</h3>
-					<li class="tournament__results"></li>
-				</div>
-				<div class="tournament__tour_one">
-					<h2 class="tournament__title">I тур</h2>
-					<div class="tournament__game">
-						<li class="tournament__player"></li>
-						<li class="tournament__result"></li>
+		<template id="tournament">
+			<div class="tournament">
+				<h1 class="tournament__name"></h1>
+				<div id="day_one" class="tournament__day">
+					<h2 class="tournament__day_title">Первый день</h2>
+					<div class="tournament__players">
+						<div class="tournament__players_title">
+							<h3 class="tournament__item-index">участники</h3>
+							<span class="tournament__item-index">побед/сыграно</span>
+						</div>
+						<div class="tournament__list_one"></div>
+					</div>
+					<div class="tours">
+						<div class="tournament__tour">
+							<h3 class="tournament__title">I тур</h3>
+							<div id="game_one" class="tournament__game"></div>
+						</div>
+						<div class="tournament__tour">
+							<h3 class="tournament__title">II тур</h3>
+							<div id="game_two" class="tournament__game"></div>
+						</div>
+
+						<div class="tournament__tour">
+							<h3 class="tournament__title">III тур</h3>
+							<div id="game_three" class="tournament__game"></div>
+						</div>
 					</div>
 				</div>
-				<div class="tournament__tour_two">
-					<h2 class="tournament__title">II тур</h2>
-					<div class="tournament__game">
-						<li class="tournament__player"></li>
-						<li class="tournament__result"></li>
+
+				<div id="day_two" class="tournament__day">
+					<h2 class="tournament__day_title">Второй день</h2>
+					<div class="tournament__players">
+						<div class="tournament__players_title">
+							<h3 class="tournament__item-index">участники</h3>
+							<span class="tournament__item-index">побед/сыграно</span>
+						</div>
+						<div class="tournament__list_two"></div>
 					</div>
-				</div>
-				<div class="tournament__tour_three">
-					<h2 class="tournament__title">III тур</h2>
-					<div class="tournament__game">
-						<li class="tournament__player"></li>
-						<li class="tournament__result"></li>
+					<div class="tours">
+						<div class="tournament__tour">
+							<h3 class="tournament__title">IV тур</h3>
+							<div id="game_four" class="tournament__game"></div>
+						</div>
+						<div class="tournament__tour">
+							<h3 class="tournament__title">V тур</h3>
+							<div id="game_five" class="tournament__game"></div>
+						</div>
+						<div class="tournament__tour">
+							<h3 class="tournament__title">VI тур</h3>
+							<div id="game_six" class="tournament__game"></div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="tournament__day">
-				<h2 class="tournament__day_title"></h2>
-				<div class="tournament__players">
-					<h3 class="tournament__item-index">участники</h3>
-					<li class="tournament__player"></li>
-					<h3 class="tournament__item-index">сыграно/побед</h3>
-					<li class="tournament__results"></li>
-				</div>
-				<div class="tournament__tour_one">
-					<h2 class="tournament__title">I тур</h2>
-					<div class="tournament__game">
-						<li class="tournament__player"></li>
-						<li class="tournament__result"></li>
-					</div>
-				</div>
-				<div class="tournament__tour_two">
-					<h2 class="tournament__title">II тур</h2>
-					<div class="tournament__game">
-						<li class="tournament__player"></li>
-						<li class="tournament__result"></li>
-					</div>
-				</div>
-				<div class="tournament__tour_three">
-					<h2 class="tournament__title">III тур</h2>
-					<div class="tournament__game">
-						<li class="tournament__player"></li>
-						<li class="tournament__result"></li>
-					</div>
-				</div>
+		</template>
+
+		<template id="tournament-item">
+			<h1 class="tournament__name"></h1>
+			<li class="tournament__player"></li>
+			<li class="tournament__results"></li>
+		</template>
+
+		<template id="tournament-game">
+			<div class="tournament_conteiner">
+				<span class="tournament__player"></span>
+				<span class="tournament__result"></span>
 			</div>
 		</template>
 
@@ -630,7 +635,7 @@
 					>
 				</li>
 				<li class="menu-item">
-					<a href="#сhangelog"
+					<a class="tournament__point" href="#tournament"
 						><img
 							class="footer-image"
 							src="<%=require('../images/icon_tournaments.png')%>"

@@ -1,13 +1,3 @@
-export interface Marker {
-	image: string;
-	title: string;
-}
-
-const NewWarriors: Marker = {
-	image: require('../images/marker_new.png'),
-	title: 'Новый отряд',
-};
-
 export const localArmy = [
 	//Войска Колдуна
 	{

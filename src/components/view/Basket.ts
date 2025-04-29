@@ -1,3 +1,4 @@
+import { backgroundClip } from 'html2canvas/dist/types/css/property-descriptors/background-clip';
 import { createElement, ensureElement } from '../../utils/utils';
 import { Component } from '../base/Component';
 import { EventEmitter } from '../base/events';
@@ -52,6 +53,13 @@ export class Basket extends Component<IBasketView> {
 			return;
 		}
 
+		const items = basketList.querySelectorAll('.basket__item');
+		items.forEach((item) => {
+			const basketItem = item as HTMLElement;
+			basketItem.style.paddingLeft = '10px';
+			basketList.style.maxWidth = '595px';
+		});
+
 		html2canvas(basketList, {
 			ignoreElements: (element) => {
 				return (
@@ -68,6 +76,11 @@ export class Basket extends Component<IBasketView> {
 				link.href = canvas.toDataURL('image/jpeg', 1.0);
 				link.download = 'MyRoster.jpg';
 				link.click();
+				items.forEach((item) => {
+					const basketItem = item as HTMLElement;
+					basketItem.style.paddingLeft = '';
+					basketList.style.maxWidth = '';
+				});
 			})
 			.catch((error) => {
 				console.error('Error generating image:', error);

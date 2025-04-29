@@ -15,6 +15,7 @@ import { Page } from './components/View/Page';
 import { Modal } from './components/View/Modal';
 import { Basket } from './components/View/Basket';
 import { Rating } from './components/view/Rating';
+import { Tournament } from './components/view/Tournament';
 
 //Управление событиями и API
 const events = new EventEmitter();
@@ -42,6 +43,8 @@ const cardBasketTemplateFM = ensureElement<HTMLTemplateElement>(
 	'#card-basket_fighting_machine'
 );
 const ratingTemplate = ensureElement<HTMLTemplateElement>('#rating');
+const tournamentTemplate = ensureElement<HTMLTemplateElement>('#tournament');
+
 const memoTemplate = ensureElement<HTMLElement>('.memo');
 
 // Инициализация состояния приложения
@@ -50,6 +53,8 @@ const appData = new AppData({}, events);
 const basket = new Basket(cloneTemplate(basketTemplate), events);
 
 const rating = new Rating(cloneTemplate(ratingTemplate), events);
+
+const tournament = new Tournament(cloneTemplate(tournamentTemplate), events);
 
 // Обработчик изменения каталога
 events.on<CatalogChangeEvent>('items:changed', () => {
@@ -181,6 +186,14 @@ events.on('rating:open', () => {
 	});
 });
 
+// Открытие турнира
+events.on('tournament:open', () => {
+	page.locked = true;
+	modal.render({
+		content: tournament.render({}),
+	});
+});
+
 //Открытие справочника
 events.on('memo:open', () => {
 	page.locked = true;
@@ -197,6 +210,9 @@ window.addEventListener('hashchange', () => {
 	if (window.location.hash === '#memo') {
 		events.emit('memo:open');
 	}
+	if (window.location.hash === '#tournament') {
+		events.emit('tournament:open');
+	}
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -205,6 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	if (window.location.hash === '#memo') {
 		events.emit('memo:open');
+	}
+	if (window.location.hash === '#tournament') {
+		events.emit('tournament:open');
 	}
 });
 
@@ -536,6 +555,7 @@ Promise.all([
 			loadBasketFromLocalStorage();
 		}
 	)
+
 	.catch((error) => {
 		console.error('Ошибка при загрузке данных:', error);
 	});
