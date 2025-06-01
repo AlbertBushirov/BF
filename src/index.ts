@@ -15,6 +15,7 @@ import { Page } from './components/View/Page';
 import { Modal } from './components/View/Modal';
 import { Basket } from './components/View/Basket';
 import { Rating } from './components/view/Rating';
+import { Settings } from './components/view/Settings';
 import { Tournament } from './components/view/Tournament';
 
 //Управление событиями и API
@@ -35,6 +36,7 @@ const cardFightMachineTemplate = ensureElement<HTMLTemplateElement>(
 	'#card-fighting_machine'
 );
 const basketTemplate = ensureElement<HTMLTemplateElement>('#basket');
+
 const cardBasketTemplate = ensureElement<HTMLTemplateElement>('#card-basket');
 const cardBasketTemplateWheels = ensureElement<HTMLTemplateElement>(
 	'#card-basket_wheels'
@@ -43,6 +45,8 @@ const cardBasketTemplateFM = ensureElement<HTMLTemplateElement>(
 	'#card-basket_fighting_machine'
 );
 const ratingTemplate = ensureElement<HTMLTemplateElement>('#rating');
+const settingsTemplate = ensureElement<HTMLTemplateElement>('#settings');
+
 const tournamentTemplate = ensureElement<HTMLTemplateElement>('#tournament');
 
 const memoTemplate = ensureElement<HTMLElement>('.memo');
@@ -53,6 +57,8 @@ const appData = new AppData({}, events);
 const basket = new Basket(cloneTemplate(basketTemplate), events);
 
 const rating = new Rating(cloneTemplate(ratingTemplate), events);
+
+const settings = new Settings(cloneTemplate(settingsTemplate), events);
 
 const tournament = new Tournament(cloneTemplate(tournamentTemplate), events);
 
@@ -75,9 +81,16 @@ events.on('card:select', (item: ICardItem) => {
 	appData.setPreview(item);
 });
 
-//Добавление продукта в корзину
+//Добавление Боевой единицы в корзину
 events.on('product:add', (item: ICardItem) => {
 	appData.addBasket(item);
+	modal.close();
+});
+
+//Добавление Боевой единицы в Избранное
+events.on('product:addLike', (item: ICardItem) => {
+	appData.addFavorites(item);
+
 	modal.close();
 });
 
@@ -186,6 +199,13 @@ events.on('rating:open', () => {
 	});
 });
 
+//Открытие настроек
+events.on('settings:open', () => {
+	modal.render({
+		content: settings.render({}),
+	});
+});
+
 // Открытие турнира
 events.on('tournament:open', () => {
 	page.locked = true;
@@ -213,6 +233,9 @@ window.addEventListener('hashchange', () => {
 	if (window.location.hash === '#tournament') {
 		events.emit('tournament:open');
 	}
+	if (window.location.hash === '#settings') {
+		events.emit('settings:open');
+	}
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -225,9 +248,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (window.location.hash === '#tournament') {
 		events.emit('tournament:open');
 	}
+	if (window.location.hash === '#settings') {
+		events.emit('settings:open');
+	}
 });
 
 // Обработчики изменения предпросмотра продукта и добавления в корзину
+
 events.on('preview:changed', (item: ICardItem) => {
 	if (item && item.type === 'list') {
 		api.getWarriorsItem(item.id).then((res) => {
@@ -456,7 +483,7 @@ Promise.all([
 					);
 
 					if (tehlist.length > 0) {
-						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
 					}
 				});
 			}
@@ -469,7 +496,7 @@ Promise.all([
 					);
 
 					if (tehlist.length > 0) {
-						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
 					}
 				});
 			}
@@ -496,7 +523,7 @@ Promise.all([
 					);
 
 					if (tehlist.length > 0) {
-						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
 					}
 				});
 			}
@@ -552,6 +579,49 @@ Promise.all([
 					}
 				});
 			}
+
+			const galleriesItem = document.querySelectorAll('.gallery__item');
+			const galeries = document.querySelectorAll('.gallery');
+			function applyNetState(state: 'save' | 'cancel') {
+				if (state === 'save') {
+					galeries.forEach((gallery) => {
+						gallery.classList.add('gallery__net');
+						gallery.classList.remove('gallery');
+					});
+
+					galleriesItem.forEach((gallery) => {
+						gallery.classList.add('galleryItem__net');
+						gallery.classList.remove('card');
+					});
+				} else {
+					galeries.forEach((gallery) => {
+						gallery.classList.add('gallery');
+						gallery.classList.remove('gallery__net');
+					});
+
+					galleriesItem.forEach((gallery) => {
+						gallery.classList.add('card');
+						gallery.classList.remove('galleryItem__net');
+					});
+				}
+			}
+
+			// При загрузке страницы применяем сохранённое состояние
+			const savedNetState = localStorage.getItem('netState');
+			if (savedNetState === 'save' || savedNetState === 'cancel') {
+				applyNetState(savedNetState);
+			}
+
+			// Подписка на события с сохранением состояния
+			events.on('net:save', () => {
+				applyNetState('save');
+				localStorage.setItem('netState', 'save');
+			});
+
+			events.on('net:cancel', () => {
+				applyNetState('cancel');
+				localStorage.setItem('netState', 'cancel');
+			});
 			loadBasketFromLocalStorage();
 		}
 	)

@@ -11,12 +11,14 @@ interface IPage {
 export class Page extends Component<IPage> {
 	protected _counter: HTMLElement;
 	protected _catalog: HTMLElement;
+	protected _gallery: HTMLElement;
 	protected _wrapper: HTMLElement;
 	protected _basket: HTMLElement;
 	protected _modal: HTMLElement;
 	protected _rating: HTMLElement;
 	protected _memo: HTMLElement;
 	protected _tournament: HTMLElement;
+	protected _settings: HTMLElement;
 
 	constructor(container: HTMLElement, protected events: IEvents) {
 		super(container);
@@ -26,11 +28,13 @@ export class Page extends Component<IPage> {
 			container
 		);
 		this._catalog = ensureElement<HTMLElement>('.gallery', container);
+
 		this._wrapper = ensureElement<HTMLElement>('.page__wrapper', container);
 		this._basket = ensureElement<HTMLElement>('.header__basket', container);
 		this._modal = ensureElement<HTMLElement>('.modal__container', container);
 		this._rating = ensureElement<HTMLElement>('.rating__point', container);
 		this._memo = ensureElement<HTMLElement>('.memo__point', container);
+		this._settings = ensureElement<HTMLElement>('.settings__point', container);
 		this._tournament = ensureElement<HTMLElement>(
 			'.tournament__point',
 			container
@@ -46,6 +50,10 @@ export class Page extends Component<IPage> {
 
 		this._memo.addEventListener('click', () => {
 			this.events.emit('memo:open');
+		});
+
+		this._settings.addEventListener('click', () => {
+			this.events.emit('settings:open');
 		});
 
 		this._tournament.addEventListener('click', () => {

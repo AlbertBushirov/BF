@@ -1,0 +1,38 @@
+.settings {
+}
+
+.settings.active {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.settings__title {
+	text-align: center;
+}
+
+.settings__list {
+	list-style: none;
+	font-size: 15px;
+	padding-inline: 1px;
+
+	display: flex;
+	flex-direction: column;
+	justify-self: center;
+
+	li {
+		justify-content: space-between;
+		display: flex;
+
+		padding-block: 10px;
+		gap: 5px;
+		@media (max-width: 450px) {
+			max-width: 100%;
+		}
+	}
+}
+
+.save_armlist,
+.net_armlist {
+	width: 30px;
+}

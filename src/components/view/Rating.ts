@@ -13,7 +13,6 @@ export class Rating extends Component<IRatingView> {
 	constructor(container: HTMLElement, events: EventEmitter) {
 		super(container, new EventEmitter());
 		this._player = ensureElement<HTMLElement>('.rating__list', container);
-		console.log(this._player);
 		this.events = events;
 		this.renderPlayers(localPlayers);
 	}

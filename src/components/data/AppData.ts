@@ -16,6 +16,7 @@ export interface IOrderForm {
 
 export class AppData extends Model<IProductItem> {
 	basket: ICardItem[] = [];
+	favorites: ICardItem[] = [];
 	items: ICardItem[];
 	players: IPlayersForm[];
 
@@ -27,6 +28,12 @@ export class AppData extends Model<IProductItem> {
 		if (this.basket.indexOf(item) < 0) {
 			this.basket.push(item);
 			this.updateBasket();
+		}
+	}
+
+	addFavorites(item: ICardItem) {
+		if (this.favorites.indexOf(item) < 0) {
+			this.favorites.push(item);
 		}
 	}
 

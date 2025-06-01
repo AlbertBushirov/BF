@@ -18,6 +18,7 @@ export class Basket extends Component<IBasketView> {
 	protected _title: HTMLElement;
 	protected _price: HTMLElement;
 	protected _button: HTMLButtonElement;
+	protected _isArtefactSaveEnabled: boolean = false;
 
 	protected _description?: HTMLImageElement;
 	protected _footerPrice: HTMLElement;
@@ -43,6 +44,14 @@ export class Basket extends Component<IBasketView> {
 			});
 		}
 
+		this.events.on('artefact:save', () => {
+			this._isArtefactSaveEnabled = true;
+		});
+
+		this.events.on('artefact:cancel', () => {
+			this._isArtefactSaveEnabled = false;
+		});
+
 		this.items = [];
 	}
 
@@ -54,16 +63,18 @@ export class Basket extends Component<IBasketView> {
 		}
 
 		const items = basketList.querySelectorAll('.basket__item');
-		items.forEach((item) => {
-			const basketItem = item as HTMLElement;
-			basketItem.style.paddingLeft = '10px';
-			basketList.style.maxWidth = '595px';
-		});
+
+		if (!this._isArtefactSaveEnabled) {
+			basketList.style.width = '570px';
+		} else {
+			basketList.style.width = '880px';
+		}
 
 		html2canvas(basketList, {
 			ignoreElements: (element) => {
 				return (
-					element.classList.contains('card__description') ||
+					(!this._isArtefactSaveEnabled &&
+						element.classList.contains('card__description')) ||
 					element.classList.contains('card__title') ||
 					element.classList.contains('basket__item-delete') ||
 					element.classList.contains('card__price_basket')
@@ -79,7 +90,7 @@ export class Basket extends Component<IBasketView> {
 				items.forEach((item) => {
 					const basketItem = item as HTMLElement;
 					basketItem.style.paddingLeft = '';
-					basketList.style.maxWidth = '';
+					basketList.style.width = '';
 				});
 			})
 			.catch((error) => {

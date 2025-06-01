@@ -54,6 +54,7 @@ export class WebLarekAPI extends Api implements IAuctionAPI {
 			type: 'list',
 			image: imageUrl,
 			description: descriptionHtml,
+			buttonLike: false,
 		});
 	}
 

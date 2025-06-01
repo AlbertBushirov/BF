@@ -31,6 +31,7 @@ const category: Category = {
 	'Ст. производители (ХБ)': 'card__category_storonniye_XB',
 	'Ст. производители (ВПМ)': 'card__category_storonniye_VPM',
 	'Ст. производители (ЛЧП)': 'card__category_storonniye_LCHP',
+	'Ст. производители (Б)': 'card__category_storonniye_B',
 	Техлист: 'card__category_other',
 	кнопка: 'card__category_button',
 	другое: 'card__category_other',
@@ -42,6 +43,7 @@ export class Card extends Component<ICardItem> {
 	protected _directory: HTMLElement;
 	protected _image?: HTMLImageElement;
 	protected _category?: HTMLElement;
+	protected _gallery: HTMLElement;
 	protected _description?: HTMLImageElement;
 	protected _marker?: HTMLImageElement;
 	protected _markerTitle: HTMLElement;
@@ -49,7 +51,7 @@ export class Card extends Component<ICardItem> {
 	protected _price: HTMLElement;
 	protected priceValue: number;
 	protected _button?: HTMLButtonElement;
-	protected _buttonModal?: HTMLButtonElement;
+	protected _buttonLike: HTMLButtonElement;
 	protected volumeLevel: HTMLElement;
 	protected increaseButton: HTMLButtonElement;
 	protected decreaseButton: HTMLButtonElement;
@@ -72,11 +74,13 @@ export class Card extends Component<ICardItem> {
 		this._directory = container.querySelector('.directory');
 		this._description = container.querySelector('.card__description');
 		this._image = container.querySelector('.card__image');
+		this._gallery = container.querySelector('.gallery__item');
 		this._marker = container.querySelector('.gallery_marker__image');
 		this._markerTitle = container.querySelector('.gallery_marker__title');
 		this._markers = container.querySelector('.gallery__marker');
 		this._price = ensureElement<HTMLElement>('.card__price', container);
 		this._button = container.querySelector('.card__button');
+		this._buttonLike = container.querySelector('.button_like_preview');
 		this._weapons = container.querySelector('.weapons-list');
 
 		// Ссылка на чекбокс
@@ -105,6 +109,17 @@ export class Card extends Component<ICardItem> {
 			} else {
 				container.addEventListener('click', handleAction);
 			}
+		}
+		if (this._buttonLike) {
+			this._buttonLike.addEventListener('click', () =>
+				this.addClassButtonLikeActive()
+			);
+		}
+	}
+
+	addClassButtonLikeActive() {
+		if (this._buttonLike) {
+			this._buttonLike.classList.toggle('button_like_preview_active');
 		}
 	}
 

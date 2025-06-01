@@ -49,6 +49,29 @@
 	}
 }
 
+.gallery__net {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	margin-top: 70px;
+	margin-bottom: 10px;
+	@media (max-width: 450px) {
+		grid-template-columns: repeat(1, 1fr);
+		margin-top: 90px;
+		margin-bottom: 0px;
+	}
+}
+
 .gallery_marker__image:hover + .gallery_marker__title {
 	display: block;
+}
+
+.button_like_preview {
+	background: none;
+	border: none;
+}
+
+.like_preview {
+	width: 40px;
+	background: none;
+	cursor: pointer;
 }

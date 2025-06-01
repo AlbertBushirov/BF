@@ -5,7 +5,7 @@ export interface Weapon {
 
 export const combatLaser: Weapon = {
 	title: 'Боевой лазер',
-	price: 10,
+	price: 5,
 };
 export const grenadeLauncher: Weapon = {
 	title: 'Гранатомёт',
@@ -31,7 +31,7 @@ export const launcher: Weapon = {
 
 export const combatLaser2: Weapon = {
 	title: 'Боевой лазер',
-	price: 10,
+	price: 5,
 };
 export const grenadeLauncher2: Weapon = {
 	title: 'Гранатомёт',

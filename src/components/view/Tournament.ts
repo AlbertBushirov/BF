@@ -23,15 +23,16 @@ export class Tournament extends Component<ITournamentView> {
 		this._day_two = ensureElement<HTMLElement>('#day_two', container);
 
 		this.events = events;
-		localTournament.forEach((tournament) => {
+		for (let i = 0; i < localTournament.length; i += 1) {
+			const tournament = localTournament[i];
 			this.renderTournament(tournament);
-		});
+		}
 	}
 
 	private renderTournament(tournament: ITournament) {
 		// Создаем контейнер для турнира
 		const tournamentContainer = document.createElement('div');
-		tournamentContainer.className = 'tournament-container';
+		tournamentContainer.className = 'tournament';
 
 		// Отрисовка заголовка турнира
 		const titleTemplate = document.getElementById(
@@ -52,6 +53,8 @@ export class Tournament extends Component<ITournamentView> {
 		mainTitleElement.textContent = tournament.title;
 
 		// Отрисовка участников
+		const participantListOne = document.createElement('ul');
+		participantListOne.className = 'tournament__list_one';
 		tournament.participant.forEach((player) => {
 			const tournamentList = this._day.querySelector(
 				'.tournament__list_one'
@@ -67,6 +70,7 @@ export class Tournament extends Component<ITournamentView> {
 			tournamentList.appendChild(playerElement);
 			tournamentList.appendChild(resultsElement);
 		});
+		tournamentContainer.appendChild(participantListOne);
 
 		tournament.participant1.forEach((player) => {
 			const tournamentList = this._day_two.querySelector(
