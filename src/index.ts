@@ -62,9 +62,55 @@ const settings = new Settings(cloneTemplate(settingsTemplate), events);
 
 const tournament = new Tournament(cloneTemplate(tournamentTemplate), events);
 
+const categoryOrder = [
+	'Войска Колдуна',
+	'Легионеры Некроманта',
+	'Гвардия Чародея',
+	'Гильдия вольных стрелков',
+	'Ст. производители (НО)',
+	'Ст. производители (Б)',
+	'Ст. производители (ВИМ)',
+	'Ст. производители (ХБ)',
+	'Ст. производители (АС)',
+	'Ст. производители (ВПМ)',
+	'Ст. производители (ЛЧП)',
+	'Войска Колдуна (ОБЕ)',
+	'Легионеры Некроманта (ОБЕ)',
+	'Гвардия Чародея (ОБЕ)',
+	'Гильдия вольных стрелков (ОБЕ)',
+	'Боевое существо (ОБЕ)',
+	'Ст. производители (ВПМ) (ОБЕ)',
+	'Ст. производители (НО) (ОБЕ)',
+	'Техлист (1А)',
+	'Техлист (1П)',
+	'Техлист (1МП)',
+	'Техлист (1К)',
+	'Техлист (2П)',
+	'Техлист (2А)',
+	'Техлист (2МП)',
+	'Техлист (2К)',
+];
+
 // Обработчик изменения каталога
 events.on<CatalogChangeEvent>('items:changed', () => {
-	page.catalog = appData.items.map((item) => {
+	// Сортируем items по индексу категории в categoryOrder
+	const sortedItems = appData.items.slice().sort((a, b) => {
+		const indexA = categoryOrder.indexOf(a.category);
+		const indexB = categoryOrder.indexOf(b.category);
+
+		// Если категория не найдена, помещаем в конец
+		const posA = indexA === -1 ? Number.MAX_SAFE_INTEGER : indexA;
+		const posB = indexB === -1 ? Number.MAX_SAFE_INTEGER : indexB;
+
+		if (posA !== posB) {
+			return posA - posB;
+		}
+		if (a.title && b.title) {
+			return a.title.localeCompare(b.title, 'ru', { sensitivity: 'base' });
+		}
+	});
+
+	page.catalog = sortedItems.map((item) => {
 		const card = new Card('card', cloneTemplate(cardCatalogTemplate), {
 			onClick: () => events.emit('card:select', item),
 		});
@@ -133,15 +179,18 @@ events.on('basket:changed', () => {
 			const orderA = order[a.type] || 5;
 			const orderB = order[b.type] || 5;
 
-			if (a.category === 'Техлист' && b.category === 'Техлист') {
+			const aIsTehlist = a.category.includes('Техлист');
+			const bIsTehlist = b.category.includes('Техлист');
+
+			if (aIsTehlist && bIsTehlist) {
 				return 0;
 			}
 
-			if (a.category === 'Техлист') {
+			if (aIsTehlist) {
 				return 1;
 			}
 
-			if (b.category === 'Техлист') {
+			if (bIsTehlist) {
 				return -1;
 			}
 
@@ -267,6 +316,7 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.directory = res.directory;
 			item.marker = res.marker;
 			item.markerTitle = res.markerTitle;
+			item.buttonLike = res.buttonLike;
 
 			const card = new Card('card', cloneTemplate(cardPreviewTemplate), {
 				onClick: () => {
@@ -278,6 +328,7 @@ events.on('preview:changed', (item: ICardItem) => {
 					}
 				},
 			});
+
 			const buttonTitle: string = appData.productOrder(item)
 				? 'Убрать'
 				: 'Добавить';

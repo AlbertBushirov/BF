@@ -213,7 +213,7 @@ export const localPlayers = [
 	{
 		id: 'Stepan_Harlakshin',
 		image: require('../images/avatar_gamers.png'),
-		player: 'Степан Харлакшин',
+		player: 'Степан Харлашкин',
 		achievements: [],
 		games: 15, //Побед: 10
 		winrating: 67,

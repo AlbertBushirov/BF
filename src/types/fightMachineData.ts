@@ -20,7 +20,7 @@ export const localfightMachine = [
 	{
 		id: 'minometKrab',
 		title: 'Краб',
-		category: 'Техлист',
+		category: 'Техлист (1П)',
 		image: require('../images/TehList/Krab.png'),
 		price: 35,
 		inBasket: true,
@@ -32,7 +32,7 @@ export const localfightMachine = [
 	{
 		id: 'minometMolot',
 		title: 'Молот',
-		category: 'Техлист',
+		category: 'Техлист (2П)',
 		image: require('../images/TehList/Molot.png'),
 		price: 70,
 		inBasket: true,
@@ -44,7 +44,7 @@ export const localfightMachine = [
 	{
 		id: 'minometedelveys',
 		title: 'Эдельвейс',
-		category: 'Техлист',
+		category: 'Техлист (1П)',
 		image: require('../images/TehList/Adalveis.png'),
 		price: 50,
 		inBasket: true,
