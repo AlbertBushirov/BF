@@ -633,6 +633,9 @@ Promise.all([
 
 			const galleriesItem = document.querySelectorAll('.gallery__item');
 			const galeries = document.querySelectorAll('.gallery');
+			const cardCaterory =
+				document.querySelectorAll<HTMLElement>('.card__category');
+
 			function applyNetState(state: 'save' | 'cancel') {
 				if (state === 'save') {
 					galeries.forEach((gallery) => {
@@ -663,7 +666,6 @@ Promise.all([
 				applyNetState(savedNetState);
 			}
 
-			// Подписка на события с сохранением состояния
 			events.on('net:save', () => {
 				applyNetState('save');
 				localStorage.setItem('netState', 'save');
@@ -673,6 +675,12 @@ Promise.all([
 				applyNetState('cancel');
 				localStorage.setItem('netState', 'cancel');
 			});
+
+			events.on('lightTheme:save', () => {
+				applyNetState('cancel');
+				localStorage.setItem('netState', 'cancel');
+			});
+
 			loadBasketFromLocalStorage();
 		}
 	)

@@ -70,12 +70,9 @@
 .rating__achievements {
 	position: relative; /* Позиционируем контейнер для достижения */
 	display: inline-block;
-	@media (max-width: 720px) {
-		display: grid;
-
-		grid-template-columns: repeat(3, auto);
-		align-items: end;
-	}
+	display: grid;
+	grid-template-columns: repeat(4, auto);
+	align-items: end;
 }
 
 .rating__achievement {

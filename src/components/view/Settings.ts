@@ -9,7 +9,7 @@ interface IRatingView {
 export class Settings extends Component<IRatingView> {
 	public _inputArtefact: HTMLInputElement;
 	public _inputNet: HTMLInputElement;
-	public _inputNetABC: HTMLInputElement;
+	public _inputLight: HTMLInputElement;
 	//public _inputnet: HTMLInputElement;
 	constructor(container: HTMLElement, events: EventEmitter) {
 		super(container, new EventEmitter());
@@ -20,8 +20,8 @@ export class Settings extends Component<IRatingView> {
 			'.net_armlist'
 		) as HTMLInputElement;
 
-		this._inputNetABC = container.querySelector(
-			'.net_armlist_ABC'
+		this._inputLight = container.querySelector(
+			'.light_theme'
 		) as HTMLInputElement;
 
 		this.events = events;

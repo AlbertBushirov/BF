@@ -14,6 +14,7 @@ import {
 	launcher2,
 	projectile,
 	rocketProjectile,
+	comboGun,
 } from './weapons';
 
 export const localfightMachine = [
@@ -115,7 +116,7 @@ export const localfightMachine = [
 		image: require('../images/BM/FMDinamo.jpg'),
 		price: 90,
 		inBasket: true,
-		weapons: [laserPistol, lightningGun, swordSaw],
+		weapons: [laserPistol, lightningGun, comboGun, swordSaw],
 		button: '',
 	},
 	{
@@ -125,7 +126,7 @@ export const localfightMachine = [
 		image: require('../images/BM/FMKibero.jpg'),
 		price: 90,
 		inBasket: true,
-		weapons: [laserPistol, lightningGun, swordSaw],
+		weapons: [laserPistol, lightningGun, comboGun, swordSaw],
 		button: '',
 	},
 	{
@@ -135,7 +136,7 @@ export const localfightMachine = [
 		image: require('../images/BM/FMSamuro.jpg'),
 		price: 90,
 		inBasket: true,
-		weapons: [laserPistol, lightningGun, swordSaw],
+		weapons: [laserPistol, lightningGun, comboGun, swordSaw],
 		button: '',
 	},
 	{
@@ -145,7 +146,7 @@ export const localfightMachine = [
 		image: require('../images/BM/FMCunamo.jpg'),
 		price: 90,
 		inBasket: true,
-		weapons: [laserPistol, lightningGun, swordSaw],
+		weapons: [laserPistol, lightningGun, comboGun, swordSaw],
 		button: '',
 	},
 ];
