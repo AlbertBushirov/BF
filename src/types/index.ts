@@ -49,6 +49,7 @@ export interface IListItem extends IBaseCardItem {
 export interface ITehListEtem extends IBaseCardItem {
 	type: 'tech' | 'OBE';
 	image: string;
+	categoryGun?: string;
 }
 
 export interface ITehListWheelsEtem extends IBaseCardItem {

@@ -226,7 +226,7 @@ export const localPlayers = [
 	},
 	{
 		id: 'Artur_Kovalev',
-		image: require('../images/avatar_gamers.png'),
+		image: require('../images/photo_players/Artur_Kovalev.jpg'),
 		player: 'Артур Ковалёв',
 		achievements: [
 			OneMoscow1,
@@ -690,7 +690,7 @@ export const localPlayers = [
 	},
 	{
 		id: 'Vadim_Basuk',
-		image: require('../images/avatar_gamers.png'),
+		image: require('../images/photo_players/Vadim_Basuk.jpg'),
 		player: 'Вадим Басюк',
 		achievements: [],
 		games: 6,

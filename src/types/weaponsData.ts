@@ -90,19 +90,6 @@ export const localWeapons = [
 	},
 
 	{
-		id: 'arbaletskorpion',
-		title: 'Скорпион',
-		category: 'Техлист (1А)',
-		image: require('../images/TehList/Skorpion.png'), // Прямой URL для удаленного изображения
-		price: 115,
-		inBasket: true,
-		button: '',
-		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Понижена цена на 15.',
-	},
-
-	{
 		id: 'pushkabuldog',
 		title: 'Бульдог',
 		category: 'Техлист (1П)',
@@ -137,19 +124,6 @@ export const localWeapons = [
 		inBasket: true,
 		button: '',
 		directory: '',
-	},
-
-	{
-		id: 'pushkagrom',
-		title: 'Гром',
-		category: 'Техлист (1П)',
-		image: require('../images/TehList/Grom.png'), // Прямой URL для удаленного изображения
-		price: 105,
-		inBasket: true,
-		button: '',
-		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Понижена цена на 15.',
 	},
 
 	{
@@ -194,20 +168,6 @@ export const localWeapons = [
 		button: '',
 		directory: '',
 	},
-
-	{
-		id: 'pushkaShkval',
-		title: 'Шквал',
-		category: 'Техлист (1МП)',
-		image: require('../images/TehList/Shkval.png'), // Прямой URL для удаленного изображения
-		price: 105,
-		inBasket: true,
-		button: '',
-		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Понижена цена на 5.',
-	},
-
 	{
 		id: 'catapultklop',
 		title: 'Клоп',
@@ -251,7 +211,7 @@ export const localWeapons = [
 		id: 'catapultciklop',
 		title: 'Циклоп',
 		category: 'Техлист (2К)',
-		image: require('../images/TehList/Ciklop.png'), // Прямой URL для удаленного изображения
+		image: require('../images/TehList/Ciklop.png'),
 		price: 90,
 		inBasket: true,
 		button: '',
@@ -261,8 +221,9 @@ export const localWeapons = [
 	{
 		id: 'MDB-15',
 		title: 'MDB-15',
-		category: 'Техлист (2П)',
-		image: require('../images/TehList/MDB-15.png'), // Прямой URL для удаленного изображения
+		category: 'Техлист',
+		categoryGun: '(2П)',
+		image: require('../images/TehList/MDB-15.png'),
 		price: 150,
 		inBasket: true,
 		button: '',
@@ -273,6 +234,42 @@ export const localWeapons = [
 ];
 //Орудия с шинами
 export const localWeaponsWheels = [
+	{
+		id: 'pushkaShkval',
+		title: 'Шквал',
+		category: 'Техлист (1МП)',
+		image: require('../images/TehList/Shkval.png'), // Прямой URL для удаленного изображения
+		price: 95,
+		inBasket: true,
+		button: '',
+		directory: '',
+		marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Понижена цена на 5.',
+	},
+	{
+		id: 'arbaletskorpion',
+		title: 'Скорпион',
+		category: 'Техлист (1А)',
+		image: require('../images/TehList/Skorpion.png'), // Прямой URL для удаленного изображения
+		price: 105,
+		inBasket: true,
+		button: '',
+		directory: '',
+		marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Понижена цена на 15.',
+	},
+	{
+		id: 'pushkagrom',
+		title: 'Гром',
+		category: 'Техлист (1П)',
+		image: require('../images/TehList/Grom.png'), // Прямой URL для удаленного изображения
+		price: 105,
+		inBasket: true,
+		button: '',
+		directory: '',
+		marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Понижена цена на 15.',
+	},
 	{
 		id: 'arbaletgoliaf',
 		title: 'Голиаф',
@@ -312,8 +309,8 @@ export const localWeaponsWheels = [
 		id: 'catapultsarancha',
 		title: 'Саранча',
 		category: 'Техлист (1К)',
-		image: require('../images/TehList/Sarancha.png'), // Прямой URL для удаленного изображения
-		price: 95,
+		image: require('../images/TehList/Sarancha.png'),
+		price: 85,
 		inBasket: true,
 		button: '',
 		directory: '',
@@ -324,8 +321,8 @@ export const localWeaponsWheels = [
 		id: 'pushkablast',
 		title: 'Бласт',
 		category: 'Техлист (1П)',
-		image: require('../images/TehList/Blast.png'), // Прямой URL для удаленного изображения
-		price: 120,
+		image: require('../images/TehList/Blast.png'),
+		price: 110,
 		inBasket: true,
 		button: '',
 		directory: '',
@@ -336,7 +333,7 @@ export const localWeaponsWheels = [
 		id: 'pushkabuivol',
 		title: 'Буйвол',
 		category: 'Техлист (2П)',
-		image: require('../images/TehList/Buivol.png'), // Прямой URL для удаленного изображения
+		image: require('../images/TehList/Buivol.png'),
 		price: 90,
 		inBasket: true,
 		button: '',

@@ -93,12 +93,10 @@ const categoryOrder = [
 
 // Обработчик изменения каталога
 events.on<CatalogChangeEvent>('items:changed', () => {
-	// Сортируем items по индексу категории в categoryOrder
 	const sortedItems = appData.items.slice().sort((a, b) => {
 		const indexA = categoryOrder.indexOf(a.category);
 		const indexB = categoryOrder.indexOf(b.category);
 
-		// Если категория не найдена, помещаем в конец
 		const posA = indexA === -1 ? Number.MAX_SAFE_INTEGER : indexA;
 		const posB = indexB === -1 ? Number.MAX_SAFE_INTEGER : indexB;
 
@@ -633,8 +631,6 @@ Promise.all([
 
 			const galleriesItem = document.querySelectorAll('.gallery__item');
 			const galeries = document.querySelectorAll('.gallery');
-			const cardCaterory =
-				document.querySelectorAll<HTMLElement>('.card__category');
 
 			function applyNetState(state: 'save' | 'cancel') {
 				if (state === 'save') {
@@ -660,7 +656,6 @@ Promise.all([
 				}
 			}
 
-			// При загрузке страницы применяем сохранённое состояние
 			const savedNetState = localStorage.getItem('netState');
 			if (savedNetState === 'save' || savedNetState === 'cancel') {
 				applyNetState(savedNetState);
