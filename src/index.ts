@@ -89,8 +89,6 @@ events.on('product:add', (item: ICardItem) => {
 
 //Добавление Боевой единицы в Избранное
 events.on('product:addLike', (item: ICardItem) => {
-	appData.addFavorites(item);
-
 	modal.close();
 });
 
@@ -282,6 +280,7 @@ events.on('preview:changed', (item: ICardItem) => {
 				? 'Убрать'
 				: 'Добавить';
 			card.buttonTitle = buttonTitle;
+
 			modal.render({
 				content: card.render({
 					...item,
