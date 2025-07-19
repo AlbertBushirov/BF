@@ -80,7 +80,7 @@ const categoryOrder = [
 	'Гильдия вольных стрелков (ОБЕ)',
 	'Боевое существо (ОБЕ)',
 	'Ст. производители (ВПМ) (ОБЕ)',
-	'Ст. производители (НО) (ОБЕ)',
+	'Ст. производители (Б) (ОБЕ)',
 	'Техлист (1А)',
 	'Техлист (1П)',
 	'Техлист (1МП)',
@@ -143,13 +143,6 @@ events.on('product:delete', (item: ICardItem) => {
 	appData.removeFromBasket(item.id);
 });
 
-const order: Record<string, number> = {
-	list: 1,
-	tech: 2,
-	wheels: 3,
-	machine: 4,
-};
-
 function saveBasketToLocalStorage() {
 	const basketItems = appData.getOrderProducts();
 	localStorage.setItem('basket', JSON.stringify(basketItems));
@@ -165,6 +158,13 @@ function loadBasketFromLocalStorage() {
 		events.emit('basket:changed');
 	}
 }
+
+const order: Record<string, number> = {
+	list: 1,
+	tech: 2,
+	wheels: 3,
+	machine: 4,
+};
 
 //Обработчик изменения в корзине и обновления общей стоимости
 events.on('basket:changed', () => {

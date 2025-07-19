@@ -116,7 +116,7 @@ export const localfightMachine = [
 		image: require('../images/BM/FMDinamo.jpg'),
 		price: 90,
 		inBasket: true,
-		weapons: [laserPistol, lightningGun, comboGun, swordSaw],
+		weapons: [laserPistol, lightningGun, swordSaw],
 		button: '',
 	},
 	{
@@ -126,7 +126,7 @@ export const localfightMachine = [
 		image: require('../images/BM/FMKibero.jpg'),
 		price: 90,
 		inBasket: true,
-		weapons: [laserPistol, lightningGun, comboGun, swordSaw],
+		weapons: [laserPistol, lightningGun, swordSaw],
 		button: '',
 	},
 	{
@@ -136,7 +136,7 @@ export const localfightMachine = [
 		image: require('../images/BM/FMSamuro.jpg'),
 		price: 90,
 		inBasket: true,
-		weapons: [laserPistol, lightningGun, comboGun, swordSaw],
+		weapons: [laserPistol, lightningGun, swordSaw],
 		button: '',
 	},
 	{
@@ -146,7 +146,7 @@ export const localfightMachine = [
 		image: require('../images/BM/FMCunamo.jpg'),
 		price: 90,
 		inBasket: true,
-		weapons: [laserPistol, lightningGun, comboGun, swordSaw],
+		weapons: [laserPistol, lightningGun, swordSaw],
 		button: '',
 	},
 ];

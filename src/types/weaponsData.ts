@@ -57,13 +57,23 @@ export const localWeapons = [
 	{
 		id: 'ObePolbustuk',
 		title: 'Полб`Уст`Ук',
-		category: 'Ст. производители (НО) (ОБЕ)',
+		category: 'Ст. производители (Б) (ОБЕ)',
 		image: require('../images/TehList/ObePolbustuk.jpg'), // Прямой URL для удаленного изображения
 		price: 100,
 		inBasket: true,
 		button: '',
 		directory:
 			'Луковое амбре. Вероятность успешного использования в 1 воина: 67%',
+	},
+	{
+		id: 'ObeRiha',
+		title: 'Ррыкха',
+		category: 'Ст. производители (Б) (ОБЕ)',
+		image: require('../images/TehList/ObeRiha.jpg'), // Прямой URL для удаленного изображения
+		price: 90,
+		inBasket: true,
+		button: '',
+		directory: '',
 	},
 	{
 		id: 'ObeOriana',
@@ -221,7 +231,7 @@ export const localWeapons = [
 	{
 		id: 'MDB-15',
 		title: 'MDB-15',
-		category: 'Техлист',
+		category: 'Техлист (2П)',
 		categoryGun: '(2П)',
 		image: require('../images/TehList/MDB-15.png'),
 		price: 150,

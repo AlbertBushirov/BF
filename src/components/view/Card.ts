@@ -38,6 +38,7 @@ const category: Category = {
 	'Ст. производители (ВПМ) (ОБЕ)': 'card__category_storonniye_VPM',
 	'Ст. производители (ЛЧП)': 'card__category_storonniye_LCHP',
 	'Ст. производители (Б)': 'card__category_storonniye_B',
+	'Ст. производители (Б) (ОБЕ)': 'card__category_storonniye_B',
 	'Техлист (1П)': 'card__category_other',
 	'Техлист (1А)': 'card__category_other',
 	'Техлист (1МП)': 'card__category_other',

@@ -66,7 +66,7 @@ export const lightningGun: Weapon = {
 };
 
 export const comboGun: Weapon = {
-	title: 'Комбо-пушка',
+	title: 'Комби-пушка',
 	price: 25,
 };
 
