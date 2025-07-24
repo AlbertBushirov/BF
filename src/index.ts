@@ -62,9 +62,53 @@ const settings = new Settings(cloneTemplate(settingsTemplate), events);
 
 const tournament = new Tournament(cloneTemplate(tournamentTemplate), events);
 
+const categoryOrder = [
+	'Войска Колдуна',
+	'Легионеры Некроманта',
+	'Гвардия Чародея',
+	'Гильдия вольных стрелков',
+	'Ст. производители (НО)',
+	'Ст. производители (Б)',
+	'Ст. производители (ВИМ)',
+	'Ст. производители (ХБ)',
+	'Ст. производители (АС)',
+	'Ст. производители (ВПМ)',
+	'Ст. производители (ЛЧП)',
+	'Войска Колдуна (ОБЕ)',
+	'Легионеры Некроманта (ОБЕ)',
+	'Гвардия Чародея (ОБЕ)',
+	'Гильдия вольных стрелков (ОБЕ)',
+	'Боевое существо (ОБЕ)',
+	'Ст. производители (ВПМ) (ОБЕ)',
+	'Ст. производители (Б) (ОБЕ)',
+	'Техлист (1А)',
+	'Техлист (1П)',
+	'Техлист (1МП)',
+	'Техлист (1К)',
+	'Техлист (2П)',
+	'Техлист (2А)',
+	'Техлист (2МП)',
+	'Техлист (2К)',
+];
+
 // Обработчик изменения каталога
 events.on<CatalogChangeEvent>('items:changed', () => {
-	page.catalog = appData.items.map((item) => {
+	const sortedItems = appData.items.slice().sort((a, b) => {
+		const indexA = categoryOrder.indexOf(a.category);
+		const indexB = categoryOrder.indexOf(b.category);
+
+		const posA = indexA === -1 ? Number.MAX_SAFE_INTEGER : indexA;
+		const posB = indexB === -1 ? Number.MAX_SAFE_INTEGER : indexB;
+
+		if (posA !== posB) {
+			return posA - posB;
+		}
+		if (a.title && b.title) {
+			return a.title.localeCompare(b.title, 'ru', { sensitivity: 'base' });
+		}
+	});
+
+	page.catalog = sortedItems.map((item) => {
 		const card = new Card('card', cloneTemplate(cardCatalogTemplate), {
 			onClick: () => events.emit('card:select', item),
 		});
@@ -97,13 +141,6 @@ events.on('product:delete', (item: ICardItem) => {
 	appData.removeFromBasket(item.id);
 });
 
-const order: Record<string, number> = {
-	list: 1,
-	tech: 2,
-	wheels: 3,
-	machine: 4,
-};
-
 function saveBasketToLocalStorage() {
 	const basketItems = appData.getOrderProducts();
 	localStorage.setItem('basket', JSON.stringify(basketItems));
@@ -120,6 +157,13 @@ function loadBasketFromLocalStorage() {
 	}
 }
 
+const order: Record<string, number> = {
+	list: 1,
+	tech: 2,
+	wheels: 3,
+	machine: 4,
+};
+
 //Обработчик изменения в корзине и обновления общей стоимости
 events.on('basket:changed', () => {
 	page.counter = appData.getOrderProducts().length;
@@ -131,15 +175,18 @@ events.on('basket:changed', () => {
 			const orderA = order[a.type] || 5;
 			const orderB = order[b.type] || 5;
 
-			if (a.category === 'Техлист' && b.category === 'Техлист') {
+			const aIsTehlist = a.category.includes('Техлист');
+			const bIsTehlist = b.category.includes('Техлист');
+
+			if (aIsTehlist && bIsTehlist) {
 				return 0;
 			}
 
-			if (a.category === 'Техлист') {
+			if (aIsTehlist) {
 				return 1;
 			}
 
-			if (b.category === 'Техлист') {
+			if (bIsTehlist) {
 				return -1;
 			}
 
@@ -265,6 +312,7 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.directory = res.directory;
 			item.marker = res.marker;
 			item.markerTitle = res.markerTitle;
+			item.buttonLike = res.buttonLike;
 
 			const card = new Card('card', cloneTemplate(cardPreviewTemplate), {
 				onClick: () => {
@@ -276,6 +324,7 @@ events.on('preview:changed', (item: ICardItem) => {
 					}
 				},
 			});
+
 			const buttonTitle: string = appData.productOrder(item)
 				? 'Убрать'
 				: 'Добавить';
@@ -581,6 +630,7 @@ Promise.all([
 
 			const galleriesItem = document.querySelectorAll('.gallery__item');
 			const galeries = document.querySelectorAll('.gallery');
+
 			function applyNetState(state: 'save' | 'cancel') {
 				if (state === 'save') {
 					galeries.forEach((gallery) => {
@@ -605,13 +655,11 @@ Promise.all([
 				}
 			}
 
-			// При загрузке страницы применяем сохранённое состояние
 			const savedNetState = localStorage.getItem('netState');
 			if (savedNetState === 'save' || savedNetState === 'cancel') {
 				applyNetState(savedNetState);
 			}
 
-			// Подписка на события с сохранением состояния
 			events.on('net:save', () => {
 				applyNetState('save');
 				localStorage.setItem('netState', 'save');
@@ -621,6 +669,12 @@ Promise.all([
 				applyNetState('cancel');
 				localStorage.setItem('netState', 'cancel');
 			});
+
+			events.on('lightTheme:save', () => {
+				applyNetState('cancel');
+				localStorage.setItem('netState', 'cancel');
+			});
+
 			loadBasketFromLocalStorage();
 		}
 	)

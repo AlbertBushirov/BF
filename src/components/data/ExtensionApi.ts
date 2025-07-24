@@ -83,7 +83,6 @@ export class WebLarekAPI extends Api implements IAuctionAPI {
 			return Promise.reject('Item not found');
 		}
 
-		// Обрабатываем описание с картинками
 		const imageUrl =
 			item.image.startsWith('http') || item.image.startsWith('https')
 				? item.image
@@ -104,7 +103,6 @@ export class WebLarekAPI extends Api implements IAuctionAPI {
 			return Promise.reject('Item not found');
 		}
 
-		// Обрабатываем описание с картинками
 		const imageUrl =
 			item.image.startsWith('http') || item.image.startsWith('https')
 				? item.image

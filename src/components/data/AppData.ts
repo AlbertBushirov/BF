@@ -87,7 +87,6 @@ export class AppData extends Model<IProductItem> {
 		this.emitChanges('items:changed', { catalog: this.items });
 	}
 
-	//Предпросмотр продукта validateOrder
 	setPreview(item: ICardItem) {
 		this.preview = item.id;
 		this.emitChanges('preview:changed', item);

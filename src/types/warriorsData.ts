@@ -1263,18 +1263,31 @@ export const localArmy = [
 		title: 'отряд Хардкор',
 		category: 'Ст. производители (НО)',
 		description: require('../images/Artefakti/Hardkor.jpg'),
-		image: require('../images/Storonie/SPHardkor.jpg'), // Прямой URL для удаленного изображения
+		image: require('../images/Storonie/SPHardkor.jpg'),
 		price: 230,
 		inBasket: true,
 		directory: '',
 		button: '',
 	},
 	{
+		id: 'SPOmicsir',
+		title: 'Омиксир',
+		category: 'Ст. производители (Б)',
+		description: require('../images/Artefakti/Omicsir.jpg'),
+		image: require('../images/Storonie/SPOmicsir.jpg'),
+		price: 230,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
 		id: 'SPShotrm',
 		title: 'Био-взвод Шторм',
 		category: 'Ст. производители (Б)',
 		description: require('../images/Artefakti/Shotrm.jpg'),
-		image: require('../images/Storonie/SPShotrm.jpg'), // Прямой URL для удаленного изображения
+		image: require('../images/Storonie/SPShotrm.jpg'),
 		price: 220,
 		inBasket: true,
 		directory: '',
@@ -1286,7 +1299,7 @@ export const localArmy = [
 		category: 'Ст. производители (НО)',
 		description:
 			'https://sun9-12.userapi.com/impg/bvR7cJyi5lLMPiwmNuAH-Ap47j87SOJ9st3y2Q/e48La_SU8U8.jpg?size=1090x726&quality=95&sign=a4cf18e61919cd11f379c0416d373c49&type=album',
-		image: require('../images/Storonie/SPKallisto.jpg'), // Прямой URL для удаленного изображения
+		image: require('../images/Storonie/SPKallisto.jpg'),
 		price: 260,
 		inBasket: true,
 		directory: '',
@@ -1297,7 +1310,7 @@ export const localArmy = [
 		title: 'Демоны Сульфура',
 		category: 'Ст. производители (НО)',
 		description: require('../images/Artefakti/DemoniSulfura.jpg'),
-		image: require('../images/Storonie/SPDemoniSulfura.jpg'), // Прямой URL для удаленного изображения
+		image: require('../images/Storonie/SPDemoniSulfura.jpg'),
 		price: 130,
 		inBasket: true,
 		directory:
@@ -1309,7 +1322,7 @@ export const localArmy = [
 		title: 'Лизарды',
 		category: 'Ст. производители (НО)',
 		description: require('../images/Artefakti/Lizardi.jpg'),
-		image: require('../images/Storonie/SPLizardi.jpg'), // Прямой URL для удаленного изображения
+		image: require('../images/Storonie/SPLizardi.jpg'),
 		price: 150,
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта: 67% ',
@@ -1757,7 +1770,7 @@ export const localArmy = [
 		id: 'SPKiberzveri',
 		title: 'Киберзвери',
 		category: 'Ст. производители (ЛЧП)',
-		description: require('../images/Artefakti/Gromoboi.jpg'),
+		description: require('../images/Artefakti/Kiberzveri.jpg'),
 		image: require('../images/Storonie/SPKiberzveri.jpg'), // Прямой URL для удаленного изображения
 		price: 290,
 		inBasket: true,
@@ -1847,7 +1860,5 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта: 67%',
 		button: '',
-		marker: require('../images/marker_new.png'),
-		markerTitle: 'Новый адаптированный отряд',
 	},
 ];

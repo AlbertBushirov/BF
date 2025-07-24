@@ -127,10 +127,9 @@ export class Card extends Component<ICardItem> {
 		}
 
 		if (this._buttonLike) {
-			this._buttonLike.addEventListener('click', (evt) => {
-				this.addClassButtonLikeActive();
-				this.events.emit('product:addLike');
-			});
+			this._buttonLike.addEventListener('click', () =>
+				this.addClassButtonLikeActive()
+			);
 		}
 	}
 

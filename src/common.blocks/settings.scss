@@ -29,10 +29,8 @@
 		@media (max-width: 450px) {
 			max-width: 100%;
 		}
+		input {
+			width: 30px;
+		}
 	}
-}
-
-.save_armlist,
-.net_armlist {
-	width: 30px;
 }

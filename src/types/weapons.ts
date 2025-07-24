@@ -65,6 +65,11 @@ export const lightningGun: Weapon = {
 	price: 25,
 };
 
+export const comboGun: Weapon = {
+	title: 'Комби-пушка',
+	price: 25,
+};
+
 export const swordSaw: Weapon = {
 	title: 'Меч-пила',
 	price: 20,

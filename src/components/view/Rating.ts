@@ -17,6 +17,10 @@ export class Rating extends Component<IRatingView> {
 		this.renderPlayers(localPlayers);
 	}
 	private renderPlayers(players: IPlayersForm[]) {
+		players.forEach((player) => {
+			player.winrating =
+				player.games !== 0 ? Math.round((player.win / player.games) * 100) : 0;
+		});
 		// Очищаем текущий список
 		this._player.innerHTML = '';
 
@@ -40,6 +44,7 @@ export class Rating extends Component<IRatingView> {
 
 			return achievementsB - achievementsA; // Сравниваем по количеству достижений
 		});
+
 		players.forEach((player, index) => {
 			const template = document.getElementById(
 				'rating-item'
@@ -65,7 +70,10 @@ export class Rating extends Component<IRatingView> {
 			imageElement.alt = player.player;
 			nameElement.textContent = player.player;
 			gamesElement.textContent = player.games.toString();
-			winElement.textContent = `${player.winrating}%`;
+			winElement.textContent =
+				player.games !== 0
+					? `${Math.round((player.win / player.games) * 100)}%`
+					: '0%';
 			if (player.achievements && player.achievements.length > 0) {
 				player.achievements.forEach((achievement: Cup) => {
 					const achievementImage = document.createElement('img');
