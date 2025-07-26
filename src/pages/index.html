@@ -313,7 +313,7 @@
 							<h3 class="tournament__item-index">участники</h3>
 							<span class="tournament__item-index">побед/сыграно</span>
 						</div>
-						<div class="tournament__list_one"></div>
+						<ul class="tournament__list_one"></ul>
 					</div>
 					<div class="tours">
 						<div class="tournament__tour">
@@ -361,8 +361,10 @@
 
 		<template id="tournament-item">
 			<h1 class="tournament__name"></h1>
-			<li class="tournament__player"></li>
-			<li class="tournament__results"></li>
+			<ul class="tournament__list">
+				<li class="tournament__player"></li>
+				<li class="tournament__results"></li>
+			</ul>
 		</template>
 
 		<template id="tournament-game">
