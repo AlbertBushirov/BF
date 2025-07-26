@@ -19,8 +19,8 @@ interface Category {
 }
 
 const category: Category = {
-	'Гильдия вольных стрелков': 'card__category_soft',
-	'Гильдия вольных стрелков  (ОБЕ)': 'card__category_soft',
+	'Гильдия вольных стрелков': 'card__category_GVS',
+	'Гильдия вольных стрелков (ОБЕ)': 'card__category_GVS',
 	'Войска Колдуна': 'card__category_hard',
 	'Войска Колдуна (ОБЕ)': 'card__category_hard',
 	'Боевое существо (ОБЕ)': 'card__category_additional',
@@ -130,6 +130,17 @@ export class Card extends Component<ICardItem> {
 			this._buttonLike.addEventListener('click', () =>
 				this.addClassButtonLikeActive()
 			);
+		}
+	}
+
+	categoryPadding() {
+		if (
+			this._category.textContent.includes('Гильдия вольных стрелков') ||
+			this._category.textContent.includes('Гвардия Чародея') ||
+			this._category.textContent.includes('Легионеры Некроманта') ||
+			this._category.textContent.includes('Войска Колдуна')
+		) {
+			this._category.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
 		}
 	}
 

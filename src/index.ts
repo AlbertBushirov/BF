@@ -336,6 +336,7 @@ events.on('preview:changed', (item: ICardItem) => {
 					button: buttonTitle,
 				}),
 			});
+			card.categoryPadding();
 		});
 	}
 });
@@ -369,6 +370,7 @@ events.on('preview:changed', (item: ICardItem) => {
 					...item,
 				}),
 			});
+			card.categoryPadding();
 		});
 	}
 });
@@ -580,7 +582,7 @@ Promise.all([
 					event.preventDefault();
 
 					const tehlist = Array.from(divs).filter((h2) =>
-						h2.textContent.includes('Кентавр')
+						h2.textContent.includes('Герои Шипки')
 					);
 
 					if (tehlist.length > 0) {
@@ -630,6 +632,8 @@ Promise.all([
 
 			const galleriesItem = document.querySelectorAll('.gallery__item');
 			const galeries = document.querySelectorAll('.gallery');
+			const cartCategory = document.querySelectorAll('.card__category');
+			const cartCategoryArray = Array.from(cartCategory);
 
 			function applyNetState(state: 'save' | 'cancel') {
 				if (state === 'save') {
@@ -642,6 +646,16 @@ Promise.all([
 						gallery.classList.add('galleryItem__net');
 						gallery.classList.remove('card');
 					});
+					cartCategoryArray.forEach((el: HTMLElement) => {
+						if (el.textContent.includes('Техлист')) {
+							el.style.fontSize = '13px';
+							const res = el.textContent.slice(7);
+							el.textContent = res;
+						}
+						if (!el.textContent.includes('Техлист')) {
+							el.style.padding = '1rem 1rem';
+						}
+					});
 				} else {
 					galeries.forEach((gallery) => {
 						gallery.classList.add('gallery');
@@ -651,6 +665,26 @@ Promise.all([
 					galleriesItem.forEach((gallery) => {
 						gallery.classList.add('card');
 						gallery.classList.remove('galleryItem__net');
+					});
+					cartCategoryArray.forEach((el: HTMLElement) => {
+						if (
+							!el.textContent.includes('Гильдия вольных стрелков') ||
+							!el.textContent.includes('Гвардия Чародея') ||
+							!el.textContent.includes('Легионеры Некроманта') ||
+							!el.textContent.includes('Войска Колдуна')
+						) {
+							el.style.padding = '0.5rem 1rem';
+						}
+						if (
+							el.textContent.includes('Гильдия вольных стрелков') ||
+							el.textContent.includes('Гвардия Чародея') ||
+							el.textContent.includes('Легионеры Некроманта') ||
+							el.textContent.includes('Войска Колдуна')
+						) {
+							el.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
+						}
+						const res = el.textContent;
+						el.textContent = res;
 					});
 				}
 			}
