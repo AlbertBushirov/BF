@@ -5,7 +5,7 @@ export interface players {
 
 export interface IGames {
 	name: players;
-	result: number;
+	result: string;
 }
 
 export interface ITournament {
@@ -71,6 +71,8 @@ const Egor_Klesch: players = {
 	id: 'Egor_Klesch',
 	name: 'Егор Клещ',
 };
+
+//Результаты игровых дней
 
 export const localParticipant = [
 	{ name: Sergey_Latishev, result: '3/3' },

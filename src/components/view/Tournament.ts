@@ -28,12 +28,13 @@ export class Tournament extends Component<ITournamentView> {
 		console.log(this.tournamentName);
 		this.events = events;
 
-		localTournament.forEach((element) => {
-			const result = this.tournamentRender(element);
+		localParticipant.forEach((element) => {
+			const result = this.participantRender(element);
+			this.tournamentListOne.append(result);
 		});
 	}
 
-	tournamentRender(tournament: ITournament) {
+	participantRender(tournament: IGames) {
 		const tournamentTemplate = document.querySelector(
 			'#tournament-item'
 		) as HTMLTemplateElement;
@@ -42,11 +43,10 @@ export class Tournament extends Component<ITournamentView> {
 		const container = tournamentElement.querySelector('.tournament__list');
 		const cloneContainer = container.cloneNode(true) as HTMLElement;
 
-		cloneContainer.querySelector('.tournament__name').textContent =
-			tournament.title;
-
-		const allNames = tournament.participant.map((el) => el.name.name).join();
-		cloneContainer.querySelector('.tournament__player').textContent = allNames;
+		cloneContainer.querySelector('.tournament__player').textContent =
+			tournament.name.name;
+		cloneContainer.querySelector('.tournament__results').textContent =
+			tournament.result;
 
 		return cloneContainer;
 	}

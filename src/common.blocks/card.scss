@@ -251,7 +251,7 @@ html {
 		@media (max-width: 450px) {
 			height: 100vh;
 			box-sizing: border-box;
-			margin-top: 30px;
+			margin-top: 15px;
 			border-radius: 0%;
 
 			gap: 5px 10px;
@@ -321,7 +321,7 @@ html {
 				justify-self: center;
 				grid-column: 1 / 3;
 				grid-row: 3;
-				gap: 5px;
+				column-gap: 5px;
 			}
 		}
 		.weapon_title {
@@ -352,7 +352,7 @@ html {
 			align-self: end;
 			@media (max-width: 450px) {
 				position: fixed;
-				bottom: 3vh;
+				bottom: 2vh;
 				left: 5vw;
 			}
 			@media (max-height: 900px) {
