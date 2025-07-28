@@ -13,6 +13,8 @@ interface ITournamentView {
 }
 
 export class Tournament extends Component<ITournamentView> {
+	protected tournamentName: HTMLElement;
+	protected tournamentListOne: HTMLElement;
 	public _day: HTMLElement;
 	public _day_two: HTMLElement;
 	public _games: HTMLElement;
@@ -21,8 +23,11 @@ export class Tournament extends Component<ITournamentView> {
 		super(container, new EventEmitter());
 		this._day = ensureElement<HTMLElement>('#day_one', container);
 		this._day_two = ensureElement<HTMLElement>('#day_two', container);
-
+		this.tournamentName = container.querySelector('.tournament__name');
+		this.tournamentListOne = container.querySelector('.tournament__list_one');
+		console.log(this.tournamentName);
 		this.events = events;
+
 		for (let i = 0; i < localTournament.length; i += 1) {
 			const tournament = localTournament[i];
 			this.renderTournament(tournament);
