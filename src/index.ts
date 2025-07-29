@@ -257,6 +257,8 @@ events.on('tournament:open', () => {
 	modal.render({
 		content: tournament.render({}),
 	});
+	/*const players = document.querySelector('.tournament__player') as HTMLElement;
+	tournament.hoverElement(players);*/
 });
 
 //Открытие справочника

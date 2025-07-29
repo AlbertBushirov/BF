@@ -305,6 +305,12 @@
 
 		<template id="tournament">
 			<div class="tournament">
+				<div class="tournament"></div>
+			</div>
+		</template>
+
+		<template id="tournament-item">
+			<div class="tournament-item">
 				<h1 class="tournament__name"></h1>
 				<div id="day_one" class="tournament__day">
 					<h2 class="tournament__day_title">Первый день</h2>
@@ -313,21 +319,41 @@
 							<h3 class="tournament__item-index">участники</h3>
 							<span class="tournament__item-index">побед/сыграно</span>
 						</div>
-						<ul class="tournament__list_one"></ul>
+						<ul class="tournament__list">
+							<li class="tournament__item">
+								<span class="tournament__player"></span>
+								<span class="tournament__result"></span>
+							</li>
+						</ul>
 					</div>
 					<div class="tours">
-						<div class="tournament__tour">
+						<div id="game_one" class="tournament__tour">
 							<h3 class="tournament__title">I тур</h3>
-							<div id="game_one" class="tournament__game"></div>
+							<ul class="tournament__game">
+								<li class="tournament_conteiner">
+									<span class="tournament__player"></span>
+									<span class="tournament__result"></span>
+								</li>
+							</ul>
 						</div>
-						<div class="tournament__tour">
+						<div id="game_two" class="tournament__tour">
 							<h3 class="tournament__title">II тур</h3>
-							<div id="game_two" class="tournament__game"></div>
+							<ul class="tournament__game">
+								<li class="tournament_conteiner">
+									<span class="tournament__player"></span>
+									<span class="tournament__result"></span>
+								</li>
+							</ul>
 						</div>
 
-						<div class="tournament__tour">
+						<div id="game_three" class="tournament__tour">
 							<h3 class="tournament__title">III тур</h3>
-							<div id="game_three" class="tournament__game"></div>
+							<ul class="tournament__game">
+								<li class="tournament_conteiner">
+									<span class="tournament__player"></span>
+									<span class="tournament__result"></span>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -339,38 +365,43 @@
 							<h3 class="tournament__item-index">участники</h3>
 							<span class="tournament__item-index">побед/сыграно</span>
 						</div>
-						<div class="tournament__list_two"></div>
+						<ul class="tournament__list">
+							<li class="tournament__item">
+								<span class="tournament__player"></span>
+								<span class="tournament__result"></span>
+							</li>
+						</ul>
 					</div>
 					<div class="tours">
-						<div class="tournament__tour">
+						<div id="game_four" class="tournament__tour">
 							<h3 class="tournament__title">IV тур</h3>
-							<div id="game_four" class="tournament__game"></div>
+							<ul class="tournament__game">
+								<li class="tournament_conteiner">
+									<span class="tournament__player"></span>
+									<span class="tournament__result"></span>
+								</li>
+							</ul>
 						</div>
-						<div class="tournament__tour">
+						<div id="game_five" class="tournament__tour">
 							<h3 class="tournament__title">V тур</h3>
-							<div id="game_five" class="tournament__game"></div>
+							<ul class="tournament__game">
+								<li class="tournament_conteiner">
+									<span class="tournament__player"></span>
+									<span class="tournament__result"></span>
+								</li>
+							</ul>
 						</div>
-						<div class="tournament__tour">
+						<div id="game_six" class="tournament__tour">
 							<h3 class="tournament__title">VI тур</h3>
-							<div id="game_six" class="tournament__game"></div>
+							<ul class="tournament__game">
+								<li class="tournament_conteiner">
+									<span class="tournament__player"></span>
+									<span class="tournament__result"></span>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
-			</div>
-		</template>
-
-		<template id="tournament-item">
-			<h1 class="tournament__name"></h1>
-			<ul class="tournament__list">
-				<li class="tournament__player"></li>
-				<li class="tournament__results"></li>
-			</ul>
-		</template>
-
-		<template id="tournament-game">
-			<div class="tournament_conteiner">
-				<span class="tournament__player"></span>
-				<span class="tournament__result"></span>
 			</div>
 		</template>
 
