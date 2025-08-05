@@ -396,6 +396,11 @@ events.on('basket:open', () => {
 	modal.render({
 		content: basket.render({}),
 	});
+	const jsonStr = JSON.stringify(
+		appData.getOrderProducts().map((item) => item.id)
+	);
+
+	location.hash = encodeURIComponent(jsonStr);
 });
 
 events.on('basket:clear', () => {
