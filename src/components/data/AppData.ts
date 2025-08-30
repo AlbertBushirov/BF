@@ -31,6 +31,7 @@ export class AppData extends Model<IProductItem> {
 		}
 	}
 
+	//Добавить товар в Избранное
 	addFavorites(item: ICardItem) {
 		if (this.favorites.indexOf(item) < 0) {
 			this.favorites.push(item);
@@ -40,6 +41,13 @@ export class AppData extends Model<IProductItem> {
 	//Проверка, находится ли продукт в заказе.
 	productOrder(item: ICardItem): boolean {
 		return Boolean(this.basket.find((basketItem) => basketItem.id === item.id));
+	}
+
+	//Проверка, находится ли продукт в заказе.
+	productLike(item: ICardItem): boolean {
+		return Boolean(
+			this.favorites.find((basketItem) => basketItem.id === item.id)
+		);
 	}
 
 	//Очистить корзину после заказа
@@ -79,14 +87,8 @@ export class AppData extends Model<IProductItem> {
 		this.emitChanges('items:changed', { catalog: this.items });
 	}
 
-	//Предпросмотр продукта validateOrder
 	setPreview(item: ICardItem) {
 		this.preview = item.id;
 		this.emitChanges('preview:changed', item);
-	}
-
-	setRating(item: IPlayersForm[]) {
-		this.players = item;
-		this.emitChanges('rating:changed', this.players);
 	}
 }

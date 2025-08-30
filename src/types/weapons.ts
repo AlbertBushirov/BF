@@ -56,17 +56,22 @@ export const launcher2: Weapon = {
 //оружия Панцеронов
 
 export const laserPistol: Weapon = {
-	title: 'Лазерный пистолет',
+	title: 'Стрельба 2',
 	price: 15,
 };
 
 export const lightningGun: Weapon = {
-	title: 'Молниемёт',
+	title: 'Стельба 3',
+	price: 25,
+};
+
+export const comboGun: Weapon = {
+	title: 'Комби-пушка',
 	price: 25,
 };
 
 export const swordSaw: Weapon = {
-	title: 'Меч-пила',
+	title: 'Рукоп. бой',
 	price: 20,
 };
 

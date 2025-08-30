@@ -6,12 +6,17 @@ export interface Cup {
 //За судейство
 const judgeTwoSPB: Cup = {
 	image: require('../images/judge.png'),
-	title: 'Судья турнира в Санкт-Петербурге 2024',
+	title: 'Судья турнира в Санкт-Петербурге. 2024',
 };
 
 const judgeOneMoskow: Cup = {
 	image: require('../images/judge.png'),
-	title: 'Судья турнира в Москве 2023',
+	title: 'Судья турнира в Москве. 2023',
+};
+
+const judgeThreeSPB: Cup = {
+	image: require('../images/judge.png'),
+	title: 'Судья турнира в Санкт-Петербурге. 2025',
 };
 
 //-------------------------------------------------------------------------------
@@ -19,92 +24,122 @@ const judgeOneMoskow: Cup = {
 //За оргазизацию
 const organizerOneSPB: Cup = {
 	image: require('../images/organizer.png'),
-	title: 'Организатор турнира в Санкт-Петербурге 2023',
+	title: 'Организатор турнира в Санкт-Петербурге. 2023',
 };
 
 const organizerTwoSPB: Cup = {
 	image: require('../images/organizer.png'),
-	title: 'Организатор турнира в Санкт-Петербурге 2024',
+	title: 'Организатор турнира в Санкт-Петербурге. 2024',
+};
+
+const organizerThreeSPB: Cup = {
+	image: require('../images/organizer.png'),
+	title: 'Организатор турнира в Санкт-Петербурге. 2025',
+};
+
+const organizerThreeJuniorSPB: Cup = {
+	image: require('../images/JuniorOrganizer.png'),
+	title: 'Организатор турнира Юниоров в Санкт-Петербурге. 2025',
 };
 
 const organizerOneChe: Cup = {
 	image: require('../images/organizer.png'),
-	title: 'Организатор турнира в Челябинске 2023',
+	title: 'Организатор турнира в Челябинске. 2023',
 };
 
 const organizerTwoChe: Cup = {
 	image: require('../images/organizer.png'),
-	title: 'Организатор турнира в Челябинске 2024',
+	title: 'Организатор турнира в Челябинске. 2024',
 };
 
 const organizerTwoMoscow: Cup = {
 	image: require('../images/organizer.png'),
-	title: 'Организатор турнира в Москве 2024',
+	title: 'Организатор турнира в Москве. 2024',
 };
 
 const organizerOneOmsk: Cup = {
 	image: require('../images/organizer.png'),
-	title: 'Организатор турнира в Омске 2025',
+	title: 'Организатор турнира в Омске. 2025',
 };
 
 const organizerOneMoscow: Cup = {
 	image: require('../images/organizer.png'),
-	title: 'Организатор турнира в Москве 2023',
+	title: 'Организатор турнира в Москве. 2023',
 };
 
-//Санкт-Петербург 2023
+const organizerOneEKB: Cup = {
+	image: require('../images/organizer.png'),
+	title: 'Организатор турнира в Екатеринбурге. 2025',
+};
+
+//Санкт-Петербург
 const OneSPB1: Cup = {
 	image: require('../images/cups-1.png'),
-	title: 'Чемпион турнира в Санкт-Петербурге 2023',
+	title: 'Чемпион турнира в Санкт-Петербурге. 2023',
 };
 
 const OneSPB2: Cup = {
 	image: require('../images/cups-2.png'),
-	title: 'Серебро турнира в Санкт-Петербурге 2023',
+	title: 'Серебро турнира в Санкт-Петербурге. 2023',
 };
 
 const TwoSPB1: Cup = {
 	image: require('../images/cups-1.png'),
-	title: 'Чемпион турнира в Санкт-Петербурге 2024',
+	title: 'Чемпион турнира в Санкт-Петербурге. 2024',
 };
 
 const TwoSPB2: Cup = {
 	image: require('../images/cups-2.png'),
-	title: 'Серебро турнира в Санкт-Петербурге 2024',
+	title: 'Серебро турнира в Санкт-Петербурге. 2024',
 };
 
 const TwoSPB3: Cup = {
 	image: require('../images/cups-3.png'),
-	title: 'Бронза турнира в Санкт-Петербурге 2024',
+	title: 'Бронза турнира в Санкт-Петербурге. 2024',
+};
+
+const ThreeSPB1: Cup = {
+	image: require('../images/cups-1.png'),
+	title: 'Чемпион турнира в Санкт-Петербурге. 2025',
+};
+
+const ThreeSPB2: Cup = {
+	image: require('../images/cups-2.png'),
+	title: 'Серебро турнира в Санкт-Петербурге. 2025',
+};
+
+const ThreeSPB3: Cup = {
+	image: require('../images/cups-3.png'),
+	title: 'Бронза турнира в Санкт-Петербурге. 2025',
 };
 
 //Москва
 const OneMoscow1: Cup = {
 	image: require('../images/cups-1.png'),
-	title: 'Чемпион турнира в Москве 2023',
+	title: 'Чемпион турнира в Москве. 2023',
 };
 
 const OneMoscow2: Cup = {
 	image: require('../images/cups-2.png'),
-	title: 'Серебро турнира в Москве 2023',
+	title: 'Серебро турнира в Москве. 2023',
 };
 
 const TwoMoscow1: Cup = {
 	image: require('../images/cups-1.png'),
-	title: 'Чемпион турнира в Москве 2024',
+	title: 'Чемпион турнира в Москве. 2024',
 };
 
 const TwoMoscow2: Cup = {
 	image: require('../images/cups-2.png'),
-	title: 'Серебро турнира в Москве 2024',
+	title: 'Серебро турнира в Москве. 2024',
 };
 
 const TwoMoscow3: Cup = {
 	image: require('../images/cups-3.png'),
-	title: 'Бронза турнира в Москве 2024',
+	title: 'Бронза турнира в Москве. 2024',
 };
 
-//Челябинск
+//Урал
 const OneChel1: Cup = {
 	image: require('../images/cups-1.png'),
 	title: 'Чемпион турнира в Челябинске. Январь 2024',
@@ -130,16 +165,33 @@ const TwoChel3: Cup = {
 	title: 'Бронза турнира в Челябинске. Сентябрь 2024',
 };
 
+const OneEkb1: Cup = {
+	image: require('../images/cups-1.png'),
+	title: 'Чемпион турнира в Екатеринбурге. 2025',
+};
+
+const OneEkb2: Cup = {
+	image: require('../images/cups-2.png'),
+	title: 'Серебро турнира в Екатеринбурге. 2025',
+};
+
+const OneEkb3: Cup = {
+	image: require('../images/cups-3.png'),
+	title: 'Бронза турнира в Екатеринбурге. 2025',
+};
+
 //Омск
 const OneOmsk1: Cup = {
 	image: require('../images/cups-1.png'),
-	title: 'Чемпион турнира в Омске 2025',
+	title: 'Чемпион турнира в Омске. 2025',
 };
 
 const OneOmsk2: Cup = {
 	image: require('../images/cups-2.png'),
-	title: 'Серебро турнира в Омске 2025',
+	title: 'Серебро турнира в Омске. 2025',
 };
+
+//-------------------------------------------------------------------------------
 
 export const localPlayers = [
 	{
@@ -151,11 +203,12 @@ export const localPlayers = [
 		winrating: 0,
 		win: 0,
 	},
+
 	{
 		id: 'Petr_Devyatko',
-		image: require('../images/avatar_gamers.png'),
+		image: require('../images/photo_players/Petr_Devyatko.jpg'),
 		player: 'Пётр Девятко',
-		achievements: [organizerOneSPB, organizerTwoSPB],
+		achievements: [organizerOneSPB, organizerTwoSPB, organizerThreeSPB],
 		games: 0,
 		winrating: 0,
 		win: 0,
@@ -169,6 +222,7 @@ export const localPlayers = [
 			organizerTwoSPB,
 			organizerTwoMoscow,
 			organizerOneOmsk,
+			organizerThreeSPB,
 		],
 		games: 0,
 		winrating: 0,
@@ -178,45 +232,56 @@ export const localPlayers = [
 		id: 'Albert_Bashirov',
 		image: require('../images/photo_players/Albert_Bashirov.jpg'),
 		player: 'Альберт Баширов',
-		achievements: [],
-		games: 11, //Побед: 8
-		winrating: 73,
-		win: 8,
+		achievements: [ThreeSPB3, OneEkb3],
+		games: 23, //Побед: 8
+		win: 16,
 	},
 	{
 		id: 'Artur_Kovalev',
-		image: require('../images/avatar_gamers.png'),
+		image: require('../images/photo_players/Artur_Kovalev.jpg'),
 		player: 'Артур Ковалёв',
-		achievements: [OneMoscow1, TwoChel1, TwoSPB2, OneOmsk2, TwoMoscow3],
-		games: 33, //Побед: 22
-		winrating: 82,
-		win: 27,
+		achievements: [
+			OneEkb1,
+			OneMoscow1,
+			TwoChel1,
+			ThreeSPB1,
+			TwoSPB2,
+			OneOmsk2,
+			TwoMoscow3,
+		],
+		games: 45, //Побед: 22
+		win: 38,
 	},
 	{
 		id: 'Sergey_Latishev',
 		image: require('../images/photo_players/Sergey_Latishev.jpg'),
 		player: 'Сергей Латышев',
-		achievements: [OneChel1, TwoMoscow1, OneOmsk1, TwoSPB3, organizerTwoChe],
-		games: 21, //Побед: 14
-		winrating: 91,
-		win: 19,
+		achievements: [
+			OneChel1,
+			TwoMoscow1,
+			OneOmsk1,
+			OneEkb2,
+			TwoSPB3,
+			organizerTwoChe,
+		],
+		games: 27, //Побед: 14
+		win: 24,
 	},
 	{
 		id: 'Ivan_Vasilev',
 		image: require('../images/photo_players/Ivan_Vasilev.jpg'),
 		player: 'Иван Васильев',
-		achievements: [],
-		games: 20, //Побед: 12
-		winrating: 60,
-		win: 12,
+		achievements: [ThreeSPB2],
+		games: 31,
+		winrating: 5500,
+		win: 17, //Побед: 17
 	},
 	{
 		id: 'Stepan_Harlakshin',
 		image: require('../images/avatar_gamers.png'),
-		player: 'Степан Харлакшин',
+		player: 'Степан Харлашкин',
 		achievements: [],
 		games: 15, //Побед: 10
-		winrating: 67,
 		win: 10,
 	},
 	{
@@ -232,7 +297,7 @@ export const localPlayers = [
 		id: 'Viktor_Petrov',
 		image: require('../images/avatar_gamers.png'),
 		player: 'Виктор Петров',
-		achievements: [TwoSPB1, OneSPB2],
+		achievements: [TwoSPB1, OneSPB2, judgeThreeSPB],
 		games: 9, //Побед: 7
 		winrating: 78,
 		win: 7,
@@ -242,18 +307,18 @@ export const localPlayers = [
 		image: require('../images/avatar_gamers.png'),
 		player: 'Алексей Федулов',
 		achievements: [organizerTwoMoscow],
-		games: 12, //Побед: 6
+		games: 18, //Побед: 6
 		winrating: 50,
-		win: 6,
+		win: 7,
 	},
 	{
 		id: 'Denis_Solodkov',
 		image: require('../images/avatar_gamers.png'),
 		player: 'Денис Солодков',
 		achievements: [],
-		games: 13, //Побед: 6
+		games: 19, //Побед: 6
 		winrating: 46,
-		win: 6,
+		win: 10,
 	},
 	{
 		id: 'Aleksey_Mukhin',
@@ -279,7 +344,7 @@ export const localPlayers = [
 		player: 'Руслан Ильясов',
 		achievements: [TwoMoscow2],
 		games: 6, //Побед: 5
-		winrating: 83,
+		winrating: 8300,
 		win: 5,
 	},
 	{
@@ -305,15 +370,15 @@ export const localPlayers = [
 		image: require('../images/avatar_gamers.png'),
 		player: 'Урал Исмагилов',
 		achievements: [OneChel2],
-		games: 4, //Побед: 3
+		games: 10, //Побед: 3
 		winrating: 75,
-		win: 3,
+		win: 7,
 	},
 	{
 		id: 'Dmitriy_Vinogradov',
 		image: require('../images/avatar_gamers.png'),
 		player: 'Дмитрий Виноградов',
-		achievements: [],
+		achievements: [judgeThreeSPB],
 		games: 6, //Побед: 3
 		winrating: 50,
 		win: 3,
@@ -323,9 +388,8 @@ export const localPlayers = [
 		image: require('../images/avatar_gamers.png'),
 		player: 'Ким Сабиров',
 		achievements: [OneSPB1, judgeTwoSPB],
-		games: 3, //Побед: 3
-		winrating: 100,
-		win: 3,
+		games: 9,
+		win: 7,
 	},
 	{
 		id: 'Pavel_Karelin',
@@ -358,7 +422,7 @@ export const localPlayers = [
 		id: 'Andrey_Andreev',
 		image: require('../images/photo_players/Andrey_Andreev.jpg'),
 		player: 'Андрей Андреев',
-		achievements: [],
+		achievements: [organizerOneEKB],
 		games: 14, //Побед: 3
 		winrating: 43,
 		win: 6,
@@ -376,7 +440,7 @@ export const localPlayers = [
 		id: 'Alexander_Mashkalo',
 		image: require('../images/avatar_gamers.png'),
 		player: 'Александр Машкало',
-		achievements: [],
+		achievements: [organizerThreeJuniorSPB],
 		games: 6, //Побед: 2
 		winrating: 33,
 		win: 2,
@@ -395,9 +459,9 @@ export const localPlayers = [
 		image: require('../images/avatar_gamers.png'),
 		player: 'Данила Кузнецов',
 		achievements: [],
-		games: 11, //Побед: 5
+		games: 17, //Побед: 5
 		winrating: 45,
-		win: 5,
+		win: 8,
 	},
 	{
 		id: 'Dmitriy_Sokil',
@@ -422,16 +486,16 @@ export const localPlayers = [
 		image: require('../images/avatar_gamers.png'),
 		player: 'Евгений Сорокин',
 		achievements: [],
-		games: 10, //Побед: 2
+		games: 22,
 		winrating: 40,
-		win: 4,
+		win: 9,
 	},
 	{
 		id: 'Eduard_Agievich',
 		image: require('../images/avatar_gamers.png'),
 		player: 'Эдуард Агиевич',
 		achievements: [],
-		games: 8, //Побед: 3
+		games: 14, //Побед: 3
 		winrating: 36,
 		win: 3,
 	},
@@ -449,9 +513,9 @@ export const localPlayers = [
 		image: require('../images/avatar_gamers.png'),
 		player: 'Владимир Басков',
 		achievements: [],
-		games: 3, //Побед: 1
+		games: 9, //Побед: 1
 		winrating: 33,
-		win: 1,
+		win: 3,
 	},
 	{
 		id: 'Zahar_Alekseev',
@@ -467,9 +531,9 @@ export const localPlayers = [
 		image: require('../images/avatar_gamers.png'),
 		player: 'Сергей Егоров',
 		achievements: [],
-		games: 3, //Побед: 1
-		winrating: 0,
-		win: 1,
+		games: 14, //Побед: 1
+		winrating: 13,
+		win: 3,
 	},
 	{
 		id: 'Anton_Zubakov',
@@ -521,9 +585,9 @@ export const localPlayers = [
 		image: require('../images/avatar_gamers.png'),
 		player: 'Денис Шталтовой',
 		achievements: [],
-		games: 4, //Побед: 1
+		games: 10, //Побед: 1
 		winrating: 25,
-		win: 1,
+		win: 5,
 	},
 	{
 		id: 'Ivan_Vershinin',
@@ -539,9 +603,9 @@ export const localPlayers = [
 		image: require('../images/avatar_gamers.png'),
 		player: 'Андрей Омеляшко',
 		achievements: [organizerOneChe],
-		games: 12, //Побед: 4
+		games: 18, //Побед: 4
 		winrating: 67,
-		win: 8,
+		win: 11,
 	},
 	{
 		id: 'Ruslan_Aljanov',
@@ -585,9 +649,9 @@ export const localPlayers = [
 		image: require('../images/avatar_gamers.png'),
 		player: 'Александр Топорков',
 		achievements: [],
-		games: 6,
+		games: 12,
 		winrating: 33,
-		win: 2,
+		win: 5,
 	},
 
 	{
@@ -631,9 +695,9 @@ export const localPlayers = [
 		image: require('../images/avatar_gamers.png'),
 		player: 'Павел Котенёв',
 		achievements: [],
-		games: 6,
+		games: 12,
 		winrating: 50,
-		win: 3,
+		win: 7,
 	},
 	{
 		id: 'Egor_Kolobov',
@@ -643,5 +707,59 @@ export const localPlayers = [
 		games: 6,
 		winrating: 50,
 		win: 3,
+	},
+	{
+		id: 'Vadim_Basuk',
+		image: require('../images/photo_players/Vadim_Basuk.jpg'),
+		player: 'Вадим Басюк',
+		achievements: [],
+		games: 6,
+		winrating: 50,
+		win: 3,
+	},
+	{
+		id: 'Maksim_Yacuk',
+		image: require('../images/avatar_gamers.png'),
+		player: 'Максим Яцук',
+		achievements: [],
+		games: 6,
+		winrating: 50,
+		win: 2,
+	},
+	{
+		id: 'Ivan_grigorev',
+		image: require('../images/avatar_gamers.png'),
+		player: 'Иван Григорьев',
+		achievements: [],
+		games: 6,
+		winrating: 50,
+		win: 0,
+	},
+	{
+		id: 'Dmitriy_Ryabov',
+		image: require('../images/avatar_gamers.png'),
+		player: 'Дмитрий Рябов',
+		achievements: [],
+		games: 6,
+		winrating: 50,
+		win: 0,
+	},
+	{
+		id: 'Valeriy_Zhilin',
+		image: require('../images/avatar_gamers.png'),
+		player: 'Валерий Жилин',
+		achievements: [],
+		games: 6,
+		winrating: 50,
+		win: 1,
+	},
+	{
+		id: 'Maksim_Kuznezov',
+		image: require('../images/avatar_gamers.png'),
+		player: 'Максим Кузнецов',
+		achievements: [],
+		games: 6,
+		winrating: 50,
+		win: 1,
 	},
 ];

@@ -98,14 +98,15 @@
 			<div class="card_full">
 				<div class="card__column">
 					<img class="card__image" src="" alt="арм лист отряда" />
-					<span class="card__category">другое</span>
+					<div class="card__categoryMarker">
+						<span class="card__category">другое</span>
+						<img class="gallery_marker__image" src="" alt="" />
+						<span class="gallery_marker__title"></span>
+					</div>
 					<h2 class="card__title">Бэкенд-антистресс</h2>
 					<img class="card__description" src="" alt="артефакт отряда" />
-					<img class="gallery_marker__image" src="" alt="" />
-					<span class="gallery_marker__title"></span>
 
 					<div class="card__row">
-						<button class="button_like_preview"></button>
 						<button class="button card__button">В корзину</button>
 						<span class="card__price">1000 синапсов</span>
 					</div>
@@ -117,10 +118,12 @@
 		<template id="card-tehlist">
 			<div class="card_tehList">
 				<img class="card__image" src="" alt="арм лист отряда" />
-				<img class="gallery_marker__image" src="" alt="" />
-				<span class="gallery_marker__title"></span>
+				<div class="card__categoryMarker">
+					<span class="card__category">другое</span>
+					<img class="gallery_marker__image" src="" alt="" />
+					<span class="gallery_marker__title"></span>
+				</div>
 				<span class="directory"></span>
-				<span class="card__category"></span>
 				<h2 class="card__title"></h2>
 				<div class="card__row">
 					<button class="button card__button">Добавить</button>
@@ -132,9 +135,11 @@
 		<template id="card-tehlist_wheels">
 			<div class="card_tehList_wheels">
 				<img class="card__image" src="" alt="арм лист отряда" />
-				<img class="gallery_marker__image" src="" alt="" />
-				<span class="gallery_marker__title"></span>
-				<span class="card__category">другое</span>
+				<div class="card__categoryMarker">
+					<span class="card__category">другое</span>
+					<img class="gallery_marker__image" src="" alt="" />
+					<span class="gallery_marker__title"></span>
+				</div>
 				<h2 class="card__title">Бэкенд-антистресс</h2>
 				<label class="wheels_box">
 					<span class="wheels">Шины</span>
@@ -154,9 +159,11 @@
 					src=""
 					alt="арм лист боевой машины"
 				/>
-				<img class="gallery_marker__image" src="" alt="" />
-				<span class="gallery_marker__title"></span>
-				<span class="card__category"></span>
+				<div class="card__categoryMarker">
+					<span class="card__category">другое</span>
+					<img class="gallery_marker__image" src="" alt="" />
+					<span class="gallery_marker__title"></span>
+				</div>
 				<h2 class="card__title"></h2>
 				<div class="weapons-list"></div>
 				<div class="card__row">
@@ -254,9 +261,8 @@
 					<li><h3>Аватар</h3></li>
 					<li><h3>Игрок</h3></li>
 					<li><h3>Достижения</h3></li>
-					<li><h3>Игр сыграно</h3></li>
-
-					<li><h3>Процент побед</h3></li>
+					<li><h3>Побед / Игр</h3></li>
+					<li><h3>% побед</h3></li>
 				</ul>
 				<div class="rating__list"></div>
 				<div class="rating__memo_conteiner">
@@ -290,8 +296,8 @@
 				<span class="rating__name"></span>
 				<div class="rating__achievements">
 					<span class="rating__achievements_title"></span>
-					<img class="rating__achievements_image" alt="" />
 				</div>
+
 				<span class="rating__games"></span>
 				<span class="rating__win"></span>
 			</li>
@@ -299,6 +305,12 @@
 
 		<template id="tournament">
 			<div class="tournament">
+				<div class="tournament"></div>
+			</div>
+		</template>
+
+		<template id="tournament-item">
+			<div class="tournament-item">
 				<h1 class="tournament__name"></h1>
 				<div id="day_one" class="tournament__day">
 					<h2 class="tournament__day_title">Первый день</h2>
@@ -307,21 +319,41 @@
 							<h3 class="tournament__item-index">участники</h3>
 							<span class="tournament__item-index">побед/сыграно</span>
 						</div>
-						<div class="tournament__list_one"></div>
+						<ul class="tournament__list">
+							<li class="tournament__item">
+								<span class="tournament__player"></span>
+								<span class="tournament__result"></span>
+							</li>
+						</ul>
 					</div>
 					<div class="tours">
-						<div class="tournament__tour">
+						<div id="game_one" class="tournament__tour">
 							<h3 class="tournament__title">I тур</h3>
-							<div id="game_one" class="tournament__game"></div>
+							<ul class="tournament__game">
+								<li class="tournament_conteiner">
+									<span class="tournament__player"></span>
+									<span class="tournament__result"></span>
+								</li>
+							</ul>
 						</div>
-						<div class="tournament__tour">
+						<div id="game_two" class="tournament__tour">
 							<h3 class="tournament__title">II тур</h3>
-							<div id="game_two" class="tournament__game"></div>
+							<ul class="tournament__game">
+								<li class="tournament_conteiner">
+									<span class="tournament__player"></span>
+									<span class="tournament__result"></span>
+								</li>
+							</ul>
 						</div>
 
-						<div class="tournament__tour">
+						<div id="game_three" class="tournament__tour">
 							<h3 class="tournament__title">III тур</h3>
-							<div id="game_three" class="tournament__game"></div>
+							<ul class="tournament__game">
+								<li class="tournament_conteiner">
+									<span class="tournament__player"></span>
+									<span class="tournament__result"></span>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -333,36 +365,43 @@
 							<h3 class="tournament__item-index">участники</h3>
 							<span class="tournament__item-index">побед/сыграно</span>
 						</div>
-						<div class="tournament__list_two"></div>
+						<ul class="tournament__list">
+							<li class="tournament__item">
+								<span class="tournament__player"></span>
+								<span class="tournament__result"></span>
+							</li>
+						</ul>
 					</div>
 					<div class="tours">
-						<div class="tournament__tour">
+						<div id="game_four" class="tournament__tour">
 							<h3 class="tournament__title">IV тур</h3>
-							<div id="game_four" class="tournament__game"></div>
+							<ul class="tournament__game">
+								<li class="tournament_conteiner">
+									<span class="tournament__player"></span>
+									<span class="tournament__result"></span>
+								</li>
+							</ul>
 						</div>
-						<div class="tournament__tour">
+						<div id="game_five" class="tournament__tour">
 							<h3 class="tournament__title">V тур</h3>
-							<div id="game_five" class="tournament__game"></div>
+							<ul class="tournament__game">
+								<li class="tournament_conteiner">
+									<span class="tournament__player"></span>
+									<span class="tournament__result"></span>
+								</li>
+							</ul>
 						</div>
-						<div class="tournament__tour">
+						<div id="game_six" class="tournament__tour">
 							<h3 class="tournament__title">VI тур</h3>
-							<div id="game_six" class="tournament__game"></div>
+							<ul class="tournament__game">
+								<li class="tournament_conteiner">
+									<span class="tournament__player"></span>
+									<span class="tournament__result"></span>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
-			</div>
-		</template>
-
-		<template id="tournament-item">
-			<h1 class="tournament__name"></h1>
-			<li class="tournament__player"></li>
-			<li class="tournament__results"></li>
-		</template>
-
-		<template id="tournament-game">
-			<div class="tournament_conteiner">
-				<span class="tournament__player"></span>
-				<span class="tournament__result"></span>
 			</div>
 		</template>
 
@@ -647,42 +686,7 @@
 						/>Рейтинг игроков</a
 					>
 				</li>
-				<li class="menu-item">
-					<a class="favorites__point" href="#favorites">
-						<svg
-							class="like_preview"
-							id="_Слой_1"
-							data-name="Слой 1"
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 1796.5 1605.54"
-						>
-							<defs>
-								<style>
-									.cls-1 {
-										fill: currentColor;
-									}
 
-									.cls-1,
-									.cls-2 {
-										stroke-width: 0px;
-									}
-
-									.cls-2 {
-										fill: #fff;
-									}
-								</style>
-							</defs>
-							<path
-								class="cls-1"
-								d="M890.76,1573.4l-.2.18L233.53,982.36c-33.02-29.71-62.72-62.03-88.27-96.06C4.42,698.73,16.92,511.59,47.73,353.28c9.93-51.04,27.85-97.42,53.26-137.84,23.28-37.05,53.08-69.5,88.56-96.45,79.93-60.72,170.21-80.94,231.87-87.22,2.33-.24,4.49-1.07,6.31-2.36,13.13-1.03,26.33-1.55,39.3-1.55,24.83,0,49.67,1.9,73.84,5.66l.21.03c21.93,3.02,42.7,7.48,61.95,13.31l-.2.44,12.62,4.17c115.22,38.07,212.16,120.33,272.97,231.65,2.34,4.28,6.81,6.93,11.68,6.93,4.79,0,9.23-2.59,11.58-6.76,62.41-110.43,160.53-191.3,276.28-227.7l12.68-3.99-.19-.45c19.33-5.55,40.17-9.72,62.14-12.42l.21-.03c21.92-3.08,44.4-4.64,66.82-4.64,15.31,0,30.88.73,46.37,2.17,1.8,1.31,3.94,2.17,6.26,2.44,61.58,7.17,151.56,28.69,230.6,90.55,35.09,27.46,64.41,60.34,87.16,97.72,24.82,40.79,42.07,87.42,51.27,138.6,28.52,158.74,38.33,346.03-105.2,531.57-26.04,33.66-56.2,65.54-89.64,94.78l-665.49,581.7-.21-.19Z"
-							/>
-							<path
-								class="cls-2"
-								d="M467.03,39.86h0c24.22,0,48.44,1.86,72,5.51l.21.03.21.03c17.11,2.35,33.47,5.61,48.91,9.73l23.33,7.71c112.32,37.11,206.86,117.37,266.21,226.01,4.44,8.13,12.95,13.18,22.21,13.18s17.55-4.93,22.03-12.86c60.91-107.77,156.6-186.67,269.44-222.16l23.43-7.37c15.5-3.9,31.92-6.92,49.06-9.02l.21-.03.21-.03c21.37-3,43.29-4.53,65.16-4.53,14.04,0,28.33.63,42.55,1.87,2.67,1.38,5.6,2.3,8.71,2.66,40.94,4.76,80.44,14.3,117.39,28.34,39.8,15.12,75.86,35.22,107.19,59.74,33.95,26.57,62.31,58.36,84.3,94.5,24.05,39.52,40.77,84.77,49.71,134.48,28.06,156.15,37.78,340.28-102.88,522.1-25.56,33.04-55.19,64.36-88.05,93.09l-657.41,574.64-.28-.26-.27.24L241.56,973.44c-32.45-29.2-61.62-60.94-86.7-94.35C16.84,695.28,29.21,511.3,59.51,355.57c9.65-49.58,27.02-94.58,51.64-133.75,22.51-35.82,51.33-67.2,85.66-93.28,31.68-24.06,68.03-43.64,108.04-58.19,37.16-13.51,76.79-22.47,117.78-26.65,3.11-.32,6.07-1.19,8.76-2.54,11.92-.87,23.88-1.31,35.65-1.31M467.03,15.86c-14.66,0-29.5.64-44.52,1.94-.57.05-1.04.46-1.17,1.02-.13.55-.58.95-1.14,1.01C255.4,36.6,78.64,131.6,35.95,350.99,4.78,511.19-7.69,702.58,135.67,893.51c26.64,35.47,56.86,68.1,89.84,97.78l665.01,598.4.14-.12.14.12,673.56-588.76c33.4-29.19,64.09-61.38,91.24-96.47,146.1-188.85,136.39-380.39,107.52-541.03-39.53-219.98-214.9-317.51-379.44-336.66-.56-.06-1.01-.48-1.13-1.03-.12-.56-.59-.98-1.16-1.04-17.48-1.77-34.74-2.63-51.74-2.63-23.34,0-46.19,1.62-68.5,4.76-27.64,3.4-53.62,9.09-76.99,16.81l.22.51c-121.36,38.17-220.87,123.08-283.13,233.24-.25.45-.7.67-1.14.67s-.9-.23-1.15-.68c-60.67-111.05-158.95-197.39-279.74-237.29l.23-.51c-23.26-8.05-49.15-14.12-76.74-17.91-24.56-3.81-49.83-5.8-75.68-5.8h0Z"
-							/></svg
-						>Избранное
-					</a>
-				</li>
 				<li class="menu-item">
 					<a class="memo__point" href="#memo"
 						><img
@@ -701,7 +705,15 @@
 						/>Турнир</a
 					>
 				</li>
-
+				<li class="menu-item">
+					<a class="settings__point" href="#settings"
+						><img
+							class="footer-image"
+							src="<%=require('../images/icon-settings.png')%>"
+							alt="БF assistent logo"
+						/>Настройки</a
+					>
+				</li>
 				<li class="menu-item">
 					<a
 						class="header__link"
@@ -712,15 +724,6 @@
 							src="<%=require('../images/VK_logo_dark-04.png')%>"
 							alt="ссылка на сообщество в Вконтакте"
 						/>По всем вопросам</a
-					>
-				</li>
-				<li class="menu-item">
-					<a class="settings__point" href="#settings"
-						><img
-							class="footer-image"
-							src="<%=require('../images/icon-settings.png')%>"
-							alt="БF assistent logo"
-						/>Настройки</a
 					>
 				</li>
 			</ul>

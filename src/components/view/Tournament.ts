@@ -1,260 +1,261 @@
 import { Component } from '../base/Component';
 import { EventEmitter } from '../base/events';
 import { ensureElement } from '../../utils/utils';
-import {
-	localParticipant,
-	ITournament,
-	IGames,
-	localTournament,
-} from '../../types/tournamentData';
+import { ITournament, localTournament } from '../../types/tournamentData';
 
 interface ITournamentView {
 	items: HTMLElement[];
 }
 
 export class Tournament extends Component<ITournamentView> {
-	public _day: HTMLElement;
-	public _day_two: HTMLElement;
-	public _games: HTMLElement;
+	protected tournament: HTMLElement;
+	protected tournamentListOne: HTMLElement;
 
 	constructor(container: HTMLElement, events: EventEmitter) {
 		super(container, new EventEmitter());
-		this._day = ensureElement<HTMLElement>('#day_one', container);
-		this._day_two = ensureElement<HTMLElement>('#day_two', container);
+		this.tournament = container.querySelector('.tournament');
 
 		this.events = events;
-		for (let i = 0; i < localTournament.length; i += 1) {
-			const tournament = localTournament[i];
-			this.renderTournament(tournament);
-		}
+
+		localTournament.forEach((el) => {
+			const result = this.tournamentRender(el);
+			this.tournament.append(result);
+		});
 	}
 
-	private renderTournament(tournament: ITournament) {
-		// Создаем контейнер для турнира
-		const tournamentContainer = document.createElement('div');
-		tournamentContainer.className = 'tournament';
+	hoverElement(element: HTMLElement) {
+		const players = document.querySelector(
+			'.tournament__player'
+		) as HTMLElement;
 
-		// Отрисовка заголовка турнира
-		const titleTemplate = document.getElementById(
-			'tournament-item'
+		element.addEventListener('click', () => {
+			if (element.textContent === players.textContent) {
+				element.style.backgroundColor = 'orange';
+				players.style.backgroundColor = 'orange';
+			}
+		});
+	}
+
+	tournamentRender(tournament: ITournament) {
+		const template = document.querySelector(
+			'#tournament-item'
 		) as HTMLTemplateElement;
-		const titleClone = titleTemplate.content.cloneNode(true) as HTMLElement;
+		const tournamentTemplate = template.content;
+		const tournamentElement = tournamentTemplate
+			.querySelector('.tournament-item')
+			.cloneNode(true) as HTMLElement;
+		tournamentElement.querySelector('.tournament__name').textContent =
+			tournament.title;
 
-		const titleElement = titleClone.querySelector(
-			'.tournament__name'
-		) as HTMLElement;
-		titleElement.textContent = tournament.title;
-		tournamentContainer.appendChild(titleElement);
+		//Список участников первого дня
+		const dayOne = tournamentElement.querySelector('#day_one');
+		const tournamentList = dayOne.querySelector('.tournament__list');
 
-		// Получаем основной заголовок турнира
-		const mainTitleElement = this._day.parentElement.querySelector(
-			'.tournament__name'
-		) as HTMLElement;
-		mainTitleElement.textContent = tournament.title;
+		const itemTemplate = tournamentList.querySelector('.tournament__item');
+		tournamentList.innerHTML = '';
 
-		// Отрисовка участников
-		const participantListOne = document.createElement('ul');
-		participantListOne.className = 'tournament__list_one';
 		tournament.participant.forEach((player) => {
-			const tournamentList = this._day.querySelector(
-				'.tournament__list_one'
-			) as HTMLElement;
-			const playerElement = document.createElement('li');
-			playerElement.className = 'tournament__player';
-			playerElement.textContent = player.name.name;
+			const listElement = itemTemplate.cloneNode(true) as HTMLElement;
 
-			const resultsElement = document.createElement('li');
-			resultsElement.className = 'tournament__results';
-			resultsElement.textContent = player.result;
+			listElement.querySelector('.tournament__player').textContent =
+				player.name.name;
+			listElement.querySelector('.tournament__result').textContent =
+				player.result;
 
-			tournamentList.appendChild(playerElement);
-			tournamentList.appendChild(resultsElement);
-		});
-		tournamentContainer.appendChild(participantListOne);
-
-		tournament.participant1.forEach((player) => {
-			const tournamentList = this._day_two.querySelector(
-				'.tournament__list_two'
-			) as HTMLElement;
-			const playerElement = document.createElement('li');
-			playerElement.className = 'tournament__player';
-			playerElement.textContent = player.name.name;
-
-			const resultsElement = document.createElement('li');
-			resultsElement.className = 'tournament__results';
-			resultsElement.textContent = player.result;
-
-			tournamentList.appendChild(playerElement);
-			tournamentList.appendChild(resultsElement);
+			tournamentList.append(listElement);
 		});
 
-		//Отрисовка первого тура
+		//Список участников второго дня
+		const dayTwo = tournamentElement.querySelector('#day_two');
+		const tournamentListTwo = dayTwo.querySelector('.tournament__list');
+
+		const itemTemplateTwo =
+			tournamentListTwo.querySelector('.tournament__item');
+		tournamentListTwo.innerHTML = '';
+
+		tournament.participantTwo.forEach((player) => {
+			const listElement = itemTemplateTwo.cloneNode(true) as HTMLElement;
+
+			listElement.querySelector('.tournament__player').textContent =
+				player.name.name;
+			listElement.querySelector('.tournament__result').textContent =
+				player.result;
+
+			tournamentListTwo.append(listElement);
+		});
+
+		//Первый тур
+		const tournamentTour = dayOne.querySelector('#game_one');
+		const gameOne = tournamentTour.querySelector('.tournament__game');
+
+		const tournamentConteiner = gameOne.querySelector('.tournament_conteiner');
+		gameOne.innerHTML = '';
+
 		tournament.tour_one.forEach((player) => {
-			const gameTemplate = document.getElementById(
-				'tournament-game'
-			) as HTMLTemplateElement;
-			const gameClone = gameTemplate.content.cloneNode(true) as HTMLElement;
+			const tourElement = tournamentConteiner.cloneNode(true) as HTMLElement;
 
-			// Получаем элементы из клона
-			const playerElement = gameClone.querySelector(
-				'.tournament__player'
-			) as HTMLElement;
-			const resultsElement = gameClone.querySelector(
+			tourElement.querySelector('.tournament__player').textContent =
+				player.name.name;
+			tourElement.querySelector(
+				'.tournament__result'
+			).textContent = `${player.result}`;
+
+			const resultsElement = tourElement.querySelector(
 				'.tournament__result'
 			) as HTMLElement;
-
-			// Устанавливаем текст для игрока и результата
-			playerElement.textContent = player.name.name;
-			resultsElement.textContent = `${player.result}`;
-
 			if (player.result === 1) {
 				resultsElement.style.backgroundColor = 'purple';
 			}
 
-			// Находим контейнер для добавления
-			const tournamentList = this._day.querySelector(
-				'#game_one'
-			) as HTMLElement;
-
-			// Добавляем весь элемент <li class="tournament_conteiner"> в контейнер
-			tournamentList.appendChild(gameClone);
+			gameOne.append(tourElement);
 		});
 
-		//Отрисовка второго тура
+		//Второй тур
+		const tournamentTourTwo = dayOne.querySelector('#game_two');
+		const gameTwo = tournamentTourTwo.querySelector('.tournament__game');
+
+		const tournamentConteinerTwo = gameTwo.querySelector(
+			'.tournament_conteiner'
+		);
+		gameTwo.innerHTML = '';
+
 		tournament.tour_two.forEach((player) => {
-			const gameTemplate = document.getElementById(
-				'tournament-game'
-			) as HTMLTemplateElement;
-			const gameClone = gameTemplate.content.cloneNode(true) as HTMLElement;
+			const tourElement = tournamentConteinerTwo.cloneNode(true) as HTMLElement;
 
-			// Получаем элементы из клона
-			const playerElement = gameClone.querySelector(
-				'.tournament__player'
-			) as HTMLElement;
-			const resultsElement = gameClone.querySelector(
+			tourElement.querySelector('.tournament__player').textContent =
+				player.name.name;
+			tourElement.querySelector(
+				'.tournament__result'
+			).textContent = `${player.result}`;
+
+			const resultsElement = tourElement.querySelector(
 				'.tournament__result'
 			) as HTMLElement;
-
-			playerElement.textContent = player.name.name;
-			resultsElement.textContent = `${player.result}`;
-
 			if (player.result === 1) {
 				resultsElement.style.backgroundColor = 'purple';
 			}
 
-			const tournamentList = this._day.querySelector(
-				'#game_two'
-			) as HTMLElement;
-
-			tournamentList.appendChild(gameClone);
+			gameTwo.append(tourElement);
 		});
 
-		tournament.tour_thee.forEach((player) => {
-			const gameTemplate = document.getElementById(
-				'tournament-game'
-			) as HTMLTemplateElement;
-			const gameClone = gameTemplate.content.cloneNode(true) as HTMLElement;
+		//Третий тур
+		const tournamentTourThree = dayOne.querySelector('#game_three');
+		const gameThree = tournamentTourThree.querySelector('.tournament__game');
 
-			const playerElement = gameClone.querySelector(
-				'.tournament__player'
+		const tournamentConteinerThree = gameThree.querySelector(
+			'.tournament_conteiner'
+		);
+		gameThree.innerHTML = '';
+
+		tournament.tour_three.forEach((player) => {
+			const tourElement = tournamentConteinerThree.cloneNode(
+				true
 			) as HTMLElement;
-			const resultsElement = gameClone.querySelector(
+
+			tourElement.querySelector('.tournament__player').textContent =
+				player.name.name;
+			tourElement.querySelector(
+				'.tournament__result'
+			).textContent = `${player.result}`;
+
+			const resultsElement = tourElement.querySelector(
 				'.tournament__result'
 			) as HTMLElement;
-
-			playerElement.textContent = player.name.name;
-			resultsElement.textContent = `${player.result}`;
-
 			if (player.result === 1) {
 				resultsElement.style.backgroundColor = 'purple';
 			}
 
-			const tournamentList = this._day.querySelector(
-				'#game_three'
-			) as HTMLElement;
-
-			tournamentList.appendChild(gameClone);
+			gameThree.append(tourElement);
 		});
+
+		//Четвертый тур
+		const tournamentTourFour = dayTwo.querySelector('#game_four');
+		const gameFour = tournamentTourFour.querySelector('.tournament__game');
+
+		const tournamentConteinerFour = gameFour.querySelector(
+			'.tournament_conteiner'
+		);
+		gameFour.innerHTML = '';
 
 		tournament.tour_four.forEach((player) => {
-			const gameTemplate = document.getElementById(
-				'tournament-game'
-			) as HTMLTemplateElement;
-			const gameClone = gameTemplate.content.cloneNode(true) as HTMLElement;
-
-			const playerElement = gameClone.querySelector(
-				'.tournament__player'
+			const tourElement = tournamentConteinerThree.cloneNode(
+				true
 			) as HTMLElement;
-			const resultsElement = gameClone.querySelector(
+
+			tourElement.querySelector('.tournament__player').textContent =
+				player.name.name;
+			tourElement.querySelector(
+				'.tournament__result'
+			).textContent = `${player.result}`;
+
+			const resultsElement = tourElement.querySelector(
 				'.tournament__result'
 			) as HTMLElement;
-
-			playerElement.textContent = player.name.name;
-			resultsElement.textContent = `${player.result}`;
-
 			if (player.result === 1) {
 				resultsElement.style.backgroundColor = 'purple';
 			}
 
-			const tournamentList = this._day_two.querySelector(
-				'#game_four'
-			) as HTMLElement;
-
-			tournamentList.appendChild(gameClone);
+			gameFour.append(tourElement);
 		});
+
+		//Пятый тур
+		const tournamentTourFive = dayTwo.querySelector('#game_five');
+		const gameFive = tournamentTourFive.querySelector('.tournament__game');
+
+		const tournamentConteinerFive = gameFive.querySelector(
+			'.tournament_conteiner'
+		);
+		gameFive.innerHTML = '';
 
 		tournament.tour_five.forEach((player) => {
-			const gameTemplate = document.getElementById(
-				'tournament-game'
-			) as HTMLTemplateElement;
-			const gameClone = gameTemplate.content.cloneNode(true) as HTMLElement;
-
-			const playerElement = gameClone.querySelector(
-				'.tournament__player'
+			const tourElement = tournamentConteinerFive.cloneNode(
+				true
 			) as HTMLElement;
-			const resultsElement = gameClone.querySelector(
+
+			tourElement.querySelector('.tournament__player').textContent =
+				player.name.name;
+			tourElement.querySelector(
+				'.tournament__result'
+			).textContent = `${player.result}`;
+
+			const resultsElement = tourElement.querySelector(
 				'.tournament__result'
 			) as HTMLElement;
-
-			playerElement.textContent = player.name.name;
-			resultsElement.textContent = `${player.result}`;
-
 			if (player.result === 1) {
 				resultsElement.style.backgroundColor = 'purple';
 			}
 
-			const tournamentList = this._day_two.querySelector(
-				'#game_five'
-			) as HTMLElement;
-
-			tournamentList.appendChild(gameClone);
+			gameFive.append(tourElement);
 		});
+
+		//Шестой тур
+		const tournamentTourSix = dayTwo.querySelector('#game_six');
+		const gameSix = tournamentTourSix.querySelector('.tournament__game');
+
+		const tournamentConteinerSix = gameSix.querySelector(
+			'.tournament_conteiner'
+		);
+		gameSix.innerHTML = '';
 
 		tournament.tour_six.forEach((player) => {
-			const gameTemplate = document.getElementById(
-				'tournament-game'
-			) as HTMLTemplateElement;
-			const gameClone = gameTemplate.content.cloneNode(true) as HTMLElement;
+			const tourElement = tournamentConteinerSix.cloneNode(true) as HTMLElement;
 
-			const playerElement = gameClone.querySelector(
-				'.tournament__player'
-			) as HTMLElement;
-			const resultsElement = gameClone.querySelector(
+			tourElement.querySelector('.tournament__player').textContent =
+				player.name.name;
+			tourElement.querySelector(
+				'.tournament__result'
+			).textContent = `${player.result}`;
+
+			const resultsElement = tourElement.querySelector(
 				'.tournament__result'
 			) as HTMLElement;
-
-			playerElement.textContent = player.name.name;
-			resultsElement.textContent = `${player.result}`;
-
 			if (player.result === 1) {
 				resultsElement.style.backgroundColor = 'purple';
 			}
 
-			const tournamentList = this._day_two.querySelector(
-				'#game_six'
-			) as HTMLElement;
-
-			tournamentList.appendChild(gameClone);
+			gameSix.append(tourElement);
 		});
+
+		return tournamentElement;
 	}
 }

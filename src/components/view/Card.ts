@@ -19,20 +19,34 @@ interface Category {
 }
 
 const category: Category = {
-	'Гильдия вольных стрелков': 'card__category_soft',
+	'Гильдия вольных стрелков': 'card__category_GVS',
+	'Гильдия вольных стрелков (ОБЕ)': 'card__category_GVS',
 	'Войска Колдуна': 'card__category_hard',
-	'Боевое существо': 'card__category_additional',
+	'Войска Колдуна (ОБЕ)': 'card__category_hard',
+	'Боевое существо (ОБЕ)': 'card__category_drakon',
 	'Легионеры Некроманта': 'card__category_nekromant',
+	'Легионеры Некроманта (ОБЕ)': 'card__category_nekromant',
 	'Гвардия Чародея': 'card__category_charodey',
+	'Гвардия Чародея (ОБЕ)': 'card__category_charodey',
 	'Боевая машина': 'card__category_additional',
 	'Ст. производители (НО)': 'card__category_storonniye_NO',
+	'Ст. производители (НО) (ОБЕ)': 'card__category_storonniye_NO',
 	'Ст. производители (АС)': 'card__category_storonniye_AS',
 	'Ст. производители (ВИМ)': 'card__category_storonniye_VIM',
 	'Ст. производители (ХБ)': 'card__category_storonniye_XB',
 	'Ст. производители (ВПМ)': 'card__category_storonniye_VPM',
+	'Ст. производители (ВПМ) (ОБЕ)': 'card__category_storonniye_VPM',
 	'Ст. производители (ЛЧП)': 'card__category_storonniye_LCHP',
 	'Ст. производители (Б)': 'card__category_storonniye_B',
-	Техлист: 'card__category_other',
+	'Ст. производители (Б) (ОБЕ)': 'card__category_storonniye_B',
+	'Техлист (1П)': 'card__category_other',
+	'Техлист (1А)': 'card__category_other',
+	'Техлист (1МП)': 'card__category_other',
+	'Техлист (1К)': 'card__category_other',
+	'Техлист (2П)': 'card__category_other',
+	'Техлист (2А)': 'card__category_other',
+	'Техлист (2К)': 'card__category_other',
+	'Техлист (2МП)': 'card__category_other',
 	кнопка: 'card__category_button',
 	другое: 'card__category_other',
 	дополнительное: 'card__category_additional',
@@ -51,7 +65,8 @@ export class Card extends Component<ICardItem> {
 	protected _price: HTMLElement;
 	protected priceValue: number;
 	protected _button?: HTMLButtonElement;
-	protected _buttonLike: HTMLButtonElement;
+	protected _buttonLike: HTMLInputElement;
+	protected isLiked: boolean = false;
 	protected volumeLevel: HTMLElement;
 	protected increaseButton: HTMLButtonElement;
 	protected decreaseButton: HTMLButtonElement;
@@ -110,10 +125,22 @@ export class Card extends Component<ICardItem> {
 				container.addEventListener('click', handleAction);
 			}
 		}
+
 		if (this._buttonLike) {
 			this._buttonLike.addEventListener('click', () =>
 				this.addClassButtonLikeActive()
 			);
+		}
+	}
+
+	categoryPadding() {
+		if (
+			this._category.textContent.includes('Гильдия вольных стрелков') ||
+			this._category.textContent.includes('Гвардия Чародея') ||
+			this._category.textContent.includes('Легионеры Некроманта') ||
+			this._category.textContent.includes('Войска Колдуна')
+		) {
+			this._category.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
 		}
 	}
 
