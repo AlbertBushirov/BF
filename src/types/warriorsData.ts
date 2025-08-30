@@ -1279,8 +1279,6 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/marker_new.png'),
-		markerTitle: 'Новый адаптированный отряд',
 	},
 	{
 		id: 'SPShotrm',
@@ -1327,8 +1325,6 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта: 67% ',
 		button: '',
-		marker: require('../images/marker_new.png'),
-		markerTitle: 'Новый адаптированный отряд',
 	},
 	{
 		id: 'SPKlanLokAmon',
@@ -1860,5 +1856,18 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта: 67%',
 		button: '',
+	},
+	{
+		id: 'SPDikobrazi',
+		title: 'Дикобразы',
+		category: 'Ст. производители (ЛЧП)',
+		description: require('../images/Artefakti/Dikobrazi.jpg'),
+		image: require('../images/Storonie/SPDikobrazi.jpg'),
+		price: 230,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
 	},
 ];

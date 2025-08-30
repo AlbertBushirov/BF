@@ -23,7 +23,7 @@ const category: Category = {
 	'Гильдия вольных стрелков (ОБЕ)': 'card__category_GVS',
 	'Войска Колдуна': 'card__category_hard',
 	'Войска Колдуна (ОБЕ)': 'card__category_hard',
-	'Боевое существо (ОБЕ)': 'card__category_additional',
+	'Боевое существо (ОБЕ)': 'card__category_drakon',
 	'Легионеры Некроманта': 'card__category_nekromant',
 	'Легионеры Некроманта (ОБЕ)': 'card__category_nekromant',
 	'Гвардия Чародея': 'card__category_charodey',

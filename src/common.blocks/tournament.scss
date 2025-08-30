@@ -152,6 +152,7 @@ ul {
 .tournament_conteiner {
 	display: flex;
 	margin-bottom: 20px;
+
 	border-bottom-left-radius: 0.2rem;
 	border-bottom-right-radius: 0.2rem;
 	@media (max-width: 450px) {
@@ -178,9 +179,13 @@ ul {
 	.tournament__player,
 	.tournament__result {
 		border: none;
-
-		padding-inline: 4px;
+		font-size: 14px;
+		padding-inline: 2.5px;
 		padding-block: 6px;
+	}
+
+	.tournament__result {
+		font-size: 15px;
 	}
 	.tournament__result {
 		border-inline-start: 2px solid rgba(0, 0, 0, 0.459);

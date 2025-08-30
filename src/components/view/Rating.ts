@@ -10,9 +10,11 @@ interface IRatingView {
 
 export class Rating extends Component<IRatingView> {
 	public _player: HTMLElement;
+	public _achievements: HTMLElement;
 	constructor(container: HTMLElement, events: EventEmitter) {
 		super(container, new EventEmitter());
 		this._player = ensureElement<HTMLElement>('.rating__list', container);
+
 		this.events = events;
 		this.renderPlayers(localPlayers);
 	}
@@ -69,11 +71,13 @@ export class Rating extends Component<IRatingView> {
 			imageElement.src = player.image;
 			imageElement.alt = player.player;
 			nameElement.textContent = player.player;
-			gamesElement.textContent = player.games.toString();
+			gamesElement.textContent =
+				player.win.toString() + `${' / '}` + player.games.toString();
 			winElement.textContent =
 				player.games !== 0
 					? `${Math.round((player.win / player.games) * 100)}%`
 					: '0%';
+
 			if (player.achievements && player.achievements.length > 0) {
 				player.achievements.forEach((achievement: Cup) => {
 					const achievementImage = document.createElement('img');

@@ -516,7 +516,7 @@ html {
 		transform: scale(1.5) translateY(50px);
 		cursor: zoom-out;
 		@media (max-width: 450px) {
-			transform: scale(1.1);
+			transform: scale(1.1) translateY(20px);
 		}
 	}
 
@@ -595,8 +595,15 @@ html {
 		&_other {
 			background-color: $category2;
 		}
+		&_drakon {
+			background-color: $category3;
+		}
 		&_additional {
 			background-color: $category3;
+
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 		&_nekromant {
 			background-color: $category6;
@@ -651,6 +658,7 @@ html {
 			background-size: cover;
 		}
 	}
+
 	&__price {
 		font-size: 15px;
 		font-weight: 300;
@@ -665,6 +673,14 @@ html {
 		padding: 0.5rem 1.25rem;
 		border-radius: 2.5rem;
 		margin-bottom: 12px;
+	}
+}
+
+.img__machine.enlarged {
+	transform: scale(1.5) translateY(85px);
+	cursor: zoom-out;
+	@media (max-width: 450px) {
+		transform: scale(1.1) translateY(20px);
 	}
 }
 

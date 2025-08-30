@@ -9,19 +9,31 @@
 	margin-bottom: 0px;
 }
 
+.rating__list {
+	@media (max-width: 450px) {
+		margin-top: 85px;
+	}
+}
+
 .rating__title {
+	background-color: #060c14;
 	display: grid;
 	grid-template-columns: 1.2fr 2fr 2fr 2fr 2fr 2fr;
 	font-size: 15px;
 	list-style: none;
-	padding: 0px;
+
 	text-align: center;
-	margin-top: 60px;
+	z-index: 3;
 	border-bottom: 2px solid rgba(255, 255, 255, 0.459);
 	@media (max-width: 600px) {
 		font-size: 12px;
 	}
 	@media (max-width: 450px) {
+		position: fixed;
+
+		top: 0vh;
+		margin: 0px;
+		padding-top: 50px;
 		font-size: 10px;
 		padding-inline: 3px;
 		box-sizing: border-box;
@@ -37,10 +49,12 @@
 .rating__title li {
 	padding-inline: 3px;
 	box-sizing: border-box;
+	align-self: end;
 }
 
 .rating__item {
 	display: grid;
+
 	grid-template-columns: 1.2fr 2fr 2fr 2fr 2fr 2fr;
 	height: 120px;
 	font-size: 15px;
@@ -68,37 +82,45 @@
 }
 
 .rating__achievements {
-	position: relative; /* Позиционируем контейнер для достижения */
 	display: inline-block;
 	display: grid;
+
 	grid-template-columns: repeat(4, auto);
 	align-items: end;
+	@media (max-width: 450px) {
+		grid-template-columns: repeat(3, min-content);
+		max-width: 81px;
+		height: 68px;
+
+		overflow-x: auto;
+	}
 }
 
 .rating__achievement {
-	position: relative; /* Позиционируем контейнер для достижения */
-	display: inline-block;
+	align-self: center;
 }
 
 .rating__achievements_title {
 	display: none;
 	position: absolute;
+	width: 110px;
 	background-color: rgba(0, 0, 0, 0.7);
 	padding: 5px;
 	border-radius: 3px;
 	font-size: 15px;
-
+	z-index: 2;
 	@media (max-width: 450px) {
 		font-size: 10px;
+		width: 60px;
 	}
 }
 
 .rating__achievements_image:hover + .rating__achievements_title {
 	display: block;
-	z-index: 1000;
 }
 
 .rating__achievements_image {
+	position: relative;
 	max-width: 40px;
 	padding: 1px;
 	@media (max-width: 551px) {
