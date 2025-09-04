@@ -115,7 +115,7 @@ export class Basket extends Component<IBasketView> {
 	set total(total: number) {
 		if (this._total) {
 			this.setText(this._total, `${total.toString()} очков`);
-			this.updateFooterPrice(total); // Обновляем сумму в footer
+			this.updateFooterPrice(total);
 		} else {
 			console.warn('Element for total price is not found.');
 		}

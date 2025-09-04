@@ -1,4 +1,4 @@
-import { ensureElement } from '../../utils/utils';
+import { ensureElement, createElement } from '../../utils/utils';
 import { Component } from '../base/Component';
 import { IEvents } from '../base/events';
 
@@ -20,6 +20,7 @@ export class Page extends Component<IPage> {
 	protected _memo: HTMLElement;
 	protected _tournament: HTMLElement;
 	protected _settings: HTMLElement;
+
 	public _pointWeapon: HTMLElement;
 	public _pointFightMachine: HTMLElement;
 	public _pointSpecial: HTMLElement;
@@ -82,6 +83,11 @@ export class Page extends Component<IPage> {
 
 	set catalog(items: HTMLElement[]) {
 		this._catalog.replaceChildren(...items);
+		if (!items.length) {
+			const emptyMessage = createElement<HTMLParagraphElement>('p');
+			this.setText(emptyMessage, 'У вас нет избранных боевых единиц');
+			this._catalog.replaceChildren(emptyMessage);
+		}
 	}
 
 	set locked(value: boolean) {

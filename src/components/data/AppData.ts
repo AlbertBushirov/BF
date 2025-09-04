@@ -29,13 +29,13 @@ export class AppData extends Model<IProductItem> {
 		if (!this.productLike(item)) {
 			this.favorites.push(item);
 			this.saveFavoritesToLocalStorage();
-			this.emitChanges('favorites:changed');
 		}
 	}
 
 	removeFromLike(id: string) {
 		this.favorites = this.favorites.filter((it) => it.id !== id);
 		this.saveFavoritesToLocalStorage();
+
 		this.emitChanges('favorites:changed');
 	}
 
@@ -78,9 +78,7 @@ export class AppData extends Model<IProductItem> {
 
 	//Обновить корзину
 	updateBasket() {
-		this.emitChanges('counter:changed', this.basket);
 		this.emitChanges('basket:changed', this.basket); // Обновление корзины
-		this.emitChanges('catalog:changed', this.items); // Обновляем каталог
 	}
 
 	//Удаление продукта из корзины

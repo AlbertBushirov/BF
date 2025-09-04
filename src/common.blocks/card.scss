@@ -294,10 +294,10 @@ html {
 				justify-self: center;
 			}
 			@media (max-height: 740px) {
-				max-width: 70vw;
+				max-width: 65vw;
 			}
 			@media (max-height: 670px) {
-				max-width: 55vw;
+				max-width: 50vw;
 			}
 		}
 
@@ -356,10 +356,6 @@ html {
 				position: fixed;
 				bottom: 2vh;
 				left: 5vw;
-			}
-			@media (max-height: 900px) {
-				left: 50vw;
-				gap: 2vw;
 			}
 		}
 	}
