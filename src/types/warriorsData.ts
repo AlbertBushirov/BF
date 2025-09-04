@@ -1864,7 +1864,7 @@ export const localArmy = [
 		description: require('../images/Artefakti/Dikobrazi.jpg'),
 		image: require('../images/Storonie/SPDikobrazi.jpg'),
 		price: 230,
-		inBasket: true,
+		inBasket: false,
 		directory: '',
 		button: '',
 		marker: require('../images/marker_new.png'),

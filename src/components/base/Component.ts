@@ -31,6 +31,13 @@ export abstract class Component<T> {
 		}
 	}
 
+	setChecked(element: HTMLElement, state: boolean) {
+		if (element) {
+			if (state) element.setAttribute('checked', 'checked');
+			else element.removeAttribute('checked');
+		}
+	}
+
 	// Скрыть
 	protected setHidden(element: HTMLElement) {
 		element.style.display = 'none';

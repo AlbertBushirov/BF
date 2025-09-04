@@ -107,7 +107,6 @@ events.on<CatalogChangeEvent>('items:changed', () => {
 			return a.title.localeCompare(b.title, 'ru', { sensitivity: 'base' });
 		}
 	});
-
 	page.catalog = sortedItems.map((item) => {
 		const card = new Card('card', cloneTemplate(cardCatalogTemplate), {
 			onClick: () => events.emit('card:select', item),
@@ -116,9 +115,219 @@ events.on<CatalogChangeEvent>('items:changed', () => {
 		card.marker = item.marker;
 		card.markerTitle = item.markerTitle;
 
+		if (
+			card._category.textContent.includes('Гильдия вольных стрелков') ||
+			card._category.textContent.includes('Гвардия Чародея') ||
+			card._category.textContent.includes('Легионеры Некроманта') ||
+			card._category.textContent.includes('Войска Колдуна')
+		) {
+			card._category.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
+		}
+
+		if (
+			!card._category.textContent.includes('Гильдия вольных стрелков') ||
+			!card._category.textContent.includes('Гвардия Чародея') ||
+			!card._category.textContent.includes('Легионеры Некроманта') ||
+			!card._category.textContent.includes('Войска Колдуна')
+		) {
+			card._category.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
+		}
+
+		if (page._pointWeapon) {
+			page._pointWeapon.addEventListener('click', (event) => {
+				event.preventDefault();
+
+				const allH2 = Array.from(document.querySelectorAll('.card__category'));
+
+				const tehlist = allH2.filter(
+					(h2) =>
+						h2.textContent?.includes('Техлист') ||
+						h2.textContent?.includes('(1А)') ||
+						h2.textContent?.includes('(1П)') ||
+						h2.textContent?.includes('(1МП)') ||
+						h2.textContent?.includes('(1К)') ||
+						h2.textContent?.includes('(2П)') ||
+						h2.textContent?.includes('(2МП)') ||
+						h2.textContent?.includes('(2К)') ||
+						h2.textContent?.includes('(2А)')
+				);
+				if (tehlist.length > 0) {
+					tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+				}
+			});
+		}
+		if (page._pointFightMachine) {
+			page._pointFightMachine.addEventListener('click', (event) => {
+				event.preventDefault();
+
+				const allH2 = Array.from(document.querySelectorAll('.card__category'));
+
+				const tehlist = allH2.filter((h2) =>
+					h2.textContent?.includes('Боевая машина')
+				);
+
+				if (tehlist.length > 0) {
+					tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+				}
+			});
+		}
+
+		if (page._pointSpecial) {
+			page._pointSpecial.addEventListener('click', (event) => {
+				event.preventDefault();
+
+				const allH2 = Array.from(document.querySelectorAll('.card__category'));
+
+				const tehlist = allH2.filter((h2) => h2.textContent?.includes('ОБЕ'));
+
+				if (tehlist.length > 0) {
+					tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+				}
+			});
+		}
+
+		if (page._pointNecromancer) {
+			page._pointNecromancer.addEventListener('click', (event) => {
+				event.preventDefault();
+
+				const allH2 = Array.from(document.querySelectorAll('.card__category'));
+
+				const tehlist = allH2.filter((h2) =>
+					h2.textContent?.includes('Легионеры Некроманта')
+				);
+
+				if (tehlist.length > 0) {
+					tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+				}
+			});
+		}
+		if (page._pointSorcerer) {
+			page._pointSorcerer.addEventListener('click', (event) => {
+				event.preventDefault();
+
+				const allH2 = Array.from(document.querySelectorAll('.card__category'));
+
+				const tehlist = allH2.filter((h2) =>
+					h2.textContent?.includes('Гвардия Чародея')
+				);
+
+				if (tehlist.length > 0) {
+					tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+				}
+			});
+		}
+		if (page._pointGVS) {
+			page._pointGVS.addEventListener('click', (event) => {
+				event.preventDefault();
+
+				const allH2 = Array.from(document.querySelectorAll('.card__category'));
+
+				const tehlist = allH2.filter((h2) =>
+					h2.textContent?.includes('Гильдия вольных стрелков')
+				);
+
+				if (tehlist.length > 0) {
+					tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+				}
+			});
+		}
+		if (page._pointOutsiders) {
+			page._pointOutsiders.addEventListener('click', (event) => {
+				event.preventDefault();
+
+				const allH2 = Array.from(document.querySelectorAll('.card__category'));
+
+				const tehlist = allH2.filter((h2) =>
+					h2.textContent?.includes('Ст. производители')
+				);
+
+				if (tehlist.length > 0) {
+					tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+				}
+			});
+		}
+
 		return card.render(item);
 	});
+	const savedNetState = localStorage.getItem('netState');
+	if (savedNetState === 'save' || savedNetState === 'cancel') {
+		applyNetState(savedNetState);
+	}
+
+	events.on('net:save', () => {
+		applyNetState('save');
+		localStorage.setItem('netState', 'save');
+	});
+
+	events.on('net:cancel', () => {
+		applyNetState('cancel');
+		localStorage.setItem('netState', 'cancel');
+	});
+
+	events.on('lightTheme:save', () => {
+		applyNetState('cancel');
+		localStorage.setItem('netState', 'cancel');
+	});
 });
+
+const galeries = document.querySelectorAll('.gallery');
+
+function applyNetState(state: 'save' | 'cancel') {
+	const galleriesItem = document.querySelectorAll('.gallery__item');
+	const cartCategory = document.querySelectorAll('.card__category');
+	const cartCategoryArray = Array.from(cartCategory);
+	if (state === 'save') {
+		galeries.forEach((gallery) => {
+			gallery.classList.add('gallery__net');
+			gallery.classList.remove('gallery');
+		});
+
+		galleriesItem.forEach((gallery) => {
+			gallery.classList.add('galleryItem__net');
+			gallery.classList.remove('card');
+		});
+		cartCategoryArray.forEach((el: HTMLElement) => {
+			if (el.textContent.includes('Техлист')) {
+				el.style.fontSize = '13px';
+				const res = el.textContent.slice(7);
+				el.textContent = res;
+			}
+			if (!el.textContent.includes('Техлист')) {
+				el.style.padding = '1rem 1rem';
+			}
+		});
+	} else {
+		galeries.forEach((gallery) => {
+			gallery.classList.add('gallery');
+			gallery.classList.remove('gallery__net');
+		});
+
+		galleriesItem.forEach((gallery) => {
+			gallery.classList.add('card');
+			gallery.classList.remove('galleryItem__net');
+		});
+		cartCategoryArray.forEach((el: HTMLElement) => {
+			if (
+				!el.textContent.includes('Гильдия вольных стрелков') ||
+				!el.textContent.includes('Гвардия Чародея') ||
+				!el.textContent.includes('Легионеры Некроманта') ||
+				!el.textContent.includes('Войска Колдуна')
+			) {
+				el.style.padding = '0.5rem 1rem';
+			}
+			if (
+				el.textContent.includes('Гильдия вольных стрелков') ||
+				el.textContent.includes('Гвардия Чародея') ||
+				el.textContent.includes('Легионеры Некроманта') ||
+				el.textContent.includes('Войска Колдуна')
+			) {
+				el.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
+			}
+			const res = el.textContent;
+			el.textContent = res;
+		});
+	}
+}
 
 //Выбор товара
 events.on('card:select', (item: ICardItem) => {
@@ -133,6 +342,12 @@ events.on('product:add', (item: ICardItem) => {
 
 //Добавление Боевой единицы в Избранное
 events.on('product:addLike', (item: ICardItem) => {
+	appData.addFavorites(item);
+	modal.close();
+});
+
+events.on('product:deleteLike', (item: ICardItem) => {
+	appData.removeFromLike(item.id);
 	modal.close();
 });
 
@@ -257,8 +472,6 @@ events.on('tournament:open', () => {
 	modal.render({
 		content: tournament.render({}),
 	});
-	/*const players = document.querySelector('.tournament__player') as HTMLElement;
-	tournament.hoverElement(players);*/
 });
 
 //Открытие справочника
@@ -314,7 +527,7 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.directory = res.directory;
 			item.marker = res.marker;
 			item.markerTitle = res.markerTitle;
-			item.buttonLike = res.buttonLike;
+			item.inBasket = res.inBasket;
 
 			const card = new Card('card', cloneTemplate(cardPreviewTemplate), {
 				onClick: () => {
@@ -325,7 +538,21 @@ events.on('preview:changed', (item: ICardItem) => {
 						events.emit('product:add', item);
 					}
 				},
+				onChangeLike: () => {
+					if (appData.productLike(item)) {
+						appData.removeFromLike(item.id);
+						appData.setCatalog(appData.favorites);
+						modal.close();
+					} else {
+						events.emit('product:addLike', item);
+					}
+				},
 			});
+
+			card.BasedOnLike();
+
+			const checkedAttr: boolean = appData.productLike(item);
+			card.buttonLike = checkedAttr;
 
 			const buttonTitle: string = appData.productOrder(item)
 				? 'Убрать'
@@ -365,8 +592,20 @@ events.on('preview:changed', (item: ICardItem) => {
 						id: newCartId,
 					});
 				},
+				onChangeLike: () => {
+					if (appData.productLike(item)) {
+						appData.removeFromLike(item.id);
+						appData.setCatalog(appData.favorites);
+						modal.close();
+					} else {
+						events.emit('product:addLike', item);
+					}
+				},
 			});
+			card.BasedOnLike();
 
+			const checkedAttr: boolean = appData.productLike(item) ? true : false;
+			card.buttonLike = checkedAttr;
 			modal.render({
 				content: card.render({
 					...item,
@@ -397,9 +636,23 @@ events.on('preview:changed', (item: ICardItem) => {
 						id: newCartId,
 					});
 				},
+				onChangeLike: () => {
+					if (appData.productLike(item)) {
+						appData.removeFromLike(item.id);
+						appData.setCatalog(appData.favorites);
+						modal.close();
+					} else {
+						events.emit('product:addLike', item);
+					}
+				},
 			});
 
 			card.BasedOnWheels();
+
+			card.BasedOnLike();
+
+			const checkedAttr: boolean = appData.productLike(item) ? true : false;
+			card.buttonLike = checkedAttr;
 			modal.render({
 				content: card.render({
 					...item,
@@ -431,7 +684,21 @@ events.on('preview:changed', (item: ICardItem) => {
 						id: newCartId,
 					});
 				},
+				onChangeLike: () => {
+					if (appData.productLike(item)) {
+						appData.removeFromLike(item.id);
+						appData.setCatalog(appData.favorites);
+						modal.close();
+					} else {
+						events.emit('product:addLike', item);
+					}
+				},
 			});
+
+			card.BasedOnLike();
+
+			const checkedAttr: boolean = appData.productLike(item) ? true : false;
+			card.buttonLike = checkedAttr;
 
 			modal.render({
 				content: card.render({
@@ -521,179 +788,21 @@ Promise.all([
 			];
 			appData.setCatalog(combinedList);
 
-			const pointWeapon = document.querySelector('.point_weapon');
-			const pointFightMachine = document.querySelector('.point_fightMachine');
-			const pointSpecial = document.querySelector('.point_special');
-			const pointNecromancer = document.querySelector('.point_Necromancer');
-			const pointSorcerer = document.querySelector('.point_Sorcerer');
-			const pointGVS = document.querySelector('.point_GVS');
-			const pointOutsiders = document.querySelector('.point_Outsiders');
+			appData.loadFavoritesFromLocalStorage();
 
-			const divs = document.querySelectorAll('.card__title');
+			events.on('favorites_on', () => {
+				appData.setCatalog(appData.favorites);
+			});
 
-			if (pointWeapon) {
-				pointWeapon.addEventListener('click', (event) => {
-					event.preventDefault();
+			events.on('favorites_off', () => {
+				appData.setCatalog(combinedList);
+			});
 
-					const tehlist = Array.from(divs).filter((h2) =>
-						h2.textContent.includes('Паук')
-					);
-
-					if (tehlist.length > 0) {
-						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-					}
-				});
-			}
-			if (pointFightMachine) {
-				pointFightMachine.addEventListener('click', (event) => {
-					event.preventDefault();
-
-					const tehlist = Array.from(divs).filter((h2) =>
-						h2.textContent.includes('UNL-3')
-					);
-
-					if (tehlist.length > 0) {
-						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-					}
-				});
-			}
-
-			if (pointSpecial) {
-				pointSpecial.addEventListener('click', (event) => {
-					event.preventDefault();
-
-					const tehlist = Array.from(divs).filter((h2) =>
-						h2.textContent.includes('Тёмный Шаман')
-					);
-
-					if (tehlist.length > 0) {
-						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-					}
-				});
-			}
-			if (pointWeapon) {
-				pointWeapon.addEventListener('click', (event) => {
-					event.preventDefault();
-
-					const tehlist = Array.from(divs).filter((h2) =>
-						h2.textContent.includes('Паук')
-					);
-
-					if (tehlist.length > 0) {
-						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-					}
-				});
-			}
-			if (pointNecromancer) {
-				pointNecromancer.addEventListener('click', (event) => {
-					event.preventDefault();
-
-					const tehlist = Array.from(divs).filter((h2) =>
-						h2.textContent.includes('Герои Шипки')
-					);
-
-					if (tehlist.length > 0) {
-						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-					}
-				});
-			}
-			if (pointSorcerer) {
-				pointSorcerer.addEventListener('click', (event) => {
-					event.preventDefault();
-
-					const tehlist = Array.from(divs).filter((h2) =>
-						h2.textContent.includes('Амазонки')
-					);
-
-					if (tehlist.length > 0) {
-						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-					}
-				});
-			}
-			if (pointGVS) {
-				pointGVS.addEventListener('click', (event) => {
-					event.preventDefault();
-
-					const tehlist = Array.from(divs).filter((h2) =>
-						h2.textContent.includes('Беркут')
-					);
-
-					if (tehlist.length > 0) {
-						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-					}
-				});
-			}
-			if (pointOutsiders) {
-				pointOutsiders.addEventListener('click', (event) => {
-					event.preventDefault();
-
-					const tehlist = Array.from(divs).filter((h2) =>
-						h2.textContent.includes('Драконоборцы')
-					);
-
-					if (tehlist.length > 0) {
-						tehlist[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-					}
-				});
-			}
-
-			const galleriesItem = document.querySelectorAll('.gallery__item');
-			const galeries = document.querySelectorAll('.gallery');
-			const cartCategory = document.querySelectorAll('.card__category');
-			const cartCategoryArray = Array.from(cartCategory);
-
-			function applyNetState(state: 'save' | 'cancel') {
-				if (state === 'save') {
-					galeries.forEach((gallery) => {
-						gallery.classList.add('gallery__net');
-						gallery.classList.remove('gallery');
-					});
-
-					galleriesItem.forEach((gallery) => {
-						gallery.classList.add('galleryItem__net');
-						gallery.classList.remove('card');
-					});
-					cartCategoryArray.forEach((el: HTMLElement) => {
-						if (el.textContent.includes('Техлист')) {
-							el.style.fontSize = '13px';
-							const res = el.textContent.slice(7);
-							el.textContent = res;
-						}
-						if (!el.textContent.includes('Техлист')) {
-							el.style.padding = '1rem 1rem';
-						}
-					});
-				} else {
-					galeries.forEach((gallery) => {
-						gallery.classList.add('gallery');
-						gallery.classList.remove('gallery__net');
-					});
-
-					galleriesItem.forEach((gallery) => {
-						gallery.classList.add('card');
-						gallery.classList.remove('galleryItem__net');
-					});
-					cartCategoryArray.forEach((el: HTMLElement) => {
-						if (
-							!el.textContent.includes('Гильдия вольных стрелков') ||
-							!el.textContent.includes('Гвардия Чародея') ||
-							!el.textContent.includes('Легионеры Некроманта') ||
-							!el.textContent.includes('Войска Колдуна')
-						) {
-							el.style.padding = '0.5rem 1rem';
-						}
-						if (
-							el.textContent.includes('Гильдия вольных стрелков') ||
-							el.textContent.includes('Гвардия Чародея') ||
-							el.textContent.includes('Легионеры Некроманта') ||
-							el.textContent.includes('Войска Колдуна')
-						) {
-							el.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
-						}
-						const res = el.textContent;
-						el.textContent = res;
-					});
-				}
+			const favoritesEnabled = localStorage.getItem('favoritesSaveEnabled');
+			if (favoritesEnabled !== 'false') {
+				events.emit('favorites_on');
+			} else {
+				events.emit('favorites_off');
 			}
 
 			const savedNetState = localStorage.getItem('netState');
@@ -707,11 +816,6 @@ Promise.all([
 			});
 
 			events.on('net:cancel', () => {
-				applyNetState('cancel');
-				localStorage.setItem('netState', 'cancel');
-			});
-
-			events.on('lightTheme:save', () => {
 				applyNetState('cancel');
 				localStorage.setItem('netState', 'cancel');
 			});

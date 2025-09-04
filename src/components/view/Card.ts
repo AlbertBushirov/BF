@@ -12,6 +12,7 @@ interface ICardActions {
 	}) => void;
 	onChange?: (data: { isWheels?: boolean; price?: number }) => void;
 	onChangeWeapon?: (data: { weapons?: IItemWeapons }) => void;
+	onChangeLike?: (data: { isLike?: boolean }) => void;
 }
 
 interface Category {
@@ -56,8 +57,8 @@ export class Card extends Component<ICardItem> {
 	protected _title: HTMLElement;
 	protected _directory: HTMLElement;
 	protected _image?: HTMLImageElement;
-	protected _category?: HTMLElement;
-	protected _gallery: HTMLElement;
+	public _category?: HTMLElement;
+	public _gallery: HTMLElement;
 	protected _description?: HTMLImageElement;
 	protected _marker?: HTMLImageElement;
 	protected _markerTitle: HTMLElement;
@@ -65,7 +66,7 @@ export class Card extends Component<ICardItem> {
 	protected _price: HTMLElement;
 	protected priceValue: number;
 	protected _button?: HTMLButtonElement;
-	protected _buttonLike: HTMLInputElement;
+	public _buttonLike: HTMLInputElement;
 	protected isLiked: boolean = false;
 	protected volumeLevel: HTMLElement;
 	protected increaseButton: HTMLButtonElement;
@@ -127,9 +128,11 @@ export class Card extends Component<ICardItem> {
 		}
 
 		if (this._buttonLike) {
-			this._buttonLike.addEventListener('click', () =>
-				this.addClassButtonLikeActive()
-			);
+			this._buttonLike.addEventListener('change', () => {
+				this.isLiked = this._buttonLike.checked;
+				action.onChangeLike({ isLike: this.isLiked });
+				this.addClassButtonLikeActive();
+			});
 		}
 	}
 
@@ -146,8 +149,13 @@ export class Card extends Component<ICardItem> {
 
 	addClassButtonLikeActive() {
 		if (this._buttonLike) {
-			this._buttonLike.classList.toggle('button_like_preview_active');
+			if (this.isLiked) {
+				this._buttonLike.classList.add('button_like_preview_active');
+			} else {
+				this._buttonLike.classList.remove('button_like_preview_active');
+			}
 		}
+		this.events.emit('favorites:changed');
 	}
 
 	private addEnlargedClassToImage() {
@@ -281,6 +289,14 @@ export class Card extends Component<ICardItem> {
 		);
 	}
 
+	BasedOnLike() {
+		// Добавляем обработчик события изменения состояния инпута
+		this._buttonLike.addEventListener(
+			'change',
+			this.addClassButtonLikeActive.bind(this)
+		);
+	}
+
 	public BasedOnWeapon() {
 		const weaponsPrice = this.weapons?.reduce(
 			(total, weapon) => total + weapon.price * weapon.quantity,
@@ -326,6 +342,12 @@ export class Card extends Component<ICardItem> {
 	set buttonTitle(value: string) {
 		if (this._button) {
 			this.setText(this._button, value);
+		}
+	}
+
+	set buttonLike(value: boolean) {
+		if (this._buttonLike) {
+			this.setChecked(this._buttonLike, value);
 		}
 	}
 
@@ -410,7 +432,7 @@ export interface IBasketItem {
 
 export class BasketElement extends Component<IBasketItem> {
 	protected _index: HTMLElement;
-	protected _title: HTMLElement;
+	public _title: HTMLElement;
 	public _price: HTMLElement;
 	protected _button: HTMLButtonElement;
 	protected _image?: HTMLImageElement;

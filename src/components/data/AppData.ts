@@ -7,13 +7,6 @@ export type CatalogChangeEvent = {
 	playersList: IPlayersForm;
 };
 
-export interface IOrderForm {
-	payment: string;
-	address: string;
-	email: string;
-	phone: string;
-}
-
 export class AppData extends Model<IProductItem> {
 	basket: ICardItem[] = [];
 	favorites: ICardItem[] = [];
@@ -33,21 +26,48 @@ export class AppData extends Model<IProductItem> {
 
 	//Добавить товар в Избранное
 	addFavorites(item: ICardItem) {
-		if (this.favorites.indexOf(item) < 0) {
+		if (!this.productLike(item)) {
 			this.favorites.push(item);
+			this.saveFavoritesToLocalStorage();
+			this.emitChanges('favorites:changed');
+		}
+	}
+
+	removeFromLike(id: string) {
+		this.favorites = this.favorites.filter((it) => it.id !== id);
+		this.saveFavoritesToLocalStorage();
+		this.emitChanges('favorites:changed');
+	}
+
+	productLike(item: ICardItem): boolean {
+		return Boolean(
+			this.favorites.find((liketItem) => liketItem.id === item.id)
+		);
+	}
+
+	saveFavoritesToLocalStorage() {
+		try {
+			localStorage.setItem('favorites', JSON.stringify(this.favorites));
+		} catch (e) {
+			console.warn('Не удалось сохранить favorites в localStorage', e);
+		}
+	}
+
+	loadFavoritesFromLocalStorage() {
+		try {
+			const data = localStorage.getItem('favorites');
+			if (data) {
+				this.favorites = JSON.parse(data);
+			}
+		} catch (e) {
+			console.warn('Не удалось загрузить favorites из localStorage', e);
+			this.favorites = [];
 		}
 	}
 
 	//Проверка, находится ли продукт в заказе.
 	productOrder(item: ICardItem): boolean {
 		return Boolean(this.basket.find((basketItem) => basketItem.id === item.id));
-	}
-
-	//Проверка, находится ли продукт в заказе.
-	productLike(item: ICardItem): boolean {
-		return Boolean(
-			this.favorites.find((basketItem) => basketItem.id === item.id)
-		);
 	}
 
 	//Очистить корзину после заказа
@@ -69,9 +89,15 @@ export class AppData extends Model<IProductItem> {
 		this.emitChanges('basket:changed');
 	}
 
+	//Удаление продукта из корзины
+
 	//Получение продуктов из заказа
 	getOrderProducts(): ICardItem[] {
 		return this.basket;
+	}
+
+	getFavoritesProducts(): ICardItem[] {
+		return this.favorites;
 	}
 
 	//Подсчет общей стоимости

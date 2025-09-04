@@ -82,9 +82,10 @@ html {
 			}
 		}
 		.card__row {
-			grid-column: 3;
+			grid-column: 2/4;
 			grid-row: 2;
 			align-self: end;
+			justify-self: end;
 			@media (max-width: 450px) {
 				position: fixed;
 				bottom: 5vh;
@@ -187,9 +188,10 @@ html {
 		}
 
 		.card__row {
-			grid-column: 3;
+			grid-column: 2/4;
 			grid-row: 2;
 			align-self: end;
+			justify-self: end;
 			@media (max-width: 450px) {
 				position: fixed;
 				bottom: 5vh;
@@ -741,6 +743,9 @@ html {
 }
 
 .button_like_preview {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 	left: -60px;
 	width: 45px;
 	height: 40px;
@@ -751,11 +756,12 @@ html {
 	cursor: pointer;
 	@media (max-width: 450px) {
 		left: 100px;
+		margin-inline: 15px;
 		position: absolute;
 	}
 }
 
-.button_like_preview_active {
+.button_like_preview[type='checkbox']:checked {
 	background-image: url(../images/like_active.png);
 }
 

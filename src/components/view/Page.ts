@@ -12,6 +12,7 @@ export class Page extends Component<IPage> {
 	protected _counter: HTMLElement;
 	protected _catalog: HTMLElement;
 	protected _gallery: HTMLElement;
+	protected _galleryItem: HTMLElement;
 	protected _wrapper: HTMLElement;
 	protected _basket: HTMLElement;
 	protected _modal: HTMLElement;
@@ -19,6 +20,13 @@ export class Page extends Component<IPage> {
 	protected _memo: HTMLElement;
 	protected _tournament: HTMLElement;
 	protected _settings: HTMLElement;
+	public _pointWeapon: HTMLElement;
+	public _pointFightMachine: HTMLElement;
+	public _pointSpecial: HTMLElement;
+	public _pointNecromancer: HTMLElement;
+	public _pointGVS: HTMLElement;
+	public _pointSorcerer: HTMLElement;
+	public _pointOutsiders: HTMLElement;
 
 	constructor(container: HTMLElement, protected events: IEvents) {
 		super(container);
@@ -39,6 +47,13 @@ export class Page extends Component<IPage> {
 			'.tournament__point',
 			container
 		);
+		this._pointWeapon = ensureElement<HTMLElement>('.point_weapon');
+		this._pointFightMachine = ensureElement<HTMLElement>('.point_fightMachine');
+		this._pointSpecial = ensureElement<HTMLElement>('.point_special');
+		this._pointNecromancer = ensureElement<HTMLElement>('.point_Necromancer');
+		this._pointGVS = ensureElement<HTMLElement>('.point_GVS');
+		this._pointSorcerer = ensureElement<HTMLElement>('.point_Sorcerer');
+		this._pointOutsiders = ensureElement<HTMLElement>('.point_Outsiders');
 
 		this._basket.addEventListener('click', () => {
 			this.events.emit('basket:open');

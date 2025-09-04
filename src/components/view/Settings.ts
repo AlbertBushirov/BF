@@ -10,6 +10,7 @@ export class Settings extends Component<IRatingView> {
 	public _inputArtefact: HTMLInputElement;
 	public _inputNet: HTMLInputElement;
 	public _inputLight: HTMLInputElement;
+	public _favorites: HTMLInputElement;
 	//public _inputnet: HTMLInputElement;
 	constructor(container: HTMLElement, events: EventEmitter) {
 		super(container, new EventEmitter());
@@ -22,6 +23,10 @@ export class Settings extends Component<IRatingView> {
 
 		this._inputLight = container.querySelector(
 			'.light_theme'
+		) as HTMLInputElement;
+
+		this._favorites = container.querySelector(
+			'.favorites_armlist'
 		) as HTMLInputElement;
 
 		this.events = events;
@@ -61,6 +66,25 @@ export class Settings extends Component<IRatingView> {
 			} else {
 				localStorage.setItem('netSaveEnabled', 'false');
 				this.events.emit('net:cancel');
+			}
+		});
+
+		const favoritesValue = localStorage.getItem('favoritesSaveEnabled');
+		if (favoritesValue !== 'false') {
+			this._favorites.checked = true;
+			this.events.emit('favorites_on');
+		} else {
+			this._favorites.checked = false;
+			this.events.emit('favorites_off');
+		}
+
+		this._favorites.addEventListener('change', () => {
+			if (this._favorites.checked) {
+				localStorage.setItem('favoritesSaveEnabled', 'true');
+				this.events.emit('favorites_on');
+			} else {
+				localStorage.setItem('favoritesSaveEnabled', 'false');
+				this.events.emit('favorites_off');
 			}
 		});
 	}

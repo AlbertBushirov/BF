@@ -4,6 +4,7 @@ import { Cup } from './playersData';
 
 export interface IProductItem {
 	basket: IBasket[];
+	favorites: IBaseCardItem[];
 	cardsList: ICardItem[];
 	cardsTehList: ITehListEtem[];
 	preview: string | null;
@@ -37,13 +38,13 @@ export interface IBaseCardItem {
 	marker?: string;
 	markerTitle?: string;
 	directory?: string;
-	buttonLike?: boolean;
 }
 
 export interface IListItem extends IBaseCardItem {
 	type: 'list';
 	description: string;
 	image: string;
+	buttonLike?: boolean;
 }
 
 export interface ITehListEtem extends IBaseCardItem {
