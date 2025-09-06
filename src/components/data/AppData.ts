@@ -28,6 +28,7 @@ export class AppData extends Model<IProductItem> {
 	addFavorites(item: ICardItem) {
 		if (!this.productLike(item)) {
 			this.favorites.push(item);
+			this.updateFavorites();
 			this.saveFavoritesToLocalStorage();
 		}
 	}
@@ -35,8 +36,7 @@ export class AppData extends Model<IProductItem> {
 	removeFromLike(id: string) {
 		this.favorites = this.favorites.filter((it) => it.id !== id);
 		this.saveFavoritesToLocalStorage();
-
-		this.emitChanges('favorites:changed');
+		this.emitChanges('items:changed');
 	}
 
 	productLike(item: ICardItem): boolean {
@@ -79,6 +79,10 @@ export class AppData extends Model<IProductItem> {
 	//Обновить корзину
 	updateBasket() {
 		this.emitChanges('basket:changed', this.basket); // Обновление корзины
+	}
+
+	updateFavorites() {
+		this.emitChanges('items:changed', this.favorites); // Обновление корзины
 	}
 
 	//Удаление продукта из корзины

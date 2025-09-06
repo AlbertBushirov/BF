@@ -25,6 +25,7 @@ const api = new WebLarekAPI(CDN_URL, API_URL);
 //Переменные
 const modal = new Modal(ensureElement<HTMLElement>('#modal-container'), events);
 const page = new Page(document.body, events);
+//const favoritesPage = new FavoritesPage(document.body, events);
 const cardCatalogTemplate = ensureElement<HTMLTemplateElement>('#card-catalog');
 
 const cardPreviewTemplate = ensureElement<HTMLTemplateElement>('#card-preview');
@@ -93,6 +94,11 @@ const categoryOrder = [
 
 // Обработчик изменения каталога
 events.on<CatalogChangeEvent>('items:changed', () => {
+	page.favorites = appData.favorites.length;
+	page.showFavoritesFooter();
+	setTimeout(() => {
+		page.favoritesTimeout();
+	}, 3000);
 	const sortedItems = appData.items.slice().sort((a, b) => {
 		const indexA = categoryOrder.indexOf(a.category);
 		const indexB = categoryOrder.indexOf(b.category);
@@ -107,10 +113,22 @@ events.on<CatalogChangeEvent>('items:changed', () => {
 			return a.title.localeCompare(b.title, 'ru', { sensitivity: 'base' });
 		}
 	});
+
 	page.catalog = sortedItems.map((item) => {
 		const card = new Card('card', cloneTemplate(cardCatalogTemplate), {
 			onClick: () => events.emit('card:select', item),
+			onChangeLike: () => {
+				if (appData.productLike(item)) {
+					appData.removeFromLike(item.id);
+
+					modal.close();
+				} else {
+					events.emit('product:addLike', item);
+				}
+			},
 		});
+		const checkedAttr: boolean = appData.productLike(item) ? true : false;
+		card.buttonLike = checkedAttr;
 
 		card.marker = item.marker;
 		card.markerTitle = item.markerTitle;
@@ -379,8 +397,8 @@ const order: Record<string, number> = {
 	machine: 4,
 };
 
-events.on('favorites:changed', () => {
-	const sortedItems = appData.getFavoritesProducts().sort((a, b) => {
+/*events.on('favorites:changed', () => {
+	const sortedItems = appData.favorites.sort((a, b) => {
 		const indexA = categoryOrder.indexOf(a.category);
 		const indexB = categoryOrder.indexOf(b.category);
 
@@ -394,10 +412,21 @@ events.on('favorites:changed', () => {
 			return a.title.localeCompare(b.title, 'ru', { sensitivity: 'base' });
 		}
 	});
-	page.catalog = sortedItems.map((item) => {
+	favoritesPage.catalog = sortedItems.map((item) => {
 		const card = new Card('card', cloneTemplate(cardCatalogTemplate), {
 			onClick: () => events.emit('card:select', item),
+			onChangeLike: () => {
+				if (appData.productLike(item)) {
+					appData.removeFromLike(item.id);
+
+					modal.close();
+				} else {
+					events.emit('product:addLike', item);
+				}
+			},
 		});
+		const checkedAttr: boolean = appData.productLike(item) ? true : false;
+		card.buttonLike = checkedAttr;
 
 		card.marker = item.marker;
 		card.markerTitle = item.markerTitle;
@@ -420,8 +449,8 @@ events.on('favorites:changed', () => {
 			card._category.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
 		}
 
-		if (page._pointWeapon) {
-			page._pointWeapon.addEventListener('click', (event) => {
+		if (favoritesPage._pointWeapon) {
+			favoritesPage._pointWeapon.addEventListener('click', (event) => {
 				event.preventDefault();
 
 				const allH2 = Array.from(document.querySelectorAll('.card__category'));
@@ -443,8 +472,8 @@ events.on('favorites:changed', () => {
 				}
 			});
 		}
-		if (page._pointFightMachine) {
-			page._pointFightMachine.addEventListener('click', (event) => {
+		if (favoritesPage._pointFightMachine) {
+			favoritesPage._pointFightMachine.addEventListener('click', (event) => {
 				event.preventDefault();
 
 				const allH2 = Array.from(document.querySelectorAll('.card__category'));
@@ -459,8 +488,8 @@ events.on('favorites:changed', () => {
 			});
 		}
 
-		if (page._pointSpecial) {
-			page._pointSpecial.addEventListener('click', (event) => {
+		if (favoritesPage._pointSpecial) {
+			favoritesPage._pointSpecial.addEventListener('click', (event) => {
 				event.preventDefault();
 
 				const allH2 = Array.from(document.querySelectorAll('.card__category'));
@@ -473,8 +502,8 @@ events.on('favorites:changed', () => {
 			});
 		}
 
-		if (page._pointNecromancer) {
-			page._pointNecromancer.addEventListener('click', (event) => {
+		if (favoritesPage._pointNecromancer) {
+			favoritesPage._pointNecromancer.addEventListener('click', (event) => {
 				event.preventDefault();
 
 				const allH2 = Array.from(document.querySelectorAll('.card__category'));
@@ -488,8 +517,8 @@ events.on('favorites:changed', () => {
 				}
 			});
 		}
-		if (page._pointSorcerer) {
-			page._pointSorcerer.addEventListener('click', (event) => {
+		if (favoritesPage._pointSorcerer) {
+			favoritesPage._pointSorcerer.addEventListener('click', (event) => {
 				event.preventDefault();
 
 				const allH2 = Array.from(document.querySelectorAll('.card__category'));
@@ -503,8 +532,8 @@ events.on('favorites:changed', () => {
 				}
 			});
 		}
-		if (page._pointGVS) {
-			page._pointGVS.addEventListener('click', (event) => {
+		if (favoritesPage._pointGVS) {
+			favoritesPage._pointGVS.addEventListener('click', (event) => {
 				event.preventDefault();
 
 				const allH2 = Array.from(document.querySelectorAll('.card__category'));
@@ -518,8 +547,8 @@ events.on('favorites:changed', () => {
 				}
 			});
 		}
-		if (page._pointOutsiders) {
-			page._pointOutsiders.addEventListener('click', (event) => {
+		if (favoritesPage._pointOutsiders) {
+			favoritesPage._pointOutsiders.addEventListener('click', (event) => {
 				event.preventDefault();
 
 				const allH2 = Array.from(document.querySelectorAll('.card__category'));
@@ -555,7 +584,7 @@ events.on('favorites:changed', () => {
 		applyNetState('cancel');
 		localStorage.setItem('netState', 'cancel');
 	});
-});
+});*/
 
 //Обработчик изменения в корзине и обновления общей стоимости
 events.on('basket:changed', () => {

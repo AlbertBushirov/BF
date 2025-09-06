@@ -61,17 +61,24 @@
 	}
 }
 
+.gallery__item {
+	.button_like_preview {
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		width: 17px;
+		height: 15px;
+		left: -35px;
+		bottom: 4px;
+		background-image: url(../images/like.png);
+		background-position: center;
+		background-size: cover;
+		border: none;
+		cursor: pointer;
+		position: absolute;
+	}
+}
+
 .gallery_marker__image:hover + .gallery_marker__title {
 	display: block;
-}
-
-.button_like_preview {
-	background: none;
-	border: none;
-}
-
-.like_preview {
-	width: 40px;
-	background: none;
-	cursor: pointer;
 }

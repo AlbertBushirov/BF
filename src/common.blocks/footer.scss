@@ -84,3 +84,22 @@
 .header__link-image {
 	width: 40px;
 }
+
+.favorites__footer {
+	padding: 0px;
+	position: fixed;
+	bottom: 0;
+	background-color: rgba(21, 23, 25, 0.9);
+	z-index: 3;
+	font-size: 15px;
+	transform: translateY(100%);
+	opacity: 0;
+	transition: transform 0.5s ease, opacity 0.5s ease;
+	overflow: hidden;
+	padding: 10px;
+}
+
+.favorites__footer_active {
+	transform: translateY(0);
+	opacity: 1;
+}
