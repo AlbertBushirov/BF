@@ -62,7 +62,7 @@ export class Basket extends Component<IBasketView> {
 			return;
 		}
 
-		const items = basketList.querySelectorAll('.basket__item');
+		const items = this._list.querySelectorAll('.basket__item');
 
 		if (!this._isArtefactSaveEnabled) {
 			basketList.style.width = '570px';
@@ -82,16 +82,54 @@ export class Basket extends Component<IBasketView> {
 			},
 		})
 			.then((canvas) => {
-				// Создаем изображение из канваса
-				const link = document.createElement('a');
-				link.href = canvas.toDataURL('image/jpeg', 1.0);
-				link.download = 'MyRoster.jpg';
-				link.click();
-				items.forEach((item) => {
-					const basketItem = item as HTMLElement;
-					basketItem.style.paddingLeft = '';
-					basketList.style.width = '';
-				});
+				const ctx = canvas.getContext('2d');
+				if (!ctx) {
+					console.error('Failed to get canvas context');
+					return;
+				}
+
+				const logo = new Image();
+				logo.src = require('../../images/icon-dark.png'); // Путь к изображению
+
+				/*logo.onload = () => {
+					ctx.globalAlpha = 0.4;
+
+					if (!this._isArtefactSaveEnabled) {
+						ctx.drawImage(logo, 510, 820, 60, 60);
+					} else {
+						ctx.drawImage(logo, 860, 860, 60, 60);
+					}
+					ctx.globalAlpha = 1.0;
+
+					// После отрисовки логотипа формируем ссылку и запускаем скачивание
+					const link = document.createElement('a');
+					link.href = canvas.toDataURL('image/jpeg', 1.0);
+					link.download = 'MyRoster.jpg';
+					link.click();
+
+					// Восстанавливаем стили
+					items.forEach((item) => {
+						const basketItem = item as HTMLElement;
+						basketItem.style.paddingLeft = '';
+						basketList.style.width = '';
+					});
+				};*/
+
+				logo.onerror = (e) => {
+					console.error('Failed to load watermark image', e);
+
+					// Если не удалось загрузить логотип, просто сохраняем без него
+					const link = document.createElement('a');
+					link.href = canvas.toDataURL('image/jpeg', 1.0);
+					link.download = 'MyRoster.jpg';
+					link.click();
+
+					items.forEach((item) => {
+						const basketItem = item as HTMLElement;
+						basketItem.style.paddingLeft = '';
+						basketList.style.width = '';
+					});
+				};
 			})
 			.catch((error) => {
 				console.error('Error generating image:', error);

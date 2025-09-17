@@ -505,7 +505,7 @@ const EKB25localTour_one = [
 	{ name: Evgeniy_Sorokin, result: 1 },
 
 	{ name: Alexandr_Toporkov, result: 0 },
-	{ name: Sergey_Egorov, result: 1 },
+	{ name: Sergey_Latishev, result: 1 },
 ];
 
 const EKB25localTour_two = [
