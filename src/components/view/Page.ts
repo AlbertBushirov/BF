@@ -87,7 +87,7 @@ export class Page extends Component<IPage> {
 	set favorites(value: number) {
 		this.setText(
 			this._favoritesFooter,
-			`Количество избранных Боевых единиц: ${String(value)}`
+			`${String(value)} избранных Боевых единиц`
 		);
 	}
 

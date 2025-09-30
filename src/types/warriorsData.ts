@@ -137,7 +137,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKneptun.jpg'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
-		directory: '',
+		directory: 'Вероятность успешного использования артефакта: 75%',
 		button: '',
 	},
 	{
@@ -148,7 +148,6 @@ export const localArmy = [
 		image: require('../images/Koldun/VKNorman.jpg'), // Прямой URL для удаленного изображения
 		price: 150,
 		inBasket: true,
-		directory: '',
 		button: '',
 		marker: require('../images/Exclamation_marker.png'),
 		markerTitle: 'Ослаблен Артефакт. Теперь работает только с П',
@@ -1336,8 +1335,6 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/marker_new.png'),
-		markerTitle: 'Новый адаптированный отряд',
 	},
 	{
 		id: 'SPKlanLokAmon5',
@@ -1346,6 +1343,30 @@ export const localArmy = [
 		description: require('../images/Artefakti/LokAmon.jpg'),
 		image: require('../images/Storonie/SPKlanLokAmon5.jpg'),
 		price: 205,
+		inBasket: true,
+		directory: '',
+		button: '',
+	},
+	{
+		id: 'SPOrkestrSmerty',
+		title: 'Оркестр Смерти',
+		category: 'Ст. производители (НО)',
+		description: require('../images/Artefakti/OrkestrSmerty.jpg'),
+		image: require('../images/Storonie/SPOrkestrSmerty.jpg'),
+		price: 185,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPYarostNebes',
+		title: 'Ярость Небес',
+		category: 'Ст. производители (НО)',
+		description: require('../images/Artefakti/YarostNebes.jpg'),
+		image: require('../images/Storonie/SPYarostNebes.jpg'),
+		price: 180,
 		inBasket: true,
 		directory: '',
 		button: '',
@@ -1424,6 +1445,17 @@ export const localArmy = [
 		markerTitle: 'Снижена цена на 5. Ослаблено свойство Артефакта.',
 	},
 	{
+		id: 'SPChasticiRazuma',
+		title: 'Частицы Разума',
+		category: 'Ст. производители (ВИМ)',
+		description: require('../images/Artefakti/ChasticiRazuma.jpg'),
+		image: require('../images/Storonie/SPChasticiRazuma.jpg'), // Прямой URL для удаленного изображения
+		price: 190,
+		inBasket: true,
+		directory: '',
+		button: '',
+	},
+	{
 		id: 'SPKiberici',
 		title: 'Киберийцы',
 		category: 'Ст. производители (ХБ)',
@@ -1459,6 +1491,32 @@ export const localArmy = [
 		button: '',
 		marker: require('../images/Exclamation_marker.png'),
 		markerTitle: 'Повышена цена на 5.',
+	},
+	{
+		id: 'SPValhalla',
+		title: 'Вальхалла',
+		category: 'Ст. производители (ХБ)',
+		description: require('../images/Artefakti/Valhalla.jpg'),
+		image: require('../images/Storonie/SPValhalla.jpg'), // Прямой URL для удаленного изображения
+		price: 150,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPShampanoidi',
+		title: 'Шампаноиды',
+		category: 'Ст. производители (ХБ)',
+		description: require('../images/Artefakti/Shampanoidi.jpg'),
+		image: require('../images/Storonie/SPShampanoidi.jpg'), // Прямой URL для удаленного изображения
+		price: 205,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
 	},
 	{
 		id: 'SPTangar',
@@ -1626,19 +1684,7 @@ export const localArmy = [
 		marker: require('../images/marker_new.png'),
 		markerTitle: 'Новый адаптированный отряд',
 	},
-	{
-		id: 'SPChasticiRazuma',
-		title: 'Частицы Разума',
-		category: 'Ст. производители (АС)',
-		description: require('../images/Artefakti/ChasticiRazuma.jpg'),
-		image: require('../images/Storonie/SPChasticiRazuma.jpg'), // Прямой URL для удаленного изображения
-		price: 190,
-		inBasket: true,
-		directory: '',
-		button: '',
-		marker: require('../images/marker_new.png'),
-		markerTitle: 'Новый адаптированный отряд',
-	},
+
 	{
 		id: 'SPNewAmazonki',
 		title: 'Новые Амазонки',

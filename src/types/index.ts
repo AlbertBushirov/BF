@@ -37,7 +37,7 @@ export interface IBaseCardItem {
 	button: string;
 	marker?: string;
 	markerTitle?: string;
-	directory?: string;
+	directory?: string | '';
 }
 
 export interface IListItem extends IBaseCardItem {

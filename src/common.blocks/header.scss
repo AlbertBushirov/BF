@@ -112,7 +112,7 @@ nav {
 	text-decoration: none;
 	align-self: center;
 	font-size: 15px;
-	padding: 10px 15px;
+	padding: 20px 15px;
 	transition: background 0.2s linear;
 	cursor: pointer;
 
@@ -121,7 +121,7 @@ nav {
 	}
 }
 .category_list li a:hover {
-	background: #444;
+	background: #2e2e2e;
 	border-radius: 3px;
 }
 
@@ -147,9 +147,28 @@ nav {
 }
 
 .sub-menu li a {
-	@media (max-width: 450px) {
-		padding: 6px 4px;
-	}
+	position: relative; /* Для позиционирования псевдоэлемента */
+	text-decoration: none; /* Убираем стандартное подчеркивание */
+	padding: 6px 4px;
+}
+
+.sub-menu li a::after {
+	content: ''; /* Создаем линию */
+	position: absolute;
+	bottom: 7px; /* Размещаем снизу */
+	left: 0; /* Начинаем слева */
+	width: 0; /* Начальная ширина — 0 (не видно) */
+	height: 1px; /* Толщина линии */
+	background-color: currentColor; /* Цвет линии как у текста */
+	transition: width 0.3s ease; /* Плавная анимация ширины */
+}
+
+.sub-menu li a:hover {
+	background: none;
+}
+
+.sub-menu li a:hover::after {
+	width: 100%; /* При hover линия расширяется до полной ширины */
 }
 
 .positioning {

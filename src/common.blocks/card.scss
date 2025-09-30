@@ -88,7 +88,7 @@ html {
 			justify-self: end;
 			@media (max-width: 450px) {
 				position: fixed;
-				bottom: 5vh;
+				bottom: 1vh;
 				left: 5vw;
 			}
 		}
@@ -194,7 +194,7 @@ html {
 			justify-self: end;
 			@media (max-width: 450px) {
 				position: fixed;
-				bottom: 5vh;
+				bottom: 1vh;
 				left: 5vw;
 			}
 		}
@@ -354,7 +354,7 @@ html {
 			align-self: end;
 			@media (max-width: 450px) {
 				position: fixed;
-				bottom: 2vh;
+				bottom: 1vh;
 				left: 5vw;
 			}
 		}
@@ -460,7 +460,7 @@ html {
 		.card__row {
 			@media (max-width: 450px) {
 				position: fixed;
-				bottom: 5vh;
+				bottom: 1vh;
 				left: 5vw;
 			}
 		}
@@ -569,7 +569,8 @@ html {
 		font-size: 12px;
 		padding: 0.5rem 1rem;
 		border-radius: 2.5rem;
-		color: $primary;
+		color: $secondary;
+		text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
 		@media (max-width: 450px) {
 			grid-row: 1;
 			grid-column: 1;
@@ -598,12 +599,16 @@ html {
 			background-color: $category2;
 		}
 		&_drakon {
-			background-color: $category3;
+			background-color: $category11;
+			background-image: url(../images/Fons/Fon_Drakon.png);
+			background-position: left;
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 		&_additional {
 			background-color: $category3;
-
-			background-position: center;
+			background-image: url(../images/Fons/Fon_BM.png);
+			background-position: left;
 			background-size: contain;
 			background-repeat: no-repeat;
 		}
@@ -625,39 +630,53 @@ html {
 			background-color: $category4;
 		}
 		&_storonniye_AS {
+			background-color: $category1;
 			background-image: url(../images/Fons/Fon_AS.png);
-			background-position: center;
-			background-size: cover;
+			background-position: left;
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 		&_storonniye_NO {
-			background-image: url(../images/Fons/Fon_NO.png);
-			background-position: center;
-			background-size: cover;
+			background-color: $category9;
+			background-image: url(../images/Fons/Fon_Neutral.png);
+			background-position: left;
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 		&_storonniye_VIM {
+			background-color: $category12;
 			background-image: url(../images/Fons/Fon_VIM.png);
-			background-position: center;
-			background-size: cover;
+			background-position: left;
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 		&_storonniye_XB {
-			background-image: url(../images/Fons/Fon_XB.png);
-			background-position: center;
-			background-size: cover;
+			background-color: $category6;
+			background-image: url(../images/Fons/Fon_X-Bunker.png);
+			background-position: left;
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 		&_storonniye_VPM {
-			background-image: url(../images/Fons/Fon_VPM.png);
-			background-position: center;
-			background-size: cover;
+			background-color: $category11;
+			background-image: url(../images/Fons/Fon_logo_VPM.png);
+			background-position: left;
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 		&_storonniye_LCHP {
+			background-color: $category10;
 			background-image: url(../images/Fons/Fon_LCHP.png);
-			background-position: center;
-			background-size: cover;
+			background-position: left;
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 		&_storonniye_B {
+			background-color: $category13;
 			background-image: url(../images/Fons/Fon_B.png);
-			background-position: center;
-			background-size: cover;
+			background-position: left;
+			background-size: contain;
+			background-repeat: no-repeat;
 		}
 	}
 

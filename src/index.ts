@@ -126,25 +126,6 @@ events.on<CatalogChangeEvent>('items:changed', () => {
 		card.marker = item.marker;
 		card.markerTitle = item.markerTitle;
 
-		const categoryText = card._category.textContent || '';
-		if (
-			categoryText.includes('Гильдия вольных стрелков') ||
-			categoryText.includes('Гвардия Чародея') ||
-			categoryText.includes('Легионеры Некроманта') ||
-			categoryText.includes('Войска Колдуна')
-		) {
-			card._category.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
-		}
-
-		if (
-			!categoryText.includes('Гильдия вольных стрелков') ||
-			!categoryText.includes('Гвардия Чародея') ||
-			!categoryText.includes('Легионеры Некроманта') ||
-			!categoryText.includes('Войска Колдуна')
-		) {
-			card._category.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
-		}
-
 		return card.render(item);
 	});
 
@@ -253,22 +234,12 @@ function applyNetState(state: 'save' | 'cancel') {
 			gallery.classList.remove('galleryItem__net');
 		});
 		cartCategoryArray.forEach((el: HTMLElement) => {
-			if (
-				!el.textContent.includes('Гильдия вольных стрелков') ||
-				!el.textContent.includes('Гвардия Чародея') ||
-				!el.textContent.includes('Легионеры Некроманта') ||
-				!el.textContent.includes('Войска Колдуна')
-			) {
+			if (el.textContent.includes('Техлист')) {
 				el.style.padding = '0.5rem 1rem';
-			}
-			if (
-				el.textContent.includes('Гильдия вольных стрелков') ||
-				el.textContent.includes('Гвардия Чародея') ||
-				el.textContent.includes('Легионеры Некроманта') ||
-				el.textContent.includes('Войска Колдуна')
-			) {
+			} else {
 				el.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
 			}
+
 			const res = el.textContent;
 			el.textContent = res;
 		});

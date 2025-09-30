@@ -73,10 +73,10 @@ export class Basket extends Component<IBasketView> {
 		html2canvas(basketList, {
 			ignoreElements: (element) => {
 				return (
-					(!this._isArtefactSaveEnabled &&
-						element.classList.contains('card__description')) ||
-					element.classList.contains('card__title') ||
-					element.classList.contains('basket__item-delete') ||
+					!this._isArtefactSaveEnabled &&
+					element.classList.contains('card__description') &&
+					element.classList.contains('card__title') &&
+					element.classList.contains('basket__item-delete') &&
 					element.classList.contains('card__price_basket')
 				);
 			},
@@ -115,21 +115,17 @@ export class Basket extends Component<IBasketView> {
 					});
 				};*/
 
-				logo.onerror = (e) => {
-					console.error('Failed to load watermark image', e);
+				// Если не удалось загрузить логотип, просто сохраняем без него
+				const link = document.createElement('a');
+				link.href = canvas.toDataURL('image/jpeg', 1.0);
+				link.download = 'MyRoster.jpg';
+				link.click();
 
-					// Если не удалось загрузить логотип, просто сохраняем без него
-					const link = document.createElement('a');
-					link.href = canvas.toDataURL('image/jpeg', 1.0);
-					link.download = 'MyRoster.jpg';
-					link.click();
-
-					items.forEach((item) => {
-						const basketItem = item as HTMLElement;
-						basketItem.style.paddingLeft = '';
-						basketList.style.width = '';
-					});
-				};
+				items.forEach((item) => {
+					const basketItem = item as HTMLElement;
+					basketItem.style.paddingLeft = '';
+					basketList.style.width = '';
+				});
 			})
 			.catch((error) => {
 				console.error('Error generating image:', error);

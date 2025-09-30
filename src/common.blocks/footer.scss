@@ -60,7 +60,7 @@
 	flex-direction: column;
 	align-items: center;
 	align-self: end;
-	padding: 5px;
+	padding: 10px 1px;
 }
 
 .menu a:hover {
@@ -70,7 +70,7 @@
 
 .footer-menu {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 
 	@media (min-width: 450px) {
 		grid-template-columns: repeat(1, 1fr);
@@ -101,4 +101,9 @@
 
 .favorites__footer_active {
 	transform: translateY(0);
+}
+
+.rating__point,
+.header__link {
+	text-align: center;
 }

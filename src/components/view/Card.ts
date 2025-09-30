@@ -141,7 +141,16 @@ export class Card extends Component<ICardItem> {
 			this._category.textContent.includes('Гильдия вольных стрелков') ||
 			this._category.textContent.includes('Гвардия Чародея') ||
 			this._category.textContent.includes('Легионеры Некроманта') ||
-			this._category.textContent.includes('Войска Колдуна')
+			this._category.textContent.includes('Войска Колдуна') ||
+			this._category.textContent.includes('Ст. производители (ВПМ)') ||
+			this._category.textContent.includes('Ст. производители (ХБ)') ||
+			this._category.textContent.includes('Ст. производители (НО)') ||
+			this._category.textContent.includes('Ст. производители (ЛЧП)') ||
+			this._category.textContent.includes('ВИМ') ||
+			this._category.textContent.includes('АС') ||
+			this._category.textContent.includes('(Б)') ||
+			this._category.textContent.includes('(ОБЕ)') ||
+			this._category.textContent.includes('Боевая машина')
 		) {
 			this._category.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
 		}
@@ -333,10 +342,6 @@ export class Card extends Component<ICardItem> {
 
 	get title(): string {
 		return this._title.textContent || '';
-	}
-
-	get directory(): string {
-		return this._directory.textContent || '';
 	}
 
 	set buttonTitle(value: string) {
