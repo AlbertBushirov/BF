@@ -34,7 +34,7 @@ export const localArmy = [
 		image: require('../images/Koldun/VKGurony.jpg'), // Прямой URL для удаленного изображения
 		price: 175,
 		inBasket: true,
-		directory: '',
+
 		button: '',
 		marker: require('../images/Exclamation_marker.png'),
 		markerTitle: 'Снижена цена на 25. Свойства Артефакта уточнены.',
@@ -47,7 +47,6 @@ export const localArmy = [
 		image: require('../images/Koldun/VKZigfrid.png'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
-		directory: '',
 		button: '',
 		marker: require('../images/Exclamation_marker.png'),
 		markerTitle: 'Свойства Артефакта расширены до ОБЕ.',

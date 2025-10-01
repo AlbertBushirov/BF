@@ -29,6 +29,11 @@ ul {
 }
 
 .tournament__day {
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+		url(../images/Fons/Fon_Tournament.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 	justify-content: center;
 	display: grid;
 	grid-template-columns: max-content max-content;

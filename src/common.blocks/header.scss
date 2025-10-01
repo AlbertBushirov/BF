@@ -2,6 +2,7 @@
 @use 'mixins';
 
 .header {
+	//background: linear-gradient(135deg, #3133a3 0%, #feb47b 50%, #ff6b9d 100%);
 	position: fixed;
 	background-color: $primary;
 	top: 0;

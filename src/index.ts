@@ -441,7 +441,7 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.description = res.description;
 			item.image = res.image;
 			item.price = res.price;
-			item.directory = res.directory;
+
 			item.marker = res.marker;
 			item.markerTitle = res.markerTitle;
 			item.inBasket = res.inBasket;

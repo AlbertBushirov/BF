@@ -21,6 +21,11 @@
 
 .gallery__item {
 	position: relative;
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+		url(../images/Fons/Fon_Gallery.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 	.gallery_marker__image {
 		position: absolute;
 		width: 30px;
@@ -47,21 +52,6 @@
 		font-size: 15px;
 		z-index: 2;
 	}
-}
-
-.gallery__net {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	margin-top: 60px;
-	margin-bottom: 10px;
-	@media (max-width: 450px) {
-		grid-template-columns: repeat(1, 1fr);
-		margin-top: 84px;
-		margin-bottom: 0px;
-	}
-}
-
-.gallery__item {
 	.button_like_preview {
 		appearance: none;
 		-webkit-appearance: none;
@@ -76,6 +66,18 @@
 		border: none;
 		cursor: pointer;
 		position: absolute;
+	}
+}
+
+.gallery__net {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	margin-top: 60px;
+	margin-bottom: 10px;
+	@media (max-width: 450px) {
+		grid-template-columns: repeat(1, 1fr);
+		margin-top: 84px;
+		margin-bottom: 0px;
 	}
 }
 

@@ -65,9 +65,6 @@
 		margin: 0;
 		font-size: 1.5rem;
 		font-weight: 400;
-		@media (max-width: 450px) {
-			background-color: $overlayBackground;
-		}
 	}
 
 	&__actions {

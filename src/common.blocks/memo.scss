@@ -23,6 +23,10 @@
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
+		url(../images/Fons/Fon_Preview.jpg);
+	background-position: center;
+	background-size: contain;
 }
 
 .memo__list_virtual {

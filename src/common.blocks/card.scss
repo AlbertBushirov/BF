@@ -10,18 +10,22 @@ html {
 	border: 0;
 	border-radius: 1rem;
 	background-color: $primary;
-
 	color: white;
 	padding: 10px 5px;
 	gap: 10px;
 	align-items: center;
 	cursor: pointer;
+
 	@media (max-width: 450px) {
 		padding: 7px 2px;
 		gap: 5px;
 	}
 
 	&_tehList {
+		background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
+			url(../images/Fons/Fon_Preview.jpg);
+		background-position: center;
+		background-size: contain;
 		display: grid;
 		gap: 10px;
 		grid-template-rows: min-content 1fr;
@@ -88,8 +92,10 @@ html {
 			justify-self: end;
 			@media (max-width: 450px) {
 				position: fixed;
-				bottom: 1vh;
+				bottom: 1vw;
 				left: 5vw;
+				background-color: $primary;
+				width: 100vw;
 			}
 		}
 
@@ -144,6 +150,10 @@ html {
 	}
 
 	&_tehList_wheels {
+		background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
+			url(../images/Fons/Fon_Preview.jpg);
+		background-position: center;
+		background-size: contain;
 		display: grid;
 		gap: 10px;
 		grid-template-rows: min-content 1fr;
@@ -196,6 +206,8 @@ html {
 				position: fixed;
 				bottom: 1vh;
 				left: 5vw;
+				background-color: $primary;
+				width: 100vw;
 			}
 		}
 
@@ -242,6 +254,10 @@ html {
 	}
 
 	&_fighting_machine {
+		background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
+			url(../images/Fons/Fon_Preview.jpg);
+		background-position: center;
+		background-size: contain;
 		display: grid;
 		gap: 10px;
 		grid-template-rows: min-content min-content min-content;
@@ -356,6 +372,8 @@ html {
 				position: fixed;
 				bottom: 1vh;
 				left: 5vw;
+				background-color: $primary;
+				width: 100vw;
 			}
 		}
 	}
@@ -390,6 +408,11 @@ html {
 		gap: 10px;
 		grid-template-rows: min-content min-content min-content;
 		grid-template-columns: 1fr 1fr;
+		background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
+			url(../images/Fons/Fon_Preview.jpg);
+		background-position: center;
+		background-size: contain;
+
 		@media (max-width: 730px) {
 			width: 100vw;
 			box-sizing: border-box;
@@ -397,13 +420,12 @@ html {
 		@media (max-width: 450px) {
 			height: 100vh;
 			border-radius: 0%;
-			padding-top: 5px;
+			padding-top: 45px;
 			justify-content: center;
 			grid-template-rows: min-content min-content min-content 0.75fr;
 			grid-template-columns: 1fr 1fr;
 			gap: 20px;
 			padding-inline: 5px;
-			margin-top: 40px;
 		}
 
 		.directory {
@@ -462,6 +484,8 @@ html {
 				position: fixed;
 				bottom: 1vh;
 				left: 5vw;
+				background-color: $primary;
+				width: 100vw;
 			}
 		}
 
@@ -744,11 +768,10 @@ html {
 .enlarged-image {
 	max-width: 90%;
 	max-height: 90%;
-	border: 2px solid white; /* Для лучшего визуального эффекта */
+	border: 2px solid white;
 }
 
 .directory {
-	background-color: #060c14;
 	border-radius: 1rem;
 	position: absolute;
 	opacity: 0;

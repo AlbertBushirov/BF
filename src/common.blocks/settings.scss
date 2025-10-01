@@ -1,4 +1,10 @@
 .settings {
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+		url(../images/Fons/Fon_Card.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 10px;
 }
 
 .settings.active {
