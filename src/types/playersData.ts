@@ -38,7 +38,7 @@ const organizerThreeSPB: Cup = {
 };
 
 const organizerThreeJuniorSPB: Cup = {
-	image: require('../images/JuniorOrganizer.png'),
+	image: require('../images/organizer.png'),
 	title: 'Организатор турнира Юниоров в Санкт-Петербурге. 2025',
 };
 

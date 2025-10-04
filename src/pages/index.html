@@ -266,7 +266,7 @@
 					<li><h3>Игрок</h3></li>
 					<li><h3>Достижения</h3></li>
 					<li><h3>Побед / Игр</h3></li>
-					<li><h3>% побед</h3></li>
+					<li><h3>% побед / Ранг</h3></li>
 				</ul>
 				<div class="rating__list"></div>
 				<div class="rating__memo_conteiner">
@@ -296,7 +296,9 @@
 		<template id="rating-item">
 			<li class="rating__item">
 				<h2 class="rating__item-index"></h2>
-				<img class="rating__image" src="" alt="Аватарка Игрока" />
+				<div class="rating__image-conteiner">
+					<img class="rating__image" src="" alt="Аватарка Игрока" />
+				</div>
 				<span class="rating__name"></span>
 				<div class="rating__achievements">
 					<span class="rating__achievements_title"></span>
@@ -428,6 +430,14 @@
 				</ul>
 			</div>
 		</template>
+
+		<div class="search">
+			<input
+				class="search__input"
+				type="search"
+				placeholder="Введите название Боевой Единицы"
+			/>
+		</div>
 
 		<div class="memo">
 			<div class="virtual_shooting">
@@ -685,6 +695,15 @@
 
 		<footer class="menu" id="menu">
 			<ul class="footer-menu">
+				<li class="menu-item">
+					<a class="search__point" target="_blank"
+						><img
+							class="footer-image"
+							src="<%=require('../images/icon_search.png')%>"
+							alt="БF assistent logo"
+						/>Поиск</a
+					>
+				</li>
 				<li class="menu-item">
 					<a class="rating__point" href="#rating"
 						><img

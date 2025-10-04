@@ -47,6 +47,7 @@ const cardBasketTemplateFM = ensureElement<HTMLTemplateElement>(
 );
 const ratingTemplate = ensureElement<HTMLTemplateElement>('#rating');
 const settingsTemplate = ensureElement<HTMLTemplateElement>('#settings');
+const searchTemplate = ensureElement<HTMLElement>('.search');
 
 const tournamentTemplate = ensureElement<HTMLTemplateElement>('#tournament');
 
@@ -383,6 +384,14 @@ events.on('settings:open', () => {
 	});
 });
 
+//Открытие справочника
+events.on('search:open', () => {
+	searchTemplate.classList.add('active');
+	modal.render({
+		content: searchTemplate,
+	});
+});
+
 // Открытие турнира
 events.on('tournament:open', () => {
 	page.locked = true;
@@ -715,6 +724,61 @@ Promise.all([
 
 			events.on('favorites_off', () => {
 				appData.setCatalog(combinedList);
+			});
+
+			document.addEventListener('DOMContentLoaded', () => {
+				const searchInput = document.querySelector('.search__input');
+				const items = Array.from(
+					document.querySelectorAll('.card__title')
+				) as HTMLElement[];
+
+				// Сохраняем оригинальный текст для каждого элемента
+				items.forEach((item) => {
+					if (!item.dataset.originalText) {
+						item.dataset.originalText = item.textContent || '';
+					}
+				});
+
+				searchInput.addEventListener('input', (e) => {
+					const target = e.target as HTMLInputElement;
+					const query = target.value.toLowerCase().trim();
+
+					items.forEach((item) => {
+						const originalText = item.dataset.originalText || '';
+						const text = originalText.toLowerCase();
+						const matches = text.includes(query);
+
+						// Фильтрация: скрываем/показываем
+						item.classList.toggle('hidden', !matches);
+
+						if (matches && query) {
+							// Подсветка совпадений
+							const regex = new RegExp(
+								`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`,
+								'gi'
+							);
+							const highlighted = originalText.replace(
+								regex,
+								'<mark>$1</mark>'
+							);
+							item.innerHTML = highlighted;
+						} else {
+							// Возвращаем оригинальный текст без подсветки
+							item.innerHTML = originalText;
+						}
+					});
+
+					// Прокрутка до первого видимого элемента
+					const firstVisible = document.querySelector(
+						'.card__title:not(.hidden)'
+					);
+					if (firstVisible && query) {
+						firstVisible.scrollIntoView({
+							behavior: 'smooth',
+							block: 'center',
+						});
+					}
+				});
 			});
 
 			const favoritesEnabled = localStorage.getItem('favoritesSaveEnabled');

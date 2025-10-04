@@ -18,6 +18,7 @@ export class Page extends Component<IPage> {
 	protected _modal: HTMLElement;
 	protected _rating: HTMLElement;
 	protected _memo: HTMLElement;
+	protected _search: HTMLElement;
 	protected _tournament: HTMLElement;
 	protected _settings: HTMLElement;
 	public _pointWeapon: HTMLElement;
@@ -46,6 +47,7 @@ export class Page extends Component<IPage> {
 		this._modal = ensureElement<HTMLElement>('.modal__container', container);
 		this._rating = ensureElement<HTMLElement>('.rating__point', container);
 		this._memo = ensureElement<HTMLElement>('.memo__point', container);
+		this._search = ensureElement<HTMLElement>('.search__point', container);
 		this._settings = ensureElement<HTMLElement>('.settings__point', container);
 		this._tournament = ensureElement<HTMLElement>(
 			'.tournament__point',
@@ -77,6 +79,9 @@ export class Page extends Component<IPage> {
 
 		this._tournament.addEventListener('click', () => {
 			this.events.emit('tournament:open');
+		});
+		this._search.addEventListener('click', () => {
+			this.events.emit('search:open');
 		});
 	}
 	//Установка значения счетчика корзины.

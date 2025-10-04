@@ -1,21 +1,27 @@
-@use "variables" as *;
-@use "mixins";
+.search {
+	display: none;
+	position: fixed;
+	display: flex;
+	@media (max-width: 450px) {
+		background-color: black;
+		padding-top: 80px;
+		padding-bottom: 10px;
+	}
+}
 
-.order-success {
-  @include mixins.flex(column);
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
+.search.active {
+	display: flex;
+}
 
-  &::before {
-    content: " ";
-    @include mixins.background('../images/Subtract.png');
-    width: 256px;
-    height: 256px;
-  }
+.search__input {
+	width: 400px;
 
-  &__close {
-    margin-top: 2rem;
-  }
+	@media (max-width: 450px) {
+		width: 100vw;
+	}
+}
+
+.highlight {
+	background-color: yellow;
+	font-weight: bold;
 }

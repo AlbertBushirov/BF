@@ -59,7 +59,7 @@
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	grid-template-columns: 1.2fr 2fr 2fr 2fr 2fr 2fr;
+	grid-template-columns: 1.2fr 2fr 2fr 2.2fr 2fr 2fr;
 	height: 120px;
 	font-size: 15px;
 	border-bottom: 2px solid rgba(255, 255, 255, 0.459);
@@ -79,23 +79,64 @@
 .rating__image {
 	width: 100px;
 	aspect-ratio: 1/1;
-	border-radius: 10%;
+
 	@media (max-width: 450px) {
 		width: 70px;
 	}
 }
 
-.rating__achievements {
-	display: inline-block;
-	display: grid;
+.rating__image-conteiner {
+	position: relative;
+}
 
+/*.rating__item:nth-child(-n + 1) .rating__image-conteiner::after {
+	content: '';
+	position: absolute;
+	top: 10px;
+	right: -25px;
+	bottom: 0;
+	background-image: url(../images/Fons/zolotaya-vetka.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 2;
+	width: 130%;
+	height: 90%;
+	@media (max-width: 450px) {
+		top: 7px;
+		right: -17px;
+	}
+}*/
+
+.rating__item:nth-child(n + 1):nth-child(-n + 3) .rating__image {
+	border: 6px solid transparent;
+	border-image: url(../images/Fons/gold.png) 30% stretch;
+}
+
+.rating__item:nth-child(-n + 10) .rating__image {
+	border: 6px solid transparent;
+	border-image: url(../images/Fons/cover.png) 30% stretch;
+}
+
+.rating__item:nth-child(n + 11):nth-child(-n + 20) .rating__image {
+	border: 6px solid transparent;
+	border-image: url(../images/Fons/fling.png) 30% stretch;
+}
+
+.rating__item:nth-child(n + 21):nth-child(-n + 30) .rating__image {
+	border: 6px solid transparent;
+	border-image: url(../images/Fons/planks.png) 30% stretch;
+}
+
+.rating__achievements {
+	position: relative;
+	display: grid;
 	grid-template-columns: repeat(4, auto);
 	align-items: end;
 	@media (max-width: 450px) {
 		grid-template-columns: repeat(3, min-content);
 		max-width: 81px;
 		height: 68px;
-
+		position: static;
 		overflow-x: auto;
 	}
 }
@@ -107,15 +148,20 @@
 .rating__achievements_title {
 	display: none;
 	position: absolute;
-	width: 110px;
-	background-color: rgba(0, 0, 0, 0.7);
-	padding: 5px;
-	border-radius: 3px;
-	font-size: 15px;
-	z-index: 2;
+	max-width: 90px;
+	color: black;
+	background-image: url(../images/Fons/svitok.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-image: url(../images/Fons/svitok.png) 30% stretch;
+	text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+	padding: 12px;
+
+	font-size: 14px;
+	z-index: 3;
 	@media (max-width: 450px) {
 		font-size: 10px;
-		width: 60px;
 	}
 }
 
@@ -123,10 +169,17 @@
 	display: block;
 }
 
+@media (min-width: 450px) {
+	.rating__achievements_image:hover {
+		transform: scale(1.6);
+		z-index: 2;
+	}
+}
+
 .rating__achievements_image {
-	position: relative;
-	max-width: 40px;
+	max-width: 39px;
 	padding: 1px;
+	transition: transform 0.3s ease;
 	@media (max-width: 551px) {
 		max-width: 30px;
 	}
@@ -160,4 +213,65 @@
 }
 .rating__link:hover {
 	text-decoration: underline;
+}
+
+// Ранги
+
+.rating__win {
+	position: relative;
+	margin-top: 60px;
+	@media (max-width: 450px) {
+		margin-top: 42px;
+	}
+}
+
+.rating__item:nth-child(-n + 1) .rating__win::after {
+	content: '';
+	position: absolute;
+	right: -37px;
+	bottom: 25px;
+	background-image: url(../images/rang-lion.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 2;
+	width: 300%;
+	height: 300%;
+	@media (max-width: 450px) {
+		right: -27px;
+		bottom: 20px;
+	}
+}
+
+.rating__item:nth-child(n + 2):nth-child(-n + 2) .rating__win::after {
+	content: '';
+	position: absolute;
+	right: -37px;
+	bottom: 25px;
+	background-image: url(../images/rang-eliphant.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 2;
+	width: 300%;
+	height: 300%;
+	@media (max-width: 450px) {
+		right: -27px;
+		bottom: 20px;
+	}
+}
+
+.rating__item:nth-child(n + 3):nth-child(-n + 3) .rating__win::after {
+	content: '';
+	position: absolute;
+	right: -37px;
+	bottom: 25px;
+	background-image: url(../images/rang-bull.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 2;
+	width: 300%;
+	height: 300%;
+	@media (max-width: 450px) {
+		right: -27px;
+		bottom: 20px;
+	}
 }

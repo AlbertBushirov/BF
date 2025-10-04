@@ -10,8 +10,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Улучшено свойство Артефакта. Снижена цена на 10',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Улучшено свойство Артефакта. Снижена цена на 10',*/
 	},
 	{
 		id: 'VKGrenaderi',
@@ -23,8 +23,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: 'xt gbcfnm z [p',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Изменено свойство Артефакта',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Изменено свойство Артефакта',*/
 	},
 	{
 		id: 'VKsupergurony',
@@ -36,8 +36,8 @@ export const localArmy = [
 		inBasket: true,
 
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 25. Свойства Артефакта уточнены.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 25. Свойства Артефакта уточнены.',*/
 	},
 	{
 		id: 'VKZigfrid',
@@ -48,8 +48,8 @@ export const localArmy = [
 		price: 190,
 		inBasket: true,
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Свойства Артефакта расширены до ОБЕ.',
+		/*	marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Свойства Артефакта расширены до ОБЕ.',*/
 	},
 	{
 		id: 'VKzigfridmorgenshtern',
@@ -61,8 +61,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Свойства Артефакта расширены до ОБЕ.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Свойства Артефакта расширены до ОБЕ.',*/
 	},
 	{
 		id: 'VKzigfrid6',
@@ -74,8 +74,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Свойства Артефакта расширены до ОБЕ.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Свойства Артефакта расширены до ОБЕ.',*/
 	},
 	{
 		id: 'VKkaizer',
@@ -98,9 +98,9 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle:
-			'Снижена цена на 5. Усилено свойство Артефакта, увеличено количество карт до 5',
+		/*marker: require('../images/Exclamation_marker.png'),*/
+		/*markerTitle:
+			'Снижена цена на 5. Усилено свойство Артефакта, увеличено количество карт до 5',*/
 	},
 	{
 		id: 'VKkondor7',
@@ -112,8 +112,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5. Усилено свойство Артефакта.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5. Усилено свойство Артефакта.',*/
 	},
 	{
 		id: 'VKmatodor',
@@ -125,8 +125,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5',*/
 	},
 	{
 		id: 'VKneptun',
@@ -148,8 +148,8 @@ export const localArmy = [
 		price: 150,
 		inBasket: true,
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Ослаблен Артефакт. Теперь работает только с П',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Ослаблен Артефакт. Теперь работает только с П',*/
 	},
 	{
 		id: 'VKYatagan',
@@ -161,8 +161,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10. Усилен Артефакт.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10. Усилен Артефакт.',*/
 	},
 	{
 		id: 'VKAskalon',
@@ -174,8 +174,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта: 55.56%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5. Усилен Артефакт.',
+		/*	marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5. Усилен Артефакт.',*/
 	},
 	{
 		id: 'VKAsterisk',
@@ -187,8 +187,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность выпадения 6: 59.8%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Усилено свойство Артефакта, увеличена видимость цели.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Усилено свойство Артефакта, увеличена видимость цели.',*/
 	},
 	{
 		id: 'VKgnomi',
@@ -200,8 +200,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Изменено свойство Артефакта.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Изменено свойство Артефакта.',*/
 	},
 	{
 		id: 'VKVaterloo',
@@ -213,8 +213,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10.',*/
 	},
 	{
 		id: 'VKvervulf',
@@ -226,8 +226,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 20.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 20.',*/
 	},
 	{
 		id: 'VKgidra',
@@ -239,8 +239,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Ослаблен Артефакт. Повышает броню строго до 2',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Ослаблен Артефакт. Повышает броню строго до 2',*/
 	},
 	{
 		id: 'VKIzmail',
@@ -252,8 +252,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5. Изменено свойство Артефакта.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5. Изменено свойство Артефакта.',*/
 	},
 	{
 		id: 'VKKiber-skilet',
@@ -265,9 +265,9 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
+		/*	marker: require('../images/Exclamation_marker.png'),
 		markerTitle:
-			'Улучшены характеристики Маневра. Снижена цена на 10. Усилено свойство Артефакта.',
+			'Улучшены характеристики Маневра. Снижена цена на 10. Усилено свойство Артефакта.',*/
 	},
 	{
 		id: 'VKKondung',
@@ -279,9 +279,9 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
+		/*marker: require('../images/Exclamation_marker.png'),
 		markerTitle:
-			'Снижена цена на 10. Усилено свойство Артефакта, расширенно до любого противника',
+			'Снижена цена на 10. Усилено свойство Артефакта, расширенно до любого противника',*/
 	},
 	{
 		id: 'VKMinotavri',
@@ -293,8 +293,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 5.',
+		/*	marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 5.',*/
 	},
 	{
 		id: 'VKChagatai',
@@ -306,8 +306,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Улучшен Артефакт. Теперь не дает штрафов',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Улучшен Артефакт. Теперь не дает штрафов',*/
 	},
 	{
 		id: 'VKYagelon',
@@ -332,8 +332,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 20.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 20.',*/
 	},
 	{
 		id: 'LNKobra',
@@ -356,8 +356,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 20. Улучшено свойство Артефакта.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 20. Улучшено свойство Артефакта.',*/
 	},
 	{
 		id: 'LNPiton',
@@ -380,8 +380,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10. Изменён текст Артефакта.',
+		/*	marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10. Изменён текст Артефакта.',*/
 	},
 	{
 		id: 'LNTitan',
@@ -393,8 +393,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снинжена цена на 10.',
+		/*	marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снинжена цена на 10.',*/
 	},
 	{
 		id: 'LNTornado',
@@ -406,8 +406,8 @@ export const localArmy = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 5.',*/
 	},
 	{
 		id: 'LNTornadogolovotyap',
@@ -419,8 +419,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 5.',
+		/*	marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 5.',*/
 	},
 	{
 		id: 'LNUdav',
@@ -433,9 +433,9 @@ export const localArmy = [
 		directory:
 			'Вероятность успешного использования артефакта (воин хотя бы убежит): 67%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle:
-			'Усилено свойство Артефакта: расстояние выбирается произвольно',
+		/*marker: require('../images/Exclamation_marker.png'),*/
+		/*markerTitle:
+			'Усилено свойство Артефакта: расстояние выбирается произвольно',*/
 	},
 	{
 		id: 'LNUragan',
@@ -447,8 +447,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10. Изменено свойство артефакта',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10. Изменено свойство артефакта',*/
 	},
 	{
 		id: 'LNFobos',
@@ -482,9 +482,9 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
+		/*marker: require('../images/Exclamation_marker.png'),
 		markerTitle:
-			'Снижена цена на 10. Усилено свойство Артефакта: работает сразу после активации',
+			'Снижена цена на 10. Усилено свойство Артефакта: работает сразу после активации',*/
 	},
 	{
 		id: 'LNShipki',
@@ -496,8 +496,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5. Изменено свойство артефакта.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5. Изменено свойство артефакта.',*/
 	},
 	{
 		id: 'LNGladius',
@@ -509,8 +509,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10. Изменено свойство Артефакта.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10. Изменено свойство Артефакта.',*/
 	},
 	{
 		id: 'LNGornii-Bars',
@@ -522,8 +522,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования артефакта: 83%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Усилено свойство Артефакта. Повышена вероятность',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Усилено свойство Артефакта. Повышена вероятность',*/
 	},
 	{
 		id: 'LNGrobag',
@@ -535,8 +535,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта: 30.56%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10.',*/
 	},
 	{
 		id: 'LNGulrog',
@@ -559,8 +559,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 5',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 5',*/
 	},
 	{
 		id: 'LNYedinorog',
@@ -572,8 +572,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5',
+		/*	marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5',*/
 	},
 	{
 		id: 'LNKechya',
@@ -597,8 +597,8 @@ export const localArmy = [
 		directory:
 			'Вероятность успешного использования Артефакта в 5 воинов: 59.8%; в 4 воина: 51.8%; в 3 воина: 42.1%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10',*/
 	},
 	{
 		id: 'LNStrazhi-grobnits',
@@ -611,8 +611,8 @@ export const localArmy = [
 		directory:
 			'Вероятность смерти воина при успешном использовании артефакта: 33.33%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Усилено свойство Артефакта.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Усилено свойство Артефакта.',*/
 	},
 	{
 		id: 'LNStrazhi-Tmi',
@@ -624,9 +624,9 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования артефакта: 33.33%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
+		/*marker: require('../images/Exclamation_marker.png'),
 		markerTitle:
-			'Снижена цена на 15. Изменены характеристики. Усилен Артефакт, повышена вероятность',
+			'Снижена цена на 15. Изменены характеристики. Усилен Артефакт, повышена вероятность',*/
 	},
 	{
 		id: 'LNUruk-Tag',
@@ -662,8 +662,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5.',*/
 	},
 	{
 		id: 'GCHBagration',
@@ -675,8 +675,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5. Артефакт переформулирован',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5. Артефакт переформулирован',*/
 	},
 	{
 		id: 'GCHVarani',
@@ -688,8 +688,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта: 55.56%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Усилена вероятность успешного использования Артефакта',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Усилена вероятность успешного использования Артефакта',*/
 	},
 	{
 		id: 'GCHMarsel',
@@ -701,8 +701,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Усилено свойство Артефакта: работает на любом противнике.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Усилено свойство Артефакта: работает на любом противнике.',*/
 	},
 	{
 		id: 'GCHPoseidon',
@@ -725,8 +725,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Уменьшена стоимость на 20. Ослаблено свойство Артефакта',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Уменьшена стоимость на 20. Ослаблено свойство Артефакта',*/
 	},
 	{
 		id: 'GCHStalingrad',
@@ -738,8 +738,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта 55.6%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Изменены допуски к орудиям.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Изменены допуски к орудиям.',*/
 	},
 	{
 		id: 'GCHTaifun',
@@ -762,8 +762,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта 16,6%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Уменьшена цена на 5. Усилено свойство Артефакта',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Уменьшена цена на 5. Усилено свойство Артефакта',*/
 	},
 	{
 		id: 'GCHEspada',
@@ -775,8 +775,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта 83,4%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Уменьшена цена на 10.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Уменьшена цена на 10.',*/
 	},
 	{
 		id: 'GCHAvalon',
@@ -788,8 +788,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Увеличена цена на 5.',
+		/*	marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Увеличена цена на 5.',*/
 	},
 	{
 		id: 'GCHBorodino',
@@ -801,8 +801,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Уменьшена цена на 5. Изменена формулировка Артефакта',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Уменьшена цена на 5. Изменена формулировка Артефакта',*/
 	},
 	{
 		id: 'GCHVolkodav',
@@ -825,8 +825,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Уменьшены допуски к орудиям у командира',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Уменьшены допуски к орудиям у командира',*/
 	},
 	{
 		id: 'GCHVolnica',
@@ -838,8 +838,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта 33,33%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Уменьшена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Уменьшена цена на 5.',*/
 	},
 	{
 		id: 'GCHPaladini',
@@ -851,8 +851,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта: 33.33%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Увеличена вероятность успешного использования Артефакта.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Увеличена вероятность успешного использования Артефакта.',*/
 	},
 	{
 		id: 'GCHPoltava',
@@ -864,9 +864,9 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
+		/*marker: require('../images/Exclamation_marker.png'),
 		markerTitle:
-			'Снижена цена на 5. Усилено свойство Артефакта: повышен радиус с 8 до 10 шагов.',
+			'Снижена цена на 5. Усилено свойство Артефакта: повышен радиус с 8 до 10 шагов.',*/
 	},
 	{
 		id: 'GCHSkifi',
@@ -878,8 +878,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10',*/
 	},
 	{
 		id: 'GCHElitar',
@@ -890,8 +890,8 @@ export const localArmy = [
 		price: 225,
 		inBasket: true,
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5. Изменено свойство Артефакта',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5. Изменено свойство Артефакта',*/
 	},
 	{
 		id: 'GCHYastreb',
@@ -903,8 +903,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта: 67%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 10. Улучшены характеристики Маневра',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 10. Улучшены характеристики Маневра',*/
 	},
 	//Гильдия Вольных Стрелков
 	{
@@ -917,8 +917,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность выпадения 5,6: 33.33%',
 		button: 'green',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Усилено свойство Артефакта',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Усилено свойство Артефакта',*/
 	},
 	{
 		id: 'GVSvepr',
@@ -930,8 +930,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Усилено свойство Артефакта. Изменен принцип возрождения',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Усилено свойство Артефакта. Изменен принцип возрождения',*/
 	},
 	{
 		id: 'GVSversal',
@@ -943,8 +943,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: 'xt gbcfnm z [p',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 15. Измменены допуски к орудиям',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 15. Измменены допуски к орудиям',*/
 	},
 	{
 		id: 'GVSpsivoini',
@@ -967,8 +967,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: 'xt gbcfnm z [p',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10. Артефакт уточнен',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10. Артефакт уточнен',*/
 	},
 	{
 		id: 'GVSrodezia',
@@ -980,8 +980,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: 'xt gbcfnm z [p',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5. Артефакт уточнен',
+		/*	marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5. Артефакт уточнен',*/
 	},
 	{
 		id: 'GVSsaturn',
@@ -993,8 +993,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: 'xt gbcfnm z [p',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10. Артефакт ослаблен',
+		/*	marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10. Артефакт ослаблен',*/
 	},
 	{
 		id: 'GVSshervud',
@@ -1006,8 +1006,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: 'xt gbcfnm z [p',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5.',*/
 	},
 	{
 		id: 'GVSbiokiborgysherify',
@@ -1019,8 +1019,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: 'xt gbcfnm z [p',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10. Изменены допуски к орудиям',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10. Изменены допуски к орудиям',*/
 	},
 	{
 		id: 'GVSvoinymirty',
@@ -1043,8 +1043,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5.',*/
 	},
 	{
 		id: 'GVSpsi-komandazero',
@@ -1056,8 +1056,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта: 67%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Изменены допуски к орудиям.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Изменены допуски к орудиям.',*/
 	},
 	{
 		id: 'GVSkentavry',
@@ -1069,8 +1069,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 10',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 10',*/
 	},
 	{
 		id: 'GVSmorskoye-bratstvo',
@@ -1082,8 +1082,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10',*/
 	},
 	{
 		id: 'GVSnovaya-sibir',
@@ -1095,8 +1095,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижены характеристики Маневра',
+		/*	marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижены характеристики Маневра',*/
 	},
 	{
 		id: 'GVSroksburg',
@@ -1108,8 +1108,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5. Изменено свойство Артефакта',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5. Изменено свойство Артефакта',*/
 	},
 	{
 		id: 'GVStarasov-kuren',
@@ -1121,8 +1121,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5. Усилено свойство Артефакта',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5. Усилено свойство Артефакта',*/
 	},
 	{
 		id: 'GVStemnya-sotnya',
@@ -1134,8 +1134,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10.',*/
 	},
 	{
 		id: 'GVSyupiter',
@@ -1147,8 +1147,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 5.',*/
 	},
 
 	//Сторонние производиттели
@@ -1174,8 +1174,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10. Изменены допуски к орудиям',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10. Изменены допуски к орудиям',*/
 	},
 	{
 		id: 'SPKitoboi',
@@ -1187,8 +1187,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5',*/
 	},
 	{
 		id: 'SPKricheri',
@@ -1200,8 +1200,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышеня цена на 20',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышеня цена на 20',*/
 	},
 
 	{
@@ -1214,8 +1214,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышеня цена на 5',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышеня цена на 5',*/
 	},
 	{
 		id: 'SPPredvestniki5',
@@ -1227,8 +1227,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышеня цена на 5',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышеня цена на 5',*/
 	},
 	{
 		id: 'SPStragiGizi',
@@ -1240,8 +1240,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10',*/
 	},
 	{
 		id: 'SPTechKnight',
@@ -1253,8 +1253,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10.',*/
 	},
 	{
 		id: 'SPHardkor',
@@ -1360,6 +1360,19 @@ export const localArmy = [
 		markerTitle: 'Новый адаптированный отряд',
 	},
 	{
+		id: 'SPGendarmes',
+		title: 'Жандармы',
+		category: 'Ст. производители (НО)',
+		description: require('../images/Artefakti/Gendarmes.jpg'),
+		image: require('../images/Storonie/SPOrkestrSmerty.jpg'),
+		price: 200,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
 		id: 'SPYarostNebes',
 		title: 'Ярость Небес',
 		category: 'Ст. производители (НО)',
@@ -1404,8 +1417,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5.',*/
 	},
 	{
 		id: 'SPGeroyBilin',
@@ -1440,8 +1453,20 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5. Ослаблено свойство Артефакта.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5. Ослаблено свойство Артефакта.',*/
+	},
+	{
+		id: 'SPGally',
+		title: 'Галлы',
+		category: 'Ст. производители (ВИМ)',
+		description: require('../images/Artefakti/Gally.jpg'),
+		image: require('../images/Storonie/SPGally.jpg'), // Прямой URL для удаленного изображения
+		price: 170,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
 	},
 	{
 		id: 'SPChasticiRazuma',
@@ -1475,8 +1500,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5.',*/
 	},
 	{
 		id: 'SPStalnayaPyaterka',
@@ -1488,8 +1513,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 5.',*/
 	},
 	{
 		id: 'SPValhalla',
@@ -1538,8 +1563,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 5.',*/
 	},
 	{
 		id: 'SPHorni',
@@ -1562,8 +1587,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 5.',*/
 	},
 	{
 		id: 'SPBorciZaOgon',
@@ -1575,8 +1600,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5.',*/
 	},
 	{
 		id: 'SPBratyaIgarashi',
@@ -1632,8 +1657,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 5.',*/
 	},
 	{
 		id: 'SPMinoni',
@@ -1667,8 +1692,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Понижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Понижена цена на 5.',*/
 	},
 	{
 		id: 'SPPodrugiAiri',
@@ -1705,9 +1730,9 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
+		/*marker: require('../images/Exclamation_marker.png'),
 		markerTitle:
-			'Повышена цена на 5. Изменено свойство Артефакта: госпиталь заменен на ранение',
+			'Повышена цена на 5. Изменено свойство Артефакта: госпиталь заменен на ранение',*/
 	},
 	{
 		id: 'SPPesherniLudi',
@@ -1719,8 +1744,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5.',*/
 	},
 	{
 		id: 'SPFemiskira',
@@ -1769,8 +1794,8 @@ export const localArmy = [
 		directory:
 			'Вероятность успешного использования Артефакта при броске 3 кубиков: 16,6%; ',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 10.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 10.',*/
 	},
 	{
 		id: 'SPHraniteliRochi',
@@ -1804,8 +1829,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 5.',*/
 	},
 	{
 		id: 'SPKiberzveri',
@@ -1828,9 +1853,9 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
+		/*	marker: require('../images/Exclamation_marker.png'),
 		markerTitle:
-			'Снижена цена на 5. Изменено свойство Артефакта: воин исцеляется в стартовую зону',
+			'Снижена цена на 5. Изменено свойство Артефакта: воин исцеляется в стартовую зону',*/
 	},
 	{
 		id: 'SPTvoreniyaMarkusa',
@@ -1853,8 +1878,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: 'Вероятность успешного использования Артефакта: 42.13%',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5.',*/
 	},
 	{
 		id: 'SPTritalianci',
@@ -1866,8 +1891,8 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 5.',
+		/*	marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 5.',*/
 	},
 	{
 		id: 'SPChama-Tor',
@@ -1909,6 +1934,19 @@ export const localArmy = [
 		description: require('../images/Artefakti/Dikobrazi.jpg'),
 		image: require('../images/Storonie/SPDikobrazi.jpg'),
 		price: 230,
+		inBasket: false,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPDzyanshi',
+		title: 'Дзяньши',
+		category: 'Ст. производители (ХБ)',
+		description: require('../images/Artefakti/Dzyanshi.jpg'),
+		image: require('../images/Storonie/SPDzyanshi.jpg'),
+		price: 170,
 		inBasket: false,
 		directory: '',
 		button: '',

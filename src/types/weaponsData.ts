@@ -95,8 +95,8 @@ export const localWeapons = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10.',*/
 	},
 
 	{
@@ -108,8 +108,8 @@ export const localWeapons = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10.',
+		/*	marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10.',*/
 	},
 
 	{
@@ -121,8 +121,8 @@ export const localWeapons = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10.',*/
 	},
 
 	{
@@ -145,8 +145,8 @@ export const localWeapons = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10.',*/
 	},
 	{
 		id: 'pushkasparka',
@@ -187,8 +187,8 @@ export const localWeapons = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5.',*/
 	},
 
 	{
@@ -200,8 +200,8 @@ export const localWeapons = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5.',*/
 	},
 
 	{
@@ -213,8 +213,8 @@ export const localWeapons = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 20.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 20.',*/
 	},
 
 	{
@@ -238,8 +238,8 @@ export const localWeapons = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 30.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 30.',*/
 	},
 ];
 //Орудия с шинами
@@ -253,8 +253,8 @@ export const localWeaponsWheels = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Понижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Понижена цена на 5.',*/
 	},
 	{
 		id: 'arbaletskorpion',
@@ -265,8 +265,8 @@ export const localWeaponsWheels = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Понижена цена на 15.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Понижена цена на 15.',*/
 	},
 	{
 		id: 'pushkagrom',
@@ -277,8 +277,8 @@ export const localWeaponsWheels = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Понижена цена на 15.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Понижена цена на 15.',*/
 	},
 	{
 		id: 'arbaletgoliaf',
@@ -289,8 +289,8 @@ export const localWeaponsWheels = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 20.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 20.',*/
 	},
 
 	{
@@ -302,8 +302,8 @@ export const localWeaponsWheels = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 15.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 15.',*/
 	},
 	{
 		id: 'catapultbogomol',
@@ -324,8 +324,8 @@ export const localWeaponsWheels = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Понижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Понижена цена на 5.',*/
 	},
 	{
 		id: 'pushkablast',
@@ -336,8 +336,8 @@ export const localWeaponsWheels = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Понижена цена на 10.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Понижена цена на 10.',*/
 	},
 	{
 		id: 'pushkabuivol',
@@ -348,8 +348,8 @@ export const localWeaponsWheels = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 10.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 10.',*/
 	},
 
 	{
@@ -361,8 +361,8 @@ export const localWeaponsWheels = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 15.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 15.',*/
 	},
 
 	{
@@ -374,8 +374,8 @@ export const localWeaponsWheels = [
 		inBasket: true,
 		button: '',
 		directory: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 15.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 15.',*/
 	},
 ];
 

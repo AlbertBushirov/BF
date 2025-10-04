@@ -27,8 +27,8 @@ export const localfightMachine = [
 		inBasket: true,
 		weapons: [projectile, rocketProjectile],
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5.',*/
 	},
 	{
 		id: 'minometMolot',
@@ -39,8 +39,8 @@ export const localfightMachine = [
 		inBasket: true,
 		weapons: [projectile, rocketProjectile],
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Повышена цена на 10.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Повышена цена на 10.',*/
 	},
 	{
 		id: 'minometedelveys',
@@ -51,8 +51,8 @@ export const localfightMachine = [
 		inBasket: true,
 		weapons: [projectile, rocketProjectile],
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 10.',*/
 	},
 	{
 		id: 'FMUnl-3',
@@ -69,8 +69,8 @@ export const localfightMachine = [
 			launcher,
 		],
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Понижена цена лазера на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Понижена цена лазера на 5.',*/
 	},
 	{
 		id: 'FMRaptor',
@@ -87,8 +87,8 @@ export const localfightMachine = [
 			launcher,
 		],
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Понижена цена лазера на 5.',
+		/*marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Понижена цена лазера на 5.',*/
 	},
 	{
 		id: 'FMUNL-2',
@@ -105,9 +105,9 @@ export const localfightMachine = [
 			launcher2,
 		],
 		button: '',
-		marker: require('../images/Exclamation_marker.png'),
+		/*marker: require('../images/Exclamation_marker.png'),
 		markerTitle:
-			'Изменены характеристики скорости. Повышена цена на 10. Понижена цена лазера на 5.',
+			'Изменены характеристики скорости. Повышена цена на 10. Понижена цена лазера на 5.',*/
 	},
 	{
 		id: 'FMDinamo',
