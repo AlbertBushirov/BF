@@ -69,20 +69,26 @@ const categoryOrder = [
 	'Легионеры Некроманта',
 	'Гвардия Чародея',
 	'Гильдия вольных стрелков',
-	'Ст. производители (НО)',
-	'Ст. производители (Б)',
-	'Ст. производители (ВИМ)',
-	'Ст. производители (ХБ)',
-	'Ст. производители (АС)',
-	'Ст. производители (ВПМ)',
-	'Ст. производители (ЛЧП)',
-	'Войска Колдуна (ОБЕ)',
-	'Легионеры Некроманта (ОБЕ)',
-	'Гвардия Чародея (ОБЕ)',
-	'Гильдия вольных стрелков (ОБЕ)',
-	'Боевое существо (ОБЕ)',
-	'Ст. производители (ВПМ) (ОБЕ)',
-	'Ст. производители (Б) (ОБЕ)',
+	'Нейтральный отряд (КБФ)',
+	'Воители иных миров (КБФ)',
+	'База (КБФ)',
+	'Х-Бункер (КБФ)',
+	'Альянс Свободных (КБФ)',
+	'Войско павшего мага (КБФ)',
+	'Легионы черной планеты (КБФ)',
+	'База (АОБФ)',
+	'Нейтралы (АОБФ)',
+	'Альянс Свободных (АОБФ)',
+	'Войско павшего мага (АОБФ)',
+	'Войска Колдуна ОБЕ',
+	'Легионеры Некроманта ОБЕ',
+	'Гвардия Чародея ОБЕ',
+	'Гильдия вольных стрелков ОБЕ',
+	'Боевое существо ОБЕ',
+	'Войско павшего мага ОБЕ (КБФ)',
+	'База ОБЕ (КБФ)',
+	'Легионы черной планеты ОБЕ (КБФ)',
+
 	'Техлист (1А)',
 	'Техлист (1П)',
 	'Техлист (1МП)',
@@ -91,6 +97,7 @@ const categoryOrder = [
 	'Техлист (2А)',
 	'Техлист (2МП)',
 	'Техлист (2К)',
+	'Боевая машина',
 ];
 
 // Обработчик изменения каталога
@@ -106,11 +113,8 @@ events.on<CatalogChangeEvent>('items:changed', () => {
 		const indexA = categoryOrder.indexOf(a.category);
 		const indexB = categoryOrder.indexOf(b.category);
 
-		const posA = indexA === -1 ? Number.MAX_SAFE_INTEGER : indexA;
-		const posB = indexB === -1 ? Number.MAX_SAFE_INTEGER : indexB;
-
-		if (posA !== posB) {
-			return posA - posB;
+		if (indexA !== indexB) {
+			return indexA - indexB;
 		}
 		if (a.title && b.title) {
 			return a.title.localeCompare(b.title, 'ru', { sensitivity: 'base' });
@@ -193,9 +197,8 @@ function setupNavigationHandlers() {
 	addScrollHandler(page._pointGVS, (h2) =>
 		h2.textContent?.includes('Гильдия вольных стрелков')
 	);
-	addScrollHandler(page._pointOutsiders, (h2) =>
-		h2.textContent?.includes('Ст. производители')
-	);
+	addScrollHandler(page._pointKBF, (h2) => h2.textContent?.includes('(КБФ)'));
+	addScrollHandler(page._pointAOBF, (h2) => h2.textContent?.includes('(АОБФ)'));
 }
 
 const galeries = document.querySelectorAll('.gallery');
@@ -236,9 +239,9 @@ function applyNetState(state: 'save' | 'cancel') {
 		});
 		cartCategoryArray.forEach((el: HTMLElement) => {
 			if (el.textContent.includes('Техлист')) {
-				el.style.padding = '0.5rem 1rem';
+				el.style.padding = '0.4rem 1rem';
 			} else {
-				el.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
+				el.style.padding = '0.4rem 0.3rem 0.4rem 1.6rem';
 			}
 
 			const res = el.textContent;
@@ -510,6 +513,10 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.price = res.price;
 			item.directory = res.directory;
 
+			item.marker = res.marker;
+			item.markerTitle = res.markerTitle;
+			item.inBasket = res.inBasket;
+
 			const card = new Card('card', cloneTemplate(cardTehlistTemplate), {
 				onClick: () => {
 					const newCartId = generateNewId();
@@ -530,7 +537,7 @@ events.on('preview:changed', (item: ICardItem) => {
 			});
 			card.BasedOnLike();
 
-			const checkedAttr: boolean = appData.productLike(item) ? true : false;
+			const checkedAttr: boolean = appData.productLike(item);
 			card.buttonLike = checkedAttr;
 			modal.render({
 				content: card.render({
@@ -550,6 +557,10 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.title = res.title;
 			item.image = res.image;
 			item.price = res.price;
+
+			item.marker = res.marker;
+			item.markerTitle = res.markerTitle;
+			item.inBasket = res.inBasket;
 
 			// Создание карточки товара
 			const card = new Card('card', cloneTemplate(cardTehlistWheelsTemplate), {
@@ -577,7 +588,7 @@ events.on('preview:changed', (item: ICardItem) => {
 
 			card.BasedOnLike();
 
-			const checkedAttr: boolean = appData.productLike(item) ? true : false;
+			const checkedAttr: boolean = appData.productLike(item);
 			card.buttonLike = checkedAttr;
 			modal.render({
 				content: card.render({
@@ -597,6 +608,10 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.image = res.image;
 			item.price = res.price;
 			item.weapons = res.weapons;
+
+			item.marker = res.marker;
+			item.markerTitle = res.markerTitle;
+			item.inBasket = res.inBasket;
 
 			// Создание карточки товара
 			const card = new Card('card', cloneTemplate(cardFightMachineTemplate), {
@@ -632,12 +647,14 @@ events.on('preview:changed', (item: ICardItem) => {
 				}),
 			});
 			card.resetWeaponCount();
+			card.categoryPadding();
 		});
 	}
 });
 
-//Открытие корзицы товаров
+//Открытие корзины товаров
 events.on('basket:open', () => {
+	page.locked = true;
 	modal.render({
 		content: basket.render({}),
 	});
@@ -653,14 +670,8 @@ events.on('basket:clear', () => {
 	modal.close();
 });
 
-// Блокировка прокрутки страницы
-events.on('basket:open', () => {
-	page.locked = true;
-});
-
 events.on('modal:close', () => {
 	page.locked = false;
-	history.replaceState(null, '', window.location.pathname);
 });
 
 const menuToggle = document.getElementById('menu-toggle');
@@ -696,6 +707,14 @@ menuItems.forEach((item) => {
 	});
 });
 
+function NotKBF(mass: ICardItem[]) {
+	return mass.filter((el: ICardItem) => !el.category.includes('(КБФ)'));
+}
+
+function NotAOBF(mass: ICardItem[]) {
+	return mass.filter((el: ICardItem) => !el.category.includes('(АОБФ)'));
+}
+
 //Получаем массив товаров с сервера
 Promise.all([
 	api.getWarriorsList(),
@@ -712,11 +731,51 @@ Promise.all([
 				...getFightMachineList,
 				...getlocalMortarList,
 			];
+			const KBF = document.querySelector('.point_KBF') as HTMLElement;
+			const AOBF = document.querySelector('.point_AOBF') as HTMLElement;
+
+			let isKBFEnabled = false;
+			let isAOBFEnabled = false;
+
+			function applyFilters() {
+				let filteredList = [...combinedList];
+
+				if (isKBFEnabled) {
+					filteredList = NotKBF(filteredList);
+				}
+
+				if (isAOBFEnabled) {
+					filteredList = NotAOBF(filteredList);
+				}
+
+				appData.setCatalog(filteredList);
+			}
+
+			events.on('KBF_on', () => {
+				isKBFEnabled = true;
+				KBF.style.display = 'none';
+				applyFilters();
+			});
+
+			events.on('KBF_off', () => {
+				isKBFEnabled = false;
+				KBF.style.display = 'block';
+				applyFilters();
+			});
+			events.on('AOBF_on', () => {
+				isAOBFEnabled = true;
+				AOBF.style.display = 'none';
+				applyFilters();
+			});
+
+			events.on('AOBF_off', () => {
+				isAOBFEnabled = false;
+				AOBF.style.display = 'block';
+				applyFilters();
+			});
 			appData.setCatalog(combinedList);
 
 			setupNavigationHandlers();
-
-			appData.loadFavoritesFromLocalStorage();
 
 			events.on('favorites_on', () => {
 				appData.setCatalog(appData.favorites);
@@ -725,6 +784,7 @@ Promise.all([
 			events.on('favorites_off', () => {
 				appData.setCatalog(combinedList);
 			});
+			appData.loadFavoritesFromLocalStorage();
 
 			document.addEventListener('DOMContentLoaded', () => {
 				const searchInput = document.querySelector('.search__input');
@@ -802,6 +862,20 @@ Promise.all([
 				applyNetState('cancel');
 				localStorage.setItem('netState', 'cancel');
 			});
+
+			const KBFEnabled = localStorage.getItem('KBFSaveEnabled');
+			if (KBFEnabled === 'true') {
+				events.emit('KBF_on');
+			} else {
+				events.emit('KBF_off');
+			}
+
+			const AOBFEnabled = localStorage.getItem('AOBFSaveEnabled');
+			if (AOBFEnabled === 'true') {
+				events.emit('AOBF_on');
+			} else {
+				events.emit('AOBF_off');
+			}
 
 			loadBasketFromLocalStorage();
 		}

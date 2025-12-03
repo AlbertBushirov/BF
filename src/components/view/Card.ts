@@ -21,25 +21,30 @@ interface Category {
 
 const category: Category = {
 	'Гильдия вольных стрелков': 'card__category_GVS',
-	'Гильдия вольных стрелков (ОБЕ)': 'card__category_GVS',
+	'Гильдия вольных стрелков ОБЕ': 'card__category_GVS',
 	'Войска Колдуна': 'card__category_hard',
-	'Войска Колдуна (ОБЕ)': 'card__category_hard',
-	'Боевое существо (ОБЕ)': 'card__category_drakon',
+	'Войска Колдуна ОБЕ': 'card__category_hard',
+	'Боевое существо ОБЕ': 'card__category_drakon',
 	'Легионеры Некроманта': 'card__category_nekromant',
-	'Легионеры Некроманта (ОБЕ)': 'card__category_nekromant',
+	'Легионеры Некроманта ОБЕ': 'card__category_nekromant',
 	'Гвардия Чародея': 'card__category_charodey',
-	'Гвардия Чародея (ОБЕ)': 'card__category_charodey',
+	'Гвардия Чародея ОБЕ': 'card__category_charodey',
 	'Боевая машина': 'card__category_additional',
-	'Ст. производители (НО)': 'card__category_storonniye_NO',
-	'Ст. производители (НО) (ОБЕ)': 'card__category_storonniye_NO',
-	'Ст. производители (АС)': 'card__category_storonniye_AS',
-	'Ст. производители (ВИМ)': 'card__category_storonniye_VIM',
-	'Ст. производители (ХБ)': 'card__category_storonniye_XB',
-	'Ст. производители (ВПМ)': 'card__category_storonniye_VPM',
-	'Ст. производители (ВПМ) (ОБЕ)': 'card__category_storonniye_VPM',
-	'Ст. производители (ЛЧП)': 'card__category_storonniye_LCHP',
-	'Ст. производители (Б)': 'card__category_storonniye_B',
-	'Ст. производители (Б) (ОБЕ)': 'card__category_storonniye_B',
+	'Нейтральный отряд (КБФ)': 'card__category_storonniye_NO',
+	'Ст. производители (НО) ОБЕ': 'card__category_storonniye_NO',
+	'Альянс Свободных (КБФ)': 'card__category_storonniye_AS',
+	'Воители иных миров (КБФ)': 'card__category_storonniye_VIM',
+	'Х-Бункер (КБФ)': 'card__category_storonniye_XB',
+	'Войско павшего мага (КБФ)': 'card__category_storonniye_VPM',
+	'Войско павшего мага ОБЕ (КБФ)': 'card__category_storonniye_VPM',
+	'Войско павшего мага (АОБФ)': 'card__category_storonniye_VPM',
+	'Легионы черной планеты (КБФ)': 'card__category_storonniye_LCHP',
+	'Легионы черной планеты ОБЕ (КБФ)': 'card__category_storonniye_LCHP',
+	'База (КБФ)': 'card__category_storonniye_B',
+	'База (АОБФ)': 'card__category_storonniye_B',
+	'База ОБЕ (КБФ)': 'card__category_storonniye_B',
+	'Нейтралы (АОБФ)': 'card__category_storonniye_NO',
+	'Альянс Свободных (АОБФ)': 'card__category_AS_AOBF',
 	'Техлист (1П)': 'card__category_other',
 	'Техлист (1А)': 'card__category_other',
 	'Техлист (1МП)': 'card__category_other',
@@ -137,22 +142,8 @@ export class Card extends Component<ICardItem> {
 	}
 
 	categoryPadding() {
-		if (
-			this._category.textContent.includes('Гильдия вольных стрелков') ||
-			this._category.textContent.includes('Гвардия Чародея') ||
-			this._category.textContent.includes('Легионеры Некроманта') ||
-			this._category.textContent.includes('Войска Колдуна') ||
-			this._category.textContent.includes('Ст. производители (ВПМ)') ||
-			this._category.textContent.includes('Ст. производители (ХБ)') ||
-			this._category.textContent.includes('Ст. производители (НО)') ||
-			this._category.textContent.includes('Ст. производители (ЛЧП)') ||
-			this._category.textContent.includes('ВИМ') ||
-			this._category.textContent.includes('АС') ||
-			this._category.textContent.includes('(Б)') ||
-			this._category.textContent.includes('(ОБЕ)') ||
-			this._category.textContent.includes('Боевая машина')
-		) {
-			this._category.style.padding = '0.5rem 1rem 0.5rem 1.9rem';
+		if (!this._category.textContent.includes('Техлист')) {
+			this._category.style.padding = '0.4rem 1rem 0.5rem 1.9rem';
 		}
 	}
 
@@ -338,6 +329,9 @@ export class Card extends Component<ICardItem> {
 
 	set directory(value: string) {
 		this.setText(this._directory, value);
+		if (value === undefined) {
+			this._directory.style.display = 'none';
+		}
 	}
 
 	get title(): string {

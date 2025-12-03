@@ -11,6 +11,8 @@ export class Settings extends Component<IRatingView> {
 	public _inputNet: HTMLInputElement;
 	public _inputLight: HTMLInputElement;
 	public _favorites: HTMLInputElement;
+	public _KBF: HTMLInputElement;
+	public _AOBF: HTMLInputElement;
 	//public _inputnet: HTMLInputElement;
 	constructor(container: HTMLElement, events: EventEmitter) {
 		super(container, new EventEmitter());
@@ -28,6 +30,9 @@ export class Settings extends Component<IRatingView> {
 		this._favorites = container.querySelector(
 			'.favorites_armlist'
 		) as HTMLInputElement;
+
+		this._KBF = container.querySelector('.KBF_armlist') as HTMLInputElement;
+		this._AOBF = container.querySelector('.AOBF_armlist') as HTMLInputElement;
 
 		this.events = events;
 
@@ -78,13 +83,60 @@ export class Settings extends Component<IRatingView> {
 			this.events.emit('favorites_off');
 		}
 
+		const kbfValue = localStorage.getItem('KBFSaveEnabled');
+		if (kbfValue === 'true') {
+			this._KBF.checked = true;
+			this.events.emit('KBF_on');
+		} else {
+			this._KBF.checked = false;
+			this.events.emit('KBF_off');
+		}
+
+		const aobfValue = localStorage.getItem('AOBFSaveEnabled');
+		if (aobfValue === 'true') {
+			this._AOBF.checked = true;
+			this.events.emit('AOBF_on');
+		} else {
+			this._AOBF.checked = false;
+			this.events.emit('AOBF_off');
+		}
+
 		this._favorites.addEventListener('change', () => {
 			if (this._favorites.checked) {
-				localStorage.setItem('favoritesSaveEnabled', 'true');
+				this._KBF.checked = false;
+				this._AOBF.checked = false;
+				localStorage.setItem('KBFSaveEnabled', 'false');
+				this.events.emit('KBF_off');
+
 				this.events.emit('favorites_on');
 			} else {
+				this.events.emit('favorites_off');
+			}
+		});
+
+		this._KBF.addEventListener('change', () => {
+			if (this._KBF.checked) {
+				this._favorites.checked = false;
 				localStorage.setItem('favoritesSaveEnabled', 'false');
 				this.events.emit('favorites_off');
+				localStorage.setItem('KBFSaveEnabled', 'true');
+				this.events.emit('KBF_on');
+			} else {
+				localStorage.setItem('KBFSaveEnabled', 'false');
+				this.events.emit('KBF_off');
+			}
+		});
+
+		this._AOBF.addEventListener('change', () => {
+			if (this._AOBF.checked) {
+				this._favorites.checked = false;
+				localStorage.setItem('favoritesSaveEnabled', 'false');
+				this.events.emit('favorites_off');
+				localStorage.setItem('AOBFSaveEnabled', 'true');
+				this.events.emit('AOBF_on');
+			} else {
+				localStorage.setItem('AOBFSaveEnabled', 'false');
+				this.events.emit('AOBF_off');
 			}
 		});
 	}

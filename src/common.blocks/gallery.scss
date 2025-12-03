@@ -21,7 +21,7 @@
 
 .gallery__item {
 	position: relative;
-	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
 		url(../images/Fons/Fon_Gallery.jpg);
 	background-position: center;
 	background-size: cover;
@@ -29,8 +29,8 @@
 	.gallery_marker__image {
 		position: absolute;
 		width: 30px;
-		left: 1%;
-		top: 1%;
+		left: -3%;
+		top: -3%;
 		display: block;
 		z-index: 1;
 

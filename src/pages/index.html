@@ -53,7 +53,8 @@
 										<a class="point_Necromancer">Некромант</a>
 										<a class="point_Sorcerer">Чародей</a>
 										<a class="point_GVS">ГВС</a>
-										<a class="point_Outsiders">Сторонние</a>
+										<a class="point_KBF"> Сторонние (КБФ)</a>
+										<a class="point_AOBF"> Сторонние (АОБФ)</a>
 									</li>
 								</ul>
 							</li>
@@ -81,17 +82,15 @@
 		</div>
 
 		<template id="card-catalog">
-			<div class="gallery__item card">
+			<button class="gallery__item card">
 				<img class="gallery_marker__image" src="" alt="" />
 				<span class="gallery_marker__title"></span>
-				<button class="gallery__item card">
-					<span class="card__category card__category_soft"></span>
-					<h2 class="card__title"></h2>
-					<div class="card__row">
-						<span class="card__price"></span>
-					</div>
-				</button>
-			</div>
+				<span class="card__category card__category_soft"></span>
+				<h2 class="card__title"></h2>
+				<div class="card__row">
+					<span class="card__price"></span>
+				</div>
+			</button>
 		</template>
 
 		<template id="card-preview">
@@ -266,7 +265,7 @@
 					<li><h3>Игрок</h3></li>
 					<li><h3>Достижения</h3></li>
 					<li><h3>Побед / Игр</h3></li>
-					<li><h3>% побед / Ранг</h3></li>
+					<li><h3>Ранг %побед</h3></li>
 				</ul>
 				<div class="rating__list"></div>
 				<div class="rating__memo_conteiner">
@@ -426,6 +425,14 @@
 					<li>
 						<span>Показать избранные Боевые единицы</span
 						><input class="favorites_armlist" type="checkbox" />
+					</li>
+					<li>
+						<span>Скрыть Сторонние отряды (КБФ)</span
+						><input class="KBF_armlist" type="checkbox" />
+					</li>
+					<li>
+						<span>Скрыть Сторонние отряды (АОБФ)</span
+						><input class="AOBF_armlist" type="checkbox" />
 					</li>
 				</ul>
 			</div>

@@ -73,13 +73,14 @@ export class Basket extends Component<IBasketView> {
 		html2canvas(basketList, {
 			ignoreElements: (element) => {
 				return (
-					!this._isArtefactSaveEnabled &&
-					element.classList.contains('card__description') &&
-					element.classList.contains('card__title') &&
-					element.classList.contains('basket__item-delete') &&
+					(!this._isArtefactSaveEnabled &&
+						element.classList.contains('card__description')) ||
+					element.classList.contains('card__title') ||
+					element.classList.contains('basket__item-delete') ||
 					element.classList.contains('card__price_basket')
 				);
 			},
+			scale: 4,
 		})
 			.then((canvas) => {
 				const ctx = canvas.getContext('2d');

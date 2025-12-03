@@ -17,7 +17,6 @@ html {
 	cursor: pointer;
 
 	@media (max-width: 450px) {
-		padding: 7px 2px;
 		gap: 5px;
 	}
 
@@ -94,7 +93,7 @@ html {
 				position: fixed;
 				bottom: 1vw;
 				left: 5vw;
-				background-color: $primary;
+
 				width: 100vw;
 			}
 		}
@@ -206,7 +205,7 @@ html {
 				position: fixed;
 				bottom: 1vh;
 				left: 5vw;
-				background-color: $primary;
+
 				width: 100vw;
 			}
 		}
@@ -319,6 +318,7 @@ html {
 
 		.card__title {
 			justify-self: end;
+			align-self: end;
 			flex-grow: 0;
 			@media (max-width: 450px) {
 				margin-top: 10px;
@@ -352,16 +352,11 @@ html {
 			}
 		}
 		.card__category {
+			display: flex;
 			grid-column: 2;
 			grid-row: 1;
 			text-align: center;
 			@media (max-width: 450px) {
-				padding: 6px;
-
-				justify-self: center;
-				align-self: end;
-				grid-column: 1;
-				grid-row: 1;
 			}
 		}
 		.card__row {
@@ -372,7 +367,7 @@ html {
 				position: fixed;
 				bottom: 1vh;
 				left: 5vw;
-				background-color: $primary;
+
 				width: 100vw;
 			}
 		}
@@ -484,7 +479,7 @@ html {
 				position: fixed;
 				bottom: 1vh;
 				left: 5vw;
-				background-color: $primary;
+
 				width: 100vw;
 			}
 		}
@@ -567,6 +562,7 @@ html {
 
 	&__description.enlarged {
 		transform: scale(1.5);
+		z-index: 2;
 		cursor: zoom-out;
 		@media (max-width: 450px) {
 			transform: scale(1.3);
@@ -577,10 +573,10 @@ html {
 		grid-row: 1;
 		grid-column: 1;
 		position: relative;
-		font-size: 20px;
+		font-size: 18px;
 		margin: 0px;
 		@media (max-width: 450px) {
-			min-height: 46px;
+			min-height: 40px;
 		}
 	}
 
@@ -591,14 +587,14 @@ html {
 		justify-self: start;
 
 		font-size: 12px;
-		padding: 0.5rem 1rem;
+		padding: 0.4rem 1rem;
 		border-radius: 2.5rem;
 		color: $secondary;
 		text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
 		@media (max-width: 450px) {
 			grid-row: 1;
 			grid-column: 1;
-
+			font-size: 12px;
 			max-height: 20px;
 		}
 		&__text {
@@ -660,6 +656,13 @@ html {
 			background-size: contain;
 			background-repeat: no-repeat;
 		}
+		&_AS_AOBF {
+			background-color: $category7;
+			background-image: url(../images/Fons/Fon_AS.png);
+			background-position: left;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
 		&_storonniye_NO {
 			background-color: $category9;
 			background-image: url(../images/Fons/Fon_Neutral.png);
@@ -707,7 +710,7 @@ html {
 	&__price {
 		font-size: 15px;
 		font-weight: 300;
-		margin-top: 15px;
+
 		text-align: right;
 		&_basket {
 			font-weight: 300;

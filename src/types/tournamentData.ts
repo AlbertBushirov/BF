@@ -162,6 +162,51 @@ const Alexandr_Toporkov: players = {
 	name: 'Александр Топорков',
 };
 
+const Georgiy_Dragun: players = {
+	id: 'Georgiy_Dragun',
+	name: 'Георгий Драгун',
+};
+
+const Dmitry_Solodkov: players = {
+	id: 'Dmitry_Solodkov',
+	name: 'Дмитрий Солодков',
+};
+
+const Denis_Meshkov: players = {
+	id: 'Denis_Meshkov',
+	name: 'Денис Мешков',
+};
+
+const Dmitriy_Sokil: players = {
+	id: 'Dmitriy_Sokil',
+	name: 'Дмитрий Сокил',
+};
+
+const Victor_Reshetnikov: players = {
+	id: 'Victor_Reshetnikov',
+	name: 'Виктор Решетников',
+};
+
+const Ruslan_Ilyasov: players = {
+	id: 'Ruslan_Ilyasov',
+	name: 'Руслан Ильясов',
+};
+
+const Georgiy_Matveev: players = {
+	id: 'Georgiy_Matveev',
+	name: 'Георгий Матвеев',
+};
+
+const Vaiper_Imortal: players = {
+	id: 'Vaiper_Imortal',
+	name: 'Вайпер Иммортал',
+};
+
+const Vasily_Nikishin: players = {
+	id: 'Vasily_Nikishin',
+	name: 'Василий Никишин',
+};
+
 //Результаты игровых дней
 
 //Омск 2025
@@ -608,6 +653,201 @@ const EKB25localTour_six = [
 	{ name: Valeriy_Zhilin, result: 1 },
 ];
 
+// Москва
+const Moscow25Participant = [
+	{ name: Albert_Bashirov, result: '3/3' },
+	{ name: Georgiy_Dragun, result: '2/3' },
+	{ name: Dmitry_Solodkov, result: '1/3' },
+	{ name: Denis_Meshkov, result: '0/3' },
+	{ name: Artur_Kovalev, result: '3/3' },
+	{ name: Ivan_Vasilev, result: '2/3' },
+	{ name: Dmitriy_Sokil, result: '1/3' },
+	{ name: Victor_Reshetnikov, result: '0/3' },
+	{ name: Ruslan_Ilyasov, result: '3/3' },
+	{ name: Evgeniy_Sorokin, result: '1/3' },
+	{ name: Georgiy_Matveev, result: '0/3' },
+	{ name: Vaiper_Imortal, result: '2/3' },
+	{ name: Sergey_Latishev, result: '1/3' },
+	{ name: Denis_Solodkov, result: '3/3' },
+	{ name: Sergey_Egorov, result: '0/3' },
+	{ name: Vasily_Nikishin, result: '2/3' },
+];
+
+const Moscow25Participant1 = [
+	{ name: Albert_Bashirov, result: '6/6' },
+	{ name: Georgiy_Dragun, result: '4/6' },
+	{ name: Dmitry_Solodkov, result: '3/6' },
+	{ name: Denis_Meshkov, result: '2/6' },
+	{ name: Artur_Kovalev, result: '4/6' },
+	{ name: Ivan_Vasilev, result: '2/6' },
+	{ name: Dmitriy_Sokil, result: '2/6' },
+	{ name: Victor_Reshetnikov, result: '1/6' },
+	{ name: Ruslan_Ilyasov, result: '4/6' },
+	{ name: Evgeniy_Sorokin, result: '3/6' },
+	{ name: Georgiy_Matveev, result: '0/6' },
+	{ name: Vaiper_Imortal, result: '3/6' },
+	{ name: Sergey_Latishev, result: '4/6' },
+	{ name: Denis_Solodkov, result: '5/6' },
+	{ name: Sergey_Egorov, result: '1/6' },
+	{ name: Vasily_Nikishin, result: '4/6' },
+];
+
+const Moscow25localTour_one = [
+	{ name: Albert_Bashirov, result: 1 },
+	{ name: Denis_Meshkov, result: 0 },
+
+	{ name: Georgiy_Dragun, result: 1 },
+	{ name: Dmitry_Solodkov, result: 0 },
+
+	{ name: Artur_Kovalev, result: 1 },
+	{ name: Victor_Reshetnikov, result: 0 },
+
+	{ name: Ivan_Vasilev, result: 1 },
+	{ name: Dmitriy_Sokil, result: 0 },
+
+	{ name: Ruslan_Ilyasov, result: 1 },
+	{ name: Vaiper_Imortal, result: 0 },
+
+	{ name: Evgeniy_Sorokin, result: 1 },
+	{ name: Georgiy_Matveev, result: 0 },
+
+	{ name: Sergey_Latishev, result: 0 },
+	{ name: Vasily_Nikishin, result: 1 },
+
+	{ name: Denis_Solodkov, result: 1 },
+	{ name: Sergey_Egorov, result: 0 },
+];
+
+const Moscow25localTour_two = [
+	{ name: Albert_Bashirov, result: 1 },
+	{ name: Georgiy_Dragun, result: 0 },
+
+	{ name: Denis_Meshkov, result: 0 },
+	{ name: Dmitry_Solodkov, result: 1 },
+
+	{ name: Artur_Kovalev, result: 1 },
+	{ name: Dmitriy_Sokil, result: 0 },
+
+	{ name: Ivan_Vasilev, result: 1 },
+	{ name: Victor_Reshetnikov, result: 0 },
+
+	{ name: Ruslan_Ilyasov, result: 1 },
+	{ name: Georgiy_Matveev, result: 0 },
+
+	{ name: Vaiper_Imortal, result: 1 },
+	{ name: Evgeniy_Sorokin, result: 0 },
+
+	{ name: Sergey_Latishev, result: 0 },
+	{ name: Denis_Solodkov, result: 1 },
+
+	{ name: Vasily_Nikishin, result: 1 },
+	{ name: Sergey_Egorov, result: 0 },
+];
+
+const Moscow25localTour_three = [
+	{ name: Albert_Bashirov, result: 1 },
+	{ name: Dmitry_Solodkov, result: 0 },
+
+	{ name: Georgiy_Dragun, result: 1 },
+	{ name: Denis_Meshkov, result: 0 },
+
+	{ name: Artur_Kovalev, result: 1 },
+	{ name: Ivan_Vasilev, result: 0 },
+
+	{ name: Victor_Reshetnikov, result: 0 },
+	{ name: Dmitriy_Sokil, result: 1 },
+
+	{ name: Ruslan_Ilyasov, result: 1 },
+	{ name: Evgeniy_Sorokin, result: 0 },
+
+	{ name: Vaiper_Imortal, result: 1 },
+	{ name: Georgiy_Matveev, result: 0 },
+
+	{ name: Sergey_Latishev, result: 1 },
+	{ name: Sergey_Egorov, result: 0 },
+
+	{ name: Denis_Solodkov, result: 1 },
+	{ name: Vasily_Nikishin, result: 0 },
+];
+
+const Moscow25localTour_four = [
+	{ name: Albert_Bashirov, result: 1 },
+	{ name: Ivan_Vasilev, result: 0 },
+
+	{ name: Artur_Kovalev, result: 1 },
+	{ name: Georgiy_Dragun, result: 0 },
+
+	{ name: Ruslan_Ilyasov, result: 0 },
+	{ name: Vasily_Nikishin, result: 1 },
+
+	{ name: Denis_Solodkov, result: 1 },
+	{ name: Vaiper_Imortal, result: 0 },
+
+	{ name: Dmitry_Solodkov, result: 1 },
+	{ name: Victor_Reshetnikov, result: 0 },
+
+	{ name: Dmitriy_Sokil, result: 0 },
+	{ name: Denis_Meshkov, result: 1 },
+
+	{ name: Evgeniy_Sorokin, result: 0 },
+	{ name: Sergey_Egorov, result: 1 },
+
+	{ name: Sergey_Latishev, result: 1 },
+	{ name: Georgiy_Matveev, result: 0 },
+];
+
+const Moscow25localTour_five = [
+	{ name: Albert_Bashirov, result: 1 },
+	{ name: Artur_Kovalev, result: 0 },
+
+	{ name: Denis_Solodkov, result: 0 },
+	{ name: Vasily_Nikishin, result: 1 },
+
+	{ name: Ivan_Vasilev, result: 0 },
+	{ name: Georgiy_Dragun, result: 1 },
+
+	{ name: Ruslan_Ilyasov, result: 1 },
+	{ name: Vaiper_Imortal, result: 0 },
+
+	{ name: Dmitry_Solodkov, result: 0 },
+	{ name: Denis_Meshkov, result: 1 },
+
+	{ name: Sergey_Egorov, result: 0 },
+	{ name: Sergey_Latishev, result: 1 },
+
+	{ name: Victor_Reshetnikov, result: 0 },
+	{ name: Dmitriy_Sokil, result: 1 },
+
+	{ name: Evgeniy_Sorokin, result: 1 },
+	{ name: Georgiy_Matveev, result: 0 },
+];
+
+const Moscow25localTour_six = [
+	{ name: Albert_Bashirov, result: 1 },
+	{ name: Vasily_Nikishin, result: 0 },
+
+	{ name: Artur_Kovalev, result: 0 },
+	{ name: Denis_Solodkov, result: 1 },
+
+	{ name: Georgiy_Dragun, result: 1 },
+	{ name: Ruslan_Ilyasov, result: 0 },
+
+	{ name: Ivan_Vasilev, result: 0 },
+	{ name: Vaiper_Imortal, result: 1 },
+
+	{ name: Denis_Meshkov, result: 0 },
+	{ name: Sergey_Latishev, result: 1 },
+
+	{ name: Dmitry_Solodkov, result: 1 },
+	{ name: Sergey_Egorov, result: 0 },
+
+	{ name: Dmitriy_Sokil, result: 0 },
+	{ name: Evgeniy_Sorokin, result: 1 },
+
+	{ name: Victor_Reshetnikov, result: 1 },
+	{ name: Georgiy_Matveev, result: 0 },
+];
+
 export const localTournament = [
 	{
 		title: 'Турнир в Омске 2025',
@@ -641,5 +881,16 @@ export const localTournament = [
 		tour_four: EKB25localTour_four,
 		tour_five: EKB25localTour_five,
 		tour_six: EKB25localTour_six,
+	},
+	{
+		title: 'Турнир в Москве 2025',
+		participant: Moscow25Participant,
+		participantTwo: Moscow25Participant1,
+		tour_one: Moscow25localTour_one,
+		tour_two: Moscow25localTour_two,
+		tour_three: Moscow25localTour_three,
+		tour_four: Moscow25localTour_four,
+		tour_five: Moscow25localTour_five,
+		tour_six: Moscow25localTour_six,
 	},
 ];

@@ -82,7 +82,7 @@ export class AppData extends Model<IProductItem> {
 	}
 
 	updateFavorites() {
-		this.emitChanges('items:changed', this.favorites); // Обновление корзины
+		this.emitChanges('items:changed', this.favorites);
 	}
 
 	//Удаление продукта из корзины

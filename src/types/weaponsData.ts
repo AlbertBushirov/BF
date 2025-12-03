@@ -4,17 +4,20 @@ export const localWeapons = [
 	{
 		id: 'ObeDragon',
 		title: 'Дракон',
-		category: 'Боевое существо (ОБЕ)',
+		category: 'Боевое существо ОБЕ',
 		image: require('../images/TehList/ObeDragon.jpg'),
-		price: 250,
+		price: 200,
 		inBasket: true,
 		button: '',
-		directory: '',
+		directory:
+			'Огневая Атака. Вероятность, что воин хотя бы ранен, при использовании в 3 воинов: 87.5%; в 2 воина: 75%',
+		marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 50.',
 	},
 	{
 		id: 'ObeDarkShaman',
 		title: 'Тёмный Шаман',
-		category: 'Легионеры Некроманта (ОБЕ)',
+		category: 'Легионеры Некроманта ОБЕ',
 		image: require('../images/TehList/ObeDarkShaman.png'),
 		price: 110,
 		inBasket: true,
@@ -25,7 +28,7 @@ export const localWeapons = [
 	{
 		id: 'ObeKlerik',
 		title: 'Клерик',
-		category: 'Войска Колдуна (ОБЕ)',
+		category: 'Войска Колдуна ОБЕ',
 		image: require('../images/TehList/ObeKlerik.png'), // Прямой URL для удаленного изображения
 		price: 110,
 		inBasket: true,
@@ -36,7 +39,7 @@ export const localWeapons = [
 	{
 		id: 'ObeMasterVolshebnik',
 		title: 'Мастер Волшебник ',
-		category: 'Гвардия Чародея (ОБЕ)',
+		category: 'Гвардия Чародея ОБЕ',
 		image: require('../images/TehList/ObeMasterVolshebnik.png'), // Прямой URL для удаленного изображения
 		price: 110,
 		inBasket: true,
@@ -47,7 +50,7 @@ export const localWeapons = [
 	{
 		id: 'ObeBrodyachiMag',
 		title: 'Бродячий Маг',
-		category: 'Гильдия вольных стрелков (ОБЕ)',
+		category: 'Гильдия вольных стрелков ОБЕ',
 		image: require('../images/TehList/ObeBrodyachiMag.jpg'), // Прямой URL для удаленного изображения
 		price: 120,
 		inBasket: true,
@@ -56,8 +59,8 @@ export const localWeapons = [
 	},
 	{
 		id: 'ObePolbustuk',
-		title: 'Полб`Уст`Ук',
-		category: 'Ст. производители (Б) (ОБЕ)',
+		title: `Полб'Уст'Ук`,
+		category: 'База ОБЕ (КБФ)',
 		image: require('../images/TehList/ObePolbustuk.jpg'), // Прямой URL для удаленного изображения
 		price: 100,
 		inBasket: true,
@@ -68,22 +71,35 @@ export const localWeapons = [
 	{
 		id: 'ObeRiha',
 		title: 'Ррыкха',
-		category: 'Ст. производители (Б) (ОБЕ)',
+		category: 'База ОБЕ (КБФ)',
 		image: require('../images/TehList/ObeRiha.jpg'), // Прямой URL для удаленного изображения
 		price: 90,
 		inBasket: true,
 		button: '',
 		directory: '',
 	},
+
 	{
 		id: 'ObeOriana',
 		title: 'Ориана',
-		category: 'Ст. производители (ВПМ) (ОБЕ)',
+		category: 'Войско павшего мага ОБЕ (КБФ)',
 		image: require('../images/TehList/ObeOriana.jpg'), // Прямой URL для удаленного изображения
 		price: 120,
 		inBasket: true,
 		button: '',
 		directory: 'Кибер-сердце. Вероятность успешного использования: 33,33%',
+	},
+	{
+		id: 'ObeBesstrashni',
+		title: 'Эрведан Бесстрашный',
+		category: 'Легионы черной планеты ОБЕ (КБФ)',
+		image: require('../images/TehList/ObeBesstrashni.jpg'), // Прямой URL для удаленного изображения
+		price: 110,
+		inBasket: true,
+		button: '',
+		directory: 'Вероятность выиграть инициативу с Эрведаном: 72%',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный ОБЕ',
 	},
 
 	{
@@ -183,12 +199,12 @@ export const localWeapons = [
 		title: 'Клоп',
 		category: 'Техлист (1К)',
 		image: require('../images/TehList/Klop.png'), // Прямой URL для удаленного изображения
-		price: 95,
+		price: 90,
 		inBasket: true,
 		button: '',
 		directory: '',
-		/*marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 5.',*/
+		marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Снижена цена на 5.',
 	},
 
 	{
@@ -370,7 +386,7 @@ export const localWeaponsWheels = [
 		title: 'Шторм',
 		category: 'Техлист (2МП)',
 		image: require('../images/TehList/Shtorm.png'), // Прямой URL для удаленного изображения
-		price: 85,
+		price: 80,
 		inBasket: true,
 		button: '',
 		directory: '',

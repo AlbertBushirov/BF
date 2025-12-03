@@ -41,6 +41,7 @@ export class Modal extends Component<IModalData> {
 		this.container.classList.remove('modal_active');
 		this.content = null;
 		this.events.emit('modal:close');
+		window.location.hash = 'home';
 	}
 
 	private handleDocumentClick(event: MouseEvent): void {

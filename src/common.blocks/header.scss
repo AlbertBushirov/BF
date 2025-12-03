@@ -148,9 +148,9 @@ nav {
 }
 
 .sub-menu li a {
-	position: relative; /* Для позиционирования псевдоэлемента */
-	text-decoration: none; /* Убираем стандартное подчеркивание */
-	padding: 6px 4px;
+	position: relative;
+	text-decoration: none;
+	padding: 6px 2px;
 }
 
 .sub-menu li a::after {
@@ -169,14 +169,14 @@ nav {
 }
 
 .sub-menu li a:hover::after {
-	width: 100%; /* При hover линия расширяется до полной ширины */
+	width: 100%;
 }
 
 .positioning {
-	position: relative; /* Необходимо для позиционирования подменю */
+	position: relative;
 }
 
 .positioning:hover .sub-menu {
-	display: block; /* Показываем подменю при наведении на родительский элемент */
+	display: block;
 	background-color: rgba(21, 23, 25, 0.9);
 }

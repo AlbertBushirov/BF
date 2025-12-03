@@ -149,4 +149,14 @@ export const localfightMachine = [
 		weapons: [laserPistol, lightningGun, swordSaw],
 		button: '',
 	},
+	/*{
+		id: 'ObeAnarhist',
+		title: 'Стальной Анархист',
+		category: 'Ст. производители (Б) (ОБЕ)',
+		image: require('../images/TehList/ObeAnarhist.jpg'), // Прямой URL для удаленного изображения
+		price: 105,
+		inBasket: true,
+		button: '',
+		weapons: [laserPistol],
+	},*/
 ];

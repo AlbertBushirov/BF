@@ -1156,7 +1156,7 @@ export const localArmy = [
 	{
 		id: 'SPDrakonoborci',
 		title: 'Драконоборцы',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Drakonoborci.jpg'),
 		image: require('../images/Storonie/SPDrakonoborci.jpg'), // Прямой URL для удаленного изображения
 		price: 170,
@@ -1167,7 +1167,7 @@ export const localArmy = [
 	{
 		id: 'SPKamlak',
 		title: 'Камлак',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Kamlak.jpg'),
 		image: require('../images/Storonie/SPKamlak.jpg'), // Прямой URL для удаленного изображения
 		price: 240,
@@ -1180,7 +1180,7 @@ export const localArmy = [
 	{
 		id: 'SPKitoboi',
 		title: 'Китобои',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Kitoboi.jpg'),
 		image: require('../images/Storonie/SPKitoboi.jpg'), // Прямой URL для удаленного изображения
 		price: 205,
@@ -1193,7 +1193,7 @@ export const localArmy = [
 	{
 		id: 'SPKricheri',
 		title: 'Кричеры',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Kricheri.jpg'),
 		image: require('../images/Storonie/SPKricheri.jpg'), // Прямой URL для удаленного изображения
 		price: 190,
@@ -1207,7 +1207,7 @@ export const localArmy = [
 	{
 		id: 'SPPredvestniki4',
 		title: 'Предвестники',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Predvestniki.jpg'),
 		image: require('../images/Storonie/SPPredvestniki4.jpg'), // Прямой URL для удаленного изображения
 		price: 155,
@@ -1220,7 +1220,7 @@ export const localArmy = [
 	{
 		id: 'SPPredvestniki5',
 		title: 'Предвестники (5 бойцов)',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Predvestniki.jpg'),
 		image: require('../images/Storonie/SPPredvestniki5.jpg'), // Прямой URL для удаленного изображения
 		price: 195,
@@ -1233,7 +1233,7 @@ export const localArmy = [
 	{
 		id: 'SPStragiGizi',
 		title: 'Стражи Гизы',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/StragiGizi.jpg'),
 		image: require('../images/Storonie/SPStragiGizi.jpg'), // Прямой URL для удаленного изображения
 		price: 210,
@@ -1246,20 +1246,20 @@ export const localArmy = [
 	{
 		id: 'SPTechKnight',
 		title: 'Технорыцари',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/TechKnight.jpg'),
 		image: require('../images/Storonie/SPTechKnight.jpg'), // Прямой URL для удаленного изображения
 		price: 170,
 		inBasket: true,
 		directory: '',
 		button: '',
-		/*marker: require('../images/Exclamation_marker.png'),
-		markerTitle: 'Снижена цена на 10.',*/
+		marker: require('../images/Exclamation_marker.png'),
+		markerTitle: 'Усилен Артефакт.',
 	},
 	{
 		id: 'SPHardkor',
 		title: 'отряд Хардкор',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Hardkor.jpg'),
 		image: require('../images/Storonie/SPHardkor.jpg'),
 		price: 230,
@@ -1270,7 +1270,7 @@ export const localArmy = [
 	{
 		id: 'SPOmicsir',
 		title: 'Омиксир',
-		category: 'Ст. производители (Б)',
+		category: 'База (КБФ)',
 		description: require('../images/Artefakti/Omicsir.jpg'),
 		image: require('../images/Storonie/SPOmicsir.jpg'),
 		price: 230,
@@ -1281,7 +1281,7 @@ export const localArmy = [
 	{
 		id: 'SPShotrm',
 		title: 'Био-взвод Шторм',
-		category: 'Ст. производители (Б)',
+		category: 'База (КБФ)',
 		description: require('../images/Artefakti/Shotrm.jpg'),
 		image: require('../images/Storonie/SPShotrm.jpg'),
 		price: 220,
@@ -1292,7 +1292,7 @@ export const localArmy = [
 	{
 		id: 'SPKallisto',
 		title: 'Каллисто',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description:
 			'https://sun9-12.userapi.com/impg/bvR7cJyi5lLMPiwmNuAH-Ap47j87SOJ9st3y2Q/e48La_SU8U8.jpg?size=1090x726&quality=95&sign=a4cf18e61919cd11f379c0416d373c49&type=album',
 		image: require('../images/Storonie/SPKallisto.jpg'),
@@ -1304,7 +1304,7 @@ export const localArmy = [
 	{
 		id: 'SPDemoniSulfura',
 		title: 'Демоны Сульфура',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/DemoniSulfura.jpg'),
 		image: require('../images/Storonie/SPDemoniSulfura.jpg'),
 		price: 130,
@@ -1316,7 +1316,7 @@ export const localArmy = [
 	{
 		id: 'SPLizardi',
 		title: 'Лизарды',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Lizardi.jpg'),
 		image: require('../images/Storonie/SPLizardi.jpg'),
 		price: 150,
@@ -1327,7 +1327,7 @@ export const localArmy = [
 	{
 		id: 'SPKlanLokAmon',
 		title: 'Лок`Амон',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/LokAmon.jpg'),
 		image: require('../images/Storonie/SPKlanLokAmon.jpg'),
 		price: 165,
@@ -1338,7 +1338,7 @@ export const localArmy = [
 	{
 		id: 'SPKlanLokAmon5',
 		title: 'Лок`Амон (5 бойцов)',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/LokAmon.jpg'),
 		image: require('../images/Storonie/SPKlanLokAmon5.jpg'),
 		price: 205,
@@ -1349,7 +1349,7 @@ export const localArmy = [
 	{
 		id: 'SPOrkestrSmerty',
 		title: 'Оркестр Смерти',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/OrkestrSmerty.jpg'),
 		image: require('../images/Storonie/SPOrkestrSmerty.jpg'),
 		price: 185,
@@ -1362,9 +1362,9 @@ export const localArmy = [
 	{
 		id: 'SPGendarmes',
 		title: 'Жандармы',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Gendarmes.jpg'),
-		image: require('../images/Storonie/SPOrkestrSmerty.jpg'),
+		image: require('../images/Storonie/SPGendarmes.jpg'),
 		price: 200,
 		inBasket: true,
 		directory: '',
@@ -1375,7 +1375,7 @@ export const localArmy = [
 	{
 		id: 'SPYarostNebes',
 		title: 'Ярость Небес',
-		category: 'Ст. производители (НО)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/YarostNebes.jpg'),
 		image: require('../images/Storonie/SPYarostNebes.jpg'),
 		price: 180,
@@ -1388,7 +1388,7 @@ export const localArmy = [
 	{
 		id: 'SPNeukronimie',
 		title: 'Неукротимые',
-		category: 'Ст. производители (ВИМ)',
+		category: 'Воители иных миров (КБФ)',
 		description: require('../images/Artefakti/Neukronimie.jpg'),
 		image: require('../images/Storonie/SPNeukronimie.jpg'), // Прямой URL для удаленного изображения
 		price: 210,
@@ -1399,7 +1399,7 @@ export const localArmy = [
 	{
 		id: 'SPVedmaki',
 		title: 'Отряд Ведьмаки',
-		category: 'Ст. производители (ВИМ)',
+		category: 'Воители иных миров (КБФ)',
 		description: require('../images/Artefakti/Vedmaki.jpg'),
 		image: require('../images/Storonie/SPVedmaki.jpg'), // Прямой URL для удаленного изображения
 		price: 210,
@@ -1410,7 +1410,7 @@ export const localArmy = [
 	{
 		id: 'SPVerniePrinc',
 		title: 'Верные Принцу',
-		category: 'Ст. производители (ВИМ)',
+		category: 'Воители иных миров (КБФ)',
 		description: require('../images/Artefakti/VerniePrinc.jpg'),
 		image: require('../images/Storonie/SPVerniePrinc.jpg'), // Прямой URL для удаленного изображения
 		price: 225,
@@ -1423,7 +1423,7 @@ export const localArmy = [
 	{
 		id: 'SPGeroyBilin',
 		title: 'Герои былин',
-		category: 'Ст. производители (ВИМ)',
+		category: 'Воители иных миров (КБФ)',
 		description: require('../images/Artefakti/GeroyBilin.jpg'),
 		image: require('../images/Storonie/SPGeroyBilin.jpg'), // Прямой URL для удаленного изображения
 		price: 210,
@@ -1434,7 +1434,7 @@ export const localArmy = [
 	{
 		id: 'SPHichniki',
 		title: 'Отряд Хищники',
-		category: 'Ст. производители (ВИМ)',
+		category: 'Воители иных миров (КБФ)',
 		description: require('../images/Artefakti/Hichniki.jpg'),
 		image: require('../images/Storonie/SPHichniki.jpg'), // Прямой URL для удаленного изображения
 		price: 330,
@@ -1446,7 +1446,7 @@ export const localArmy = [
 	{
 		id: 'SPChempioniAreni',
 		title: 'Чемпионы Арены',
-		category: 'Ст. производители (ВИМ)',
+		category: 'Воители иных миров (КБФ)',
 		description: require('../images/Artefakti/ChempioniAreni.jpg'),
 		image: require('../images/Storonie/SPChempioniAreni.jpg'), // Прямой URL для удаленного изображения
 		price: 255,
@@ -1459,7 +1459,7 @@ export const localArmy = [
 	{
 		id: 'SPGally',
 		title: 'Галлы',
-		category: 'Ст. производители (ВИМ)',
+		category: 'Воители иных миров (КБФ)',
 		description: require('../images/Artefakti/Gally.jpg'),
 		image: require('../images/Storonie/SPGally.jpg'), // Прямой URL для удаленного изображения
 		price: 170,
@@ -1471,7 +1471,7 @@ export const localArmy = [
 	{
 		id: 'SPChasticiRazuma',
 		title: 'Частицы Разума',
-		category: 'Ст. производители (ВИМ)',
+		category: 'Воители иных миров (КБФ)',
 		description: require('../images/Artefakti/ChasticiRazuma.jpg'),
 		image: require('../images/Storonie/SPChasticiRazuma.jpg'), // Прямой URL для удаленного изображения
 		price: 190,
@@ -1482,7 +1482,7 @@ export const localArmy = [
 	{
 		id: 'SPKiberici',
 		title: 'Киберийцы',
-		category: 'Ст. производители (ХБ)',
+		category: 'Х-Бункер (КБФ)',
 		description: require('../images/Artefakti/Kiberici.jpg'),
 		image: require('../images/Storonie/SPKiberici.jpg'), // Прямой URL для удаленного изображения
 		price: 180,
@@ -1493,7 +1493,7 @@ export const localArmy = [
 	{
 		id: 'SPKsenohanteri',
 		title: 'Ксенохантеры',
-		category: 'Ст. производители (ХБ)',
+		category: 'Х-Бункер (КБФ)',
 		description: require('../images/Artefakti/Ksenohanteri.jpg'),
 		image: require('../images/Storonie/SPKsenohanteri.jpg'), // Прямой URL для удаленного изображения
 		price: 195,
@@ -1506,7 +1506,7 @@ export const localArmy = [
 	{
 		id: 'SPStalnayaPyaterka',
 		title: 'Стальная Пятерка',
-		category: 'Ст. производители (ХБ)',
+		category: 'Х-Бункер (КБФ)',
 		description: require('../images/Artefakti/StalnayaPyaterka.jpg'),
 		image: require('../images/Storonie/SPStalnayaPyaterka.jpg'), // Прямой URL для удаленного изображения
 		price: 255,
@@ -1519,7 +1519,7 @@ export const localArmy = [
 	{
 		id: 'SPValhalla',
 		title: 'Вальхалла',
-		category: 'Ст. производители (ХБ)',
+		category: 'Х-Бункер (КБФ)',
 		description: require('../images/Artefakti/Valhalla.jpg'),
 		image: require('../images/Storonie/SPValhalla.jpg'), // Прямой URL для удаленного изображения
 		price: 150,
@@ -1532,7 +1532,7 @@ export const localArmy = [
 	{
 		id: 'SPShampanoidi',
 		title: 'Шампаноиды',
-		category: 'Ст. производители (ХБ)',
+		category: 'Х-Бункер (КБФ)',
 		description: require('../images/Artefakti/Shampanoidi.jpg'),
 		image: require('../images/Storonie/SPShampanoidi.jpg'), // Прямой URL для удаленного изображения
 		price: 205,
@@ -1545,7 +1545,7 @@ export const localArmy = [
 	{
 		id: 'SPTangar',
 		title: 'Тангар',
-		category: 'Ст. производители (ХБ)',
+		category: 'Х-Бункер (КБФ)',
 		description: require('../images/Artefakti/Tangar.jpg'),
 		image: require('../images/Storonie/SPTangar.jpg'), // Прямой URL для удаленного изображения
 		price: 270,
@@ -1556,7 +1556,7 @@ export const localArmy = [
 	{
 		id: 'SPTropik',
 		title: 'Тропик',
-		category: 'Ст. производители (ХБ)',
+		category: 'Х-Бункер (КБФ)',
 		description: require('../images/Artefakti/Tropik.jpg'),
 		image: require('../images/Storonie/SPTropik.jpg'), // Прямой URL для удаленного изображения
 		price: 225,
@@ -1569,7 +1569,7 @@ export const localArmy = [
 	{
 		id: 'SPHorni',
 		title: 'Хорны',
-		category: 'Ст. производители (ХБ)',
+		category: 'Х-Бункер (КБФ)',
 		description: require('../images/Artefakti/Horni.jpg'),
 		image: require('../images/Storonie/SPHorni.jpg'), // Прямой URL для удаленного изображения
 		price: 230,
@@ -1580,7 +1580,7 @@ export const localArmy = [
 	{
 		id: 'SPBladhorn',
 		title: 'Бладхорн',
-		category: 'Ст. производители (АС)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/Bladhorn.jpg'),
 		image: require('../images/Storonie/SPBladhorn.jpg'), // Прямой URL для удаленного изображения
 		price: 205,
@@ -1593,7 +1593,7 @@ export const localArmy = [
 	{
 		id: 'SPBorciZaOgon',
 		title: 'Борцы за Огонь',
-		category: 'Ст. производители (АС)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/BorciZaOgon.jpg'),
 		image: require('../images/Storonie/SPBorciZaOgon.jpg'), // Прямой URL для удаленного изображения
 		price: 165,
@@ -1606,7 +1606,7 @@ export const localArmy = [
 	{
 		id: 'SPBratyaIgarashi',
 		title: 'Братья Игараши',
-		category: 'Ст. производители (АС)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/BratyaIgarashi.jpg'),
 		image: require('../images/Storonie/SPBratyaIgarashi.jpg'), // Прямой URL для удаленного изображения
 		price: 200,
@@ -1617,7 +1617,7 @@ export const localArmy = [
 	{
 		id: 'SPValkirii',
 		title: 'Валькирии',
-		category: 'Ст. производители (АС)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/Valkirii.jpg'),
 		image: require('../images/Storonie/SPValkirii.jpg'), // Прямой URL для удаленного изображения
 		price: 180,
@@ -1628,7 +1628,7 @@ export const localArmy = [
 	{
 		id: 'SPGoblinilesa',
 		title: 'Гоблины дикого леса',
-		category: 'Ст. производители (АС)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/Goblinilesa.jpg'),
 		image: require('../images/Storonie/SPGoblinilesa.jpg'), // Прямой URL для удаленного изображения
 		price: 160,
@@ -1639,7 +1639,7 @@ export const localArmy = [
 	{
 		id: 'SPDagaz',
 		title: 'Дагаз',
-		category: 'Ст. производители (АС)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/Dagaz.jpg'),
 		image: require('../images/Storonie/SPDagaz.jpg'),
 		price: 180,
@@ -1650,7 +1650,7 @@ export const localArmy = [
 	{
 		id: 'SPDerzkayaStaya',
 		title: 'Дерзкая Стая',
-		category: 'Ст. производители (АС)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/DerzkayaStaya.jpg'),
 		image: require('../images/Storonie/SPDerzkayaStaya.jpg'), // Прямой URL для удаленного изображения
 		price: 235,
@@ -1663,7 +1663,7 @@ export const localArmy = [
 	{
 		id: 'SPMinoni',
 		title: 'Банда Миньоны',
-		category: 'Ст. производители (АС)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/Minoni.jpg'),
 		image: require('../images/Storonie/SPMinoni.jpg'),
 		price: 150,
@@ -1674,7 +1674,7 @@ export const localArmy = [
 	{
 		id: 'SPFangeti',
 		title: 'Фангеты',
-		category: 'Ст. производители (АС)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/Fangeti.jpg'),
 		image: require('../images/Storonie/SPFangeti.jpg'), // Прямой URL для удаленного изображения
 		price: 190,
@@ -1685,7 +1685,7 @@ export const localArmy = [
 	{
 		id: 'SPCherniRassvet',
 		title: 'Чёрный Рассвет',
-		category: 'Ст. производители (АС)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/CherniRassvet.jpg'),
 		image: require('../images/Storonie/SPCherniRassvet.jpg'), // Прямой URL для удаленного изображения
 		price: 225,
@@ -1698,21 +1698,19 @@ export const localArmy = [
 	{
 		id: 'SPPodrugiAiri',
 		title: 'Подруги Айры',
-		category: 'Ст. производители (АС)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/PodrugiAiri.jpg'),
 		image: require('../images/Storonie/SPPodrugiAiri.jpg'), // Прямой URL для удаленного изображения
 		price: 250,
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/marker_new.png'),
-		markerTitle: 'Новый адаптированный отряд',
 	},
 
 	{
 		id: 'SPNewAmazonki',
 		title: 'Новые Амазонки',
-		category: 'Ст. производители (ВПМ)',
+		category: 'Войско павшего мага (КБФ)',
 		description: require('../images/Artefakti/NewAmazonki.jpg'),
 		image: require('../images/Storonie/SPNewAmazonki.jpg'), // Прямой URL для удаленного изображения
 		price: 240,
@@ -1723,7 +1721,7 @@ export const localArmy = [
 	{
 		id: 'oskal_Nochi',
 		title: 'Оскал Ночи',
-		category: 'Ст. производители (ВПМ)',
+		category: 'Войско павшего мага (КБФ)',
 		description: require('../images/Artefakti/oskal_Nochi.jpg'),
 		image: require('../images/Storonie/oskal_Nochi.jpg'), // Прямой URL для удаленного изображения
 		price: 205,
@@ -1737,7 +1735,7 @@ export const localArmy = [
 	{
 		id: 'SPPesherniLudi',
 		title: 'Пещерные Люди',
-		category: 'Ст. производители (ВПМ)',
+		category: 'Войско павшего мага (КБФ)',
 		description: require('../images/Artefakti/PesherniLudi.jpg'),
 		image: require('../images/Storonie/SPPesherniLudi.jpg'), // Прямой URL для удаленного изображения
 		price: 185,
@@ -1750,7 +1748,7 @@ export const localArmy = [
 	{
 		id: 'SPFemiskira',
 		title: 'Фемискира',
-		category: 'Ст. производители (ВПМ)',
+		category: 'Войско павшего мага (КБФ)',
 		description: require('../images/Artefakti/Femiskira.jpg'),
 		image: require('../images/Storonie/SPFemiskira.jpg'), // Прямой URL для удаленного изображения
 		price: 170,
@@ -1761,7 +1759,7 @@ export const localArmy = [
 	{
 		id: 'SPCherni_Ricari',
 		title: 'Чёрные рыцари',
-		category: 'Ст. производители (ВПМ)',
+		category: 'Войско павшего мага (КБФ)',
 		description: require('../images/Artefakti/Cherni_Ricari.jpg'),
 		image: require('../images/Storonie/SPCherni_Ricari.jpg'), // Прямой URL для удаленного изображения
 		price: 140,
@@ -1772,7 +1770,7 @@ export const localArmy = [
 	{
 		id: 'SPShinobi',
 		title: 'Клан Шиноби',
-		category: 'Ст. производители (ВПМ)',
+		category: 'Войско павшего мага (КБФ)',
 		description: require('../images/Artefakti/Shinobi.jpg'),
 		image: require('../images/Storonie/SPShinobi.jpg'), // Прямой URL для удаленного изображения
 		price: 185,
@@ -1780,13 +1778,11 @@ export const localArmy = [
 		directory:
 			'Вероятность успешного использования артефакта при броске 2-х кубиков: 75%',
 		button: '',
-		marker: require('../images/marker_new.png'),
-		markerTitle: 'Новый адаптированный отряд',
 	},
 	{
 		id: 'SPBergi',
 		title: 'Берги',
-		category: 'Ст. производители (ЛЧП)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/SPBergi.jpg'),
 		image: require('../images/Storonie/SPBergi.jpg'), // Прямой URL для удаленного изображения
 		price: 300,
@@ -1800,7 +1796,7 @@ export const localArmy = [
 	{
 		id: 'SPHraniteliRochi',
 		title: 'Хранители Рощи',
-		category: 'Ст. производители (ЛЧП)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/HraniteliRochi.jpg'),
 		image: require('../images/Storonie/SPHraniteliRochi.jpg'), // Прямой URL для удаленного изображения
 		price: 240,
@@ -1811,7 +1807,7 @@ export const localArmy = [
 	{
 		id: 'SPGornyaki',
 		title: 'Горняки',
-		category: 'Ст. производители (ЛЧП)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/Gornyaki.jpg'),
 		image: require('../images/Storonie/SPGornyaki.jpg'), // Прямой URL для удаленного изображения
 		price: 260,
@@ -1822,7 +1818,7 @@ export const localArmy = [
 	{
 		id: 'SPGromoboi',
 		title: 'Громобои',
-		category: 'Ст. производители (ЛЧП)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/Gromoboi.jpg'),
 		image: require('../images/Storonie/SPGromoboi.jpg'), // Прямой URL для удаленного изображения
 		price: 275,
@@ -1835,7 +1831,7 @@ export const localArmy = [
 	{
 		id: 'SPKiberzveri',
 		title: 'Киберзвери',
-		category: 'Ст. производители (ЛЧП)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/Kiberzveri.jpg'),
 		image: require('../images/Storonie/SPKiberzveri.jpg'), // Прямой URL для удаленного изображения
 		price: 290,
@@ -1846,7 +1842,7 @@ export const localArmy = [
 	{
 		id: 'SPSumerechniStrazhi',
 		title: 'Сумеречные стражи',
-		category: 'Ст. производители (ЛЧП)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/SumerechniStrazhi.jpg'),
 		image: require('../images/Storonie/SPSumerechniStrazhi.jpg'), // Прямой URL для удаленного изображения
 		price: 245,
@@ -1860,7 +1856,7 @@ export const localArmy = [
 	{
 		id: 'SPTvoreniyaMarkusa',
 		title: 'Творения Маркуса',
-		category: 'Ст. производители (ЛЧП)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/TvoreniyaMarkusa.jpg'),
 		image: require('../images/Storonie/SPTvoreniyaMarkusa.jpg'), // Прямой URL для удаленного изображения
 		price: 260,
@@ -1871,7 +1867,7 @@ export const localArmy = [
 	{
 		id: 'SPZhneci',
 		title: 'Темные Жнецы',
-		category: 'Ст. производители (ЛЧП)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/Zhneci.jpg'),
 		image: require('../images/Storonie/SPZhneci.jpg'), // Прямой URL для удаленного изображения
 		price: 225,
@@ -1884,7 +1880,7 @@ export const localArmy = [
 	{
 		id: 'SPTritalianci',
 		title: 'Триталианцы',
-		category: 'Ст. производители (ЛЧП)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/Tritalianci.jpg'),
 		image: require('../images/Storonie/SPTritalianci.jpg'), // Прямой URL для удаленного изображения
 		price: 255,
@@ -1897,7 +1893,7 @@ export const localArmy = [
 	{
 		id: 'SPChama-Tor',
 		title: 'Чама-Тор',
-		category: 'Ст. производители (ЛЧП)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/Chama-Tor.jpg'),
 		image: require('../images/Storonie/SPChama-Tor.jpg'), // Прямой URL для удаленного изображения
 		price: 300,
@@ -1908,7 +1904,7 @@ export const localArmy = [
 	{
 		id: 'SPKhakylmoa',
 		title: 'Воины К`хакульмоа',
-		category: 'Ст. производители (ЛЧП)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/Khakylmoa.jpg'),
 		image: require('../images/Storonie/SPKhakylmoa.jpg'), // Прямой URL для удаленного изображения
 		price: 200,
@@ -1919,7 +1915,7 @@ export const localArmy = [
 	{
 		id: 'SPKromeshniki',
 		title: 'Кромешники',
-		category: 'Ст. производители (ЛЧП)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/Kromeshniki.jpg'),
 		image: require('../images/Storonie/SPKromeshniki.jpg'),
 		price: 290,
@@ -1930,7 +1926,7 @@ export const localArmy = [
 	{
 		id: 'SPDikobrazi',
 		title: 'Дикобразы',
-		category: 'Ст. производители (ЛЧП)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/Dikobrazi.jpg'),
 		image: require('../images/Storonie/SPDikobrazi.jpg'),
 		price: 230,
@@ -1941,9 +1937,61 @@ export const localArmy = [
 		markerTitle: 'Новый адаптированный отряд',
 	},
 	{
+		id: 'SPObitateliBelihRavnin',
+		title: 'Об-ли Белых Равнин',
+		category: 'Легионы черной планеты (КБФ)',
+		description: require('../images/Artefakti/ObitateliBelihRavnin.jpg'),
+		image: require('../images/Storonie/SPObitateliBelihRavnin.jpg'),
+		price: 195,
+		inBasket: false,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPmrachnaya_Krasotka',
+		title: 'Мрачная Красотка',
+		category: 'Легионы черной планеты (КБФ)',
+		description: require('../images/Artefakti/mrachnaya_Krasotka.jpg'),
+		image: require('../images/Storonie/SPmrachnaya_Krasotka.jpg'),
+		price: 275,
+		inBasket: false,
+		directory: 'Вероятность успешного использования Артефакта: 67%',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPTriton',
+		title: 'Тритон',
+		category: 'База (КБФ)',
+		description: require('../images/Artefakti/Triton.jpg'),
+		image: require('../images/Storonie/SPTriton.jpg'),
+		price: 200,
+		inBasket: false,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPGornila',
+		title: 'Песнь Горнила',
+		category: 'База (КБФ)',
+		description: require('../images/Artefakti/Gornila.jpg'),
+		image: require('../images/Storonie/SPGornila.jpg'),
+		price: 240,
+		inBasket: false,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
 		id: 'SPDzyanshi',
 		title: 'Дзяньши',
-		category: 'Ст. производители (ХБ)',
+		category: 'Х-Бункер (КБФ)',
 		description: require('../images/Artefakti/Dzyanshi.jpg'),
 		image: require('../images/Storonie/SPDzyanshi.jpg'),
 		price: 170,
@@ -1952,5 +2000,411 @@ export const localArmy = [
 		button: '',
 		marker: require('../images/marker_new.png'),
 		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPDraugry',
+		title: 'Драугры',
+		category: 'Нейтральный отряд (КБФ)',
+		description: require('../images/Artefakti/SPDraugry.jpg'),
+		image: require('../images/Storonie/SPDraugry.jpg'),
+		price: 195,
+		inBasket: false,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	//Отряды АОБФ
+	{
+		id: 'SPRenegaty_Haosa',
+		title: 'Ренегаты Хаоса',
+		category: 'База (АОБФ)',
+		description: require('../images/Artefakti/Renegaty_Haosa.jpg'),
+		image: require('../images/Storonie/SPRenegaty_Haosa.jpg'),
+		price: 180,
+		inBasket: false,
+		directory: 'Вероятность успешного использования Артефакта: 33.33%',
+		button: '',
+	},
+	{
+		id: 'SPStrazhy_Ra',
+		title: 'Стражи Ра',
+		category: 'База (АОБФ)',
+		description: require('../images/Artefakti/Strazhy_Ra.jpg'),
+		image: require('../images/Storonie/SPStrazhy_Ra.jpg'),
+		price: 220,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPKamennie_Trolly',
+		title: 'Каменные Тролли',
+		category: 'Войско павшего мага (АОБФ)',
+		description: require('../images/Artefakti/Kamennie_Trolly.jpg'),
+		image: require('../images/Storonie/SPKamennie_Trolly.jpg'),
+		price: 250,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPProidohi',
+		title: 'Пройдохи',
+		category: 'Войско павшего мага (АОБФ)',
+		description: require('../images/Artefakti/Proidohi.jpg'),
+		image: require('../images/Storonie/SPProidohi.jpg'),
+		price: 145,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPRusskie_Skazky',
+		title: 'Русские Сказки',
+		category: 'Войско павшего мага (АОБФ)',
+		description: require('../images/Artefakti/Russkie_Skazky.jpg'),
+		image: require('../images/Storonie/SPRusskie_Skazky.jpg'),
+		price: 230,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPHitrobany',
+		title: 'Хитрованы',
+		category: 'Войско павшего мага (АОБФ)',
+		description: require('../images/Artefakti/Hitrobany.jpg'),
+		image: require('../images/Storonie/SPHitrobany.jpg'),
+		price: 145,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPCrazy_food',
+		title: 'Crazy Food',
+		category: 'Нейтралы (АОБФ)',
+		description: require('../images/Artefakti/Crazy_food.jpg'),
+		image: require('../images/Storonie/SPCrazy_food.jpg'),
+		price: 170,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPApus',
+		title: 'Апус',
+		category: 'Нейтралы (АОБФ)',
+		description: require('../images/Artefakti/Apus.jpg'),
+		image: require('../images/Storonie/SPApus.jpg'),
+		price: 200,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPBezlikie',
+		title: 'Безликие',
+		category: 'Нейтралы (АОБФ)',
+		description: require('../images/Artefakti/Bezlikie.jpg'),
+		image: require('../images/Storonie/SPBezlikie.jpg'),
+		price: 190,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPBremensky_Muzic',
+		title: 'Бременские Музыканты',
+		category: 'Нейтралы (АОБФ)',
+		description: require('../images/Artefakti/Bremensky_Muzic.jpg'),
+		image: require('../images/Storonie/SPBremensky_Muzic.jpg'),
+		price: 185,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPGromovie_Kulaki',
+		title: 'Громовые Кулаки',
+		category: 'Нейтралы (АОБФ)',
+		description: require('../images/Artefakti/Gromovie_Kulaki.jpg'),
+		image: require('../images/Storonie/SPGromovie_Kulaki.jpg'),
+		price: 290,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPKarabashsky_Trolli',
+		title: 'Карабашские Тролли',
+		category: 'Нейтралы (АОБФ)',
+		description: require('../images/Artefakti/Karabashsky_Trolli.jpg'),
+		image: require('../images/Storonie/SPKarabashsky_Trolli.jpg'),
+		price: 205,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPKimy',
+		title: 'Кими',
+		category: 'Нейтралы (АОБФ)',
+		description: require('../images/Artefakti/Kimy.jpg'),
+		image: require('../images/Storonie/SPKimy.jpg'),
+		price: 220,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPMonstryDVD',
+		title: 'Монстры DVD-проката',
+		category: 'Нейтралы (АОБФ)',
+		description: require('../images/Artefakti/MonstryDVD.jpg'),
+		image: require('../images/Storonie/SPMonstryDVD.jpg'),
+		price: 180,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPStepnie_Velikany',
+		title: 'Степные Великаны',
+		category: 'Нейтралы (АОБФ)',
+		description: require('../images/Artefakti/Stepnie_Velikany.jpg'),
+		image: require('../images/Storonie/SPStepnie_Velikany.jpg'),
+		price: 120,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPUzniky_Culfura',
+		title: 'Узники Сульфура',
+		category: 'Нейтралы (АОБФ)',
+		description: require('../images/Artefakti/Uzniky_Culfura.jpg'),
+		image: require('../images/Storonie/SPUzniky_Culfura.jpg'),
+		price: 140,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPBrigada',
+		title: 'Бригада',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Brigada.jpg'),
+		image: require('../images/Storonie/SPBrigada.jpg'),
+		price: 160,
+		inBasket: false,
+		directory:
+			'Вероятность успешного использования Артефакта при броске 4 кубиков: 51.8%, 3 кубиков: 42.1%',
+		button: '',
+	},
+	{
+		id: 'SPZeleznaya_Orda',
+		title: 'Вожди Железной Орды',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Zeleznaya_Orda.jpg'),
+		image: require('../images/Storonie/SPZeleznaya_Orda.jpg'),
+		price: 220,
+		inBasket: false,
+		directory: '',
+		button: '',
+	},
+	{
+		id: 'SPGornie_Klani',
+		title: 'Горные Кланы',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Gornie_Klani.jpg'),
+		image: require('../images/Storonie/SPGornie_Klani.jpg'),
+		price: 290,
+		inBasket: false,
+		directory: '',
+		button: '',
+	},
+	{
+		id: 'SPDolg',
+		title: 'Долг',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Dolg.jpg'),
+		image: require('../images/Storonie/SPDolg.jpg'),
+		price: 225,
+		inBasket: false,
+		directory: '',
+		button: '',
+	},
+	{
+		id: 'SPZhelezni_Drakon',
+		title: 'Клан Железного Дракона',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Zhelezni_Drakon.jpg'),
+		image: require('../images/Storonie/SPZhelezni_Drakon.jpg'),
+		price: 185,
+		inBasket: false,
+		directory: '',
+		button: '',
+	},
+	{
+		id: 'SPLesnie_Vedmi',
+		title: 'Лесные Ведьмы',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Lesnie_Vedmi.jpg'),
+		image: require('../images/Storonie/SPLesnie_Vedmi.jpg'),
+		price: 190,
+		inBasket: false,
+		directory: 'Вероятность успешного использования артефакта: 30.5%',
+		button: '',
+	},
+	{
+		id: 'SPMeotida',
+		title: 'Меотида',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Meotida.jpg'),
+		image: require('../images/Storonie/SPMeotida.jpg'),
+		price: 170,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPMertvi_Kosmos',
+		title: 'Мертвый Космос',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Mertvi_Kosmos.jpg'),
+		image: require('../images/Storonie/SPMertvi_Kosmos.jpg'),
+		price: 170,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPNechistaya_Sila',
+		title: 'Нечистая Сила',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Nechistaya_Sila.jpg'),
+		image: require('../images/Storonie/SPNechistaya_Sila.jpg'),
+		price: 195,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPOtdel_Z',
+		title: 'Отдел Зет',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Otdel_Z.jpg'),
+		image: require('../images/Storonie/SPOtdel_Z.jpg'),
+		price: 155,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPOhotniki_na_Mamontov',
+		title: 'Охотники На Мамонтов',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Ohotniki_na_Mamontov.jpg'),
+		image: require('../images/Storonie/SPOhotniki_na_Mamontov.jpg'),
+		price: 155,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPOhotnici_za_Golovami',
+		title: 'Охотницы За Головами',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Ohotnici_za_Golovami.jpg'),
+		image: require('../images/Storonie/SPOhotnici_za_Golovami.jpg'),
+		price: 170,
+		inBasket: false,
+		directory: 'Вероятность успешного использования артефакта: 67%',
+		button: '',
+	},
+	{
+		id: 'SPPescherni_Trolli',
+		title: 'Пещерные Тролли',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Pescherni_Trolli.jpg'),
+		image: require('../images/Storonie/SPPescherni_Trolli.jpg'),
+		price: 210,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPRaion_Z',
+		title: 'Район Зет',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Raion_Z.jpg'),
+		image: require('../images/Storonie/SPRaion_Z.jpg'),
+		price: 155,
+		inBasket: false,
+		directory: 'Вероятность успешного использования артефакта: 33.3%',
+		button: '',
+	},
+	{
+		id: 'SPRatmeni',
+		title: 'Ратмены',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Ratmeni.jpg'),
+		image: require('../images/Storonie/SPRatmeni.jpg'),
+		price: 190,
+		inBasket: false,
+		directory:
+			'Вероятность успешного использования артефакта: 67% (Орудие хотя бы повреждено)',
+		button: '',
+	},
+	{
+		id: 'SPRoga_i_Kopita',
+		title: 'Рога И Копыта',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Roga_i_Kopita.jpg'),
+		image: require('../images/Storonie/SPRoga_i_Kopita.jpg'),
+		price: 185,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPSindikat',
+		title: 'Синдикат',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Sindikat.jpg'),
+		image: require('../images/Storonie/SPSindikat.jpg'),
+		price: 200,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPStrazhi_Heridaka',
+		title: 'Стражи Хердика',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Strazhi_Heridaka.jpg'),
+		image: require('../images/Storonie/SPStrazhi_Heridaka.jpg'),
+		price: 180,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPGarem_Sukkuba',
+		title: 'Гарем Суккуба',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Garem_Sukkuba.jpg'),
+		image: require('../images/Storonie/SPGarem_Sukkuba.jpg'),
+		price: 190,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPHalflingy',
+		title: 'Халфлинги',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Halflingy.jpg'),
+		image: require('../images/Storonie/SPHalflingy.jpg'),
+		price: 150,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPShpicbergen',
+		title: 'Шпицберген',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Shpicbergen.jpg'),
+		image: require('../images/Storonie/SPShpicbergen.jpg'),
+		price: 195,
+		inBasket: false,
+		button: '',
+	},
+	{
+		id: 'SPEllada',
+		title: 'Эллада',
+		category: 'Альянс Свободных (АОБФ)',
+		description: require('../images/Artefakti/Ellada.jpg'),
+		image: require('../images/Storonie/SPEllada.jpg'),
+		price: 190,
+		inBasket: false,
+		button: '',
 	},
 ];
