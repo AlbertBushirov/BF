@@ -31,19 +31,37 @@
 	}
 
 	&__logo {
+		position: relative;
 		height: $headerElementsSize;
 		&-image {
 			display: block;
-			height: 90%;
+			height: 95%;
 			@media (max-width: 450px) {
-				height: 80%;
+				height: 110%;
 			}
 		}
 		@media (max-width: 450px) {
 			grid-column: 1;
 			grid-row: 1 / 4;
+			padding-bottom: 5px;
+		}
+	}
 
-			padding-top: 15px;
+	&__logo::before {
+		content: '';
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		animation: multiColorGlow 3s ease-in-out infinite;
+		z-index: 1;
+
+		// Позиционирование
+		top: 56%;
+		left: 0%;
+
+		@media (max-width: 450px) {
+			top: 62%;
 		}
 	}
 
@@ -83,6 +101,34 @@
 			height: 48px;
 			width: 48px;
 		}
+	}
+}
+
+@keyframes multiColorGlow {
+	0% {
+		background-color: #ff6b6b;
+		box-shadow: 0 0 10px #fff, 0 0 20px rgba(255, 107, 107, 0.8),
+			0 0 30px rgba(255, 107, 107, 0.6), 0 0 40px rgba(255, 107, 107, 0.4);
+	}
+	25% {
+		background-color: #4e54c8;
+		box-shadow: 0 0 10px #fff, 0 0 20px rgba(78, 84, 200, 0.8),
+			0 0 30px rgba(78, 84, 200, 0.6), 0 0 40px rgba(78, 84, 200, 0.4);
+	}
+	50% {
+		background-color: #50c878;
+		box-shadow: 0 0 10px #fff, 0 0 20px rgba(80, 200, 120, 0.8),
+			0 0 30px rgba(80, 200, 120, 0.6), 0 0 40px rgba(80, 200, 120, 0.4);
+	}
+	75% {
+		background-color: #ffa500;
+		box-shadow: 0 0 10px #fff, 0 0 20px rgba(255, 165, 0, 0.8),
+			0 0 30px rgba(255, 165, 0, 0.6), 0 0 40px rgba(255, 165, 0, 0.4);
+	}
+	100% {
+		background-color: #ff6b6b;
+		box-shadow: 0 0 10px #fff, 0 0 20px rgba(255, 107, 107, 0.8),
+			0 0 30px rgba(255, 107, 107, 0.6), 0 0 40px rgba(255, 107, 107, 0.4);
 	}
 }
 
@@ -130,7 +176,7 @@ nav {
 	background-color: $primary;
 	min-height: min-content;
 	font-size: 16px;
-	min-width: min-content;
+	min-width: 205px;
 	box-sizing: border-box;
 	@media (max-width: 450px) {
 		margin-top: 12px;

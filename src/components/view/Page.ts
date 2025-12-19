@@ -30,8 +30,6 @@ export class Page extends Component<IPage> {
 	public _pointKBF: HTMLElement;
 	public _pointAOBF: HTMLElement;
 	protected _favoritesFooter: HTMLElement;
-	private _scrollTop: number = 0;
-	private _scrollLeft: number = 0;
 
 	constructor(container: HTMLElement, protected events: IEvents) {
 		super(container);

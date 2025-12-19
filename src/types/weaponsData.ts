@@ -386,7 +386,7 @@ export const localWeaponsWheels = [
 		title: 'Шторм',
 		category: 'Техлист (2МП)',
 		image: require('../images/TehList/Shtorm.png'), // Прямой URL для удаленного изображения
-		price: 80,
+		price: 85,
 		inBasket: true,
 		button: '',
 		directory: '',

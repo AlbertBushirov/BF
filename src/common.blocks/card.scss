@@ -231,11 +231,6 @@ html {
 			z-index: 2;
 		}
 
-		.card__category {
-			@media (max-width: 450px) {
-			}
-		}
-
 		.wheels_box {
 			grid-column: 2;
 			grid-row: 2;
@@ -352,7 +347,6 @@ html {
 			}
 		}
 		.card__category {
-			display: flex;
 			grid-column: 2;
 			grid-row: 1;
 			text-align: center;
@@ -454,6 +448,7 @@ html {
 		}
 
 		.card__title {
+			position: relative;
 			align-self: end;
 			justify-self: end;
 			@media (max-width: 450px) {
@@ -463,8 +458,9 @@ html {
 				min-height: 0px;
 			}
 		}
-		.card__image {
-			max-width: 100%;
+
+		.container__image {
+			position: relative;
 			grid-row: 2 / 3;
 			grid-column: 1 / 2;
 			@media (max-width: 450px) {
@@ -473,7 +469,30 @@ html {
 				grid-row: 2 / 3;
 				grid-column: 1 / 3;
 			}
+			.card__image {
+				max-width: 100%;
+			}
 		}
+
+		.container__image::before {
+			content: '';
+			position: absolute;
+			bottom: -23%;
+			left: 0;
+			width: 100%; /* Задаем ширину */
+			height: 30%;
+			background-image: url(../images/Fons/snow.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			z-index: 1;
+			pointer-events: none;
+			@media (max-width: 450px) {
+				height: 25%;
+				bottom: -16%;
+				left: 5%;
+			}
+		}
+
 		.card__row {
 			@media (max-width: 450px) {
 				position: fixed;
@@ -503,13 +522,6 @@ html {
 			padding: 5px;
 			font-size: 15px;
 			z-index: 2;
-		}
-
-		.card__category {
-			display: flex;
-
-			align-items: center;
-			justify-content: center;
 		}
 	}
 
@@ -542,21 +554,13 @@ html {
 	}
 
 	&__description {
-		grid-row: 2;
-		grid-column: 2;
-		display: flex;
-		max-height: 200px;
-		max-width: 50%;
-		align-self: center;
 		transition: transform 0.3s ease;
 		cursor: zoom-in;
+		max-height: 200px;
+		max-width: 50%;
 		@media (max-width: 450px) {
 			max-width: 100%;
 			height: 150px;
-			margin-top: 0px;
-			grid-column: 1 / 3;
-			grid-row: 3;
-			margin-inline: auto;
 		}
 	}
 
@@ -710,7 +714,7 @@ html {
 	&__price {
 		font-size: 15px;
 		font-weight: 300;
-
+		min-width: 70px;
 		text-align: right;
 		&_basket {
 			font-weight: 300;
@@ -792,7 +796,6 @@ html {
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	left: -60px;
 	width: 45px;
 	height: 40px;
 	background-image: url(../images/like.png);
@@ -853,11 +856,49 @@ html {
 	display: inline-block;
 	width: max-content;
 	height: max-content;
-
+	grid-column: 2;
+	grid-row: 1;
 	@media (max-width: 450px) {
 		justify-self: center;
 		align-self: end;
 		grid-column: 1;
 		grid-row: 1;
+	}
+}
+
+.container__description {
+	position: relative;
+	grid-row: 2;
+	grid-column: 2;
+	display: flex;
+
+	align-self: center;
+	@media (max-width: 450px) {
+		max-width: 100%;
+		height: 150px;
+		margin-top: 0px;
+		grid-column: 1 / 3;
+		grid-row: 3;
+		margin-inline: auto;
+	}
+}
+
+.container__description::before {
+	content: '';
+	position: absolute;
+	bottom: -23%;
+	left: 0;
+	width: 50%; /* Задаем ширину */
+	height: 30%;
+	background-image: url(../images/Fons/snow.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	z-index: 1;
+	pointer-events: none;
+	@media (max-width: 450px) {
+		width: 100%;
+		height: 25%;
+		bottom: -20%;
+		left: 0;
 	}
 }

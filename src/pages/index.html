@@ -39,7 +39,7 @@
 					<a class="header__logo" href="#">
 						<img
 							class="header__logo-image"
-							src="<%=require('../images/logo.png')%>"
+							src="<%=require('../images/new_year_logo.png')%>"
 							alt="БF assistent logo"
 						/>
 					</a>
@@ -96,19 +96,23 @@
 		<template id="card-preview">
 			<div class="card_full">
 				<div class="card__column">
-					<img class="card__image" src="" alt="арм лист отряда" />
+					<div class="glow-circle-1"></div>
+					<div class="container__image">
+						<img class="card__image" src="image.jpg" alt="" />
+					</div>
 					<div class="card__categoryMarker">
 						<span class="card__category">другое</span>
 						<img class="gallery_marker__image" src="" alt="" />
 						<span class="gallery_marker__title"></span>
 					</div>
 					<h2 class="card__title">Бэкенд-антистресс</h2>
-					<img class="card__description" src="" alt="артефакт отряда" />
-
+					<div class="container__description">
+						<img class="card__description" src="" alt="артефакт отряда" />
+					</div>
 					<div class="card__row">
 						<input class="button_like_preview" type="checkbox" />
 						<button class="button card__button">В корзину</button>
-						<span class="card__price">1000 синапсов</span>
+						<span class="card__price"></span>
 					</div>
 					<span class="directory"></span>
 				</div>
@@ -178,7 +182,7 @@
 
 		<template id="weapon">
 			<div class="weapon_row">
-				<span class="weapon_title">1000 синапсов </span>
+				<span class="weapon_title"></span>
 				<div class="volume-control">
 					<button class="button switch decrease">-</button>
 					<div id="volume-level" class="volume-level">

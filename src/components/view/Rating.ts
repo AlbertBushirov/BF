@@ -72,12 +72,11 @@ export class Rating extends Component<IRatingView> {
 			imageElement.alt = player.player;
 			nameElement.textContent = player.player;
 			gamesElement.textContent =
-				player.win.toString() + `${' / '}` + player.games.toString();
+				player.win.toString() + ' / ' + player.games.toString();
 			winElement.textContent =
 				player.games !== 0
 					? `${Math.round((player.win / player.games) * 100)}%`
 					: '0%';
-
 			if (player.achievements && player.achievements.length > 0) {
 				player.achievements.forEach((achievement: Cup) => {
 					const achievementImage = document.createElement('img');

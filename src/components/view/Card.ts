@@ -351,7 +351,7 @@ export class Card extends Component<ICardItem> {
 	}
 
 	set image(value: string) {
-		this.setImage(this._image, value, this.title);
+		this.setImage(this._image, value, this.id);
 	}
 
 	//Проверка на 'Бесценно'
@@ -371,7 +371,7 @@ export class Card extends Component<ICardItem> {
 
 	//Отображение артефакта
 	set description(value: string) {
-		this.setImage(this._description, value, this.title);
+		this.setImage(this._description, value, this.id);
 	}
 
 	//Описание категории товара
@@ -382,6 +382,9 @@ export class Card extends Component<ICardItem> {
 
 	set isWheels(value: boolean) {
 		this._inputWheels.checked = value;
+		const url = new URL(window.location.href);
+		url.searchParams.set('wheels', 'value');
+		history.pushState({}, '', url.toString());
 	}
 
 	set marker(value: string) {
@@ -607,6 +610,9 @@ export class BasketElement extends Component<IBasketItem> {
 
 	set isWheels(value: boolean) {
 		this._inputWheels.checked = value;
+		const url = new URL(window.location.href);
+		url.searchParams.set('wheels', 'value');
+		history.pushState({}, '', url.toString());
 	}
 
 	set isWeapons(value: boolean) {

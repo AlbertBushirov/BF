@@ -24,6 +24,7 @@
 	&__container {
 		@include mixins.container;
 		@include mixins.flex(column);
+
 		gap: $defaultPadding;
 		border: 0.3px solid rgb(62, 62, 66);
 		background-color: $primary;
@@ -84,12 +85,12 @@
 		position: absolute;
 		top: 20px;
 		right: 20px;
+		z-index: 4;
 		@include mixins.icon(2rem, 'close');
 		@include mixins.link(white, $hover);
 		@media (max-width: 450px) {
 			opacity: 0.85;
 			position: fixed;
-			z-index: 4;
 			top: 7px;
 			right: 13px;
 		}

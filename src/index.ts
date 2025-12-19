@@ -125,8 +125,8 @@ events.on<CatalogChangeEvent>('items:changed', () => {
 		const card = new Card('card', cloneTemplate(cardCatalogTemplate), {
 			onClick: () => events.emit('card:select', item),
 		});
-		const checkedAttr: boolean = appData.productLike(item);
-		card.buttonLike = checkedAttr;
+		//const checkedAttr: boolean = appData.productLike(item);
+		//card.buttonLike = checkedAttr;
 
 		card.marker = item.marker;
 		card.markerTitle = item.markerTitle;
@@ -153,6 +153,7 @@ events.on<CatalogChangeEvent>('items:changed', () => {
 		applyNetState('cancel');
 		localStorage.setItem('netState', 'cancel');
 	});
+	setBackground(appData.items);
 });
 
 function setupNavigationHandlers() {
@@ -250,11 +251,6 @@ function applyNetState(state: 'save' | 'cancel') {
 	}
 }
 
-//Выбор товара
-events.on('card:select', (item: ICardItem) => {
-	appData.setPreview(item);
-});
-
 //Добавление Боевой единицы в корзину
 events.on('product:add', (item: ICardItem) => {
 	appData.addBasket(item);
@@ -270,11 +266,6 @@ events.on('product:addLike', (item: ICardItem) => {
 events.on('product:deleteLike', (item: ICardItem) => {
 	appData.removeFromLike(item.id);
 	modal.close();
-});
-
-//Удаление продукта из корзины
-events.on('product:delete', (item: ICardItem) => {
-	appData.removeFromBasket(item.id);
 });
 
 function saveBasketToLocalStorage() {
@@ -314,6 +305,10 @@ events.on('basket:changed', () => {
 			const aIsTehlist = a.category.includes('Техлист');
 			const bIsTehlist = b.category.includes('Техлист');
 
+			if (a.price > b.price && orderA === 1 && orderB === 1) {
+				return -1;
+			}
+
 			if (aIsTehlist && bIsTehlist) {
 				return 0;
 			}
@@ -343,7 +338,7 @@ events.on('basket:changed', () => {
 
 		const card = new BasketElement(cloneTemplate(cardTemplate), index, events, {
 			onClick: () => {
-				appData.removeFromBasket(item.id);
+				events.emit('product:delete', item);
 				saveBasketToLocalStorage();
 			},
 			onChange: ({ price, isWheels }) => {
@@ -412,35 +407,88 @@ events.on('memo:open', () => {
 	});
 });
 
-window.addEventListener('hashchange', () => {
-	if (window.location.hash === '#rating') {
-		events.emit('rating:open');
-	}
-	if (window.location.hash === '#memo') {
-		events.emit('memo:open');
-	}
-	if (window.location.hash === '#tournament') {
-		events.emit('tournament:open');
-	}
-	if (window.location.hash === '#settings') {
-		events.emit('settings:open');
+//Удаление продукта из корзины
+events.on('product:delete', (item: ICardItem) => {
+	appData.removeFromBasket(item.id);
+
+	const jsonStr = JSON.stringify(appData.basket.map((item) => item.id));
+	location.hash = '#basket/' + encodeURIComponent(jsonStr);
+});
+
+//Открытие корзины товаров
+events.on('basket:open', () => {
+	page.locked = true;
+	modal.render({
+		content: basket.render({}),
+	});
+
+	const jsonStr = JSON.stringify(appData.basket.map((item) => item.id));
+	location.hash = '#basket/' + encodeURIComponent(jsonStr);
+});
+
+//Выбор товара
+events.on('card:select', (item: ICardItem) => {
+	if (item && item.id) {
+		appData.setPreview(item);
+		location.hash = '#preview/' + encodeURIComponent(item.id);
 	}
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-	if (window.location.hash === '#rating') {
+function findItemById(id: string): ICardItem | undefined {
+	return appData.items.find((item) => item.id === id);
+}
+
+function handleBasketHash(hash: string) {
+	try {
+		const jsonPart = decodeURIComponent(hash.substring(8));
+		const itemIds = JSON.parse(jsonPart);
+		appData.addBasketString(itemIds);
+		console.log(appData.basket);
+		//appData.restoreBasket(itemIds);
+		events.emit('basket:open');
+		// Восстанавливаем корзину с сохраненными ID
+	} catch (error) {
+		console.error('Error parsing basket hash:', error);
+		appData.restoreBasket([]);
+		events.emit('basket:open');
+	}
+}
+
+function handleHash() {
+	const hash = window.location.hash;
+
+	if (hash === '#rating') {
 		events.emit('rating:open');
+		return;
 	}
-	if (window.location.hash === '#memo') {
+	if (hash === '#memo') {
 		events.emit('memo:open');
+		return;
 	}
-	if (window.location.hash === '#tournament') {
+	if (hash === '#tournament') {
 		events.emit('tournament:open');
+		return;
 	}
-	if (window.location.hash === '#settings') {
+	if (hash === '#settings') {
 		events.emit('settings:open');
+		return;
 	}
-});
+	if (hash.startsWith('#basket/')) {
+		handleBasketHash(hash);
+		return;
+	}
+	if (hash.startsWith('#preview/')) {
+		const idFromHash = decodeURIComponent(hash.split('/')[1]);
+		const item = findItemById(idFromHash);
+		if (item) {
+			events.emit('card:select', item);
+		}
+		return;
+	}
+}
+
+window.addEventListener('hashchange', handleHash);
+document.addEventListener('DOMContentLoaded', handleHash);
 
 // Обработчики изменения предпросмотра продукта и добавления в корзину
 
@@ -453,7 +501,6 @@ events.on('preview:changed', (item: ICardItem) => {
 			item.description = res.description;
 			item.image = res.image;
 			item.price = res.price;
-
 			item.marker = res.marker;
 			item.markerTitle = res.markerTitle;
 			item.inBasket = res.inBasket;
@@ -499,8 +546,8 @@ events.on('preview:changed', (item: ICardItem) => {
 	}
 });
 
-function generateNewId(): string {
-	return '' + Math.random().toString(36).substr(2, 9);
+function generateNewId(originalId: string, price?: number): string {
+	return originalId + '+' + price + '-' + Math.round(Math.random() * 1000);
 }
 
 events.on('preview:changed', (item: ICardItem) => {
@@ -519,7 +566,7 @@ events.on('preview:changed', (item: ICardItem) => {
 
 			const card = new Card('card', cloneTemplate(cardTehlistTemplate), {
 				onClick: () => {
-					const newCartId = generateNewId();
+					const newCartId = generateNewId(item.id);
 					events.emit('product:add', {
 						...item,
 						id: newCartId,
@@ -565,13 +612,20 @@ events.on('preview:changed', (item: ICardItem) => {
 			// Создание карточки товара
 			const card = new Card('card', cloneTemplate(cardTehlistWheelsTemplate), {
 				onClick: (formData: { isWheels?: boolean; price: number }) => {
-					const newCartId = generateNewId();
-					events.emit('product:add', {
+					const selectedPrice = formData.price ?? item.price;
+
+					// Передаем выбранную цену в функцию generateNewId
+					const newCartId = generateNewId(item.id, selectedPrice);
+
+					const updatedItem = {
 						...item,
 						isWheels: formData.isWheels,
-						price: formData.price ?? item.price,
+						price: selectedPrice, // Используем актуальную цену
 						id: newCartId,
-					});
+					};
+
+					events.emit('product:add', updatedItem);
+					updateHashWithProduct(newCartId);
 				},
 				onChangeLike: () => {
 					if (appData.productLike(item)) {
@@ -599,6 +653,27 @@ events.on('preview:changed', (item: ICardItem) => {
 	}
 });
 
+function updateHashWithProduct(productId: string) {
+	const currentHash = location.hash.substring(1);
+	const ids = currentHash ? currentHash.split('+') : [];
+
+	// Проверяем, не добавлен ли уже товар с таким originalId
+	const newProductOriginalId = productId.split('+')[0];
+	const existingIndex = ids.findIndex(
+		(id) => id.split('+')[0] === newProductOriginalId
+	);
+
+	if (existingIndex !== -1) {
+		// Заменяем существующий ID
+		ids[existingIndex] = productId;
+	} else {
+		// Добавляем новый ID
+		ids.push(productId);
+	}
+
+	location.hash = ids.join('+');
+}
+
 events.on('preview:changed', (item: ICardItem) => {
 	if (item && item.type === 'machine') {
 		api.getFightingMachineItem(item.id).then((res) => {
@@ -616,7 +691,7 @@ events.on('preview:changed', (item: ICardItem) => {
 			// Создание карточки товара
 			const card = new Card('card', cloneTemplate(cardFightMachineTemplate), {
 				onClick: (formData: { weapons?: IItemWeapons }) => {
-					const newCartId = generateNewId();
+					const newCartId = generateNewId(item.id);
 					events.emit('product:add', {
 						...item,
 						quantity: 0,
@@ -650,19 +725,6 @@ events.on('preview:changed', (item: ICardItem) => {
 			card.categoryPadding();
 		});
 	}
-});
-
-//Открытие корзины товаров
-events.on('basket:open', () => {
-	page.locked = true;
-	modal.render({
-		content: basket.render({}),
-	});
-	const jsonStr = JSON.stringify(
-		appData.getOrderProducts().map((item) => item.id)
-	);
-
-	location.hash = encodeURIComponent(jsonStr);
 });
 
 events.on('basket:clear', () => {
@@ -713,6 +775,37 @@ function NotKBF(mass: ICardItem[]) {
 
 function NotAOBF(mass: ICardItem[]) {
 	return mass.filter((el: ICardItem) => !el.category.includes('(АОБФ)'));
+}
+
+function setBackground(items: ICardItem[]) {
+	const galleryItems = document.querySelectorAll('.gallery__item');
+
+	galleryItems.forEach((galleryItem) => {
+		// Сбрасываем фон для всех элементов
+		(galleryItem as HTMLElement).style.background = '';
+
+		// Находим заголовок товара в DOM
+		const titleElement = galleryItem.querySelector('.card__title');
+		if (!titleElement) return;
+
+		const title = titleElement.textContent?.trim() || '';
+
+		// Ищем соответствующий товар в данных
+		const itemData = items.find((item) => item.title.trim() === title);
+
+		// Если нашли товар и он имеет категорию (КБФ) - применяем стиль
+		if (itemData && itemData.category && itemData.category.includes('(КБФ)')) {
+			(galleryItem as HTMLElement).classList.add('backKBF');
+		} else if (
+			itemData &&
+			itemData.category &&
+			itemData.category.includes('(АОБФ)')
+		) {
+			(galleryItem as HTMLElement).classList.add('backAOBF');
+		} else {
+			(galleryItem as HTMLElement).classList.add('backOriginal');
+		}
+	});
 }
 
 //Получаем массив товаров с сервера

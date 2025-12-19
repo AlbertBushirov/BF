@@ -24,6 +24,53 @@ export class AppData extends Model<IProductItem> {
 		}
 	}
 
+	//Добавить товары по сроке
+	addBasketString(itemIds: string[]) {
+		itemIds.forEach((inputId) => {
+			// Извлекаем часть до '+' из входного id
+			const baseId = inputId.split('+')[0];
+
+			const alreadyInBasket = this.basket.some(
+				(item) => item.id.split('+')[0] === baseId
+			);
+			if (!alreadyInBasket) {
+				const item = this.items.find(
+					(item) => item.id.split('+')[0] === baseId
+				);
+				if (item) {
+					this.basket.push(item);
+				}
+			}
+		});
+		this.updateBasket();
+	}
+
+	//Удаление продукта из корзины
+	removeFromBasket(id: string) {
+		this.basket = this.basket.filter((it) => it.id !== id);
+		this.emitChanges('basket:changed');
+	}
+
+	restoreBasket(itemIds: string[]) {
+		this.basket = [];
+
+		itemIds.forEach((id) => {
+			// Ищем оригинальный товар по основной части ID
+			const originalId = id.split('+')[0]; // получаем оригинальный ID без суффикса
+			const originalItem = this.items.find((item) => item.id === originalId);
+
+			if (originalItem) {
+				// Создаем копию с сохраненным ID
+				this.basket.push({
+					...originalItem,
+					id: id, // сохраняем оригинальный сгенерированный ID
+				});
+			}
+		});
+
+		this.updateBasket();
+	}
+
 	//Добавить товар в Избранное
 	addFavorites(item: ICardItem) {
 		if (!this.productLike(item)) {
@@ -37,12 +84,6 @@ export class AppData extends Model<IProductItem> {
 		this.favorites = this.favorites.filter((it) => it.id !== id);
 		this.saveFavoritesToLocalStorage();
 		this.emitChanges('items:changed');
-	}
-
-	productLike(item: ICardItem): boolean {
-		return Boolean(
-			this.favorites.find((liketItem) => liketItem.id === item.id)
-		);
 	}
 
 	saveFavoritesToLocalStorage() {
@@ -65,12 +106,18 @@ export class AppData extends Model<IProductItem> {
 		}
 	}
 
+	productLike(item: ICardItem): boolean {
+		return Boolean(
+			this.favorites.find((liketItem) => liketItem.id === item.id)
+		);
+	}
+
 	//Проверка, находится ли продукт в заказе.
 	productOrder(item: ICardItem): boolean {
 		return Boolean(this.basket.find((basketItem) => basketItem.id === item.id));
 	}
 
-	//Очистить корзину после заказа
+	//Очистить корзину
 	clearBasket() {
 		this.basket = [];
 		this.updateBasket();
@@ -84,14 +131,6 @@ export class AppData extends Model<IProductItem> {
 	updateFavorites() {
 		this.emitChanges('items:changed', this.favorites);
 	}
-
-	//Удаление продукта из корзины
-	removeFromBasket(id: string) {
-		this.basket = this.basket.filter((it) => it.id !== id);
-		this.emitChanges('basket:changed');
-	}
-
-	//Удаление продукта из корзины
 
 	//Получение продуктов из заказа
 	getOrderProducts(): ICardItem[] {
@@ -116,7 +155,9 @@ export class AppData extends Model<IProductItem> {
 	}
 
 	setPreview(item: ICardItem) {
-		this.preview = item.id;
-		this.emitChanges('preview:changed', item);
+		if (item && item.id) {
+			this.preview = item.id;
+			this.emitChanges('preview:changed', item);
+		}
 	}
 }

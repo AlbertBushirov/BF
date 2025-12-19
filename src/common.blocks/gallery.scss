@@ -19,13 +19,33 @@
 	opacity: 0.8;
 }
 
-.gallery__item {
-	position: relative;
-	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+.backOriginal {
+	background: linear-gradient(rgba(17, 17, 17, 0.6), rgba(0, 0, 0, 0.6)),
 		url(../images/Fons/Fon_Gallery.jpg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+}
+
+.backKBF {
+	background: linear-gradient(rgba(12, 27, 70, 0.6), rgba(0, 0, 0, 0.6)),
+		url(../images/Fons/fon_KBF.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.backAOBF {
+	background: linear-gradient(rgba(61, 9, 9, 0.514), rgba(0, 0, 0, 0.6)),
+		url(../images/Fons/fon_AOBF.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.gallery__item {
+	position: relative;
+
 	.gallery_marker__image {
 		position: absolute;
 		width: 30px;
@@ -58,8 +78,8 @@
 		-moz-appearance: none;
 		width: 17px;
 		height: 15px;
-		left: -35px;
-		bottom: 4px;
+		left: 70px;
+		bottom: 12px;
 		background-image: url(../images/like.png);
 		background-position: center;
 		background-size: cover;
