@@ -9,7 +9,12 @@ import {
 import { EventEmitter } from './components/base/events';
 import { WebLarekAPI } from './components/data/ExtensionApi';
 import { AppData, CatalogChangeEvent } from './components/data/AppData';
-import { Card, BasketElement } from './components/View/Card';
+import {
+	Card,
+	BasketElement,
+	CardAdd,
+	CardAddHero,
+} from './components/View/Card';
 import { cloneTemplate, ensureElement } from './utils/utils';
 import { Page } from './components/View/Page';
 import { Modal } from './components/View/Modal';
@@ -27,7 +32,8 @@ const modal = new Modal(ensureElement<HTMLElement>('#modal-container'), events);
 const page = new Page(document.body, events);
 //const favoritesPage = new FavoritesPage(document.body, events);
 const cardCatalogTemplate = ensureElement<HTMLTemplateElement>('#card-catalog');
-
+const cardAddTemplate = ensureElement<HTMLTemplateElement>('#card-add');
+const newOBETemplate = ensureElement<HTMLTemplateElement>('#card-addOBE');
 const cardPreviewTemplate = ensureElement<HTMLTemplateElement>('#card-preview');
 const cardTehlistTemplate = ensureElement<HTMLTemplateElement>('#card-tehlist');
 const cardTehlistWheelsTemplate = ensureElement<HTMLTemplateElement>(
@@ -48,6 +54,7 @@ const cardBasketTemplateFM = ensureElement<HTMLTemplateElement>(
 const ratingTemplate = ensureElement<HTMLTemplateElement>('#rating');
 const settingsTemplate = ensureElement<HTMLTemplateElement>('#settings');
 const searchTemplate = ensureElement<HTMLElement>('.search');
+const newCardTemplate = ensureElement<HTMLElement>('.new_card');
 
 const tournamentTemplate = ensureElement<HTMLTemplateElement>('#tournament');
 
@@ -63,6 +70,10 @@ const rating = new Rating(cloneTemplate(ratingTemplate), events);
 const settings = new Settings(cloneTemplate(settingsTemplate), events);
 
 const tournament = new Tournament(cloneTemplate(tournamentTemplate), events);
+
+const cardAdd = new CardAdd(cloneTemplate(cardAddTemplate), events);
+
+const cardAddOBE = new CardAddHero(cloneTemplate(newOBETemplate), events);
 
 const categoryOrder = [
 	'Войска Колдуна',
@@ -125,8 +136,8 @@ events.on<CatalogChangeEvent>('items:changed', () => {
 		const card = new Card('card', cloneTemplate(cardCatalogTemplate), {
 			onClick: () => events.emit('card:select', item),
 		});
-		//const checkedAttr: boolean = appData.productLike(item);
-		//card.buttonLike = checkedAttr;
+		/*const checkedAttr: boolean = appData.productLike(item);
+		card.buttonLike = checkedAttr;*/
 
 		card.marker = item.marker;
 		card.markerTitle = item.markerTitle;
@@ -369,7 +380,6 @@ events.on('basket:changed', () => {
 
 // Открытие рейтинга игроков
 events.on('rating:open', () => {
-	page.locked = true;
 	modal.render({
 		content: rating.render({}),
 	});
@@ -377,30 +387,47 @@ events.on('rating:open', () => {
 
 //Открытие настроек
 events.on('settings:open', () => {
-	modal.render({
+	modal.renderMin({
 		content: settings.render({}),
 	});
 });
 
-//Открытие справочника
+//Открытие поиска
 events.on('search:open', () => {
 	searchTemplate.classList.add('active');
-	modal.render({
+	modal.renderMin({
 		content: searchTemplate,
 	});
 });
 
 // Открытие турнира
 events.on('tournament:open', () => {
-	page.locked = true;
 	modal.render({
 		content: tournament.render({}),
 	});
 });
 
+events.on('add:squad', () => {
+	modal.renderMin({
+		content: cardAdd.render({}),
+	});
+});
+
+events.on('add:hero', () => {
+	modal.renderMin({
+		content: cardAddOBE.render({}),
+	});
+});
+
+events.on('add:changed', () => {
+	newCardTemplate.classList.add('new_card_active');
+	modal.renderMin({
+		content: newCardTemplate,
+	});
+});
+
 //Открытие справочника
 events.on('memo:open', () => {
-	page.locked = true;
 	memoTemplate.classList.add('active');
 	modal.render({
 		content: memoTemplate,
@@ -417,7 +444,6 @@ events.on('product:delete', (item: ICardItem) => {
 
 //Открытие корзины товаров
 events.on('basket:open', () => {
-	page.locked = true;
 	modal.render({
 		content: basket.render({}),
 	});
@@ -443,7 +469,7 @@ function handleBasketHash(hash: string) {
 		const jsonPart = decodeURIComponent(hash.substring(8));
 		const itemIds = JSON.parse(jsonPart);
 		appData.addBasketString(itemIds);
-		console.log(appData.basket);
+
 		//appData.restoreBasket(itemIds);
 		events.emit('basket:open');
 		// Восстанавливаем корзину с сохраненными ID
@@ -456,7 +482,10 @@ function handleBasketHash(hash: string) {
 
 function handleHash() {
 	const hash = window.location.hash;
-
+	if (hash === '#home') {
+		modal.close();
+		return;
+	}
 	if (hash === '#rating') {
 		events.emit('rating:open');
 		return;
@@ -494,6 +523,11 @@ document.addEventListener('DOMContentLoaded', handleHash);
 
 events.on('preview:changed', (item: ICardItem) => {
 	if (item && item.type === 'list') {
+		const isLocalCard = !item.id.startsWith('api_');
+		if (isLocalCard) {
+			// Для локальной карточки используем данные напрямую
+			openPreviewModal(item);
+		}
 		api.getWarriorsItem(item.id).then((res) => {
 			item.id = res.id;
 			item.category = res.category;
@@ -535,7 +569,7 @@ events.on('preview:changed', (item: ICardItem) => {
 				: 'Добавить';
 			card.buttonTitle = buttonTitle;
 
-			modal.render({
+			modal.renderMin({
 				content: card.render({
 					...item,
 					button: buttonTitle,
@@ -546,12 +580,56 @@ events.on('preview:changed', (item: ICardItem) => {
 	}
 });
 
+function openPreviewModal(item: ICardItem) {
+	const card = new Card('card', cloneTemplate(cardPreviewTemplate), {
+		onClick: () => {
+			if (appData.productOrder(item)) {
+				appData.removeFromBasket(item.id);
+				modal.close();
+			} else {
+				events.emit('product:add', item);
+			}
+		},
+		onChangeLike: () => {
+			if (appData.productLike(item)) {
+				appData.removeFromLike(item.id);
+				modal.close();
+			} else {
+				events.emit('product:addLike', item);
+			}
+		},
+	});
+
+	card.BasedOnLike();
+
+	const checkedAttr: boolean = appData.productLike(item);
+	card.buttonLike = checkedAttr;
+
+	const buttonTitle: string = appData.productOrder(item)
+		? 'Убрать'
+		: 'Добавить';
+	card.buttonTitle = buttonTitle;
+
+	modal.renderMin({
+		content: card.render({
+			...item,
+			button: buttonTitle,
+		}),
+	});
+	card.categoryPadding();
+}
+
 function generateNewId(originalId: string, price?: number): string {
 	return originalId + '+' + price + '-' + Math.round(Math.random() * 1000);
 }
 
 events.on('preview:changed', (item: ICardItem) => {
 	if (item && item.type === 'tech') {
+		const isLocalCard = !item.id.startsWith('api_');
+		if (isLocalCard) {
+			// Для локальной карточки используем данные напрямую
+			openPreviewHero(item);
+		}
 		api.getWeaponsItem(item.id).then((res) => {
 			item.id = res.id;
 			item.category = res.category;
@@ -586,7 +664,7 @@ events.on('preview:changed', (item: ICardItem) => {
 
 			const checkedAttr: boolean = appData.productLike(item);
 			card.buttonLike = checkedAttr;
-			modal.render({
+			modal.renderMin({
 				content: card.render({
 					...item,
 				}),
@@ -595,6 +673,37 @@ events.on('preview:changed', (item: ICardItem) => {
 		});
 	}
 });
+
+function openPreviewHero(item: ICardItem) {
+	const card = new Card('card', cloneTemplate(cardTehlistTemplate), {
+		onClick: () => {
+			const newCartId = generateNewId(item.id);
+			events.emit('product:add', {
+				...item,
+				id: newCartId,
+			});
+		},
+		onChangeLike: () => {
+			if (appData.productLike(item)) {
+				appData.removeFromLike(item.id);
+
+				modal.close();
+			} else {
+				events.emit('product:addLike', item);
+			}
+		},
+	});
+	card.BasedOnLike();
+
+	const checkedAttr: boolean = appData.productLike(item);
+	card.buttonLike = checkedAttr;
+	modal.renderMin({
+		content: card.render({
+			...item,
+		}),
+	});
+	card.categoryPadding();
+}
 
 events.on('preview:changed', (item: ICardItem) => {
 	if (item && item.type === 'wheels') {
@@ -644,7 +753,7 @@ events.on('preview:changed', (item: ICardItem) => {
 
 			const checkedAttr: boolean = appData.productLike(item);
 			card.buttonLike = checkedAttr;
-			modal.render({
+			modal.renderMin({
 				content: card.render({
 					...item,
 				}),
@@ -716,7 +825,7 @@ events.on('preview:changed', (item: ICardItem) => {
 			const checkedAttr: boolean = appData.productLike(item) ? true : false;
 			card.buttonLike = checkedAttr;
 
-			modal.render({
+			modal.renderMin({
 				content: card.render({
 					...item,
 				}),
@@ -808,7 +917,6 @@ function setBackground(items: ICardItem[]) {
 	});
 }
 
-//Получаем массив товаров с сервера
 Promise.all([
 	api.getWarriorsList(),
 	api.getWeaponsList(),
@@ -829,6 +937,19 @@ Promise.all([
 
 			let isKBFEnabled = false;
 			let isAOBFEnabled = false;
+
+			events.on('card:add', () => {
+				combinedList.push(cardAdd.newCard());
+				console.log(cardAdd.newCard());
+				appData.setCatalog(combinedList);
+				modal.close();
+			});
+
+			events.on('card:addHero', () => {
+				combinedList.push(cardAddOBE.newOBE());
+				appData.setCatalog(combinedList);
+				modal.close();
+			});
 
 			function applyFilters() {
 				let filteredList = [...combinedList];
@@ -896,36 +1017,36 @@ Promise.all([
 					const target = e.target as HTMLInputElement;
 					const query = target.value.toLowerCase().trim();
 
+					// Если поисковой запрос пустой - сбрасываем всё
+					if (!query) {
+						return;
+					}
+
 					items.forEach((item) => {
 						const originalText = item.dataset.originalText || '';
 						const text = originalText.toLowerCase();
 						const matches = text.includes(query);
 
-						// Фильтрация: скрываем/показываем
 						item.classList.toggle('hidden', !matches);
 
-						if (matches && query) {
-							// Подсветка совпадений
-							const regex = new RegExp(
-								`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`,
-								'gi'
-							);
+						if (matches) {
+							const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+							const regex = new RegExp(`(${escapedQuery})`, 'gi');
 							const highlighted = originalText.replace(
 								regex,
 								'<mark>$1</mark>'
 							);
 							item.innerHTML = highlighted;
 						} else {
-							// Возвращаем оригинальный текст без подсветки
 							item.innerHTML = originalText;
 						}
 					});
 
-					// Прокрутка до первого видимого элемента
+					// Прокрутка
 					const firstVisible = document.querySelector(
 						'.card__title:not(.hidden)'
 					);
-					if (firstVisible && query) {
+					if (firstVisible) {
 						firstVisible.scrollIntoView({
 							behavior: 'smooth',
 							block: 'center',

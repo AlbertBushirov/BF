@@ -1,7 +1,7 @@
 import { cloneTemplate, ensureElement } from '../../utils/utils';
 import { Component } from '../base/Component';
 import { EventEmitter } from '../base/events';
-import { ICardItem, IItemWeapons } from '../../types';
+import { ICardItem, IItemWeapons, IListItem, ITehListEtem } from '../../types';
 import { Weapon } from './Weapon';
 
 interface ICardActions {
@@ -382,9 +382,6 @@ export class Card extends Component<ICardItem> {
 
 	set isWheels(value: boolean) {
 		this._inputWheels.checked = value;
-		const url = new URL(window.location.href);
-		url.searchParams.set('wheels', 'value');
-		history.pushState({}, '', url.toString());
 	}
 
 	set marker(value: string) {
@@ -423,6 +420,196 @@ export class Card extends Component<ICardItem> {
 			this.renderWeapons(data.weapons);
 		}
 		return element;
+	}
+}
+
+interface ICardAdd {
+	description: string;
+	image: string;
+}
+
+export class CardAdd extends Component<ICardAdd> {
+	protected _title: HTMLInputElement;
+	protected _image?: HTMLInputElement;
+	public _category?: HTMLInputElement;
+	protected _description?: HTMLInputElement;
+	protected _button?: HTMLButtonElement;
+	protected _price: HTMLInputElement;
+	protected _buttonSquad: HTMLButtonElement;
+	protected _buttonHero: HTMLButtonElement;
+	protected _additional: HTMLInputElement;
+
+	constructor(container: HTMLElement, events: EventEmitter) {
+		super(container);
+		this._title = ensureElement<HTMLInputElement>('.card__title', container);
+		this.events = events;
+		this._image = container.querySelector('.cardAdd__image');
+		this._category = container.querySelector('.card__category');
+		this._description = container.querySelector('.cardAdd__description');
+		this._button = container.querySelector('.card__button');
+		this._price = ensureElement<HTMLInputElement>('.card__price', container);
+		this._buttonSquad = ensureElement<HTMLButtonElement>('.new_squad');
+		this._buttonHero = ensureElement<HTMLButtonElement>('.new_hero');
+		this._additional = ensureElement<HTMLInputElement>(
+			'.cardAdd___additional',
+			container
+		);
+
+		this._buttonSquad.addEventListener('click', () => {
+			this.events.emit('add:squad');
+		});
+
+		this._buttonHero.addEventListener('click', () => {
+			this.events.emit('add:hero');
+		});
+
+		this._button.addEventListener('click', () => {
+			this.events.emit('card:add');
+		});
+
+		this.addInputListeners();
+	}
+
+	protected addInputListeners(): void {
+		const inputs = [
+			this._title,
+			this._image,
+			this._category,
+			this._description,
+			this._price,
+		].filter(Boolean) as HTMLInputElement[];
+
+		inputs.forEach((input) => {
+			input.addEventListener('input', () => {
+				this.checkFormValidity();
+			});
+		});
+	}
+
+	protected checkFormValidity(): void {
+		if (!this._button) return;
+
+		const isTitleValid = this._title.value.trim() !== '';
+		const isPriceValid =
+			this._price.value.trim() !== '' && !isNaN(Number(this._price.value));
+
+		const isCategoryValid = this._category?.value.trim() !== '';
+
+		// Активируем кнопку только когда все обязательные поля заполнены
+		this._button.disabled = !(isTitleValid && isPriceValid && isCategoryValid);
+	}
+
+	// Геттер для проверки готовности формы
+	public get isFormValid(): boolean {
+		return !this._button?.disabled;
+	}
+
+	newCard(): ICardItem {
+		const obj: IListItem = {
+			type: 'list',
+			id: this.transliterate(this._title.value) || '',
+			title: this._title.value || '',
+			category: this._category.value || '',
+			description: this._description.value || '',
+			image: this._image.value || '',
+			price: parseInt(this._price.value) || 0,
+			inBasket: true,
+			button: 'xt gbcfnm z [p',
+			directory: this._additional.value || '',
+		};
+		return obj;
+	}
+}
+
+export class CardAddHero extends Component<ICardAdd> {
+	protected _title: HTMLInputElement;
+	protected _image?: HTMLInputElement;
+	public _category?: HTMLInputElement;
+	protected _description?: HTMLInputElement;
+	protected _button?: HTMLButtonElement;
+	protected _price: HTMLInputElement;
+	protected _buttonSquad: HTMLButtonElement;
+	protected _buttonHero: HTMLButtonElement;
+	protected _additional: HTMLInputElement;
+
+	constructor(container: HTMLElement, events: EventEmitter) {
+		super(container);
+		this._title = ensureElement<HTMLInputElement>('.card__title', container);
+		this.events = events;
+		this._image = container.querySelector('.cardAdd__image');
+		this._category = container.querySelector('.card__category');
+		this._description = container.querySelector('.cardAdd__description');
+		this._button = container.querySelector('.card__button');
+		this._price = ensureElement<HTMLInputElement>('.card__price', container);
+		this._buttonSquad = ensureElement<HTMLButtonElement>('.new_squad');
+		this._buttonHero = ensureElement<HTMLButtonElement>('.new_hero');
+		this._additional = ensureElement<HTMLInputElement>(
+			'.cardAdd___additional',
+			container
+		);
+
+		this._buttonSquad.addEventListener('click', () => {
+			this.events.emit('add:squad');
+		});
+
+		this._buttonHero.addEventListener('click', () => {
+			this.events.emit('add:hero');
+		});
+
+		this._button.addEventListener('click', () => {
+			this.events.emit('card:addHero');
+		});
+
+		this.addInputListeners();
+	}
+
+	protected addInputListeners(): void {
+		const inputs = [
+			this._title,
+			this._image,
+			this._category,
+			this._description,
+			this._price,
+		].filter(Boolean) as HTMLInputElement[];
+
+		inputs.forEach((input) => {
+			input.addEventListener('input', () => {
+				this.checkFormValidity();
+			});
+		});
+	}
+
+	protected checkFormValidity(): void {
+		if (!this._button) return;
+
+		const isTitleValid = this._title.value.trim() !== '';
+		const isPriceValid =
+			this._price.value.trim() !== '' && !isNaN(Number(this._price.value));
+
+		const isCategoryValid = this._category?.value.trim() !== '';
+
+		// Активируем кнопку только когда все обязательные поля заполнены
+		this._button.disabled = !(isTitleValid && isPriceValid && isCategoryValid);
+	}
+
+	// Геттер для проверки готовности формы
+	public get isFormValid(): boolean {
+		return !this._button?.disabled;
+	}
+
+	newOBE(): ICardItem {
+		const obj: ITehListEtem = {
+			type: 'tech',
+			id: this.transliterate(this._title.value) || '',
+			title: this._title.value || '',
+			category: this._category.value || '',
+			image: this._image.value || '',
+			price: parseInt(this._price.value) || 0,
+			inBasket: true,
+			button: '',
+			directory: this._additional.value || '',
+		};
+		return obj;
 	}
 }
 
@@ -610,9 +797,6 @@ export class BasketElement extends Component<IBasketItem> {
 
 	set isWheels(value: boolean) {
 		this._inputWheels.checked = value;
-		const url = new URL(window.location.href);
-		url.searchParams.set('wheels', 'value');
-		history.pushState({}, '', url.toString());
 	}
 
 	set isWeapons(value: boolean) {

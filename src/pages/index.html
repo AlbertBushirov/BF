@@ -39,7 +39,7 @@
 					<a class="header__logo" href="#">
 						<img
 							class="header__logo-image"
-							src="<%=require('../images/new_year_logo.png')%>"
+							src="<%=require('../images/logo.png')%>"
 							alt="БF assistent logo"
 						/>
 					</a>
@@ -71,7 +71,9 @@
 					<span class="header_price">Сумма ростера: 0 очков</span>
 				</div>
 			</header>
-			<main class="gallery"></main>
+			<main class="gallery">
+				<button class="gallery__item card"></button>
+			</main>
 			<span class="favorites__footer">0</span>
 		</div>
 		<div class="modal" id="modal-container">
@@ -91,6 +93,81 @@
 					<span class="card__price"></span>
 				</div>
 			</button>
+		</template>
+
+		<template id="card-add">
+			<div class="card_add">
+				<div class="cardAdd__column">
+					<div class="container__image">
+						<input name=""
+							class="cardAdd__image"
+							type="text"
+							placeholder="армлист отряда"
+						/>
+					</div>
+					<input
+						class="card__category"
+						type="text"
+						placeholder="фракция отряда"
+					/>
+					<input
+						class="card__title"
+						type="text"
+						placeholder="название отряда"
+					/>
+
+					
+						<input
+							class="cardAdd__description"
+							type="text"
+							placeholder="артефакт отряда"
+						/>
+				
+					<div class="card__row">
+						<button disabled class="button card__button">Сохранить</button>
+						<input
+							class="card__price"
+							type="number"
+							placeholder="цена отряда"
+						/>
+					</div>
+					<input class="cardAdd___additional" type="text"
+							placeholder="описание артефакта"></input>
+				</div>
+			</div>
+		</template>
+
+		<template id="card-addOBE">
+			<div class="cardAdd__column">
+				<div class="container__image">
+						<input
+							class="cardAdd__image"
+							type="text"
+							placeholder="армлист ОБЕ (вставить ссылку на картинку)"
+						/>
+					</div>
+				<input
+						class="card__category"
+						type="text"
+						placeholder="фракция ОБЕ"
+					/>
+				<input class="cardAdd___additional" type="text"
+							placeholder="описание способностей"></input>
+				<input
+						class="card__title"
+						type="text"
+						placeholder="название ОБЕ"
+					/>
+				<div class="card__row">
+					
+					<button disabled class="button card__button">Сохранить</button>
+					<input
+							class="card__price"
+							type="number"
+							placeholder="цена ОБЕ"
+						/>
+				</div>
+			</div>
 		</template>
 
 		<template id="card-preview">
@@ -242,8 +319,10 @@
 			<div class="basket">
 				<h2 class="modal__title">Просмотр армии</h2>
 				<ul class="basket__list">
-					<img class="card__image" src="" alt="" />
-					<img class="card__description" src="" alt="" />
+					<li class="basket__item">
+						<img class="card__image" src="" alt="" />
+						<img class="card__description" src="" alt="" />
+					</li>
 				</ul>
 				<div class="modal__actions">
 					<div class="basket_buttons">
@@ -251,7 +330,7 @@
 						<button class="button_save">
 							<img
 								class="floppy-image"
-								src="<%=require('../images/floppy.png')%>"
+								src="<%=require('../images/saveImage.png')%>"
 								alt="Дискета"
 							/>
 						</button>
@@ -441,6 +520,11 @@
 				</ul>
 			</div>
 		</template>
+
+		<div class="new_card">
+			<button class="button new_squad">Добавить отряд</button>
+			<button class="button new_hero">Додавить ОБЕ</button>
+		</div>
 
 		<div class="search">
 			<input
@@ -766,5 +850,20 @@
 				</li>
 			</ul>
 		</footer>
+		<div
+			id="print-container"
+			style="
+				position: absolute;
+				top: -9999px;
+				left: -9999px;
+				width: 880px;
+				max-width: 100vw;
+				overflow-x: hidden;
+				overflow-y: visible;
+				box-sizing: border-box;
+				background: white;
+				padding: 20px;
+			"
+		></div>
 	</body>
 </html>

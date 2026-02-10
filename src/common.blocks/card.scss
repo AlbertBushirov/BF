@@ -21,10 +21,6 @@ html {
 	}
 
 	&_tehList {
-		background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
-			url(../images/Fons/Fon_Preview.jpg);
-		background-position: center;
-		background-size: contain;
 		display: grid;
 		gap: 10px;
 		grid-template-rows: min-content 1fr;
@@ -34,6 +30,10 @@ html {
 			box-sizing: border-box;
 		}
 		@media (max-width: 450px) {
+			background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
+				url(../images/Fons/Fon_Preview.jpg);
+			background-position: center;
+			background-size: contain;
 			padding: 0px;
 			width: 100vw;
 			height: 100vh;
@@ -149,10 +149,6 @@ html {
 	}
 
 	&_tehList_wheels {
-		background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
-			url(../images/Fons/Fon_Preview.jpg);
-		background-position: center;
-		background-size: contain;
 		display: grid;
 		gap: 10px;
 		grid-template-rows: min-content 1fr;
@@ -162,6 +158,10 @@ html {
 			box-sizing: border-box;
 		}
 		@media (max-width: 450px) {
+			background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
+				url(../images/Fons/Fon_Preview.jpg);
+			background-position: center;
+			background-size: contain;
 			height: 100vh;
 			padding-top: 5px;
 			justify-content: center;
@@ -248,10 +248,6 @@ html {
 	}
 
 	&_fighting_machine {
-		background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
-			url(../images/Fons/Fon_Preview.jpg);
-		background-position: center;
-		background-size: contain;
 		display: grid;
 		gap: 10px;
 		grid-template-rows: min-content min-content min-content;
@@ -263,12 +259,16 @@ html {
 		@media (max-width: 450px) {
 			height: 100vh;
 			box-sizing: border-box;
-			margin-top: 15px;
+			margin-top: 25px;
 			border-radius: 0%;
 
 			gap: 5px 10px;
 			padding-block: 5px;
 			padding: 0px;
+			background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
+				url(../images/Fons/Fon_Preview.jpg);
+			background-position: center;
+			background-size: contain;
 		}
 
 		.gallery_marker__image {
@@ -307,7 +307,8 @@ html {
 				max-width: 65vw;
 			}
 			@media (max-height: 670px) {
-				max-width: 50vw;
+				max-width: 40vw;
+				grid-row: 3 / 4;
 			}
 		}
 
@@ -328,6 +329,7 @@ html {
 			grid-column: 2;
 			grid-row: 2;
 			@media (max-width: 450px) {
+				position: fixed;
 				display: grid;
 				grid-template-rows: min-content min-content 0.95fr;
 				grid-template-columns: 1fr 1fr;
@@ -335,6 +337,7 @@ html {
 				grid-column: 1 / 3;
 				grid-row: 3;
 				column-gap: 5px;
+				bottom: 10vh;
 			}
 		}
 		.weapon_title {
@@ -397,10 +400,6 @@ html {
 		gap: 10px;
 		grid-template-rows: min-content min-content min-content;
 		grid-template-columns: 1fr 1fr;
-		background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
-			url(../images/Fons/Fon_Preview.jpg);
-		background-position: center;
-		background-size: contain;
 
 		@media (max-width: 730px) {
 			width: 100vw;
@@ -415,6 +414,10 @@ html {
 			grid-template-columns: 1fr 1fr;
 			gap: 20px;
 			padding-inline: 5px;
+			background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
+				url(../images/Fons/Fon_Preview.jpg);
+			background-position: center;
+			background-size: contain;
 		}
 
 		.directory {
@@ -474,14 +477,14 @@ html {
 			}
 		}
 
-		.container__image::before {
+		/*.container__image::before {
 			content: '';
 			position: absolute;
 			bottom: -23%;
 			left: 0;
-			width: 100%; /* Задаем ширину */
+			width: 100%; 
 			height: 30%;
-			background-image: url(../images/Fons/snow.png);
+			/*background-image: url(../images/Fons/snow.png);
 			background-size: contain;
 			background-repeat: no-repeat;
 			z-index: 1;
@@ -491,7 +494,7 @@ html {
 				bottom: -16%;
 				left: 5%;
 			}
-		}
+		}*/
 
 		.card__row {
 			@media (max-width: 450px) {
@@ -739,6 +742,9 @@ html {
 
 .img__machine {
 	max-height: 500px;
+	@media (max-width: 450px) {
+		margin-top: 6px;
+	}
 }
 
 .weapon {
@@ -807,6 +813,8 @@ html {
 		left: 100px;
 		margin-inline: 15px;
 		position: absolute;
+		width: 40px;
+		height: 35px;
 	}
 }
 
@@ -883,12 +891,12 @@ html {
 	}
 }
 
-.container__description::before {
+/*.container__description::before {
 	content: '';
 	position: absolute;
 	bottom: -23%;
 	left: 0;
-	width: 50%; /* Задаем ширину */
+	width: 50%;
 	height: 30%;
 	background-image: url(../images/Fons/snow.png);
 	background-size: contain;
@@ -900,5 +908,107 @@ html {
 		height: 25%;
 		bottom: -20%;
 		left: 0;
+	}
+}*/
+
+.new_card {
+	display: none;
+	&_active {
+		display: flex;
+		justify-content: center;
+		font-size: 15px;
+	}
+}
+
+.new_squad,
+.new_hero {
+	cursor: pointer;
+	padding: 15px;
+	margin-block: 10px;
+	margin-inline: 1px;
+	border-radius: 0.5rem;
+}
+
+.cardAdd__column {
+	display: grid;
+	gap: 10px;
+	grid-template-rows: min-content min-content min-content;
+	grid-template-columns: 1fr 1fr;
+	@media (max-width: 450px) {
+		height: 100vh;
+		border-radius: 0%;
+		padding-top: 45px;
+		justify-content: center;
+		grid-template-rows: min-content min-content min-content 0.75fr;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+		padding-inline: 5px;
+		background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)),
+			url(../images/Fons/Fon_Preview.jpg);
+		background-position: center;
+		background-size: contain;
+	}
+	.cardAdd___additional {
+		grid-column: 2;
+		width: 50%;
+		@media (max-width: 450px) {
+			width: 40vw;
+			font-size: 12px;
+		}
+	}
+	.card__category {
+		text-shadow: none;
+		color: black;
+	}
+	.cardAdd__description {
+		width: 50%;
+		@media (max-width: 450px) {
+			width: 40vw;
+			max-height: 14px;
+			font-size: 12px;
+			grid-row: 4 / 4;
+			grid-column: 1 / 3;
+		}
+	}
+	.cardAdd__image {
+		width: 98.5%;
+		@media (max-width: 450px) {
+			width: 40vw;
+			font-size: 12px;
+			grid-row: 2 / 2;
+			grid-column: 1 / 2;
+		}
+	}
+	.card__price {
+		text-align: left;
+		@media (max-width: 450px) {
+			min-width: 10px;
+			width: 20vw;
+			font-size: 12px;
+		}
+	}
+	.card__title {
+		@media (max-width: 450px) {
+			font-size: 12px;
+			width: 40vw;
+		}
+	}
+
+	.card__row {
+		@media (max-width: 450px) {
+			position: fixed;
+			bottom: 1vh;
+			left: 5vw;
+
+			width: 100vw;
+		}
+	}
+
+	.card__title {
+		@media (max-width: 450px) {
+			width: 45vw;
+			grid-row: 2 / 2;
+			min-height: 0px;
+		}
 	}
 }

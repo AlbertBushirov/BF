@@ -3,7 +3,6 @@
 
 .modal {
 	@include mixins.sublayer;
-
 	position: absolute;
 	display: none;
 	justify-content: center;
@@ -24,35 +23,33 @@
 	&__container {
 		@include mixins.container;
 		@include mixins.flex(column);
-
+		height: 98vh;
 		gap: $defaultPadding;
 		border: 0.3px solid rgb(62, 62, 66);
 		background-color: $primary;
-		min-height: min-content;
 		min-width: min-content;
 		border-radius: 3rem;
-		box-sizing: border-box;
 		position: fixed;
 		top: auto;
 		left: 0;
 		right: 0;
-
-		max-height: 80vh;
-		@media (max-width: 730px) {
+		top: 4px;
+		@media (max-width: 1420px) {
 			width: 100vw;
 
 			padding: 5px;
 		}
 		@media (max-width: 450px) {
 			width: 100vw;
-
+			height: 100vh;
 			padding: 0px;
 			border-radius: 0px;
+			top: 0px;
 		}
 
 		&_locked {
 			position: absolute;
-			top: 4px;
+
 			@media (max-width: 450px) {
 				top: 0px;
 			}
@@ -60,9 +57,10 @@
 	}
 
 	&__content {
-		flex-grow: 1;
-		@media (max-width: 1420px) {
-		}
+		box-sizing: content-box;
+		overflow-x: hidden;
+		height: min-content;
+		height: 100%;
 	}
 
 	&__title {
@@ -72,12 +70,22 @@
 	}
 
 	&__actions {
-		@include mixins.flex(row);
 		margin-top: 20px;
 		align-items: center;
+		display: flex;
 		justify-content: space-between;
+		background-color: rgba(0, 0, 0, 0.8);
+		width: 90%;
+		position: absolute;
+		bottom: 2vw;
 		@media (max-width: 450px) {
+			padding-inline: 4vw;
+			padding-block: 1vw;
 			margin: 0px;
+			position: fixed;
+			bottom: 0vw;
+
+			width: 90vw;
 		}
 	}
 
@@ -93,6 +101,7 @@
 			position: fixed;
 			top: 7px;
 			right: 13px;
+			font-size: 1.6rem;
 		}
 	}
 
@@ -112,4 +121,9 @@
 			color: $error;
 		}
 	}
+}
+
+.activeMin {
+	height: min-content;
+	overflow-x: visible;
 }

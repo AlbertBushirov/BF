@@ -9,9 +9,14 @@ interface IModalData {
 export class Modal extends Component<IModalData> {
 	protected _closeButton: HTMLButtonElement;
 	protected _content: HTMLElement;
+	protected _modalContainer: HTMLElement;
 
 	constructor(container: HTMLElement, protected events: IEvents) {
 		super(container);
+		this._modalContainer = ensureElement<HTMLElement>(
+			'.modal__container',
+			container
+		);
 
 		this._closeButton = ensureElement<HTMLButtonElement>(
 			'.modal__close',
@@ -42,19 +47,29 @@ export class Modal extends Component<IModalData> {
 		this.content = null;
 		this.events.emit('modal:close');
 		window.location.hash = 'home';
+		document.body.style.overflow = '';
+		document.body.style.paddingRight = '';
 	}
 
-	private handleDocumentClick(event: MouseEvent): void {
-		const target = event.target as HTMLElement;
-		// Проверяем, был ли клик вне контейнера модального окна
-		if (!this.container.contains(target)) {
-			this.close();
-		}
+	renderMin(data: IModalData): HTMLElement {
+		const isMobile = window.innerWidth <= 768;
+		document.body.style.paddingRight = isMobile ? '5' : '15px';
+		document.body.style.overflow = 'hidden';
+		super.render(data);
+		this.open();
+		this._modalContainer.classList.add('activeMin');
+		this._content.classList.add('activeMin');
+		return this.container;
 	}
 
 	//Показать модальное окно
 	render(data: IModalData): HTMLElement {
+		const isMobile = window.innerWidth <= 768;
+		document.body.style.paddingRight = isMobile ? '5' : '15px';
+		document.body.style.overflow = 'hidden';
 		super.render(data);
+		this._modalContainer.classList.remove('activeMin');
+		this._content.classList.remove('activeMin');
 		this.open();
 		return this.container;
 	}

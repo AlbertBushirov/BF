@@ -30,6 +30,7 @@ export class Page extends Component<IPage> {
 	public _pointKBF: HTMLElement;
 	public _pointAOBF: HTMLElement;
 	protected _favoritesFooter: HTMLElement;
+	protected _cardAdd: HTMLElement;
 
 	constructor(container: HTMLElement, protected events: IEvents) {
 		super(container);
@@ -62,7 +63,7 @@ export class Page extends Component<IPage> {
 		this._pointSorcerer = ensureElement<HTMLElement>('.point_Sorcerer');
 		this._pointKBF = ensureElement<HTMLElement>('.point_KBF');
 		this._pointAOBF = ensureElement<HTMLElement>('.point_AOBF');
-
+		this._cardAdd = this._catalog.querySelector('.gallery__item');
 		this._basket.addEventListener('click', () => {
 			this.events.emit('basket:open');
 		});
@@ -84,6 +85,10 @@ export class Page extends Component<IPage> {
 		});
 		this._search.addEventListener('click', () => {
 			this.events.emit('search:open');
+		});
+
+		this._cardAdd.addEventListener('click', () => {
+			this.events.emit('add:changed');
 		});
 	}
 	//Установка значения счетчика корзины.
@@ -108,6 +113,9 @@ export class Page extends Component<IPage> {
 
 	set catalog(items: HTMLElement[]) {
 		this._catalog.replaceChildren(...items);
+		this._cardAdd.innerHTML =
+			'<span class="card__category card__category_soft"></span><h2 class="card__title">Добавить Боевую Единицу</h2><div class="card__row"><span class="card__price"></span></div>';
+		this._catalog.prepend(this._cardAdd);
 		if (!items.length) {
 			const emptyMessage = createElement<HTMLParagraphElement>('p');
 			this.setText(emptyMessage, 'У вас нет избранных боевых единиц');

@@ -57,56 +57,88 @@ export class Basket extends Component<IBasketView> {
 
 	private saveBasketAsImage() {
 		const basketList = document.querySelector('.basket__list') as HTMLElement;
+		if (!basketList) return;
 
-		if (!basketList) {
-			return;
-		}
+		const items = basketList.querySelectorAll('.basket__item');
+		const isMobile = window.innerWidth <= 768;
 
-		const items = this._list.querySelectorAll('.basket__item');
-
+		// Настройки стилей для захвата
 		if (!this._isArtefactSaveEnabled) {
-			basketList.style.width = '570px';
+			basketList.style.width = isMobile ? '400px' : '575px';
 		} else {
-			basketList.style.width = '880px';
+			basketList.style.width = isMobile ? '620px' : '885px';
 		}
+		items.forEach((item) => {
+			const basketItem = item as HTMLElement;
+			basketItem.style.paddingLeft = '10px';
+		});
 
-		html2canvas(basketList, {
-			ignoreElements: (element) => {
-				return (
-					(!this._isArtefactSaveEnabled &&
-						element.classList.contains('card__description')) ||
-					element.classList.contains('card__title') ||
-					element.classList.contains('basket__item-delete') ||
-					element.classList.contains('card__price_basket')
-				);
-			},
-			scale: 4,
-		})
-			.then((canvas) => {
-				const ctx = canvas.getContext('2d');
-				if (!ctx) {
-					console.error('Failed to get canvas context');
-					return;
-				}
+		// ✅ Создаём временный элемент с суммой
+		const totalText = this._total?.textContent || '';
+		const displayTotal = `Сумма ростера: ${totalText}`;
 
-				const logo = new Image();
-				logo.src = require('../../images/icon-dark.png'); // Путь к изображению
+		const totalElement = document.createElement('div');
+		totalElement.textContent = displayTotal;
+		totalElement.style.cssText = `
+		margin-top: 15px;
+		padding: 16px;
+		text-align: center;
+		font-size: ${isMobile ? '24px' : '32px'};
+		font-weight: bold;
+		background-color: rgba(0, 0, 0, 0.5);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.51);
+		width: 100%;
+		box-sizing: border-box;
+	`;
 
-				// Если не удалось загрузить логотип, просто сохраняем без него
-				const link = document.createElement('a');
-				link.href = canvas.toDataURL('image/jpeg', 1.0);
-				link.download = 'MyRoster.jpg';
-				link.click();
+		// Добавляем элемент в DOM
+		basketList.appendChild(totalElement);
 
-				items.forEach((item) => {
-					const basketItem = item as HTMLElement;
-					basketItem.style.paddingLeft = '';
-					basketList.style.width = '';
-				});
-			})
-			.catch((error) => {
-				console.error('Error generating image:', error);
+		// ✅ ВАЖНО: Дать браузеру один кадр для рендеринга
+		requestAnimationFrame(() => {
+			requestAnimationFrame(() => {
+				// Два кадра — для надёжности
+				html2canvas(basketList, {
+					ignoreElements: (element) => {
+						return (
+							(!this._isArtefactSaveEnabled &&
+								element.classList.contains('card__description')) ||
+							element.classList.contains('card__title') ||
+							element.classList.contains('basket__item-delete') ||
+							element.classList.contains('card__price_basket')
+						);
+					},
+					scale: 4,
+					useCORS: true,
+					allowTaint: true,
+				})
+					.then((canvas) => {
+						// Удаляем временный элемент
+						if (basketList.contains(totalElement)) {
+							basketList.removeChild(totalElement);
+						}
+
+						const link = document.createElement('a');
+						link.href = canvas.toDataURL('image/jpeg', 1.0);
+						link.download = 'MyRoster.jpg';
+						link.click();
+
+						// Сбрасываем стили
+						items.forEach((item) => {
+							const basketItem = item as HTMLElement;
+							basketItem.style.paddingLeft = '';
+						});
+						basketList.style.width = '';
+					})
+					.catch((error) => {
+						console.error('Error generating image:', error);
+						// Удаляем временный элемент даже при ошибке
+						if (basketList.contains(totalElement)) {
+							basketList.removeChild(totalElement);
+						}
+					});
 			});
+		});
 	}
 
 	set items(items: HTMLElement[]) {

@@ -8,6 +8,26 @@ ul {
 	padding: 0px;
 }
 
+.tournament {
+	box-sizing: content-box;
+	flex-grow: 1;
+	overflow-y: auto;
+	max-height: 100%;
+	&::-webkit-scrollbar {
+		width: 8px;
+	}
+	&::-webkit-scrollbar-track {
+		background: rgba(0, 0, 0, 0.3);
+	}
+	&::-webkit-scrollbar-thumb {
+		background: rgba(255, 255, 255, 0.4);
+		border-radius: 10px;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background: rgba(255, 255, 255, 0.6);
+	}
+}
+
 .tournament-item {
 	display: flex;
 	flex-direction: column;
@@ -56,8 +76,6 @@ ul {
 	background-color: rgb(155, 156, 156);
 	@media (max-width: 450px) {
 		font-size: 25px;
-		position: absolute;
-
 		width: 100vw;
 	}
 }
