@@ -13,7 +13,7 @@ export class Settings extends Component<IRatingView> {
 	public _favorites: HTMLInputElement;
 	public _KBF: HTMLInputElement;
 	public _AOBF: HTMLInputElement;
-	//public _inputnet: HTMLInputElement;
+	public _limit: HTMLInputElement;
 	constructor(container: HTMLElement, events: EventEmitter) {
 		super(container, new EventEmitter());
 		this._inputArtefact = container.querySelector(
@@ -33,6 +33,7 @@ export class Settings extends Component<IRatingView> {
 
 		this._KBF = container.querySelector('.KBF_armlist') as HTMLInputElement;
 		this._AOBF = container.querySelector('.AOBF_armlist') as HTMLInputElement;
+		this._limit = container.querySelector('.limit_roster') as HTMLInputElement;
 
 		this.events = events;
 
@@ -111,6 +112,25 @@ export class Settings extends Component<IRatingView> {
 				this.events.emit('favorites_on');
 			} else {
 				this.events.emit('favorites_off');
+			}
+		});
+
+		const limitEnabled = localStorage.getItem('limitSaveEnabled') === 'true';
+		this._limit.checked = limitEnabled;
+
+		if (limitEnabled) {
+			this.events.emit('limit_off');
+		} else {
+			this.events.emit('limit_on');
+		}
+
+		this._limit.addEventListener('change', () => {
+			if (this._limit.checked) {
+				localStorage.setItem('limitSaveEnabled', 'true');
+				this.events.emit('limit_off');
+			} else {
+				localStorage.setItem('limitSaveEnabled', 'false');
+				this.events.emit('limit_on');
 			}
 		});
 

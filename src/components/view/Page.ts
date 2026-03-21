@@ -31,7 +31,8 @@ export class Page extends Component<IPage> {
 	public _pointAOBF: HTMLElement;
 	protected _favoritesFooter: HTMLElement;
 	protected _cardAdd: HTMLElement;
-	protected _cardInput: HTMLInputElement;
+	protected _positioning: HTMLElement;
+	protected _subMenu: HTMLElement;
 
 	constructor(container: HTMLElement, protected events: IEvents) {
 		super(container);
@@ -65,7 +66,8 @@ export class Page extends Component<IPage> {
 		this._pointKBF = ensureElement<HTMLElement>('.point_KBF');
 		this._pointAOBF = ensureElement<HTMLElement>('.point_AOBF');
 		this._cardAdd = this._catalog.querySelector('.gallery__item');
-		//this._cardInput = this._catalog.querySelector('.card__input');
+		this._positioning = ensureElement<HTMLElement>('.positioning');
+		this._subMenu = this._positioning.querySelector('.sub-menu');
 
 		this._basket.addEventListener('click', () => {
 			this.events.emit('basket:open');
@@ -90,10 +92,19 @@ export class Page extends Component<IPage> {
 			this.events.emit('search:open');
 		});
 
-		this._catalog.addEventListener('click', (event) => {
-			if (event.target === this._cardAdd) {
-				this.events.emit('add:changed');
-			}
+		this._positioning.addEventListener('mouseenter', () => {
+			this._subMenu.classList.add('is-active');
+		});
+
+		this._positioning.addEventListener('click', () => {
+			this._subMenu.classList.add('is-active');
+		});
+
+		this._positioning.addEventListener('mouseleave', () => {
+			this._subMenu.classList.remove('is-active');
+		});
+		window.addEventListener('scroll', () => {
+			this._subMenu.classList.remove('is-active');
 		});
 	}
 	//Установка значения счетчика корзины.
@@ -117,11 +128,15 @@ export class Page extends Component<IPage> {
 	}
 
 	set catalog(items: HTMLElement[]) {
-		this._catalog.replaceChildren(...items);
+		const fragment = document.createDocumentFragment();
+		items.forEach((item) => {
+			fragment.appendChild(item);
+		});
+		this._catalog.replaceChildren(fragment);
 		this._cardAdd.innerHTML =
 			'<span class="card__category card__category_soft"></span><h2 class="card__title">Добавить Боевую Единицу</h2><div class="card__row"><span class="card__price"></span></div>';
 		this._catalog.prepend(this._cardAdd);
-		this._cardAdd.addEventListener('click', (event) => {
+		this._cardAdd.addEventListener('click', () => {
 			this.events.emit('add:changed');
 		});
 		if (!items.length) {

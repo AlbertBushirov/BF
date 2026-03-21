@@ -1257,8 +1257,47 @@ export const localArmy = [
 		markerTitle: 'Усилен Артефакт.',
 	},
 	{
+		id: 'SPServ-On',
+		title: 'Серв-Он',
+		category: 'Нейтральный отряд (КБФ)',
+		description: require('../images/Artefakti/Serv-On.jpg'),
+		image: require('../images/Storonie/SPServ-On.jpg'), // Прямой URL для удаленного изображения
+		price: 290,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPUlichnyye_Golubi',
+		title: 'Уличные Голуби',
+		category: 'Нейтральный отряд (КБФ)',
+		description: require('../images/Artefakti/Ulichnyye_Golubi.jpg'),
+		image: require('../images/Storonie/SPUlichnyye_Golubi.jpg'), // Прямой URL для удаленного изображения
+		price: 155,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPSled_Groma',
+		title: 'След Грома',
+		category: 'Нейтральный отряд (КБФ)',
+		description: require('../images/Artefakti/Sled_Groma.jpg'),
+		image: require('../images/Storonie/SPSled_Groma.jpg'), // Прямой URL для удаленного изображения
+		price: 215,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
 		id: 'SPHardkor',
-		title: 'отряд Хардкор',
+		title: 'Отряд Хардкор',
 		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Hardkor.jpg'),
 		image: require('../images/Storonie/SPHardkor.jpg'),
@@ -1464,7 +1503,6 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/marker_new.png'),
 	},
 	{
 		id: 'SPChasticiRazuma',
@@ -1524,8 +1562,9 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/marker_new.png'),
-		markerTitle: 'Новый адаптированный отряд',
+		marker: require('../images/Exclamation_marker.png'),
+		markerTitle:
+			'Ослаблен Артефакт. Установить воина можно только вне рукопашных схваток',
 	},
 	{
 		id: 'SPShampanoidi',
@@ -1625,7 +1664,7 @@ export const localArmy = [
 	},
 	{
 		id: 'SPGoblinilesa',
-		title: 'Гоблины дикого леса',
+		title: 'Гоблины Дикого Леса',
 		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/Goblinilesa.jpg'),
 		image: require('../images/Storonie/SPGoblinilesa.jpg'), // Прямой URL для удаленного изображения
@@ -1756,7 +1795,7 @@ export const localArmy = [
 	},
 	{
 		id: 'SPCherni_Ricari',
-		title: 'Чёрные рыцари',
+		title: 'Чёрные Рыцари',
 		category: 'Войско павшего мага (КБФ)',
 		description: require('../images/Artefakti/Cherni_Ricari.jpg'),
 		image: require('../images/Storonie/SPCherni_Ricari.jpg'), // Прямой URL для удаленного изображения
@@ -1839,7 +1878,7 @@ export const localArmy = [
 	},
 	{
 		id: 'SPSumerechniStrazhi',
-		title: 'Сумеречные стражи',
+		title: 'Сумеречные Стражи',
 		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/SumerechniStrazhi.jpg'),
 		image: require('../images/Storonie/SPSumerechniStrazhi.jpg'), // Прямой URL для удаленного изображения
@@ -1903,7 +1942,7 @@ export const localArmy = [
 	},
 	{
 		id: 'SPKhakylmoa',
-		title: 'Воины К`хакульмоа',
+		title: `Воины К'хакульмоа`,
 		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/Khakylmoa.jpg'),
 		image: require('../images/Storonie/SPKhakylmoa.jpg'), // Прямой URL для удаленного изображения
@@ -1967,6 +2006,18 @@ export const localArmy = [
 		description: require('../images/Artefakti/Pozhirateli_Mirov.jpg'),
 		image: require('../images/Storonie/SPPozhirateli_Mirov.jpg'),
 		price: 310,
+		inBasket: false,
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPOtbrosy',
+		title: 'Отбросы',
+		category: 'Легионы черной планеты (КБФ)',
+		description: require('../images/Artefakti/Otbrosy.jpg'),
+		image: require('../images/Storonie/SPOtbrosy.jpg'),
+		price: 225,
 		inBasket: false,
 		button: '',
 		marker: require('../images/marker_new.png'),
@@ -2279,7 +2330,7 @@ export const localArmy = [
 	},
 	{
 		id: 'SPDolg',
-		title: 'Долг',
+		title: 'Группировка Долг',
 		category: 'Альянс Свободных (АОБФ)',
 		description: require('../images/Artefakti/Dolg.jpg'),
 		image: require('../images/Storonie/SPDolg.jpg'),

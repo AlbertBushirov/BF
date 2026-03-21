@@ -27,7 +27,7 @@ export class Modal extends Component<IModalData> {
 		//обработчики событий для закрытия модального окна
 		this._closeButton.addEventListener('click', this.close.bind(this));
 		this.container.addEventListener('click', this.close.bind(this));
-
+		document.addEventListener('keydown', this.handleEscape);
 		this._content.addEventListener('click', (event) => event.stopPropagation());
 	}
 
@@ -49,7 +49,26 @@ export class Modal extends Component<IModalData> {
 		window.location.hash = 'home';
 		document.body.style.overflow = '';
 		document.body.style.paddingRight = '';
+
+		const highlightedTitles = document.querySelectorAll('.card__title');
+		highlightedTitles.forEach((titleElement) => {
+			const original = (titleElement as HTMLElement).dataset.originalText;
+			if (original) {
+				// Возвращаем чистый текст, удаляя всё, что внутри <mark>
+				titleElement.textContent = original;
+			}
+		});
+
+		// Опционально: показать все скрытые поиском товары
+		const hiddenItems = document.querySelectorAll('.gallery__item.hidden');
+		hiddenItems.forEach((item) => item.classList.remove('hidden'));
 	}
+
+	handleEscape = (evt: KeyboardEvent) => {
+		if (evt.key.toLowerCase() === 'escape') {
+			this.close();
+		}
+	};
 
 	renderMin(data: IModalData): HTMLElement {
 		const isMobile = window.innerWidth <= 768;

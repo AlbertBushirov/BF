@@ -2,7 +2,6 @@
 @use 'mixins';
 
 .header {
-	//background: linear-gradient(135deg, #3133a3 0%, #feb47b 50%, #ff6b9d 100%);
 	position: fixed;
 	background-color: $primary;
 	top: 0;
@@ -14,8 +13,9 @@
 		box-sizing: border-box;
 		border-bottom: 0.3px solid rgb(46, 46, 49);
 		padding-block: 1px;
-		display: flex;
-		flex-direction: row;
+		display: grid;
+		grid-template-rows: min-content min-content;
+		grid-template-columns: min-content min-content min-content min-content;
 		align-items: center;
 		justify-content: center;
 		@media (max-width: 990px) {
@@ -23,6 +23,7 @@
 			padding-inline: 5px;
 		}
 		@media (max-width: 450px) {
+			grid-template-columns: min-content min-content min-content;
 			width: 100%;
 			display: grid;
 			grid-template-rows: auto 1fr;
@@ -33,6 +34,8 @@
 	&__logo {
 		position: relative;
 		height: $headerElementsSize;
+		grid-column: 1 / 2;
+		justify-self: end;
 		&-image {
 			display: block;
 			height: 95%;
@@ -66,7 +69,7 @@
 	}
 
 	&__basket {
-		//@include mixins.icon($headerElementsSize, 'basket-2');
+		grid-column: 3 / 4;
 		@include mixins.link($primary, $hover);
 		background-image: url(../images/basket_logo.svg);
 		background-repeat: no-repeat;
@@ -102,6 +105,23 @@
 			width: 48px;
 		}
 	}
+
+	&_price {
+		grid-row: 1 / 2;
+		grid-column: 4 / 6;
+		min-height: min-content;
+		font-size: 16px;
+		min-width: 236px;
+		box-sizing: border-box;
+		@media (max-width: 450px) {
+			grid-row: 2 / 3;
+			grid-column: 1 / 4;
+			margin-top: 12px;
+			font-size: 16px;
+			text-align: center;
+			min-width: 200px;
+		}
+	}
 }
 
 nav {
@@ -113,9 +133,10 @@ nav {
 }
 
 .category_list {
+	position: relative;
 	padding: 0;
 	margin: 0;
-	height: 50px;
+	height: 60px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -144,57 +165,103 @@ nav {
 	border-radius: 3px;
 }
 
-.header_price {
+.sub-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	height: 0;
+	overflow: hidden;
+	pointer-events: none;
 	background-color: $primary;
-	min-height: min-content;
-	font-size: 16px;
-	min-width: 205px;
-	box-sizing: border-box;
+	list-style: none;
+	border-radius: 3px;
+	border: 0px solid rgb(46, 46, 49); // 0px, чтобы рамка не торчала при высоте 0
+	border-top: none;
+	transition: height 0.5s ease, opacity 0.3s ease, border-width 0.1s;
+}
+
+.sub-menu.is-active {
+	height: 390px;
+	pointer-events: all;
+	border-width: 0.3px;
 	@media (max-width: 450px) {
-		margin-top: 12px;
-		font-size: 16px;
-		text-align: center;
+		height: 320px;
 	}
 }
 
-.sub-menu {
-	display: none;
-	position: absolute;
-	padding: 10px;
-	list-style: none;
-	border-radius: 10%;
+.point_Coldun,
+.point_Necromancer,
+.point_Sorcerer,
+.point_GVS,
+.point_KBF,
+.point_AOBF {
+	display: flex;
+	align-items: center;
+	gap: 3px;
 }
 
-.sub-menu li a {
-	position: relative;
-	text-decoration: none;
-	padding: 6px 2px;
-}
-
-.sub-menu li a::after {
-	content: ''; /* Создаем линию */
-	position: absolute;
-	bottom: 7px; /* Размещаем снизу */
-	left: 0; /* Начинаем слева */
-	width: 0; /* Начальная ширина — 0 (не видно) */
-	height: 1px; /* Толщина линии */
-	background-color: currentColor; /* Цвет линии как у текста */
-	transition: width 0.3s ease; /* Плавная анимация ширины */
-}
-
-.sub-menu li a:hover {
-	background: none;
-}
-
-.sub-menu li a:hover::after {
-	width: 100%;
-}
-
-.positioning {
-	position: relative;
-}
-
-.positioning:hover .sub-menu {
+.point_Coldun::before {
+	content: '';
+	background-image: url(../images/Fons/Fon_Coldun.png);
+	background-position: left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 25px;
+	height: 25px;
 	display: block;
-	background-color: rgba(21, 23, 25, 0.9);
+}
+
+.point_Necromancer::before {
+	content: '';
+	background-image: url(../images/Fons/Fon_Necromant.png);
+	background-position: left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 25px;
+	height: 25px;
+	display: block;
+}
+
+.point_Sorcerer::before {
+	content: '';
+	background-image: url(../images/Fons/Fon_Charodey.png);
+	background-position: left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 25px;
+	height: 25px;
+	display: block;
+}
+
+.point_GVS::before {
+	content: '';
+	background-image: url(../images/Fons/Fon_GVS.png);
+	background-position: left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 25px;
+	height: 25px;
+	display: block;
+}
+
+.point_KBF::before {
+	content: '';
+	background-image: url(../images/Fons/point_KBF.jpg);
+	background-position: left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 23px;
+	height: 23px;
+	display: block;
+}
+
+.point_AOBF::before {
+	content: '';
+	background-image: url(../images/Fons/point_AOBF.png);
+	background-position: left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 30px;
+	display: block;
 }

@@ -3,7 +3,6 @@
 	flex-grow: 1;
 	overflow-y: auto;
 	max-height: 100%;
-
 	&::-webkit-scrollbar {
 		width: 8px;
 	}
@@ -19,6 +18,9 @@
 	}
 	@media (max-width: 900px) {
 		width: 100vw;
+		&::-webkit-scrollbar {
+			width: 0px;
+		}
 	}
 }
 
@@ -217,11 +219,12 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	z-index: 2;
-	width: 200%;
+	width: 52px;
 	aspect-ratio: 1/1;
 	@media (max-width: 450px) {
 		right: -10px;
 		bottom: 20px;
+		width: 32px;
 	}
 }
 
@@ -310,4 +313,48 @@
 
 .rating__item:nth-child(22) .rating__win::after {
 	background-image: url(../images/rang-shield_two.png);
+}
+
+.rating__item:nth-child(23) .rating__win::after {
+	background-image: url(../images/rang-four-corner.png);
+}
+
+.rating__item:nth-child(24) .rating__win::after {
+	background-image: url(../images/rang-three-corner.png);
+}
+
+.rating__item:nth-child(25) .rating__win::after {
+	background-image: url(../images/rang-two-corner.png);
+}
+
+.rating__item:nth-child(26) .rating__win::after {
+	background-image: url(../images/rang-one-corner.png);
+}
+
+.rating__item:nth-child(27) .rating__win::after {
+	background-image: url(../images/rang-four-strip.png);
+}
+
+.rating__item:nth-child(28) .rating__win::after {
+	background-image: url(../images/rang-three-strip.png);
+}
+
+.rating__item:nth-child(29) .rating__win::after {
+	background-image: url(../images/rang-two-strip.png);
+}
+
+.rating__item:nth-child(30) .rating__win::after {
+	background-image: url(../images/rang-one-strip.png);
+}
+
+.rating__item:nth-child(30) .rating__win::after {
+	background-image: url(../images/rang-one-strip.png);
+}
+
+.rating__item:nth-child(n + 31):nth-child(-n + 56) .rating__win::after {
+	background-image: url(../images/rang-square.png);
+}
+
+.rating__item:nth-child(n + 57):nth-child(-n + 65) .rating__win::after {
+	background-image: url(../images/rang-square-ziro.png);
 }

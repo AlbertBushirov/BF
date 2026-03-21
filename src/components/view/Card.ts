@@ -13,6 +13,7 @@ interface ICardActions {
 	onChange?: (data: { isWheels?: boolean; price?: number }) => void;
 	onChangeWeapon?: (data: { weapons?: IItemWeapons }) => void;
 	onChangeLike?: (data: { isLike?: boolean }) => void;
+	onClick2?: (data: { isCardInput?: boolean }) => void;
 }
 
 interface Category {
@@ -34,6 +35,7 @@ const category: Category = {
 	'Ст. производители (НО) ОБЕ': 'card__category_storonniye_NO',
 	'Альянс Свободных (КБФ)': 'card__category_storonniye_AS',
 	'Воители иных миров (КБФ)': 'card__category_storonniye_VIM',
+	'Воители иных миров ОБЕ (КБФ)': 'card__category_storonniye_VIM',
 	'Х-Бункер (КБФ)': 'card__category_storonniye_XB',
 	'Войско павшего мага (КБФ)': 'card__category_storonniye_VPM',
 	'Войско павшего мага ОБЕ (КБФ)': 'card__category_storonniye_VPM',
@@ -73,6 +75,7 @@ export class Card extends Component<ICardItem> {
 	protected _button?: HTMLButtonElement;
 	public _buttonLike: HTMLInputElement;
 	protected isLiked: boolean = false;
+	protected isCardInput: boolean = false;
 	protected volumeLevel: HTMLElement;
 	protected increaseButton: HTMLButtonElement;
 	protected decreaseButton: HTMLButtonElement;
@@ -83,6 +86,7 @@ export class Card extends Component<ICardItem> {
 	protected weapons?: IItemWeapons;
 	public volumeLevels: number[];
 	protected weaponNumperElements: HTMLElement[] = [];
+	protected _cardInput: HTMLInputElement;
 
 	constructor(
 		protected blockName: string,
@@ -95,7 +99,6 @@ export class Card extends Component<ICardItem> {
 		this._directory = container.querySelector('.directory');
 		this._description = container.querySelector('.card__description');
 		this._image = container.querySelector('.card__image');
-		this._gallery = container.querySelector('.gallery__item');
 		this._marker = container.querySelector('.gallery_marker__image');
 		this._markerTitle = container.querySelector('.gallery_marker__title');
 		this._markers = container.querySelector('.gallery__marker');
@@ -103,8 +106,7 @@ export class Card extends Component<ICardItem> {
 		this._button = container.querySelector('.card__button');
 		this._buttonLike = container.querySelector('.button_like_preview');
 		this._weapons = container.querySelector('.weapons-list');
-
-		// Ссылка на чекбокс
+		this._cardInput = container.querySelector('.card__input');
 		this._inputWheels = container.querySelector(
 			'.input_wheels'
 		) as HTMLInputElement;
@@ -139,6 +141,15 @@ export class Card extends Component<ICardItem> {
 				this.addClassButtonLikeActive();
 			});
 		}
+		if (action?.onClick2) {
+			const handleAction = () => {
+				action.onClick2({ isCardInput: this.isCardInput });
+			};
+
+			if (this._cardInput) {
+				this._cardInput.addEventListener('change', handleAction);
+			}
+		}
 	}
 
 	categoryPadding() {
@@ -155,7 +166,6 @@ export class Card extends Component<ICardItem> {
 				this._buttonLike.classList.remove('button_like_preview_active');
 			}
 		}
-		this.events.emit('favorites:changed');
 	}
 
 	private addEnlargedClassToImage() {
@@ -309,8 +319,17 @@ export class Card extends Component<ICardItem> {
 
 	//Отключение кнопки
 	disableButton(value: number | null) {
+		const isLimitReached = !value;
+
 		if (this._button) {
 			this._button.disabled = !value;
+		}
+		if (this._cardInput) {
+			this._cardInput.disabled = isLimitReached;
+
+			if (isLimitReached) {
+				this._cardInput.checked = false;
+			}
 		}
 	}
 
@@ -349,12 +368,16 @@ export class Card extends Component<ICardItem> {
 			this.setChecked(this._buttonLike, value);
 		}
 	}
+	set cardInput(value: boolean) {
+		if (this._cardInput) {
+			this.setChecked(this._cardInput, value);
+		}
+	}
 
 	set image(value: string) {
 		this.setImage(this._image, value, this.id);
 	}
 
-	//Проверка на 'Бесценно'
 	set price(value: number) {
 		this.setText(this._price, value ? `${value.toString()} очков` : 'Бесценно');
 		this.disableButton(value);
@@ -631,7 +654,6 @@ export class BasketElement extends Component<IBasketItem> {
 	protected _weapons?: HTMLInputElement;
 	protected weapons?: IItemWeapons;
 	protected _directory: HTMLElement;
-
 	constructor(
 		container: HTMLElement,
 		index: number,
@@ -639,7 +661,6 @@ export class BasketElement extends Component<IBasketItem> {
 		protected action?: ICardActions
 	) {
 		super(container);
-
 		this._index = ensureElement<HTMLElement>('.basket__item-index', container);
 		this.setText(this._index, index + 1);
 		this._directory = container.querySelector('.directory');

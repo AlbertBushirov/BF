@@ -146,6 +146,84 @@
 .floppy-image {
 	width: 50px;
 	@media (max-width: 450px) {
-		width: 30px;
+		width: 35px;
+	}
+}
+
+.input_limit::placeholder {
+	border-radius: 3px;
+	opacity: 1;
+	font-size: 13px;
+	@media (max-width: 450px) {
+		font-size: 12px;
+	}
+}
+
+.input_limit:focus {
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.input_limit.active {
+	display: flex;
+}
+
+.input_limit {
+	height: 16px;
+	padding: 10px 16px;
+	border: 1px solid #e0e0e0;
+	border-radius: 6px;
+	outline: none;
+	transition: border-color 0.2s ease;
+	width: 150px; /* Фиксированная ширина для аккуратности */
+	@media (max-width: 450px) {
+		font-size: 14px;
+		width: 85px;
+		padding: 5px 10px;
+		height: 25px;
+	}
+}
+
+.button_limit {
+	padding: 10px 20px;
+	color: #000000;
+	border: none;
+	border-radius: 6px;
+	font-size: 14px;
+	cursor: pointer;
+	transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.button_limit:hover:not(:disabled) {
+	opacity: 0.8;
+}
+
+.button_limit:active:not(:disabled) {
+	transform: translateY(1px); /* Эффект нажатия */
+}
+
+.button_limit:disabled {
+	background-color: #f0f0f03f;
+	color: #b0b0b0;
+	cursor: not-allowed;
+	border: 1px solid #e0e0e0;
+}
+
+.header_basket {
+	display: flex;
+	justify-content: space-between;
+	@media (max-width: 450px) {
+		flex-direction: column;
+	}
+}
+.form_limit {
+	display: flex;
+	gap: 2px;
+	margin-right: 10px;
+	margin-top: 10px;
+	align-items: center;
+	@media (max-width: 450px) {
+		font-size: 14px;
+		margin-top: 5px;
 	}
 }

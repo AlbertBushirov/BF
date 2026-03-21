@@ -18,9 +18,59 @@ export class AppData extends Model<IProductItem> {
 
 	//Добавить товар в корзину
 	addBasket(item: ICardItem) {
-		if (this.basket.indexOf(item) < 0) {
+		if (!this.productOrder(item)) {
 			this.basket.push(item);
 			this.updateBasket();
+			this.saveBasketToLocalStorage();
+		}
+	}
+
+	saveBasketToLocalStorage() {
+		try {
+			localStorage.setItem('basket', JSON.stringify(this.basket));
+		} catch (e) {
+			console.warn('Не удалось сохранить favorites в localStorage', e);
+		}
+	}
+
+	loadBasketFromLocalStorage() {
+		try {
+			const data = localStorage.getItem('basket');
+			if (data) {
+				this.basket = JSON.parse(data);
+			}
+		} catch (e) {
+			console.warn('Не удалось загрузить favorites из localStorage', e);
+			this.basket = [];
+		}
+	}
+
+	//Добавить товар в Избранное
+	addFavorites(item: ICardItem) {
+		if (!this.productLike(item)) {
+			this.favorites.push(item);
+			this.updateFavorites();
+			this.saveFavoritesToLocalStorage();
+		}
+	}
+
+	saveFavoritesToLocalStorage() {
+		try {
+			localStorage.setItem('favorites', JSON.stringify(this.favorites));
+		} catch (e) {
+			console.warn('Не удалось сохранить favorites в localStorage', e);
+		}
+	}
+
+	loadFavoritesFromLocalStorage() {
+		try {
+			const data = localStorage.getItem('favorites');
+			if (data) {
+				this.favorites = JSON.parse(data);
+			}
+		} catch (e) {
+			console.warn('Не удалось загрузить favorites из localStorage', e);
+			this.favorites = [];
 		}
 	}
 
@@ -71,39 +121,10 @@ export class AppData extends Model<IProductItem> {
 		this.updateBasket();
 	}
 
-	//Добавить товар в Избранное
-	addFavorites(item: ICardItem) {
-		if (!this.productLike(item)) {
-			this.favorites.push(item);
-			this.updateFavorites();
-			this.saveFavoritesToLocalStorage();
-		}
-	}
-
 	removeFromLike(id: string) {
 		this.favorites = this.favorites.filter((it) => it.id !== id);
 		this.saveFavoritesToLocalStorage();
 		this.emitChanges('items:changed');
-	}
-
-	saveFavoritesToLocalStorage() {
-		try {
-			localStorage.setItem('favorites', JSON.stringify(this.favorites));
-		} catch (e) {
-			console.warn('Не удалось сохранить favorites в localStorage', e);
-		}
-	}
-
-	loadFavoritesFromLocalStorage() {
-		try {
-			const data = localStorage.getItem('favorites');
-			if (data) {
-				this.favorites = JSON.parse(data);
-			}
-		} catch (e) {
-			console.warn('Не удалось загрузить favorites из localStorage', e);
-			this.favorites = [];
-		}
 	}
 
 	productLike(item: ICardItem): boolean {

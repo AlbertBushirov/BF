@@ -12,7 +12,7 @@
 
 	@media (max-width: 450px) {
 		grid-template-columns: repeat(2, 1fr);
-		margin-top: 90px;
+		margin-top: 102px;
 	}
 }
 .opacityCatalog {
@@ -43,6 +43,30 @@
 	background-repeat: no-repeat;
 }
 
+.backOriginal:hover {
+	background: linear-gradient(rgba(17, 17, 17, 0.2), rgba(0, 0, 0, 0.2)),
+		url(../images/Fons/Fon_Gallery.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.backKBF:hover {
+	background: linear-gradient(rgba(12, 27, 70, 0.2), rgba(0, 0, 0, 0.2)),
+		url(../images/Fons/fon_KBF.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.backAOBF:hover {
+	background: linear-gradient(rgba(61, 9, 9, 0.3), rgba(0, 0, 0, 0.3)),
+		url(../images/Fons/fon_AOBF.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 .gallery__item {
 	position: relative;
 
@@ -55,7 +79,7 @@
 		z-index: 1;
 
 		@media (max-width: 450px) {
-			width: 20px;
+			width: 25px;
 			left: -2%;
 			top: 1%;
 		}
@@ -86,6 +110,63 @@
 		border: none;
 		cursor: pointer;
 		position: absolute;
+	}
+	.card__row {
+		gap: 2px;
+
+		.card__input {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 1em;
+			height: 1em;
+			margin: 0;
+			cursor: pointer;
+			position: relative;
+			border: 2px solid #bbb;
+			border-radius: 0.35em;
+			background: #ffffff27;
+			transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+				background 0.25s, border-color 0.25s;
+		}
+
+		.card__row:active {
+			transform: scale(1.35);
+		}
+
+		.card__input:checked {
+			background: #6b3fa0; /* яркий акцент */
+
+			transform: scale(1.2);
+		}
+
+		.card__input:disabled {
+			pointer-events: none; /* Запрещает клики */
+			filter: grayscale(1); /* Делает серым */
+			background: #0000002d; /* яркий акцент */
+			background-image: none;
+			cursor: not-allowed;
+		}
+
+		.card__input::after {
+			content: '';
+			background-image: url(../images/fist.png);
+			background-position: center;
+			background-size: cover;
+			position: absolute;
+			left: 0.25em;
+			top: 0.05em;
+			width: 0.3em;
+			height: 0.7em;
+			transform: scale(0);
+			opacity: 0;
+			transition: transform 0.25s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+				opacity 0.2s;
+		}
+
+		.card__input:checked::after {
+			transform: scale(1);
+			opacity: 1;
+		}
 	}
 }
 

@@ -18,7 +18,11 @@ export class Basket extends Component<IBasketView> {
 	protected _title: HTMLElement;
 	protected _price: HTMLElement;
 	protected _button: HTMLButtonElement;
+	protected _formLimit: HTMLElement;
+	public _inputLimit: HTMLInputElement;
+	protected _buttonLimit: HTMLButtonElement;
 	protected _isArtefactSaveEnabled: boolean = false;
+	public _limit: number | null = null;
 
 	protected _description?: HTMLImageElement;
 	protected _footerPrice: HTMLElement;
@@ -31,6 +35,11 @@ export class Basket extends Component<IBasketView> {
 		this._buttonBasket = this.container.querySelector('.basket__button');
 		this._buttonSave = this.container.querySelector('.button_save');
 		this._footerPrice = document.querySelector('.header_price');
+		this._formLimit = this.container.querySelector('.form_limit');
+		this._inputLimit = this._formLimit.querySelector('.input_limit');
+		this._buttonLimit = this._formLimit.querySelector('.button_limit');
+		console.log('Контейнер:', this.container);
+		console.log('Форма:', this._formLimit);
 		if (this._buttonBasket) {
 			this._buttonBasket.addEventListener('click', () => {
 				events.emit('basket:clear');
@@ -44,6 +53,18 @@ export class Basket extends Component<IBasketView> {
 			});
 		}
 
+		if (this._buttonLimit) {
+			this._buttonLimit.addEventListener('click', () => {
+				events.emit('basket:limit');
+			});
+		}
+
+		if (this._inputLimit) {
+			this._inputLimit.addEventListener('input', () => {
+				this._buttonLimit.disabled = this._inputLimit.value.trim() === '';
+			});
+		}
+
 		this.events.on('artefact:save', () => {
 			this._isArtefactSaveEnabled = true;
 		});
@@ -52,7 +73,59 @@ export class Basket extends Component<IBasketView> {
 			this._isArtefactSaveEnabled = false;
 		});
 
+		this.events.on('limit_off', () => {
+			this._formLimit.style.display = 'none';
+		});
+
+		this.events.on('limit_on', () => {
+			this._formLimit.style.display = 'flex';
+		});
+
 		this.items = [];
+	}
+
+	set items(items: HTMLElement[]) {
+		if (items.length) {
+			this._list.replaceChildren(...items);
+			this.setDisabled(this._buttonBasket, false);
+			this.setDisabled(this._buttonSave, false);
+		} else {
+			const emptyMessage = createElement<HTMLParagraphElement>('p');
+			this.setText(emptyMessage, 'Армия не выбрана');
+			this._list.replaceChildren(emptyMessage);
+			this.setDisabled(this._buttonBasket, true);
+			this.setDisabled(this._buttonSave, true);
+		}
+	}
+
+	basketLimit(current: number, limit: number | null) {
+		this._limit = limit;
+		this.total = current;
+		this._buttonLimit.disabled = true;
+	}
+
+	set total(total: number) {
+		if (this._limit) {
+			// Если лимит установлен, рисуем красивую строку
+			const text = `${total} / ${this._limit} очков`;
+			this.setText(this._total, text);
+			this.setText(this._footerPrice, text);
+			this.updateFooterPrice();
+		} else {
+			this.setText(this._total, `${total.toString()} очков`);
+			this.updateFooterPrice();
+		}
+	}
+
+	private updateFooterPrice() {
+		if (this._footerPrice) {
+			this.setText(
+				this._footerPrice,
+				`Сумма ростера: ${this._total.textContent}`
+			);
+		} else {
+			console.warn('Element for footer price is not found.');
+		}
 	}
 
 	private saveBasketAsImage() {
@@ -73,7 +146,6 @@ export class Basket extends Component<IBasketView> {
 			basketItem.style.paddingLeft = '10px';
 		});
 
-		// ✅ Создаём временный элемент с суммой
 		const totalText = this._total?.textContent || '';
 		const displayTotal = `Сумма ростера: ${totalText}`;
 
@@ -91,13 +163,10 @@ export class Basket extends Component<IBasketView> {
 		box-sizing: border-box;
 	`;
 
-		// Добавляем элемент в DOM
 		basketList.appendChild(totalElement);
 
-		// ✅ ВАЖНО: Дать браузеру один кадр для рендеринга
 		requestAnimationFrame(() => {
 			requestAnimationFrame(() => {
-				// Два кадра — для надёжности
 				html2canvas(basketList, {
 					ignoreElements: (element) => {
 						return (
@@ -113,7 +182,6 @@ export class Basket extends Component<IBasketView> {
 					allowTaint: true,
 				})
 					.then((canvas) => {
-						// Удаляем временный элемент
 						if (basketList.contains(totalElement)) {
 							basketList.removeChild(totalElement);
 						}
@@ -123,7 +191,6 @@ export class Basket extends Component<IBasketView> {
 						link.download = 'MyRoster.jpg';
 						link.click();
 
-						// Сбрасываем стили
 						items.forEach((item) => {
 							const basketItem = item as HTMLElement;
 							basketItem.style.paddingLeft = '';
@@ -132,46 +199,12 @@ export class Basket extends Component<IBasketView> {
 					})
 					.catch((error) => {
 						console.error('Error generating image:', error);
-						// Удаляем временный элемент даже при ошибке
+
 						if (basketList.contains(totalElement)) {
 							basketList.removeChild(totalElement);
 						}
 					});
 			});
 		});
-	}
-
-	set items(items: HTMLElement[]) {
-		if (items.length) {
-			this._list.replaceChildren(...items);
-			this.setDisabled(this._buttonBasket, false);
-			this.setDisabled(this._buttonSave, false);
-		} else {
-			const emptyMessage = createElement<HTMLParagraphElement>('p');
-			this.setText(emptyMessage, 'Армия не выбрана');
-			this._list.replaceChildren(emptyMessage);
-			this.setDisabled(this._buttonBasket, true);
-			this.setDisabled(this._buttonSave, true);
-		}
-	}
-
-	set total(total: number) {
-		if (this._total) {
-			this.setText(this._total, `${total.toString()} очков`);
-			this.updateFooterPrice(total);
-		} else {
-			console.warn('Element for total price is not found.');
-		}
-	}
-
-	private updateFooterPrice(total: number) {
-		if (this._footerPrice) {
-			this.setText(
-				this._footerPrice,
-				`Сумма ростера: ${total.toString()} очков`
-			);
-		} else {
-			console.warn('Element for footer price is not found.');
-		}
 	}
 }

@@ -99,6 +99,7 @@ const categoryOrder = [
 	'Войско павшего мага ОБЕ (КБФ)',
 	'База ОБЕ (КБФ)',
 	'Легионы черной планеты ОБЕ (КБФ)',
+	'Воители иных миров ОБЕ (КБФ)',
 
 	'Техлист (1А)',
 	'Техлист (1П)',
@@ -114,12 +115,6 @@ const categoryOrder = [
 // Обработчик изменения каталога
 
 events.on<CatalogChangeEvent>('items:changed', () => {
-	page.favorites = appData.favorites.length;
-	page.showFavoritesFooter();
-	setTimeout(() => {
-		page.favoritesTimeout();
-	}, 3000);
-
 	const sortedItems = appData.items.slice().sort((a, b) => {
 		const indexA = categoryOrder.indexOf(a.category);
 		const indexB = categoryOrder.indexOf(b.category);
@@ -134,17 +129,46 @@ events.on<CatalogChangeEvent>('items:changed', () => {
 
 	page.catalog = sortedItems.map((item) => {
 		const card = new Card('card', cloneTemplate(cardCatalogTemplate), {
-			onClick: () => events.emit('card:select', item),
+			onClick: () => {
+				if (
+					!appData.productOrder(item) &&
+					basket._limit > 0 &&
+					appData.getTotalPrice() + item.price > basket._limit
+				) {
+				} else {
+					events.emit('card:select', item);
+				}
+			},
+			onClick2: () => {
+				if (appData.productOrder(item)) {
+					appData.removeFromBasket(item.id);
+					modal.close();
+				} else if (
+					basket._limit > 0 &&
+					appData.getTotalPrice() + item.price > basket._limit
+				) {
+					card.disableButton(null);
+				} else {
+					events.emit('product:add', item);
+				}
+				setLimitProduct(appData.items, basket._limit);
+			},
 		});
-		/*const checkedAttr: boolean = appData.productLike(item);
-		card.buttonLike = checkedAttr;*/
 
+		const checkedAttr: boolean = appData.productOrder(item);
+		card.cardInput = checkedAttr;
 		card.marker = item.marker;
 		card.markerTitle = item.markerTitle;
 
+		const isTooExpensive =
+			basket._limit > 0 && appData.getTotalPrice() + item.price > basket._limit;
+
+		if (!checkedAttr && isTooExpensive) {
+			card.disableButton(null);
+		}
+
 		return card.render(item);
 	});
-
 	const savedNetState = localStorage.getItem('netState');
 	if (savedNetState === 'save' || savedNetState === 'cancel') {
 		applyNetState(savedNetState);
@@ -165,6 +189,7 @@ events.on<CatalogChangeEvent>('items:changed', () => {
 		localStorage.setItem('netState', 'cancel');
 	});
 	setBackground(appData.items);
+	setLimitProduct(appData.items, basket._limit);
 });
 
 function setupNavigationHandlers() {
@@ -253,7 +278,7 @@ function applyNetState(state: 'save' | 'cancel') {
 			if (el.textContent.includes('Техлист')) {
 				el.style.padding = '0.4rem 1rem';
 			} else {
-				el.style.padding = '0.4rem 0.3rem 0.4rem 1.6rem';
+				el.style.padding = '0.4rem 0.3rem 0.4rem 1.3rem';
 			}
 
 			const res = el.textContent;
@@ -270,11 +295,21 @@ events.on('product:add', (item: ICardItem) => {
 
 //Добавление Боевой единицы в Избранное
 events.on('product:addLike', (item: ICardItem) => {
+	page.favorites = appData.favorites.length;
+	page.showFavoritesFooter();
+	setTimeout(() => {
+		page.favoritesTimeout();
+	}, 3000);
 	appData.addFavorites(item);
 	modal.close();
 });
 
 events.on('product:deleteLike', (item: ICardItem) => {
+	page.favorites = appData.favorites.length;
+	page.showFavoritesFooter();
+	setTimeout(() => {
+		page.favoritesTimeout();
+	}, 3000);
 	appData.removeFromLike(item.id);
 	modal.close();
 });
@@ -301,6 +336,12 @@ const order: Record<string, number> = {
 	wheels: 3,
 	machine: 4,
 };
+
+events.on('basket:limit', () => {
+	basket.basketLimit(appData.getTotalPrice(), +basket._inputLimit.value);
+	appData.clearBasket();
+	modal.close();
+});
 
 //Обработчик изменения в корзине и обновления общей стоимости
 events.on('basket:changed', () => {
@@ -359,6 +400,7 @@ events.on('basket:changed', () => {
 				}
 
 				basket.total = appData.getTotalPrice();
+
 				saveBasketToLocalStorage();
 			},
 			onChangeWeapon: ({ weapons }) => {
@@ -376,6 +418,9 @@ events.on('basket:changed', () => {
 	basket.total = total;
 
 	saveBasketToLocalStorage();
+	events.emit('items:changed');
+	setBackground(appData.items);
+	setLimitProduct(appData.items, basket._limit);
 });
 
 // Открытие рейтинга игроков
@@ -437,7 +482,6 @@ events.on('memo:open', () => {
 //Удаление продукта из корзины
 events.on('product:delete', (item: ICardItem) => {
 	appData.removeFromBasket(item.id);
-
 	const jsonStr = JSON.stringify(appData.basket.map((item) => item.id));
 	location.hash = '#basket/' + encodeURIComponent(jsonStr);
 });
@@ -550,19 +594,18 @@ events.on('preview:changed', (item: ICardItem) => {
 				},
 				onChangeLike: () => {
 					if (appData.productLike(item)) {
-						appData.removeFromLike(item.id);
-
-						modal.close();
+						events.emit('product:deleteLike', item);
 					} else {
 						events.emit('product:addLike', item);
 					}
 				},
 			});
 
-			card.BasedOnLike();
+			const checkedLickedAttr: boolean = appData.productLike(item);
+			card.buttonLike = checkedLickedAttr;
 
-			const checkedAttr: boolean = appData.productLike(item);
-			card.buttonLike = checkedAttr;
+			const checkedAttr: boolean = appData.productOrder(item);
+			card.cardInput = checkedAttr;
 
 			const buttonTitle: string = appData.productOrder(item)
 				? 'Убрать'
@@ -572,9 +615,9 @@ events.on('preview:changed', (item: ICardItem) => {
 			modal.renderMin({
 				content: card.render({
 					...item,
-					button: buttonTitle,
 				}),
 			});
+
 			card.categoryPadding();
 		});
 	}
@@ -592,8 +635,7 @@ function openPreviewModal(item: ICardItem) {
 		},
 		onChangeLike: () => {
 			if (appData.productLike(item)) {
-				appData.removeFromLike(item.id);
-				modal.close();
+				events.emit('product:deleteLike', item);
 			} else {
 				events.emit('product:addLike', item);
 			}
@@ -652,9 +694,7 @@ events.on('preview:changed', (item: ICardItem) => {
 				},
 				onChangeLike: () => {
 					if (appData.productLike(item)) {
-						appData.removeFromLike(item.id);
-
-						modal.close();
+						events.emit('product:deleteLike', item);
 					} else {
 						events.emit('product:addLike', item);
 					}
@@ -685,9 +725,7 @@ function openPreviewHero(item: ICardItem) {
 		},
 		onChangeLike: () => {
 			if (appData.productLike(item)) {
-				appData.removeFromLike(item.id);
-
-				modal.close();
+				events.emit('product:deleteLike', item);
 			} else {
 				events.emit('product:addLike', item);
 			}
@@ -738,9 +776,7 @@ events.on('preview:changed', (item: ICardItem) => {
 				},
 				onChangeLike: () => {
 					if (appData.productLike(item)) {
-						appData.removeFromLike(item.id);
-
-						modal.close();
+						events.emit('product:deleteLike', item);
 					} else {
 						events.emit('product:addLike', item);
 					}
@@ -811,9 +847,7 @@ events.on('preview:changed', (item: ICardItem) => {
 				},
 				onChangeLike: () => {
 					if (appData.productLike(item)) {
-						appData.removeFromLike(item.id);
-
-						modal.close();
+						events.emit('product:deleteLike', item);
 					} else {
 						events.emit('product:addLike', item);
 					}
@@ -917,6 +951,36 @@ function setBackground(items: ICardItem[]) {
 	});
 }
 
+function setLimitProduct(items: ICardItem[], limit: number) {
+	const galleryItems = document.querySelectorAll('.gallery__item');
+
+	galleryItems.forEach((galleryItem) => {
+		const titleElement = galleryItem.querySelector('.card__title');
+		if (!titleElement) return;
+
+		const title = titleElement.textContent?.trim() || '';
+		const itemData = items.find((item) => item.title.trim() === title);
+
+		// 1. Сначала проверяем, нашли ли мы вообще данные о товаре
+		if (!itemData) {
+			(galleryItem as HTMLElement).style.opacity = '1';
+			return;
+		}
+
+		const currentPrice = itemData.price ?? 0;
+		const totalPriceWithNewItem = (appData.getTotalPrice() || 0) + currentPrice;
+
+		// Если лимит не задан (0 или null) или товар проходит по цене
+		if (!limit || totalPriceWithNewItem <= limit) {
+			(galleryItem as HTMLElement).style.opacity = '1';
+		} else if (appData.productOrder(itemData)) {
+			(galleryItem as HTMLElement).style.opacity = '1';
+		} else {
+			(galleryItem as HTMLElement).style.opacity = '0.3';
+		}
+	});
+}
+
 Promise.all([
 	api.getWarriorsList(),
 	api.getWeaponsList(),
@@ -932,6 +996,7 @@ Promise.all([
 				...getFightMachineList,
 				...getlocalMortarList,
 			];
+			console.log(combinedList);
 			const KBF = document.querySelector('.point_KBF') as HTMLElement;
 			const AOBF = document.querySelector('.point_AOBF') as HTMLElement;
 
@@ -940,7 +1005,6 @@ Promise.all([
 
 			events.on('card:add', () => {
 				combinedList.push(cardAdd.newCard());
-				console.log(cardAdd.newCard());
 				appData.setCatalog(combinedList);
 				modal.close();
 			});
@@ -973,7 +1037,7 @@ Promise.all([
 
 			events.on('KBF_off', () => {
 				isKBFEnabled = false;
-				KBF.style.display = 'block';
+				KBF.style.display = 'flex';
 				applyFilters();
 			});
 			events.on('AOBF_on', () => {
@@ -984,7 +1048,7 @@ Promise.all([
 
 			events.on('AOBF_off', () => {
 				isAOBFEnabled = false;
-				AOBF.style.display = 'block';
+				AOBF.style.display = 'flex';
 				applyFilters();
 			});
 			appData.setCatalog(combinedList);
@@ -1017,37 +1081,43 @@ Promise.all([
 					const target = e.target as HTMLInputElement;
 					const query = target.value.toLowerCase().trim();
 
-					// Если поисковой запрос пустой - сбрасываем всё
-					if (!query) {
-						return;
-					}
+					const galleryItems = document.querySelectorAll('.gallery__item');
 
-					items.forEach((item) => {
-						const originalText = item.dataset.originalText || '';
-						const text = originalText.toLowerCase();
-						const matches = text.includes(query);
+					galleryItems.forEach((item) => {
+						const htmlItem = item as HTMLElement;
+						const titleElement = htmlItem.querySelector(
+							'.card__title'
+						) as HTMLElement;
 
-						item.classList.toggle('hidden', !matches);
+						if (!titleElement) return;
 
-						if (matches) {
+						if (!titleElement.dataset.originalText) {
+							titleElement.dataset.originalText =
+								titleElement.textContent?.trim() || '';
+						}
+
+						const originalText = titleElement.dataset.originalText;
+						const matches = originalText.toLowerCase().includes(query);
+
+						htmlItem.classList.toggle('hidden', query !== '' && !matches);
+
+						if (query && matches) {
 							const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 							const regex = new RegExp(`(${escapedQuery})`, 'gi');
-							const highlighted = originalText.replace(
+							titleElement.innerHTML = originalText.replace(
 								regex,
 								'<mark>$1</mark>'
 							);
-							item.innerHTML = highlighted;
 						} else {
-							item.innerHTML = originalText;
+							titleElement.textContent = originalText;
 						}
 					});
 
-					// Прокрутка
-					const firstVisible = document.querySelector(
-						'.card__title:not(.hidden)'
-					);
-					if (firstVisible) {
-						firstVisible.scrollIntoView({
+					if (query) {
+						const firstVisible = document.querySelector(
+							'.gallery__item:not(.hidden)'
+						);
+						firstVisible?.scrollIntoView({
 							behavior: 'smooth',
 							block: 'center',
 						});

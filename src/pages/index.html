@@ -48,21 +48,17 @@
 							<li class="positioning">
 								<a class="point_squad"><span>Отряды</span></a>
 								<ul class="sub-menu" id="sub-menu">
-									<li class="positioning">
-										<a class="point_Coldun" href="#">Колдун</a>
-										<a class="point_Necromancer">Некромант</a>
-										<a class="point_Sorcerer">Чародей</a>
-										<a class="point_GVS">ГВС</a>
-										<a class="point_KBF"> Сторонние (КБФ)</a>
-										<a class="point_AOBF"> Сторонние (АОБФ)</a>
-									</li>
+										<li><a class="point_Coldun" href="#">Колдун</a></li>
+										<li><a class="point_Necromancer">Некромант</a></li>
+										<li><a class="point_Sorcerer">Чародей</a></li>
+										<li><a class="point_GVS">ГВС</a></li>
+										<li><a class="point_KBF"> Сторонние (КБФ)</a></li>
+										<li><a class="point_AOBF"> Сторонние (АОБФ)</a></li>
 								</ul>
 							</li>
-
 							<li><a class="point_special">ОБЕ</a></li>
 							<li><a class="point_weapon">Орудия</a></li>
 							<li><a class="point_fightMachine">БМ</a></li>
-							<li></li>
 						</ul>
 					</nav>
 					<button class="header__basket">
@@ -89,16 +85,17 @@
 				<span class="gallery_marker__title"></span>
 				<span class="card__category card__category_soft"></span>
 				<h2 class="card__title"></h2>
-				
 				<div class="card__row">
+					<input class="card__input" type="checkbox">
 					<span class="card__price"></span>
 				</div>
+				
 			</button>
 		</template>
 
 		<template id="card-add">
 			<div class="card_add">
-				<div class="cardAdd__column">
+				<form class="cardAdd__column">
 					<div class="container__image">
 						<input name=""
 							class="cardAdd__image"
@@ -125,7 +122,7 @@
 						/>
 				
 					<div class="card__row">
-						<button disabled class="button card__button">Сохранить</button>
+						<button type="submit" disabled class="button card__button">Сохранить</button>
 						<input
 							class="card__price"
 							type="number"
@@ -134,12 +131,12 @@
 					</div>
 					<input class="cardAdd___additional" type="text"
 							placeholder="описание артефакта"></input>
-				</div>
+				</form>
 			</div>
 		</template>
 
 		<template id="card-addOBE">
-			<div class="cardAdd__column">
+			<form class="cardAdd__column">
 				<div class="container__image">
 						<input
 							class="cardAdd__image"
@@ -161,14 +158,14 @@
 					/>
 				<div class="card__row">
 					
-					<button disabled class="button card__button">Сохранить</button>
+					<button type="submit" disabled class="button card__button">Сохранить</button>
 					<input
 							class="card__price"
 							type="number"
 							placeholder="цена ОБЕ"
 						/>
 				</div>
-			</div>
+			</form>
 		</template>
 
 		<template id="card-preview">
@@ -188,6 +185,7 @@
 						<img class="card__description" src="" alt="артефакт отряда" />
 					</div>
 					<div class="card__row">
+						
 						<input class="button_like_preview" type="checkbox" />
 						<button class="button card__button">В корзину</button>
 						<span class="card__price"></span>
@@ -301,7 +299,6 @@
 				></button>
 			</li>
 		</template>
-
 		<template id="card-basket_fighting_machine">
 			<li class="basket__item card_compact">
 				<span class="basket__item-index">1</span>
@@ -318,7 +315,14 @@
 
 		<template id="basket">
 			<div class="basket">
+				<div class="header_basket">
 				<h2 class="modal__title">Просмотр армии</h2>
+				<form class="form_limit">
+					<input class="input_limit" placeholder="Введите лимит" type='number'>
+					<button disabled class="button_limit">добавить</button>
+				</form>
+			</div>
+				
 				<ul class="basket__list">
 					<li class="basket__item">
 						<img class="card__image" src="" alt="" />
@@ -498,33 +502,37 @@
 			<div class="settings">
 				<h2 class="settings__title">Настройки</h2>
 				<ul class="settings__list">
-					<li>
+					<label>
 						<span>Показать Артефакты отрядов в ростере</span
 						><input class="save_armlist" type="checkbox" />
-					</li>
-					<li>
+					</label>
+					<label>
 						<span>Мелкая сетка каталога Боевых единиц</span
 						><input class="net_armlist" type="checkbox" />
-					</li>
-					<li>
+					</label>
+					<label>
 						<span>Показать избранные Боевые единицы</span
 						><input class="favorites_armlist" type="checkbox" />
-					</li>
-					<li>
+					</label>
+					<label>
+						<span>Скрыть поле лимита Ростера</span
+						><input class="limit_roster" type="checkbox" />
+					</label>
+					<label>
 						<span>Скрыть Сторонние отряды (КБФ)</span
 						><input class="KBF_armlist" type="checkbox" />
-					</li>
-					<li>
+					</label>
+					<label>
 						<span>Скрыть Сторонние отряды (АОБФ)</span
 						><input class="AOBF_armlist" type="checkbox" />
-					</li>
+					</label>
 				</ul>
 			</div>
 		</template>
 
 		<div class="new_card">
 			<button class="button new_squad">Добавить отряд</button>
-			<button class="button new_hero">Додавить ОБЕ</button>
+			<button class="button new_hero">Добавить ОБЕ</button>
 		</div>
 
 		<div class="search">
@@ -851,20 +859,5 @@
 				</li>
 			</ul>
 		</footer>
-		<div
-			id="print-container"
-			style="
-				position: absolute;
-				top: -9999px;
-				left: -9999px;
-				width: 880px;
-				max-width: 100vw;
-				overflow-x: hidden;
-				overflow-y: visible;
-				box-sizing: border-box;
-				background: white;
-				padding: 20px;
-			"
-		></div>
 	</body>
 </html>
