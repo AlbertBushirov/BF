@@ -153,7 +153,13 @@ export class Card extends Component<ICardItem> {
 	}
 
 	categoryPadding() {
-		if (!this._category.textContent.includes('Техлист')) {
+		// Если элемента нет, просто выходим из метода
+		if (!this._category) return;
+
+		if (
+			this._category.textContent &&
+			!this._category.textContent.includes('Техлист')
+		) {
 			this._category.style.padding = '0.4rem 1rem 0.5rem 1.9rem';
 		}
 	}
@@ -348,7 +354,8 @@ export class Card extends Component<ICardItem> {
 
 	set directory(value: string) {
 		this.setText(this._directory, value);
-		if (value === undefined) {
+		// Добавьте проверку this._directory перед .style
+		if (value === undefined && this._directory) {
 			this._directory.style.display = 'none';
 		}
 	}
@@ -375,12 +382,15 @@ export class Card extends Component<ICardItem> {
 	}
 
 	set image(value: string) {
-		this.setImage(this._image, value, this.id);
+		if (this._image) {
+			// Добавьте проверку и здесь для безопасности
+			this.setImage(this._image, value, this.title);
+		}
 	}
 
 	set price(value: number) {
 		this.setText(this._price, value ? `${value.toString()} очков` : 'Бесценно');
-		this.disableButton(value);
+		//this.disableButton(value);
 
 		// Обновляем цену в корзине, если товар добавлен
 		if (this.basketElement) {
@@ -399,8 +409,10 @@ export class Card extends Component<ICardItem> {
 
 	//Описание категории товара
 	set category(value: string) {
-		this.setText(this._category, value);
-		this.toggleClass(this._category, category[value], true);
+		if (this._category) {
+			this.setText(this._category, value);
+			this.toggleClass(this._category, category[value], true);
+		}
 	}
 
 	set isWheels(value: boolean) {
@@ -796,7 +808,10 @@ export class BasketElement extends Component<IBasketItem> {
 	}
 
 	set image(value: string) {
-		this.setImage(this._image, value, this.title);
+		if (this._image) {
+			// Добавьте проверку и здесь для безопасности
+			this.setImage(this._image, value, this.title);
+		}
 	}
 
 	set description(value: string) {

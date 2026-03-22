@@ -143,6 +143,10 @@
 	cursor: pointer;
 }
 
+.button_save:disabled {
+	cursor: not-allowed;
+}
+
 .floppy-image {
 	width: 50px;
 	@media (max-width: 450px) {
@@ -203,10 +207,9 @@
 }
 
 .button_limit:disabled {
-	background-color: #f0f0f03f;
+	background-color: #58585856;
 	color: #b0b0b0;
 	cursor: not-allowed;
-	border: 1px solid #e0e0e0;
 }
 
 .header_basket {

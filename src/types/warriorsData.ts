@@ -1406,8 +1406,6 @@ export const localArmy = [
 		inBasket: true,
 		directory: '',
 		button: '',
-		marker: require('../images/marker_new.png'),
-		markerTitle: 'Новый адаптированный отряд',
 	},
 	{
 		id: 'SPYarostNebes',
