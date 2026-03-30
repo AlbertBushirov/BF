@@ -74,7 +74,6 @@ export interface IPlayersForm {
 	player: string;
 	games: number;
 	winrating?: number;
-
 	achievements: IItemCup;
 	win: number;
 }

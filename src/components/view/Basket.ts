@@ -38,8 +38,6 @@ export class Basket extends Component<IBasketView> {
 		this._formLimit = this.container.querySelector('.form_limit');
 		this._inputLimit = this._formLimit.querySelector('.input_limit');
 		this._buttonLimit = this._formLimit.querySelector('.button_limit');
-		console.log('Контейнер:', this.container);
-		console.log('Форма:', this._formLimit);
 		if (this._buttonBasket) {
 			this._buttonBasket.addEventListener('click', () => {
 				events.emit('basket:clear');
@@ -168,6 +166,7 @@ export class Basket extends Component<IBasketView> {
 		requestAnimationFrame(() => {
 			requestAnimationFrame(() => {
 				html2canvas(basketList, {
+					backgroundColor: null,
 					ignoreElements: (element) => {
 						return (
 							(!this._isArtefactSaveEnabled &&
@@ -187,8 +186,8 @@ export class Basket extends Component<IBasketView> {
 						}
 
 						const link = document.createElement('a');
-						link.href = canvas.toDataURL('image/jpeg', 1.0);
-						link.download = 'MyRoster.jpg';
+						link.href = canvas.toDataURL('image/png');
+						link.download = 'MyRoster.png';
 						link.click();
 
 						items.forEach((item) => {

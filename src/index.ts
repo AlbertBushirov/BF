@@ -996,7 +996,6 @@ Promise.all([
 				...getFightMachineList,
 				...getlocalMortarList,
 			];
-			console.log(combinedList);
 			const KBF = document.querySelector('.point_KBF') as HTMLElement;
 			const AOBF = document.querySelector('.point_AOBF') as HTMLElement;
 

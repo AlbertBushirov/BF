@@ -54,13 +54,20 @@ export class Tournament extends Component<ITournamentView> {
 		const itemTemplate = tournamentList.querySelector('.tournament__item');
 		tournamentList.innerHTML = '';
 
-		tournament.participant.forEach((player) => {
+		const filterParticipant = [...tournament.participant].sort((a, b) => {
+			return parseInt(b.result) - parseInt(a.result);
+		});
+
+		filterParticipant.forEach((player, index) => {
 			const listElement = itemTemplate.cloneNode(true) as HTMLElement;
 
 			listElement.querySelector('.tournament__player').textContent =
 				player.name.name;
 			listElement.querySelector('.tournament__result').textContent =
 				player.result;
+			listElement.querySelector('.tournament-index').textContent = `${
+				index + 1
+			}.`.toString();
 
 			tournamentList.append(listElement);
 		});
@@ -73,13 +80,20 @@ export class Tournament extends Component<ITournamentView> {
 			tournamentListTwo.querySelector('.tournament__item');
 		tournamentListTwo.innerHTML = '';
 
-		tournament.participantTwo.forEach((player) => {
+		const filterParticipantTwo = [...tournament.participantTwo].sort((a, b) => {
+			return parseInt(b.result) - parseInt(a.result);
+		});
+
+		filterParticipantTwo.forEach((player, index) => {
 			const listElement = itemTemplateTwo.cloneNode(true) as HTMLElement;
 
 			listElement.querySelector('.tournament__player').textContent =
 				player.name.name;
 			listElement.querySelector('.tournament__result').textContent =
 				player.result;
+			listElement.querySelector('.tournament-index').textContent = `${
+				index + 1
+			}.`.toString();
 
 			tournamentListTwo.append(listElement);
 		});
