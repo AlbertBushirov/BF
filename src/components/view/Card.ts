@@ -25,7 +25,7 @@ const category: Category = {
 	'Гильдия вольных стрелков ОБЕ': 'card__category_GVS',
 	'Войска Колдуна': 'card__category_hard',
 	'Войска Колдуна ОБЕ': 'card__category_hard',
-	'Боевое существо ОБЕ': 'card__category_drakon',
+	'Нейтральный персонаж ОБЕ': 'card__category_drakon',
 	'Легионеры Некроманта': 'card__category_nekromant',
 	'Легионеры Некроманта ОБЕ': 'card__category_nekromant',
 	'Гвардия Чародея': 'card__category_charodey',
@@ -65,26 +65,22 @@ export class Card extends Component<ICardItem> {
 	protected _directory: HTMLElement;
 	protected _image?: HTMLImageElement;
 	public _category?: HTMLElement;
-	public _gallery: HTMLElement;
+
 	protected _description?: HTMLImageElement;
 	protected _marker?: HTMLImageElement;
 	protected _markerTitle: HTMLElement;
 	protected _markers: HTMLInputElement;
 	protected _price: HTMLElement;
-	protected priceValue: number;
+	protected priceValue?: number;
 	protected _button?: HTMLButtonElement;
 	public _buttonLike: HTMLInputElement;
 	protected isLiked: boolean = false;
 	protected isCardInput: boolean = false;
-	protected volumeLevel: HTMLElement;
-	protected increaseButton: HTMLButtonElement;
-	protected decreaseButton: HTMLButtonElement;
 	public _inputWheels: HTMLInputElement;
 	protected basketElement?: BasketElement;
 	protected wheelsPrice?: number;
 	protected _weapons?: HTMLInputElement;
 	protected weapons?: IItemWeapons;
-	public volumeLevels: number[];
 	protected weaponNumperElements: HTMLElement[] = [];
 	protected _cardInput: HTMLInputElement;
 
@@ -94,19 +90,19 @@ export class Card extends Component<ICardItem> {
 		action?: ICardActions
 	) {
 		super(container, new EventEmitter()); // Инициализация EventEmitter
-		this._category = container.querySelector('.card__category');
+		this._category = container.querySelector('.card__category')!;
 		this._title = ensureElement<HTMLElement>('.card__title', container);
-		this._directory = container.querySelector('.directory');
-		this._description = container.querySelector('.card__description');
-		this._image = container.querySelector('.card__image');
-		this._marker = container.querySelector('.gallery_marker__image');
-		this._markerTitle = container.querySelector('.gallery_marker__title');
-		this._markers = container.querySelector('.gallery__marker');
+		this._directory = container.querySelector('.directory')!;
+		this._description = container.querySelector('.card__description')!;
+		this._image = container.querySelector('.card__image')!;
+		this._marker = container.querySelector('.gallery_marker__image')!;
+		this._markerTitle = container.querySelector('.gallery_marker__title')!;
+		this._markers = container.querySelector('.gallery__marker')!;
 		this._price = ensureElement<HTMLElement>('.card__price', container);
-		this._button = container.querySelector('.card__button');
-		this._buttonLike = container.querySelector('.button_like_preview');
-		this._weapons = container.querySelector('.weapons-list');
-		this._cardInput = container.querySelector('.card__input');
+		this._button = container.querySelector('.card__button')!;
+		this._buttonLike = container.querySelector('.button_like_preview')!;
+		this._weapons = container.querySelector('.weapons-list')!;
+		this._cardInput = container.querySelector('.card__input')!;
 		this._inputWheels = container.querySelector(
 			'.input_wheels'
 		) as HTMLInputElement;
@@ -137,13 +133,13 @@ export class Card extends Component<ICardItem> {
 		if (this._buttonLike) {
 			this._buttonLike.addEventListener('change', () => {
 				this.isLiked = this._buttonLike.checked;
-				action.onChangeLike({ isLike: this.isLiked });
+				action?.onChangeLike?.({ isLike: this.isLiked });
 				this.addClassButtonLikeActive();
 			});
 		}
 		if (action?.onClick2) {
 			const handleAction = () => {
-				action.onClick2({ isCardInput: this.isCardInput });
+				action?.onClick2?.({ isCardInput: this.isCardInput });
 			};
 
 			if (this._cardInput) {
@@ -235,19 +231,21 @@ export class Card extends Component<ICardItem> {
 	}
 
 	resetWeaponCount() {
-		this.weapons.forEach((weapon) => {
+		this.weapons?.forEach((weapon) => {
 			weapon.quantity = 0;
 		});
-		this.renderWeapons(this.weapons);
+		this.renderWeapons(this.weapons ?? []);
 		this.BasedOnWeapon();
 	}
 
 	private totalWeaponCount(): number {
-		return this.weapons.reduce((total, weapon) => total + weapon.quantity, 0);
+		if (this.weapons)
+			return this.weapons.reduce((total, weapon) => total + weapon.quantity, 0);
+		return 0;
 	}
 
 	private increaseWeaponCount(index: number) {
-		if (this.totalWeaponCount() < 2) {
+		if (this.totalWeaponCount() < 2 && this.weapons) {
 			// Проверка на общую сумму
 			this.weapons[index].quantity++;
 			this.renderWeapons(this.weapons);
@@ -258,10 +256,14 @@ export class Card extends Component<ICardItem> {
 	}
 
 	private decreaseWeaponCount(index: number) {
-		if (this.weapons[index].quantity > 0) {
-			this.weapons[index].quantity--;
-			this.renderWeapons(this.weapons);
-			this.BasedOnWeapon(); // Обновляем цену на основе оружия
+		if (this.weapons && this.weapons[index]) {
+			if (this.weapons[index].quantity > 0) {
+				this.weapons[index].quantity--;
+
+				this.renderWeapons(this.weapons);
+
+				this.BasedOnWeapon();
+			}
 		}
 	}
 
@@ -275,11 +277,12 @@ export class Card extends Component<ICardItem> {
 
 	getPriceAdjustmentBasedOnWheels(): number {
 		if (this._inputWheels) {
-			// Если инпут существует, проверяем его состояние
-			return this._inputWheels.checked ? this.wheelsPrice : -this.wheelsPrice;
+			// Добавляем ?? 0 к переменной с ценой
+			const price = this.wheelsPrice ?? 0;
+			return this._inputWheels.checked ? price : -price;
 		} else {
 			console.warn('Input wheels element not found!');
-			return 0; // Возвращаем 0, если элемент не найден
+			return 0;
 		}
 	}
 
@@ -314,13 +317,16 @@ export class Card extends Component<ICardItem> {
 	}
 
 	public BasedOnWeapon() {
-		const weaponsPrice = this.weapons?.reduce(
-			(total, weapon) => total + weapon.price * weapon.quantity,
-			0
-		);
+		// Если weapons нет, вернем 0
+		const weaponsPrice =
+			this.weapons?.reduce(
+				(total, weapon) => total + weapon.price * weapon.quantity,
+				0
+			) ?? 0; // Добавляем значение по умолчанию
 
-		this.price = this.priceValue + weaponsPrice;
-		this.notifyBasketChanged(); // Уведомляем о изменении корзины
+		// Теперь сложение безопасно
+		this.price = (this.priceValue ?? 0) + weaponsPrice;
+		this.notifyBasketChanged();
 	}
 
 	//Отключение кнопки
@@ -404,7 +410,7 @@ export class Card extends Component<ICardItem> {
 
 	//Отображение артефакта
 	set description(value: string) {
-		this.setImage(this._description, value, this.id);
+		this.setImage(this._description!, value, this.id);
 	}
 
 	//Описание категории товара
@@ -420,7 +426,7 @@ export class Card extends Component<ICardItem> {
 	}
 
 	set marker(value: string) {
-		this.setImage(this._marker, value);
+		this.setImage(this._marker!, value);
 	}
 
 	set markerTitle(value: string) {

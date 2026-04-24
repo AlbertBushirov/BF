@@ -11,7 +11,7 @@ export interface IGames {
 export interface ITournament {
 	title: string;
 	participant: Array<{ name: players; result: string }>;
-	participantTwo?: Array<{ name: players; result: string }>;
+	participantTwo: Array<{ name: players; result: string }>;
 	tour_one: Array<{ name: players; result: number }>;
 	tour_two?: Array<{ name: players; result: number }>;
 	tour_three?: Array<{ name: players; result: number }>;

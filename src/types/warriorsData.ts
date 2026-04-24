@@ -1423,7 +1423,7 @@ export const localArmy = [
 	{
 		id: 'SPNeukronimie',
 		title: 'Неукротимые',
-		category: 'Воители иных миров (КБФ)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Neukronimie.jpg'),
 		image: require('../images/Storonie/SPNeukronimie.jpg'), // Прямой URL для удаленного изображения
 		price: 210,
@@ -1434,7 +1434,7 @@ export const localArmy = [
 	{
 		id: 'SPVedmaki',
 		title: 'Отряд Ведьмаки',
-		category: 'Воители иных миров (КБФ)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/Vedmaki.jpg'),
 		image: require('../images/Storonie/SPVedmaki.jpg'), // Прямой URL для удаленного изображения
 		price: 210,
@@ -1445,7 +1445,7 @@ export const localArmy = [
 	{
 		id: 'SPVerniePrinc',
 		title: 'Верные Принцу',
-		category: 'Воители иных миров (КБФ)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/VerniePrinc.jpg'),
 		image: require('../images/Storonie/SPVerniePrinc.jpg'), // Прямой URL для удаленного изображения
 		price: 225,
@@ -1456,9 +1456,22 @@ export const localArmy = [
 		markerTitle: 'Снижена цена на 5.',*/
 	},
 	{
+		id: 'SPAmazonky_Areny',
+		title: 'Амазонки Арены',
+		category: 'Нейтральный отряд (КБФ)',
+		description: require('../images/Artefakti/Amazonky_Areny.jpg'),
+		image: require('../images/Storonie/SPAmazonky_Areny.jpg'), // Прямой URL для удаленного изображения
+		price: 270,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
 		id: 'SPGeroyBilin',
 		title: 'Герои былин',
-		category: 'Воители иных миров (КБФ)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/GeroyBilin.jpg'),
 		image: require('../images/Storonie/SPGeroyBilin.jpg'), // Прямой URL для удаленного изображения
 		price: 210,
@@ -1468,8 +1481,8 @@ export const localArmy = [
 	},
 	{
 		id: 'SPHichniki',
-		title: 'Отряд Хищники',
-		category: 'Воители иных миров (КБФ)',
+		title: 'Возмутители',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Hichniki.jpg'),
 		image: require('../images/Storonie/SPHichniki.jpg'), // Прямой URL для удаленного изображения
 		price: 330,
@@ -1481,7 +1494,7 @@ export const localArmy = [
 	{
 		id: 'SPChempioniAreni',
 		title: 'Чемпионы Арены',
-		category: 'Воители иных миров (КБФ)',
+		category: 'Легионы черной планеты (КБФ)',
 		description: require('../images/Artefakti/ChempioniAreni.jpg'),
 		image: require('../images/Storonie/SPChempioniAreni.jpg'), // Прямой URL для удаленного изображения
 		price: 255,
@@ -1494,7 +1507,7 @@ export const localArmy = [
 	{
 		id: 'SPGally',
 		title: 'Галлы',
-		category: 'Воители иных миров (КБФ)',
+		category: 'Х-Бункер (КБФ)',
 		description: require('../images/Artefakti/Gally.jpg'),
 		image: require('../images/Storonie/SPGally.jpg'), // Прямой URL для удаленного изображения
 		price: 170,
@@ -1505,13 +1518,26 @@ export const localArmy = [
 	{
 		id: 'SPChasticiRazuma',
 		title: 'Частицы Разума',
-		category: 'Воители иных миров (КБФ)',
+		category: 'Альянс Свободных (КБФ)',
 		description: require('../images/Artefakti/ChasticiRazuma.jpg'),
 		image: require('../images/Storonie/SPChasticiRazuma.jpg'), // Прямой URL для удаленного изображения
 		price: 190,
 		inBasket: true,
 		directory: '',
 		button: '',
+	},
+	{
+		id: 'SPCrazy_Povara',
+		title: 'Crazy Повара',
+		category: 'Альянс Свободных (КБФ)',
+		description: require('../images/Artefakti/SPCrazy_Povara.jpg'),
+		image: require('../images/Storonie/SPCrazy_Povara.jpg'), // Прямой URL для удаленного изображения
+		price: 165,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
 	},
 	{
 		id: 'SPKiberici',
@@ -1571,6 +1597,19 @@ export const localArmy = [
 		description: require('../images/Artefakti/Shampanoidi.jpg'),
 		image: require('../images/Storonie/SPShampanoidi.jpg'), // Прямой URL для удаленного изображения
 		price: 205,
+		inBasket: true,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
+		id: 'SPGromKopit',
+		title: 'Громкопыт',
+		category: 'Х-Бункер (КБФ)',
+		description: require('../images/Artefakti/GromKopit.jpg'),
+		image: require('../images/Storonie/SPGromKopit.jpg'), // Прямой URL для удаленного изображения
+		price: 160,
 		inBasket: true,
 		directory: '',
 		button: '',
@@ -2081,7 +2120,7 @@ export const localArmy = [
 	{
 		id: 'SPTemnyy_Lik',
 		title: 'Тёмный Лик',
-		category: 'Воители иных миров (КБФ)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Temnyy_Lik.jpg'),
 		image: require('../images/Storonie/SPTemnyy_Lik.jpg'),
 		price: 290,
@@ -2092,9 +2131,22 @@ export const localArmy = [
 		markerTitle: 'Новый адаптированный отряд',
 	},
 	{
+		id: 'SPEvolution',
+		title: 'Эволюция',
+		category: 'Нейтральный отряд (КБФ)',
+		description: require('../images/Artefakti/SPEvolution.jpg'),
+		image: require('../images/Storonie/SPEvolution.jpg'),
+		price: 165,
+		inBasket: false,
+		directory: '',
+		button: '',
+		marker: require('../images/marker_new.png'),
+		markerTitle: 'Новый адаптированный отряд',
+	},
+	{
 		id: 'SPKrovavoe_Kopito',
 		title: 'Кровавое Копыто',
-		category: 'Воители иных миров (КБФ)',
+		category: 'Нейтральный отряд (КБФ)',
 		description: require('../images/Artefakti/Krovavoe_Kopito.jpg'),
 		image: require('../images/Storonie/SPKrovavoe_Kopito.jpg'),
 		price: 255,

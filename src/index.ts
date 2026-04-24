@@ -14,11 +14,11 @@ import {
 	BasketElement,
 	CardAdd,
 	CardAddHero,
-} from './components/View/Card';
+} from './components/view/Card';
 import { cloneTemplate, ensureElement } from './utils/utils';
-import { Page } from './components/View/Page';
-import { Modal } from './components/View/Modal';
-import { Basket } from './components/View/Basket';
+import { Page } from './components/view/Page';
+import { Modal } from './components/view/Modal';
+import { Basket } from './components/view/Basket';
 import { Rating } from './components/view/Rating';
 import { Settings } from './components/view/Settings';
 import { Tournament } from './components/view/Tournament';
@@ -81,9 +81,8 @@ const categoryOrder = [
 	'Гвардия Чародея',
 	'Гильдия вольных стрелков',
 	'Нейтральный отряд (КБФ)',
-	'Воители иных миров (КБФ)',
-	'База (КБФ)',
 	'Х-Бункер (КБФ)',
+	'База (КБФ)',
 	'Альянс Свободных (КБФ)',
 	'Войско павшего мага (КБФ)',
 	'Легионы черной планеты (КБФ)',
@@ -95,7 +94,7 @@ const categoryOrder = [
 	'Легионеры Некроманта ОБЕ',
 	'Гвардия Чародея ОБЕ',
 	'Гильдия вольных стрелков ОБЕ',
-	'Боевое существо ОБЕ',
+	'Нейтральный персонаж ОБЕ',
 	'Войско павшего мага ОБЕ (КБФ)',
 	'База ОБЕ (КБФ)',
 	'Легионы черной планеты ОБЕ (КБФ)',
@@ -125,6 +124,7 @@ events.on<CatalogChangeEvent>('items:changed', () => {
 		if (a.title && b.title) {
 			return a.title.localeCompare(b.title, 'ru', { sensitivity: 'base' });
 		}
+		return 0;
 	});
 
 	page.catalog = sortedItems.map((item) => {
@@ -200,7 +200,10 @@ function setupNavigationHandlers() {
 		if (!element) return;
 		element.addEventListener('click', (event) => {
 			event.preventDefault();
-			const allH2 = Array.from(document.querySelectorAll('.card__category'));
+			const allH2 = Array.from(
+				document.querySelectorAll('.card__category')
+			) as HTMLElement[];
+
 			const target = allH2.find(filterFn);
 			if (target) {
 				target.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -254,14 +257,16 @@ function applyNetState(state: 'save' | 'cancel') {
 			gallery.classList.add('galleryItem__net');
 			gallery.classList.remove('card');
 		});
-		cartCategoryArray.forEach((el: HTMLElement) => {
-			if (el.textContent.includes('Техлист')) {
-				el.style.fontSize = '13px';
+		cartCategoryArray.forEach((el: Element) => {
+			const htmlEl = el as HTMLElement;
+
+			if (htmlEl.textContent.includes('Техлист')) {
+				htmlEl.style.fontSize = '13px';
 				const res = el.textContent.slice(7);
-				el.textContent = res;
+				htmlEl.textContent = res;
 			}
-			if (!el.textContent.includes('Техлист')) {
-				el.style.padding = '1rem 1rem';
+			if (!htmlEl.textContent.includes('Техлист')) {
+				htmlEl.style.padding = '1rem 1rem';
 			}
 		});
 	} else {
@@ -274,15 +279,17 @@ function applyNetState(state: 'save' | 'cancel') {
 			gallery.classList.add('card');
 			gallery.classList.remove('galleryItem__net');
 		});
-		cartCategoryArray.forEach((el: HTMLElement) => {
-			if (el.textContent.includes('Техлист')) {
-				el.style.padding = '0.4rem 1rem';
+		cartCategoryArray.forEach((el: Element) => {
+			const htmlEl = el as HTMLElement; // Приводим к нужному типу
+
+			if (htmlEl.textContent?.includes('Техлист')) {
+				htmlEl.style.padding = '0.4rem 1rem';
 			} else {
-				el.style.padding = '0.4rem 0.3rem 0.4rem 1.3rem';
+				htmlEl.style.padding = '0.4rem 0.3rem 0.4rem 1.3rem';
 			}
 
-			const res = el.textContent;
-			el.textContent = res;
+			const res = htmlEl.textContent;
+			htmlEl.textContent = res;
 		});
 	}
 }
@@ -758,7 +765,7 @@ events.on('preview:changed', (item: ICardItem) => {
 
 			// Создание карточки товара
 			const card = new Card('card', cloneTemplate(cardTehlistWheelsTemplate), {
-				onClick: (formData: { isWheels?: boolean; price: number }) => {
+				onClick: (formData: { isWheels?: boolean; price?: number }) => {
 					const selectedPrice = formData.price ?? item.price;
 
 					// Передаем выбранную цену в функцию generateNewId
